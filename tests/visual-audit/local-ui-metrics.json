@@ -1,0 +1,49 @@
+{
+  "header": {
+    "selector": "header",
+    "x": 0,
+    "y": 0,
+    "width": 1280,
+    "height": 64,
+    "zIndex": "200",
+    "opacity": "1",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(232, 238, 243)",
+    "fontSize": "16px",
+    "fontFamily": "\"Noto Sans KR\", system-ui, sans-serif",
+    "borderRadius": "0px",
+    "pointerEvents": "auto"
+  },
+  "logo": null,
+  "title": null,
+  "langSelect": {
+    "selector": "button",
+    "x": 1174.984375,
+    "y": 19.25,
+    "width": 42,
+    "height": 24.5,
+    "zIndex": "auto",
+    "opacity": "1",
+    "backgroundColor": "rgb(12, 117, 201)",
+    "color": "rgb(255, 255, 255)",
+    "fontSize": "11px",
+    "fontFamily": "\"Noto Sans KR\", system-ui, sans-serif",
+    "borderRadius": "0px",
+    "pointerEvents": "auto"
+  },
+  "mapBtn": {
+    "selector": "button",
+    "x": 1197,
+    "y": 223,
+    "width": 56,
+    "height": 68,
+    "zIndex": "auto",
+    "opacity": "1",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(154, 166, 171)",
+    "fontSize": "16px",
+    "fontFamily": "\"Noto Sans KR\", system-ui, sans-serif",
+    "borderRadius": "0px",
+    "pointerEvents": "auto"
+  }
+}

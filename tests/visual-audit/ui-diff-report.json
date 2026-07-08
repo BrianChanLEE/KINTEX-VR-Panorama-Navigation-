@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-07-07T15:30:12.610Z",
+  "diffs": {
+    "header": {
+      "widthDiff": 0,
+      "heightDiff": 4,
+      "xDiff": 0,
+      "yDiff": 0,
+      "zIndexDiff": "same"
+    },
+    "langSelect": {
+      "widthDiff": 41,
+      "heightDiff": 15.5,
+      "xDiff": 8.015625,
+      "yDiff": 1.75,
+      "zIndexDiff": "same"
+    },
+    "mapBtn": {
+      "widthDiff": 239,
+      "heightDiff": 28,
+      "xDiff": 1167,
+      "yDiff": 53,
+      "zIndexDiff": "same"
+    }
+  }
+}

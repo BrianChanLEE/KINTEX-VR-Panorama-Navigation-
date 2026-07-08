@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Gate1A",
+    "origin_x": 742,
+    "origin_y": 487,
+    "local_x": 773,
+    "local_y": 525,
+    "diff_x": 31,
+    "diff_y": 38,
+    "error": "Mathematical diff due to FOV 75 vs 90"
+  },
+  {
+    "label": "Gate2",
+    "origin_x": 649,
+    "origin_y": 476,
+    "local_x": 651,
+    "local_y": 512,
+    "diff_x": 2,
+    "diff_y": 36,
+    "error": "Mathematical diff due to FOV 75 vs 90"
+  },
+  {
+    "label": "제1전시장",
+    "origin_x": 934,
+    "origin_y": 452,
+    "local_x": 1023,
+    "local_y": 479,
+    "diff_x": 89,
+    "diff_y": 27,
+    "error": "Mathematical diff due to FOV 75 vs 90"
+  }
+]

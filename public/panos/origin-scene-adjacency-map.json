@@ -1,0 +1,111 @@
+{
+  "comment": "Scene and hotspot adjacency mapping registry",
+  "scenes": [
+    {
+      "sceneKey": "aerial01",
+      "originalSceneId": 2404,
+      "title": "항공01",
+      "zone": "aerial",
+      "startDirection": {
+        "hDeg": -10,
+        "vDeg": 5
+      },
+      "adjacentScenes": [
+        {
+          "label": "Gate1A",
+          "target": "gate1a",
+          "direction": "North-West"
+        },
+        {
+          "label": "Gate2",
+          "target": "gate2",
+          "direction": "North-West"
+        },
+        {
+          "label": "무빙워크(1전시장)",
+          "target": "scene_2526",
+          "direction": "North-East"
+        },
+        {
+          "label": "무빙워크(2전시장)",
+          "target": "scene_2527",
+          "direction": "North-East"
+        },
+        {
+          "label": "SIC2027 KINTEX1",
+          "target": "scene_2411",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2410",
+      "originalSceneId": 2410,
+      "title": "전시3,4홀 로비",
+      "zone": "floor1_1",
+      "startDirection": {
+        "hDeg": -90,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시1,2홀 로비",
+          "target": "lobby12",
+          "direction": "West (Opposite to Exhibition 5 Lobby)"
+        },
+        {
+          "label": "전시3홀",
+          "target": "scene_2420",
+          "direction": "West"
+        },
+        {
+          "label": "전시4홀",
+          "target": "scene_2422",
+          "direction": "East"
+        },
+        {
+          "label": "전시5홀 로비",
+          "target": "lobby5",
+          "direction": "East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "lobby5",
+      "originalSceneId": 2411,
+      "title": "전시5홀 로비",
+      "zone": "floor1_1",
+      "startDirection": {
+        "hDeg": -1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시5홀",
+          "target": "scene_2424",
+          "direction": "North"
+        },
+        {
+          "label": "전시3,4홀 로비",
+          "target": "scene_2410",
+          "direction": "West"
+        },
+        {
+          "label": "화상상담실 입구",
+          "target": "scene_2413",
+          "direction": "East"
+        },
+        {
+          "label": "무빙워크",
+          "target": "scene_2526",
+          "direction": "East"
+        },
+        {
+          "label": "2F",
+          "target": "scene_2432",
+          "direction": "East"
+        }
+      ]
+    }
+  ]
+}

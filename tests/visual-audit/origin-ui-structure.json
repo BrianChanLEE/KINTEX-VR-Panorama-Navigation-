@@ -1,0 +1,178 @@
+{
+  "source": "https://k-mice.visitkorea.or.kr/vr/sites/KIN.kto?lang=ko",
+  "analysisDate": "2026-07-08",
+  "layout": {
+    "wrapperPage": {
+      "description": "site_page.html - parent page with header + iframe",
+      "header": {
+        "height": "60px",
+        "background": "#fff",
+        "display": "flex",
+        "alignItems": "center",
+        "justifyContent": "space-between"
+      },
+      "headLeft": {
+        "width": "325px",
+        "height": "60px",
+        "background": "#0a1429",
+        "padding": "0 0 0 30px",
+        "content": "K-MICE logo + VIRTUAL TOUR text"
+      },
+      "headNav": {
+        "items": [
+          "메인으로",
+          "360 VR 사진",
+          "360 VR 동영상",
+          "홈페이지"
+        ],
+        "fontSize": "15px",
+        "fontWeight": "bold",
+        "color": "#000",
+        "margin": "0 50px"
+      },
+      "headRight": {
+        "content": "Language toggle (KOR/ENG) + SNS icons",
+        "padding": "0 30px 0 0"
+      },
+      "iframe": {
+        "height": "calc(100vh - 90px)",
+        "width": "100%",
+        "border": "none"
+      }
+    },
+    "iframePage": {
+      "description": "origin-iframe-source.html - panorama viewer with overlays",
+      "panoramaArea": {
+        "width": "100%",
+        "height": "100vh",
+        "background": "rgb(0,0,0)"
+      },
+      "panoramaLogo": {
+        "position": "absolute",
+        "top": "80px",
+        "left": "30px",
+        "width": "295px",
+        "height": "72px",
+        "padding": "15px",
+        "background": "#fff",
+        "borderRadius": "0 20px 20px 20px",
+        "content": "SIC27-KINTEX logo image"
+      },
+      "panoramaMap": {
+        "position": "absolute",
+        "top": "170px",
+        "left": "30px",
+        "height": "40px",
+        "background": "#fff",
+        "borderRadius": "0 20px 20px 20px",
+        "boxShadow": "0 3px 6px 0 rgba(0,0,0,0.16)",
+        "content": "Pin icon + location text (15px) + plus button"
+      },
+      "panoramaInformation": {
+        "position": "fixed",
+        "left": "30px",
+        "bottom": "30px",
+        "height": "70px",
+        "padding": "0 19px",
+        "background": "#fff",
+        "borderRadius": "0 33px 33px 33px",
+        "boxShadow": "0 3px 6px 0 rgba(0,0,0,0.16)",
+        "zIndex": 100,
+        "buttons": [
+          {
+            "id": "common-info-btn",
+            "icon": "information-normal",
+            "text": "일반정보"
+          },
+          {
+            "id": "toggle_safety_layer_visibility",
+            "icon": "information-safety",
+            "text": "안전정보"
+          },
+          {
+            "id": "toggle_space_layer_visibility",
+            "icon": "information-space",
+            "text": "공간정보"
+          }
+        ],
+        "buttonStyle": {
+          "display": "flex",
+          "flexDirection": "column",
+          "alignItems": "center",
+          "margin": "0 19px",
+          "fontSize": "13px",
+          "iconSize": "25x25px"
+        },
+        "hoverColor": "#b80009",
+        "visibility": "dynamic - hidden for aerial scenes via checkMenuVisible()"
+      },
+      "panoramaMenu": {
+        "position": "fixed",
+        "right": "30px",
+        "bottom": "30px",
+        "height": "70px",
+        "padding": "0 19px",
+        "background": "#fff",
+        "borderRadius": "33px 0 33px 33px",
+        "boxShadow": "0 3px 6px 0 rgba(0,0,0,0.16)",
+        "zIndex": 1,
+        "buttons": [
+          {
+            "id": "toggle_vr_mode",
+            "icon": "information-vr",
+            "text": "VR보기"
+          },
+          {
+            "id": "toggle_fullscreen",
+            "icon": "information-fullview",
+            "text": "전체보기"
+          },
+          {
+            "id": "viewParentSceneGroup",
+            "icon": "information-lookaround",
+            "text": "둘러보기"
+          }
+        ],
+        "buttonStyle": {
+          "display": "flex",
+          "flexDirection": "column",
+          "alignItems": "center",
+          "margin": "0 19px",
+          "fontSize": "13px",
+          "iconSize": "25x25px"
+        },
+        "hoverColor": "#b80009"
+      }
+    }
+  },
+  "hotspots": {
+    "navMarker": {
+      "image": "marker01.png",
+      "width": 108,
+      "height": 108,
+      "description": "Orange circle with directional arrow, pulsing animation"
+    },
+    "poiMarker": {
+      "image": "marker04.png",
+      "width": 108,
+      "height": 108,
+      "description": "Dark circle with pin icon"
+    },
+    "poiLabel": {
+      "type": "image",
+      "description": "Korean text rendered as PNG images (e.g. SIC2027 KINTEX_Exhibition_1_kor.png)",
+      "examples": [
+        "SIC2027 KINTEX_Exhibition_1_kor.png (178x213px)",
+        "SIC2027 KINTEX_Exhibition_2_kor.png (178x213px)",
+        "Hyundai_Department_Store_kor.png (200x166px)",
+        "GTX-A_SIC2027 KINTEX_Station_kor.png (200x166px)"
+      ]
+    }
+  },
+  "viewer": {
+    "engine": "krpano 1.20.7",
+    "canvasSize": "1516x720 (at 1536x768 viewport)",
+    "startScene": 2404,
+    "startSceneTitle": "항공01"
+  }
+}

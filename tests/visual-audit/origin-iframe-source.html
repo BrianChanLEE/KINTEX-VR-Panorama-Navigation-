@@ -1,0 +1,923 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="/convention_kor/css/vr/new/default.css">
+    <link rel="stylesheet" type="text/css" href="/convention_kor/css/vr/new/sub.css">
+
+
+
+
+
+    <link rel="stylesheet" href="/convention_kor/css/vr/pc/vrplayer.css">
+
+
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        body * {
+            touch-action: none;
+        }
+
+        #vr_player {
+            width: 100%;
+            height: 100%;
+        }
+
+        #pswp {
+            top: 60px;
+            height: calc(100% - 60px);
+        }
+
+        .info-nav a {
+            margin: 0 17px 0 0;
+            background: url(/convention_kor/images/vr/pc/sub/btn_infoNav.png) no-repeat;
+        }
+
+        .vr-nav a {
+            margin: 0 0 0 17px;
+            background: url(/convention_kor/images/vr/pc/sub/btn_vrNav.png) no-repeat;
+        }
+
+        .util-nav a {
+            float: left;
+            width: 49px;
+            height: 49px;
+            overflow: hidden;
+            text-indent: -9999px;
+        }
+
+        .info-nav {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+        }
+
+        .info-nav a:hover {
+            background-position-y: -49px;
+        }
+
+        .info-nav .btn-info {
+            background-position: 0 0;
+        }
+
+        .info-nav .btn-safe {
+            background-position: -66px 0;
+        }
+
+        .info-nav .btn-place {
+            background-position: -132px 0;
+        }
+
+        .vr-nav {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+        }
+
+        .vr-nav a:hover {
+            background-position-y: -49px;
+        }
+
+        .vr-nav .btn-menu1 {
+            background-position: 0 0;
+        }
+
+        .vr-nav .btn-menu2 {
+            background-position: -132px 0;
+        }
+
+        .vr-nav .btn-menu3 {
+            background-position: -198px 0;
+        }
+
+        .vr-nav .btn-menu4 {
+            background-position: -264px 0;
+        }
+
+        .vr-nav .btn-menu5 {
+            background-position: -330px 0;
+        }
+
+        .vr-nav .btn-menu6 {
+            background-position: -66px 0;
+        }
+
+        .modal-body .info li {
+            padding: 10px 0;
+            border-bottom: 1px solid #2f3749;
+        }
+
+        .info-nav a.enabled,
+        .vr-nav a.enabled {
+            background-position-y: -49px;
+        }
+
+        .enabled .text {
+            color: #b80009;
+        }
+
+        #sub-box .enabled .information-safety {
+            background: url('/convention_kor/images/vr/new/information_safety_on.png') no-repeat center center;
+        }
+
+        #sub-box .enabled .information-space {
+            background: url('/convention_kor/images/vr/new/information_space_on.png') no-repeat center center;
+        }
+
+        #sub-box .enabled .information-auto {
+            background: url('/convention_kor/images/vr/new/information_auto_on.png') no-repeat center center;
+        }
+
+        #sub-box .enabled .information-sample {
+            background: url('/convention_kor/images/vr/new/information_sample_on.png') no-repeat center center;
+        }
+    </style>
+    <link rel="stylesheet" href="/convention_kor/css/vr/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="/convention_kor/css/vr/photoswipe/default-skin/default-skin.css">
+    <script type="text/javascript" src="/convention_kor/js/vr/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/convention_kor/js/vr/photoswipe/photoswipe-ui-default.min.js"></script>
+    <script type="text/javascript" src="/convention_kor/js/vr/promise.min.js"></script>
+    <script type="text/javascript" src="/convention_kor/js/vr/fetch.js"></script>
+
+    <style type="text/css">
+        .lucid-video-control-bar .lucid-seekbar .highlight-wrap .highlight-marker {
+            position: absolute;
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            background: #fff;
+            border-radius: 5px;
+            top: 4px
+        }
+
+        .lucid-video-control-bar .lucid-seekbar .highlight-wrap .highlight-marker.active {
+            width: 8px;
+            height: 8px;
+            border-radius: 10px;
+            border: 4px solid #ffaf31;
+            top: 2px;
+            box-sizing: initial
+        }
+
+        .lucid-video-control-bar .lucid-seekbar .highlight-wrap .highlight-marker:not(.mobile):hover {
+            cursor: pointer
+        }
+
+        .lucid-video-control-bar .lucid-seekbar .highlight-wrap .highlight-marker.mobile.hover .thumb-nail,
+        .lucid-video-control-bar .lucid-seekbar .highlight-wrap .highlight-marker:not(.mobile):hover .thumb-nail {
+            display: inline-block
+        }
+
+        .lucid-video-control-bar .lucid-seekbar .highlight-wrap .highlight-marker .thumb-nail>img {
+            position: static !important;
+            width: 100%
+        }
+
+        .lucid-video-control-bar .lucid-seekbar .highlight-wrap .highlight-marker .thumb-nail {
+            position: absolute;
+            display: none;
+            width: 156px;
+            margin-left: -78px;
+            border: 1px solid #000;
+            left: 50%;
+            bottom: 18px
+        }
+
+        .lucid-video-control-bar .lucid-seekbar .highlight-wrap .highlight-marker .thumb-nail .shooting-date {
+            position: absolute;
+            display: inline-block;
+            color: #fff;
+            width: 100%;
+            left: 1px;
+            bottom: 0;
+            background: rgba(0, 0, 0, .7);
+            text-align: center;
+            font-size: 12px;
+            line-height: 23px
+        }
+    </style>
+</head>
+
+<body onload="onPageLoaded();">
+    <main id="sub-box">
+        <div class="panorama"><!-- vr 사진 들어갈 영역 입니다. -->
+            <div id="vr_player">
+                <div id="krpanoSWFObject" tabindex="-1"
+                    style="position: relative; overflow: hidden; height: 100%; line-height: normal; font-weight: normal; font-style: normal; outline: 0px; -webkit-tap-highlight-color: transparent; background: rgb(0, 0, 0); width: 100%;">
+                    <div
+                        style="position: absolute; left: 0px; top: 0px; width: 1516px; height: 720px; overflow: hidden; user-select: none; touch-action: none; -webkit-tap-highlight-color: transparent; cursor: default;">
+                        <div
+                            style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none;">
+                            <canvas width="1516" height="720"
+                                style="position: absolute; left: 0px; top: 0px; width: 1516px; height: 720px;"></canvas>
+                        </div>
+                        <div
+                            style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; overflow: hidden; user-select: none; transform-style: preserve-3d;">
+                            <div
+                                style="position: absolute; z-index: 3001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background: none; width: 0px; height: 0px; transform: translateZ(1e+12px) translate(0px, 0px) translate(0px, 0px) rotate(0deg) translate(0px, 0px);">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 3001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background: none; width: 0px; height: 0px; transform: translateZ(1e+12px) translate(0px, 0px) translate(0px, 0px) rotate(0deg) translate(0px, 0px);">
+                            </div>
+                            <div
+                                style="display: none; position: absolute; z-index: 3001; overflow: visible; opacity: 0; color: rgb(0, 0, 0); text-size-adjust: none; pointer-events: auto; background: none; cursor: pointer; width: 101px; height: 35px; transform: translateZ(1e+12px) translate(708px, 24px) translate(0px, -17.5px) rotate(0deg) translate(0px, 17.5px);">
+                                <div
+                                    style="position: absolute; top: 0px; left: 0px; transform-origin: 0px 0px; transform: scale(1); width: 100%; height: 100%; font-size: 12px; font-family: Arial; line-height: normal; color: rgb(0, 0, 0); pointer-events: none; visibility: visible;">
+                                    <div
+                                        style="position: absolute; white-space: nowrap; background-color: rgba(0, 0, 0, 0.5); border-radius: 9px;">
+                                        <div style="margin:6px 10px 6px 10px;color:#FFFFFF;font-size:20px;">Enter VR
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                style="display: none; position: absolute; z-index: 3001; overflow: visible; opacity: 0; color: rgb(0, 0, 0); text-size-adjust: none; pointer-events: auto; background: none; cursor: pointer; width: 87px; height: 35px; transform: translateZ(1e+12px) translate(715px, 24px) translate(0px, -17.5px) rotate(0deg) translate(0px, 17.5px);">
+                                <div
+                                    style="position: absolute; top: 0px; left: 0px; transform-origin: 0px 0px; transform: scale(1); width: 100%; height: 100%; font-size: 12px; font-family: Arial; line-height: normal; color: rgb(0, 0, 0); pointer-events: none; visibility: visible;">
+                                    <div
+                                        style="position: absolute; white-space: nowrap; background-color: rgba(0, 0, 0, 0.5); border-radius: 9px;">
+                                        <div style="margin:6px 10px 6px 10px;color:#FFFFFF;font-size:20px;">Exit VR
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                style="display: none; position: absolute; z-index: 3001; overflow: visible; opacity: 0; color: rgb(0, 0, 0); text-size-adjust: none; pointer-events: auto; background: none; cursor: pointer; width: 106px; height: 35px; transform: translateZ(1e+12px) translate(705px, 661px) translate(0px, 17.5px) rotate(0deg) translate(0px, -17.5px);">
+                                <div
+                                    style="position: absolute; top: 0px; left: 0px; transform-origin: 0px 0px; transform: scale(1); width: 100%; height: 100%; font-size: 12px; font-family: Arial; line-height: normal; color: rgb(0, 0, 0); pointer-events: none; visibility: visible;">
+                                    <div
+                                        style="position: absolute; white-space: nowrap; background-color: rgba(0, 0, 0, 0.5); border-radius: 9px;">
+                                        <div style="margin:6px 10px 6px 10px;color:#FFFFFF;font-size:20px;">VR Setup
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/marker/marker01.png&quot;); width: 108px; height: 108px; background-position: 0px 0px; background-size: 108px 108px; transform-origin: 50% 50%; transform: translateZ(0px) translate(645.288px, 497.445px) translate(-54px, -54px) rotate(0deg) translate(0px, 0px) scale(0.583546, 0.583546) translate(0px, 0px);">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/marker/marker01.png&quot;); width: 108px; height: 108px; background-position: 0px 0px; background-size: 108px 108px; transform-origin: 50% 50%; transform: translateZ(0px) translate(748.369px, 485.689px) translate(-54px, -54px) rotate(0deg) translate(0px, 0px) scale(0.558563, 0.558563) translate(0px, 0px);">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/marker/marker01.png&quot;); width: 108px; height: 108px; background-position: 0px 0px; background-size: 108px 108px; transform-origin: 50% 50%; transform: translateZ(0px) translate(1009.49px, 429.57px) translate(-54px, -54px) rotate(0deg) translate(0px, 0px) scale(0.572291, 0.572291) translate(0px, 0px);">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/marker/marker01.png&quot;); width: 108px; height: 108px; background-position: 0px 0px; background-size: 108px 108px; transform-origin: 50% 50%; transform: translateZ(0px) translate(1083.05px, 413.22px) translate(-54px, -54px) rotate(0deg) translate(0px, 0px) scale(0.592123, 0.592123) translate(0px, 0px);">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/KIN/air/kor/Daehwa-dong_Leports_Park.png&quot;); width: 200px; height: 166px; background-position: 0px 0px; background-size: 200px 166px; transform-origin: 50% 50%; transform: translateZ(0px) translate(3372.44px, 1705.04px) translate(-100px, -83px) rotate(0deg) translate(0px, 0px) scale(4.1344, 4.98121) translate(0px, 0px); display: none;">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/KIN/air/kor/Goyang%20Stadium.png&quot;); width: 200px; height: 166px; background-position: 0px 0px; background-size: 200px 166px; transform-origin: 50% 50%; transform: translateZ(0px) translate(-1213.47px, 1530.01px) translate(-100px, -83px) rotate(0deg) translate(0px, 0px) scale(3.29419, 3.9689) translate(0px, 0px); display: none;">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/KIN/air/kor/Daehwa%20Station.png&quot;); width: 200px; height: 166px; background-position: 0px 0px; background-size: 200px 166px; transform-origin: 50% 50%; transform: translateZ(0px) translate(-6344.71px, 613.017px) translate(-100px, -83px) rotate(0deg) translate(0px, 0px) scale(9.24896, 11.1433) translate(0px, 0px); display: none;">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/KIN/air/kor/Ilsan_Bridge.png&quot;); width: 200px; height: 166px; background-position: 0px 0px; background-size: 200px 166px; transform-origin: 50% 50%; transform: translateZ(0px) translate(7314.86px, -234.947px) translate(-100px, -83px) rotate(0deg) translate(0px, 0px) scale(8.55953, 10.3127) translate(0px, 0px); display: none;">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/marker/marker04.png&quot;); width: 108px; height: 108px; background-position: 0px 0px; background-size: 108px 108px; transform-origin: 50% 50%; transform: translateZ(0px) translate(848.263px, 144.79px) translate(-54px, -54px) rotate(0deg) translate(0px, 0px) scale(0.602311, 0.602311) translate(0px, 0px);">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/marker/marker04.png&quot;); width: 108px; height: 108px; background-position: 0px 0px; background-size: 108px 108px; transform-origin: 50% 50%; transform: translateZ(0px) translate(2522.73px, -368.194px) translate(-54px, -54px) rotate(0deg) translate(0px, 0px) scale(2.59198, 2.59198) translate(0px, 0px);">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition_1_kor.png&quot;); width: 178px; height: 213px; background-position: 0px 0px; background-size: 178px 213px; transform-origin: 50% 50%; transform: translateZ(0px) translate(749.592px, 365.796px) translate(-89px, -106.5px) rotate(0deg) translate(0px, 0px) scale(0.333042, 0.33398) translate(0px, 0px);">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition_2_kor.png&quot;); width: 178px; height: 213px; background-position: 0px 0px; background-size: 178px 213px; transform-origin: 50% 50%; transform: translateZ(0px) translate(1225.64px, 325.877px) translate(-89px, -106.5px) rotate(0deg) translate(0px, 0px) scale(0.515884, 0.517337) translate(0px, 0px);">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/KIN/air/kor/Hyundai_Department_Store_kor.png&quot;); width: 200px; height: 166px; background-position: 0px 0px; background-size: 200px 166px; transform-origin: 50% 50%; transform: translateZ(0px) translate(625.379px, 296.009px) translate(-100px, -83px) rotate(0deg) translate(0px, 0px) scale(0.544949, 0.656565) translate(0px, 0px);">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/KIN/air/kor/GTX-A_SIC2027 KINTEX_Station_kor.png&quot;); width: 200px; height: 166px; background-position: 0px 0px; background-size: 200px 166px; transform-origin: 50% 50%; transform: translateZ(0px) translate(823.864px, 276.45px) translate(-100px, -83px) rotate(0deg) translate(0px, 0px) scale(0.527715, 0.635801) translate(0px, 0px);">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/KIN/air/kor/HYUNDAI_MOTORSTUDIO_GOYANG_kor.png&quot;); width: 200px; height: 166px; background-position: 0px 0px; background-size: 200px 166px; transform-origin: 50% 50%; transform: translateZ(0px) translate(847.842px, 326.488px) translate(-100px, -83px) rotate(0deg) translate(0px, 0px) scale(0.526665, 0.634536) translate(0px, 0px);">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_camping_ground_kor.png&quot;); width: 200px; height: 166px; background-position: 0px 0px; background-size: 200px 166px; transform-origin: 50% 50%; transform: translateZ(0px) translate(1734.72px, 311.309px) translate(-100px, -83px) rotate(0deg) translate(0px, 0px) scale(1.37015, 1.65078) translate(0px, 0px);">
+                            </div>
+                            <div
+                                style="position: absolute; z-index: 2001; overflow: visible; opacity: 1; cursor: pointer; pointer-events: auto; background-image: url(&quot;https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition3_kor.png&quot;); width: 200px; height: 166px; background-position: 0px 0px; background-size: 200px 166px; transform-origin: 50% 50%; transform: translateZ(0px) translate(2461.11px, 445.826px) translate(-100px, -83px) rotate(0deg) translate(0px, 0px) scale(2.27644, 2.74269) translate(0px, 0px);">
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        style="position: absolute; left: 0px; bottom: -1px; width: 100%; height: 156px; overflow: hidden; display: none; transform: translateZ(2e+12px); z-index: 999999999;">
+                        <div
+                            style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; overflow: hidden; background-color: rgb(0, 0, 0); box-sizing: border-box; border-top: 1px solid rgba(255, 255, 255, 0.8); border-bottom: 1px solid rgba(255, 255, 255, 0.8); opacity: 0.6;">
+                        </div>
+                        <pre
+                            style="position: absolute; left: 5px; top: 0px; margin: 6px 0px; padding: 0px 16px 0px 0px; border: 0px; border-radius: 0px; width: 100%; height: 146px; overflow: hidden auto; text-align: left; white-space: pre-line; text-size-adjust: none; cursor: text; display: block !important; background: none !important; font-family: &quot;Courier New&quot; !important; font-size: 11px !important; line-height: 1.2 !important; color: rgb(255, 255, 255) !important;"><div>INFO: krpano 1.20.7 (build 2020-05-26)</div><div>INFO: HTML5/Desktop - Chrome 149.0 - WebGL<span id="krpanoSWFObject_log_extrainfo"></span></div><div>INFO: Registered to: iok.co.kr</div></pre>
+                        <div
+                            style="position: absolute; right: 0px; top: 6px; padding: 0px 4px; height: 30px; user-select: none; cursor: pointer; -webkit-tap-highlight-color: transparent; font-family: &quot;Courier New&quot;; font-size: 10px; color: rgb(255, 255, 255);">
+                            CLOSE</div>
+                        <div
+                            style="position: absolute; right: 2px; bottom: 4px; padding: 0px 4px 4px; height: 14px; user-select: none; cursor: pointer; -webkit-tap-highlight-color: transparent; font-family: &quot;Courier New&quot;; font-size: 14px; color: rgb(170, 170, 170);">
+                            ⇵</div>
+                        <div
+                            style="position: absolute; right: 0px; bottom: 18px; padding: 0px 4px 4px; height: 12px; user-select: none; cursor: pointer; -webkit-tap-highlight-color: transparent; font-family: &quot;Courier New&quot;; font-size: 10px; color: rgb(15, 255, 0); display: none;">
+                            LAYERS</div>
+                        <div
+                            style="position: absolute; right: 0px; bottom: 36px; padding: 4px 4px 0px; height: 12px; user-select: none; cursor: pointer; -webkit-tap-highlight-color: transparent; font-family: &quot;Courier New&quot;; font-size: 10px; color: rgb(15, 255, 0); display: none;">
+                            HOTSPOTS</div>
+                        <div
+                            style="position: absolute; right: 0px; bottom: 50px; padding: 4px 4px 0px; height: 12px; user-select: none; cursor: pointer; -webkit-tap-highlight-color: transparent; font-family: &quot;Courier New&quot;; font-size: 10px; color: rgb(15, 255, 0); display: none;">
+                            PANO</div>
+                    </div>
+                    <div id="pswp" class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="pswp__bg"></div>
+                        <div class="pswp__scroll-wrap">
+                            <div class="pswp__container">
+                                <div class="pswp__item"></div>
+                                <div class="pswp__item"></div>
+                                <div class="pswp__item"></div>
+                            </div>
+                            <div class="pswp__ui pswp__ui--hidden">
+                                <div class="pswp__top-bar">
+                                    <div class="pswp__counter"></div>
+                                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                                    <div class="pswp__preloader">
+                                        <div class="pswp__preloader__icn">
+                                            <div class="pswp__preloader__cut">
+                                                <div class="pswp__preloader__donut"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                                    <div class="pswp__share-tooltip"></div>
+                                </div>
+
+                                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                                </button>
+
+                                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                                </button>
+
+                                <div class="pswp__caption">
+                                    <div class="pswp__caption__center"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="panorama-information" id="panorama-information" style="display: none;">
+            <button type="button" class="panorama-btn" id="common-info-btn" onclick="viewParentGeneralInfo()"
+                style="display: none;">
+                <i class="information-normal"></i>
+                <span class="text">일반정보</span>
+            </button>
+            <button type="button" class="panorama-btn" id="toggle_safety_layer_visibility" style="display: none;">
+                <i class="information-safety"></i>
+                <span class="text">안전정보</span>
+            </button>
+            <button type="button" class="panorama-btn" id="toggle_space_layer_visibility" style="display: none;">
+                <i class="information-space"></i>
+                <span class="text">공간정보</span>
+            </button>
+        </div>
+
+        <!-- menu Start -->
+        <div class="panorama-menu">
+            <button type="button" class="panorama-btn" id="toggle_vr_mode">
+                <i class="information-vr"></i>
+                <span class="text">VR보기</span>
+            </button>
+            <button type="button" class="panorama-btn" id="toggle_auto_tour" style="display: none;">
+                <i class="information-auto"></i>
+                <span class="text">자동투어</span>
+            </button>
+            <button type="button" class="panorama-btn" id="toggle_sample_view" style="display: none;">
+                <i class="information-sample"></i>
+                <span class="text">샘플보기</span>
+            </button>
+            <button type="button" class="panorama-btn" id="toggle_diy" style="display: none;">
+                <i class="information-diy"></i>
+                <span class="text">DIY 보기</span>
+            </button>
+            <button type="button" class="panorama-btn" id="toggle_fullscreen">
+                <i class="information-fullview"></i>
+                <span class="text">전체보기</span>
+            </button>
+            <button type="button" class="panorama-btn" onclick="javascript:viewParentSceneGroup();">
+                <i class="information-lookaround"></i>
+                <span class="text">둘러보기</span>
+            </button>
+        </div>
+        <!-- menu End -->
+
+
+    </main>
+    <script src="/convention_kor/js/vr/lucid-vr360-core.js"></script>
+    <script src="/convention_kor/js/vr/pano-player.js"></script>
+    <script src="/convention_kor/js/vr/pc/jquery-1.12.4.min.js"></script>
+    <script src="/convention_kor/js/vr/pc/jquery-ui.min.js"></script>
+    <script src="/convention_kor/js/vr/vrplayer-common.js"></script>
+    <script src="/convention_kor/js/vr/pc/jquery.bxslider.js"></script>
+    <script src="/convention_kor/js/vr/pc/jquery.mousewheel.min.js"></script>
+    <script src="/convention_kor/js/vr/pc/jquery.mCustomScrollbar.min.js"></script>
+    <script src="/convention_kor/js/vr/pc/ui.js"></script>
+    <script src="/convention_kor/js/vr/new/jquery.min.js"></script>
+    <script src="/convention_kor/js/vr/new/jquery.selectric.min.js"></script>
+    <script src="/convention_kor/js/vr/new/common.js"></script>
+
+    <script type="text/javascript">
+        var sceneId = 2404;
+
+        var ctxtPath = "";
+        var autoTourInfo = null;
+        var mapHotspot = new Object();
+        var availClient = true;
+        var firstEntry = false;
+        var leftUser;
+        $(document).ready(function () {
+            if (parent.famTour) {
+                $('.panorama-information').hide();
+                $('.panorama-menu').hide();
+            }
+        });
+        function controlSpaceLayer(onOff) {
+            console.log('controlSpaceLayer:::' + onOff);
+            if (onOff == 'on' && !vrplayer.isSpaceLayerVisible()) {
+                $('#toggle_space_layer_visibility').click();
+                $('#toggle_space_layer_visibility').css('color', '#b80009');
+            } else {
+                if (vrplayer.isSpaceLayerVisible()) {
+                    $('#toggle_space_layer_visibility').click();
+                    $('#toggle_space_layer_visibility').css('color', '#000000');
+                }
+            }
+        }
+        function controlSafetyLayer(onOff) {
+            console.log('controlSafetyLayer:::' + onOff);
+            if (onOff == 'on' && !vrplayer.isSafetyLayerVisible()) {
+                $('#toggle_safety_layer_visibility').css('color', '#b80009');
+                $('#toggle_safety_layer_visibility').click();
+            } else {
+                if (vrplayer.isSafetyLayerVisible()) {
+                    $('#toggle_safety_layer_visibility').click();
+                    $('#toggle_safety_layer_visibility').css('color', '#000000');
+                }
+            }
+        }
+        function onVideoPlayerLoaded(videoPlayer) {
+
+        }
+
+        function onPageLoaded() {
+            console.log("####### famTour" + parent.famTour);
+            console.log('VR Player page loaded successfully.');
+            console.log(window);
+            vrplayer.init('vr_player', 'pswp', ctxtPath, false, 'ko');
+            vrplayer.loadScene(sceneId, function () {
+                console.log('Load scene ' + sceneId + ' success');
+
+                if (vrplayer.isVideo())
+                    vrplayer.playVideo();
+
+                if (parent && parent.onPlayerLoaded)
+                    parent.onPlayerLoaded();
+
+                $('#vr_player').focusin(function () {
+                    if (parent && parent.onPlayerIdle) {
+                        parent.onPlayerIdle();
+                    }
+                });
+                $('#vr_player').click(function () {
+                    if (parent && parent.onPlayerIdle) {
+                        parent.onPlayerIdle();
+                    }
+                });
+                $('#vr_player').focusout(function () {
+                    if (parent && parent.onPlayerIdleEnded) {
+                        parent.onPlayerIdleEnded();
+                    }
+                });
+
+                checkMenuVisible(vrplayer.currentScene)
+
+
+
+
+            }, function (reason) {
+                console.log(reason);
+            });
+            //$('#dialog').dialog();
+
+            //Virtual Tour를 위한 이벤트 등록
+            window.addEventListener('message', function (e) {
+                //console.log('child message');
+                //console.log(e.data); // { parentData : 'test parent data' }
+                //console.log("e.origin : " + e.origin); //http://abc.com(부모창 도메인)
+                window.parent.postMessage({ currentScene: vrplayer.currentScene, method: 'currentScene' }, "*");
+                //	if(e.data.parentData === 'currentScene'){
+                //		console.log(vrplayer.currentScene);
+                //		 window.parent.postMessage({currentScene: currentScene, method:'currentScene'},"*");
+
+                //	}
+                if (e.data.parentData === 'changeScene') {
+                    changeScene(e.data.sceneId);
+                }
+
+                if (e.data.parentData === 'lookAt') {
+                    vrplayer.lookAt(e.data.hDeg, e.data.vDeg, e.data.imm);
+                }
+                //강조하기 핫스팟
+                if (e.data.parentData === 'hostHighLight') {
+                    var hotspotHighLight = {
+                        id: 'hostHighLight',
+                        layer: 'info',
+                        name: 'hostHighLight',
+                        // url:'/convention_kor/images/vr/rtc/host_accent.png',
+                        // url:'/convention_kor/images/vr/rtc/icon_emphasis_on.png',
+                        url: '/convention_kor/images/vr/new/emphasis.png',
+                        width: 100,
+                        height: 100,
+                        hDeg: e.data.hDeg,
+                        vDeg: e.data.vDeg,
+                        isVideo: false, //actions.onClick.sceneId,
+                        actions: {
+                            onClick: {
+                                sceneId: 0
+                            }
+                        },
+                        kind: '',
+                        changeEffect: ''
+
+                    }
+                    vrplayer.addHotspotDemo(hotspotHighLight);
+                    setTimeout(function () {
+                        vrplayer.removeHotspotDemo('hostHighLight');
+                    }, 5000); // 3000ms(3초)가 경과하면 이 함수가 실행됩니다.
+
+                }
+                if (e.data.parentData === 'addHotspotParent') {
+
+                    var hotspotInfo = {
+                        id: e.data.hotspot.id,
+                        layer: 'info',
+                        name: e.data.hotspot.id,
+                        url: e.data.hotspot.url,
+                        width: e.data.hotspot.width,
+                        height: e.data.hotspot.height,
+                        hDeg: e.data.hotspot.hDeg,
+                        vDeg: e.data.hotspot.vDeg,
+                        isVideo: false, //actions.onClick.sceneId,
+                        actions: {
+                            onClick: {
+                                sceneId: 0
+                            }
+                        },
+                        kind: '',
+                        changeEffect: ''
+
+                    }
+                    vrplayer.addHotspotDemo(hotspotInfo);
+                }
+
+                if (e.data.parentData === 'removeHotspotParent') {
+
+                    vrplayer.removeHotspot(e.data.hotspot.id);
+
+                }
+                if (e.data.parentData === 'addHotspot') {
+                    var hotspotInfo = {
+                        id: 'user',
+                        layer: 'info',
+                        name: 'user',
+                        url: '/public/demo/infohotspot.png',
+                        width: 640,
+                        height: 360,
+                        hDeg: e.data.hDeg,
+                        vDeg: e.data.vDeg,
+                        isVideo: false, //actions.onClick.sceneId,
+                        actions: {
+                            onClick: {
+                                sceneId: 0
+                            }
+                        },
+                        kind: '',
+                        changeEffect: ''
+
+                    }
+                    vrplayer.addHotspotDemo(hotspotInfo);
+                }
+                if (e.data.parentData === 'removeHotspot') {
+                    vrplayer.removeHotspot('user');
+                }
+                if (e.data.parentData === 'getLookAt') {
+                    window.parent.postMessage({ currentLookAt: vrplayer.getCurrentLookAt(), method: e.data.parentData }, '*');
+                }
+                if (e.data.parentData === 'screenSharing') {
+                    window.parent.postMessage({ method: e.data.parentData }, '*');
+                }
+                if (e.data.parentData === 'safety') {
+                    window.parent.postMessage({ method: e.data.parentData }, '*');
+                }
+                if (e.data.parentData === 'space') {
+                    window.parent.postMessage({ method: e.data.parentData }, '*');
+                }
+                if (e.data.parentData === 'place') {
+                    window.parent.postMessage({ method: e.data.parentData }, '*');
+                }
+                if (e.data.parentData === 'toggle_chk') {
+                    window.parent.postMessage({ method: e.data.parentData }, '*');
+                }
+                if (e.data.parentData === 'hostScene') {
+                    if (!firstEntry) {
+                        console.log("e.data.parentData ::  hostScene");
+                        console.log(e.data);
+                        changeScene(e.data.sceneId);
+                        firstEntry = true;
+                    }
+
+                }
+                if (e.data.parentData === 'eventInfo') {
+                    console.log("e.data.parentData ::  eventInfo PC");
+                    console.log(e.data);
+                }
+
+                if (e.data.parentData === 'getHighLightLookAt') {
+
+                    window.parent.postMessage({ currentLookAt: vrplayer.getCurrentLookAt(), method: e.data.parentData }, '*');
+                }
+
+                if (e.data.parentData === 'removeClient') {
+                    console.log(e.data.userinfo);
+                    vrplayer.removeHotspotDemo('user' + e.data.userinfo.id);
+                    mapHotspot[e.data.userinfo.id] = null;
+                    leftUser = e.data.userinfo;
+                }
+
+                if (e.data.parentData === 'clientLookAt') {
+                    if (availClient == false) return;
+                    if (e.data.userinfo !== undefined) {
+                        if (mapHotspot[e.data.userinfo.id] == null) {
+                            var userHotspot = {
+                                id: 'user' + e.data.userinfo.id,
+                                layer: 'info',
+                                name: 'user',
+                                url: e.data.userinfo.hotspot,
+                                width: 50,
+                                height: 50,
+                                hDeg: e.data.hDeg,
+                                vDeg: e.data.vDeg,
+                                isVideo: false, //actions.onClick.sceneId,
+                                actions: {
+                                    onClick: {
+                                        sceneId: 0
+                                    }
+                                },
+                                kind: '',
+                                changeEffect: ''
+
+                            };
+                            console.log(userHotspot);
+                            vrplayer.addHotspotDemo(userHotspot);
+                            mapHotspot[e.data.userinfo.id] = userHotspot;
+                        }
+                        else {
+                            vrplayer.setHotspotDegree('user' + e.data.userinfo.id, e.data.hDeg, e.data.vDeg);
+                        }
+                    }
+                }
+
+                if (e.data.parentData === 'toggleSafetyLayer') {
+                    vrplayer.toggleSafetyLayer();
+                }
+
+                if (e.data.parentData === 'toggleSpaceLayer') {
+                    vrplayer.toggleSpaceLayer();
+                }
+
+                if (e.data.parentData === 'startAutoRotation') {
+                    vrplayer.startAutoRotation(30, 5);
+                }
+
+                if (e.data.parentData === 'stopAutoRotation') {
+                    vrplayer.stopAutoRotation();
+                }
+
+            });
+
+            $('input.guide-never-see-again').change(function (e) {
+                var cookies = []; // (document.cookie === '')? [] : document.cookie.split(';');
+                var checked = $(this).is(':checked');
+                var modified = false;
+                var expireDate = new Date(2099, 12, 31).toUTCString();
+
+                for (var i = 0; i < cookies.length; ++i) {
+                    if (cookies[i].trim().match(/^showMouseGuide=.*/)) {
+                        cookies[i] = 'showMouseGuide=' + ((checked) ? 'n' : 'y');
+                        cookies.splice(i + 1, 0, 'expires=' + expireDate);
+                        modified = true;
+                        break;
+                    }
+                }
+                if (!modified) {
+                    cookies.push('showMouseGuide=' + ((checked) ? 'n' : 'y'));
+                    cookies.push('expires=' + expireDate);
+                }
+
+                document.cookie = cookies.join(';');
+            });
+            $('button.guide-close').click(function (e) {
+                $('.guide-window').remove();
+            });
+
+            if (vrplayer.isInSampleView())
+                $('#toggle_sample_view').addClass('enabled');
+            else
+                $('#toggle_sample_view').removeClass('enabled');
+
+            if (vrplayer.fullscreenEntered())
+                $('#toggle_fullscreen').addClass('enabled');
+            else
+                $('#toggle_fullscreen').removeClass('enabled');
+
+
+            $('#toggle_safety_layer_visibility').click(function (e) {
+                vrplayer.toggleSafetyLayer();
+                $(this).toggleClass('enabled');
+            });
+            $('#toggle_space_layer_visibility').click(function (e) {
+                vrplayer.toggleSpaceLayer();
+                $(this).toggleClass('enabled');
+            });
+
+            $('#toggle_diy').click(function (e) {
+                vrplayer.toggleDiyBoxes();
+                $(this).toggleClass('enabled');
+            });
+            $('#toggle_sample_view').click(function (e) {
+                var self = this;
+                if (vrplayer.isInSampleView()) {
+                    vrplayer.exitSampleView(
+                        function () { $(self).removeClass('enabled'); },
+                        function (msg) { console.error(msg); }
+                    );
+                } else {
+                    vrplayer.enterSampleView(
+                        function () { $(self).addClass('enabled'); },
+                        function (msg) { console.error(msg); }
+                    );
+                }
+            });
+            $('#toggle_vr_mode').click(function (e) {
+                vrplayer.toggleVRMode();
+            });
+            $('#toggle_fullscreen').click(function (e) {
+                vrplayer.toggleFullscreen();
+            });
+
+            if (vrplayer.isSafetyLayerVisible())
+                $('#toggle_safety_layer_visibility').addClass('enabled');
+            else
+                $('#toggle_safety_layer_visibility').removeClass('enabled');
+
+            if (vrplayer.isSpaceLayerVisible())
+                $('#toggle_space_layer_visibility').addClass('enabled');
+            else
+                $('#toggle_space_layer_visibility').removeClass('enabled');
+
+            if (vrplayer.isSafetyLayerVisible() || vrplayer.isSpaceLayerVisible() || vrplayer) {
+            }
+        }
+
+        function changeScene(_id) {
+            sceneId = _id;
+            availClient = false;
+            // vrplayer.loadScene(
+            vrplayer.loadScene(
+                _id,
+                function () {
+                    console.log('load success');
+                    console.log(vrplayer.currentScene);
+                    availClient = true;
+                    // setInterval(() => {
+                    // 	getCurrentLootAt();
+                    // }, 100);
+
+                    // vrplayer.setHotspotClicked(hotspotclicked);
+                    mapHotspot = new Object;
+                    checkMenuVisible(vrplayer.currentScene);
+                }
+            );
+            mapHotspot = null;
+        }
+
+        function fetchAutoTourInfo() {
+            $.ajax({
+                /* autoTourInfoRequestURL assigned by parent */
+                url: autoTourInfoRequestURL,
+                type: 'GET',
+                contentType: 'application/json'
+            }).done(function (response) {
+                autoTourInfo = JSON.parse(response);
+                if (autoTourInfo && autoTourInfo.data) {
+
+                    startidx = 0;
+
+
+                    for (idx = 0; idx < autoTourInfo.data[0].tourScenes.length; idx++) {
+
+                        if (autoTourInfo.data[0].tourScenes[idx].refSceneID === vrplayer.currentSceneId) {
+                            startidx = idx;
+                            break;
+                        }
+                    }
+                    vrplayer.startAutoTour(autoTourInfo.data[0], startidx);
+                    $('#toggle_auto_tour').addClass('enabled');
+                }
+            }).fail(function (xhr, status, err) {
+                console.error('Fetch autotour data failed: ' + err);
+            });
+        }
+
+        $('#toggle_auto_tour').click(function () {
+            if (vrplayer.autoTourEnabled()) {
+                vrplayer.stopAutoTour();
+                $('#toggle_auto_tour').removeClass('enabled');
+            } else {
+                if (!autoTourInfo) {
+                    fetchAutoTourInfo();
+                }
+                if (autoTourInfo && autoTourInfo.data) {
+
+
+                    startidx = 0;
+
+                    for (idx = 0; idx < autoTourInfo.data[0].tourScenes.length; idx++) {
+
+                        if (autoTourInfo.data[0].tourScenes[idx].refSceneID === vrplayer.currentSceneId) {
+                            startidx = idx;
+                            break;
+                        }
+                    }
+                    vrplayer.startAutoTour(autoTourInfo.data[0], startidx);
+
+
+                    $('#toggle_auto_tour').addClass('enabled');
+                }
+            }
+        });
+        function viewParentGeneralInfo() {
+
+            parent.viewGeneralInfo();
+        }
+
+        function viewParentSceneGroup() {
+            parent.viewSceneGroup();
+        }
+
+        function checkMenuVisible(_sceneData) {
+            if (parent.famTour) {
+                return;
+            }
+            var visibilities = _sceneData.controlVisibilities;
+
+            console.log(visibilities);
+
+            if (visibilities.safetyLayer === false
+                && visibilities.commonInfo === false
+                && visibilities.spaceLayer === false) {
+                $('#panorama-information').hide();
+            }
+            else {
+
+                $('#panorama-information').show();
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>

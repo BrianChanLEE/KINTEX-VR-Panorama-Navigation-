@@ -1,0 +1,34 @@
+[
+  {
+    "sceneKey": "aerial01",
+    "title": "항공01",
+    "status": "FAIL",
+    "failures": [
+      "로컬 UI 컴포넌트(TopNav, SIC2027 KINTEXLogo, SceneDropdown, FloorSelector, InfoTabs, VRControls, App, index.css)를 원본과 동일한 흰색 패널 디자인으로 전면 교체하였으나, 아직 육안 픽셀 검증이 완료되지 않음. 사용자의 로컬 캡처 확인 전까지 FAIL로 유지."
+    ]
+  },
+  {
+    "sceneKey": "scene_2410",
+    "title": "전시3,4홀 로비",
+    "status": "FAIL",
+    "failures": [
+      "UI 전면 교체 후 픽셀 검증 필요"
+    ]
+  },
+  {
+    "sceneKey": "lobby5",
+    "title": "전시5홀 로비",
+    "status": "FAIL",
+    "failures": [
+      "UI 전면 교체 후 픽셀 검증 필요"
+    ]
+  },
+  {
+    "sceneKey": "hall2",
+    "title": "전시2홀",
+    "status": "FAIL",
+    "failures": [
+      "UI 전면 교체 후 픽셀 검증 필요"
+    ]
+  }
+]

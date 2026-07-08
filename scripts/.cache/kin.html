@@ -1,0 +1,920 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SIC27-KINTEX VR</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css"
+    href="/convention_kor/css/vr/new/default.css;jsessionid=H26BDfsAeoZfarYHinUhe2Ggu7Bbcs3krx13JvUFDWWGa1JiT00vt68x6kcgLq1X">
+  <link rel="stylesheet" type="text/css"
+    href="/convention_kor/css/vr/new/sub.css;jsessionid=H26BDfsAeoZfarYHinUhe2Ggu7Bbcs3krx13JvUFDWWGa1JiT00vt68x6kcgLq1X">
+
+  <style>
+    body {
+      overflow: hidden;
+    }
+
+    body * {
+      touch-action: none;
+    }
+
+    .mapSpots>a {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      box-sizing: border-box;
+      padding: 4px;
+      border-radius: 50%;
+      background: #c5010d;
+    }
+
+    .mapSpots a span {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: 8px;
+      height: 8px;
+      overflow: hidden;
+      text-indent: -9999px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .modal-content {
+      position: relative;
+      padding: 30px;
+      border-radius: 20px;
+      background-color: #fff;
+    }
+
+    .modal-map .modal-content .close:after {
+      display: none;
+    }
+
+    .modal-map .modal-content .close:before {
+      display: none;
+    }
+
+    .modal-lookaround .modal-content {
+      top: calc(50vh - 265px);
+      left: calc(50vw - 450px);
+      height: 580px;
+      width: 900px;
+      margin: 0px;
+
+    }
+
+    .around-group-name {
+      width: 100%;
+      font-size: 20px;
+      font-weight: 900;
+      padding: 10px 0px;
+    }
+
+    .general-info-contents {
+      top: calc(50vh - 280px);
+      left: calc(50vw - 550px);
+      height: 560px;
+      width: 1100px;
+      margin: 0px;
+    }
+
+    .general-info-contents-no-space {
+      top: calc(50vh - 280px);
+      left: calc(50vw - 330px);
+      height: 560px;
+      width: 660px;
+      margin: 0px;
+    }
+
+    #sub-box .modal-normal .modal-content .box .left-box+.table-box {
+      float: left;
+      width: 580px;
+      height: 400px;
+      overflow: auto;
+    }
+
+    .blinking {
+      -webkit-animation: blink 0.7s ease-in-out infinite alternate;
+      -moz-animation: blink 0.7s ease-in-out infinite alternate;
+      animation: blink 0.7s ease-in-out infinite alternate;
+    }
+
+    @-webkit-keyframes blink {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-moz-keyframes blink {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    #sub-box .modal-normal .modal-content .box .table-box th {
+      word-break: keep-all;
+    }
+
+    header .head-left .title-text {
+      padding-right: 30px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <header style="position: fixed;z-index: 200;width: 100vw;">
+    <div class="head-left">
+      <div class="title-text">
+        <a href="/vr/sites/KIN.kto?lang=ko" style="color:white;">
+          킨텍스
+        </a>
+      </div>
+    </div>
+    <nav class="head-nav">
+      <a href="/vr/main.kto?lang=ko">메인으로</a>
+      <a href="#" onclick="imageVrSelect(event)">360 VR 사진</a>
+
+      <a href="#" onclick="videoVrSelect(event)">360 VR 동영상</a>
+
+
+      <a href="#" class="" onclick="showVirtualTourMenu()">Virtual Tour</a>
+
+
+      <a href="https://www.SIC27-KINTEX.com/" target="_blank">홈페이지</a>
+    </nav>
+    <div class="head-right">
+      <div class="head-language-box">
+        <!-- select 넣으면 자동 드롭다운 -->
+        <select id="langSelect">
+          <option value="ko">KOR</option>
+          <option value="en">ENG</option>
+        </select>
+      </div>
+    </div>
+  </header>
+  <div class="popup-guide">
+    <div class="text">
+      <h3>SIC27-KINTEX VR</h3>
+      더욱 편리하고 자세하게 이용하실 수 있습니다.
+      <div class="checkbox">
+        <input type="checkbox" id="guideClose" value="checked" class="check-none">
+        <label for="guideClose" onClick="PopupNoDisplay_1()">더 이상 보지 않기</label>
+      </div>
+      <button type="button" class="popup-guide-close" onclick="checkCookie()"></button>
+    </div>
+    <div class="guide-img01">
+      <img src="/convention_kor/images/vr/new/guide_img01.png">
+      <div class="img-text">
+        <h4>메뉴</h4>
+        360 VR 사진, 360 VR 동영상을<br>감상하고 홈페이지로 이동할 수<br>있는 메뉴입니다.
+      </div>
+    </div>
+    <div class="guide-img02">
+      <img src="/convention_kor/images/vr/new/guide_img02.png">
+      <div class="img-text">
+        <h4>지도 및 위치이동</h4>
+        현재 보고 계시는 시설의 위치를 파악하고<br>지도를 통해 쉽게 이동할 수 있습니다.
+      </div>
+    </div>
+    <div class="guide-img03">
+      <div class="img-text">
+        <h4>시설 상세정보</h4>
+        시설에 대한 상세한 정보와<br>안전시설 및 공간정보를 확인 할수 있습니다.
+      </div>
+      <img src="/convention_kor/images/vr/new/guide_img03_ko.png" height="200px">
+    </div>
+    <div class="guide-img04">
+      <div class="img-text">
+        <h4>VR 컨트롤러</h4>
+        컨벤션을 다양하고 편리하게 보실 수<br>있는 기능을 제공합니다.
+      </div>
+      <img src="/convention_kor/images/vr/new/guide_img04_ko.png" height="200px">
+    </div>
+    <div class="guide-marker">
+      <img src="/convention_kor/images/vr/new/guide_marker.png">
+      <div class="img-text">
+        <h4>마커</h4>
+        시설의 편의 도구 위치를 파악하고<br>정보를 확인 할 수 있습니다.
+      </div>
+    </div>
+  </div>
+  <main id="sub-box" style="width: 100vw; height:100vh">
+    <div class="panorama-controls">
+      <div id="sub-menu">
+        <!-- logo Start -->
+        <div class="panorama-logo" id="panorama-logo" onclick="changeChildScene(2404)">
+          <img src="/convention_kor/images/vr/new/main_title_box_kin.png">
+        </div>
+        <!-- logo End -->
+
+        <!-- map Start -->
+        <button type="button" class="panorama-map view-more" id="title-wrapper">
+          <i class="pannellum-map-icon"></i>
+          <span class="text" id="scene-title"> </span>
+          <i class="pannellum-map-pluse-icon"></i>
+        </button>
+        <div class="modal modal-map" id="floor-view">
+          <div class="modal-content">
+            <!-- tab Start -->
+            <div class="tabnav-map-box clfix">
+              <button type="button" class="tabnav-map-prev"></button>
+              <ul class="tabnav-map">
+
+                <li class="active" id="map-80">
+
+                  <a href="#">
+
+                    <div class="map-title">1</div>
+                    <div>
+                      1F
+                    </div>
+
+                  </a>
+                </li>
+
+                <li id="map-81">
+
+                  <a href="#">
+
+                    <div class="map-title">1</div>
+                    <div>
+                      2F
+                    </div>
+
+                  </a>
+                </li>
+
+                <li id="map-82">
+
+                  <a href="#">
+
+                    <div class="map-title">1</div>
+                    <div>
+                      3F
+                    </div>
+
+                  </a>
+                </li>
+
+                <li id="map-83">
+
+                  <a href="#">
+
+                    <div class="map-title">2</div>
+                    <div>
+                      2F
+                    </div>
+
+                  </a>
+                </li>
+
+                <li id="map-84">
+
+                  <a href="#">
+
+                    <div class="map-title">2</div>
+                    <div>
+                      3F
+                    </div>
+
+                  </a>
+                </li>
+
+                <li id="map-85">
+
+                  <a href="#">
+
+                    <div class="map-title">2</div>
+                    <div>
+                      4F
+                    </div>
+
+                  </a>
+                </li>
+
+              </ul>
+              <button type="button" class="tabnav-map-next"></button>
+            </div>
+            <div class="tabnav-map-tablist">
+
+
+              <div class="tabnav-map-tab">
+                <img id="mapimg-80"
+                  src="/convention_kor/images/vr/transparent.png;jsessionid=H26BDfsAeoZfarYHinUhe2Ggu7Bbcs3krx13JvUFDWWGa1JiT00vt68x6kcgLq1X"
+                  alt="큰지도이미지">
+                <div id="mapSpots-80" class="mapSpots"></div>
+              </div>
+
+              <div class="tabnav-map-tab">
+                <img id="mapimg-81"
+                  src="/convention_kor/images/vr/transparent.png;jsessionid=H26BDfsAeoZfarYHinUhe2Ggu7Bbcs3krx13JvUFDWWGa1JiT00vt68x6kcgLq1X"
+                  alt="큰지도이미지">
+                <div id="mapSpots-81" class="mapSpots"></div>
+              </div>
+
+              <div class="tabnav-map-tab">
+                <img id="mapimg-82"
+                  src="/convention_kor/images/vr/transparent.png;jsessionid=H26BDfsAeoZfarYHinUhe2Ggu7Bbcs3krx13JvUFDWWGa1JiT00vt68x6kcgLq1X"
+                  alt="큰지도이미지">
+                <div id="mapSpots-82" class="mapSpots"></div>
+              </div>
+
+              <div class="tabnav-map-tab">
+                <img id="mapimg-83"
+                  src="/convention_kor/images/vr/transparent.png;jsessionid=H26BDfsAeoZfarYHinUhe2Ggu7Bbcs3krx13JvUFDWWGa1JiT00vt68x6kcgLq1X"
+                  alt="큰지도이미지">
+                <div id="mapSpots-83" class="mapSpots"></div>
+              </div>
+
+              <div class="tabnav-map-tab">
+                <img id="mapimg-84"
+                  src="/convention_kor/images/vr/transparent.png;jsessionid=H26BDfsAeoZfarYHinUhe2Ggu7Bbcs3krx13JvUFDWWGa1JiT00vt68x6kcgLq1X"
+                  alt="큰지도이미지">
+                <div id="mapSpots-84" class="mapSpots"></div>
+              </div>
+
+              <div class="tabnav-map-tab">
+                <img id="mapimg-85"
+                  src="/convention_kor/images/vr/transparent.png;jsessionid=H26BDfsAeoZfarYHinUhe2Ggu7Bbcs3krx13JvUFDWWGa1JiT00vt68x6kcgLq1X"
+                  alt="큰지도이미지">
+                <div id="mapSpots-85" class="mapSpots"></div>
+              </div>
+
+              <div id="3d-map-pin" style="position:absolute;visibility:hidden;">
+                <div class="blinking"
+                  style="width:20px;height:24px;background-image: url(/convention_kor/images/vr/pc/sub/ico_pointRed.png;jsessionid=H26BDfsAeoZfarYHinUhe2Ggu7Bbcs3krx13JvUFDWWGa1JiT00vt68x6kcgLq1X);">
+                </div>
+              </div>
+            </div>
+            <!-- tab End -->
+            <button class="close">닫기</button>
+          </div>
+        </div>
+      </div>
+      <!-- map End -->
+
+      <div class="warp sub">
+        <div class="place-info">
+          <iframe id="vr360_player_area" scrolling="no"
+            style="height:100vh; background-position:center 0; background-size:cover; width:100vw;"
+            src="/vr/scenes/2404.kto?lang=ko" allowfullscreen="true" allow="autoplay; fullscreen"
+            frameBorder="0"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal modal-normal" id="common-info">
+      <div class="modal-content general-info-contents" id="general-info-contents">
+        <div class="title" id="general-info-title">Hall A</div>
+        <div class="box clfix">
+          <div class="left-box" id="general-info-space-layout">
+            <div class="tab">
+              <div class="tabcontent tabcontent-table" id="space-layout-img" style="height:365px;padding:35px;">
+                <div id="left-box-tab01">
+                  <img
+                    src="/convention_kor/images/vr/new/table_img.png;jsessionid=H26BDfsAeoZfarYHinUhe2Ggu7Bbcs3krx13JvUFDWWGa1JiT00vt68x6kcgLq1X">
+                </div>
+                <div id="left-box-tab02">
+                  <img
+                    src="/convention_kor/images/vr/new/table_img.png;jsessionid=H26BDfsAeoZfarYHinUhe2Ggu7Bbcs3krx13JvUFDWWGa1JiT00vt68x6kcgLq1X">
+                </div>
+                <div id="left-box-tab03">
+                  <img
+                    src="/convention_kor/images/vr/new/table_img.png;jsessionid=H26BDfsAeoZfarYHinUhe2Ggu7Bbcs3krx13JvUFDWWGa1JiT00vt68x6kcgLq1X">
+                </div>
+              </div>
+              <ul class="tabnav tabnav-table" id="space-layout-name">
+                <li><a href="#left-box-tab01" class="active">극장식</a></li>
+                <li><a href="#left-box-tab02">강의식</a></li>
+                <li><a href="#left-box-tab03">연회식</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="table-box">
+            <table id="general-info-table">
+              <tr>
+                <th>위치</th>
+                <td>1층</td>
+              </tr>
+              <tr>
+                <th>규모</th>
+                <td>10,368m² / 분할 사용 불가</td>
+              </tr>
+              <tr>
+                <th>주요용도</th>
+                <td>전시회, 각종 이벤트 행사 등</td>
+              </tr>
+              <tr>
+                <th>수용능력</th>
+                <td>극장식 416명, 강의식 250명, 연회식 200명</td>
+              </tr>
+              <tr>
+                <th>주요시설</th>
+                <td>
+                  바닥마감 : 폴리싱 마감 / Trench 및 Trench Box : 급배수, Air, 전원, 통신 배선 공급
+                  / 기둥 간격 : 18m /바닥 하중 : 1.5 tons/m²
+                </td>
+              </tr>
+              <tr>
+                <th>기타사항</th>
+                <td>
+                  주최자 사무실 : 각 실당 1개소 사용가능 (Hall A2, A3는 메자닌층에 위치)
+                  / 다용도실 : 6개소 (각 13m² ~ 21m² 규모, 전시장 내부에 위치)
+                </td>
+              </tr>
+              <tr>
+                <th>설치시설</th>
+                <td>고정식무대, 6개 동시통역실</td>
+              </tr>
+            </table>
+            <div class="toggle-box">
+              <input type="checkbox" id="toggle" hidden>
+              <label for="toggle" class="toggleSwitch">
+                <span class="toggleButton"></span>
+                <span class="text">사회적 거리두기</span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+        <button class="close" onclick="hideGeneralInfo()"></button>
+      </div>
+    </div>
+    <!-- information End -->
+
+    <div class="modal modal-2depth modal-lookaround" id="around-view">
+      <div class="modal-content">
+        <div class="title">둘러보기</div>
+        <button class="close" onclick="hideSceneGroup()"></button>
+        <div class="lookaround-box-scrollbar" id="around-inner">
+        </div>
+        <div class="modal-2depth-btn">
+          <button type="button" class="modal-2depth-close">취소</button>
+          <button type="button" class="modal-2depth-check">확인</button>
+        </div>
+      </div>
+    </div>
+    <!-- 둘러보기 End -->
+
+
+  </main>
+  <div class="modal modal-virtualtour" id="virtual-tour-modal">
+    <div class="modal-content modal-content-main">
+      <div class="virtualtour-header virtualtour-header-sub">
+        <div class="left">
+          <h1 class="logo"><img src="/convention_kor/images/vr/new/main_title_box_kin.png"></h1>
+          <div class="text">VIRTUAL TOUR</div>
+        </div>
+        <div class="right">
+          <button type="button" class="manager-login-btn" onclick="goHostPage()">
+            시설담당자 로그인
+          </button>
+          <button type="button" class="close" onclick="$('#virtual-tour-modal').hide()"></button>
+        </div>
+        <ul class="list">
+          <li>
+            <a href="/vr/famtour/reservation/create.kto?placeCd=KIN&lang=ko" target="iframe_a">
+              투어예약
+            </a>
+          </li>
+          <li>
+            <a href="/vr/famtour/reservation/guestAuth.kto?placeCd=KIN&lang=ko" target="iframe_a">
+              나의 예약현황
+            </a>
+          </li>
+          <!--li>
+                <a href="/vr/consulting/list.kto?placeCd=KIN&lang=ko" target="iframe_a">
+                  컨설팅 신청
+                </a>
+              </li-->
+          <li><a href="/vr/guide/guide.kto?placeCd=KIN&lang=ko" target="iframe_a">
+              이용가이드
+            </a></li>
+        </ul>
+      </div>
+
+
+      <!-- 상단 메뉴 End-->
+      <main class="main-iframe">
+        <iframe src="/vr/famtour/reservation/start.kto?placeCd=KIN&lang=ko" name="iframe_a" class="iframe100"></iframe>
+      </main>
+    </div>
+  </div>
+  <script
+    src="/convention_kor/js/vr/pc/jquery-1.12.4.min.js;jsessionid=H26BDfsAeoZfarYHinUhe2Ggu7Bbcs3krx13JvUFDWWGa1JiT00vt68x6kcgLq1X"></script>
+  <script
+    src="/convention_kor/js/vr/pc/jquery-ui.min.js;jsessionid=H26BDfsAeoZfarYHinUhe2Ggu7Bbcs3krx13JvUFDWWGa1JiT00vt68x6kcgLq1X"></script>
+  <script src="/convention_kor/js/vr/new/jquery.min.js"></script>
+  <script src="/convention_kor/js/vr/new/jquery.selectric.min.js"></script>
+  <script src="/convention_kor/js/vr/new/common.js"></script>
+  <script src="/convention_kor/js/vr/app.min.js"></script>
+
+  <script>
+    var generalInfo;
+    var mapObj;
+    var currMapId;
+    var currSceneId = -1;
+    var autoTourInfo = null;
+    var autoTourInfoRequestURL = '/vr/sites/KIN/tours.kto';
+    var sceneGroupData = { "3": [{ "id": 4384, "groupCode": "3", "groupName": "[1전시장] 1층", "siteId": 8, "sceneId": 2409, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-06-Hall1_2_Lobby.jpg", "seq": 6, "sceneName": "전시1,2홀 로비" }, { "id": 4385, "groupCode": "3", "groupName": "[1전시장] 1층", "siteId": 8, "sceneId": 2410, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-07-Hall3_4_Lobby.jpg", "seq": 7, "sceneName": "전시3,4홀 로비" }, { "id": 4386, "groupCode": "3", "groupName": "[1전시장] 1층", "siteId": 8, "sceneId": 2411, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-08-Hall5_Lobby.jpg", "seq": 8, "sceneName": "전시5홀 로비" }, { "id": 4387, "groupCode": "3", "groupName": "[1전시장] 1층", "siteId": 8, "sceneId": 2412, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-09-Hall5A_5B_Lobby.jpg", "seq": 9, "sceneName": "전시5A,5B 로비" }, { "id": 4388, "groupCode": "3", "groupName": "[1전시장] 1층", "siteId": 8, "sceneId": 2413, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-10-Video_Conferencing_room_01.jpg", "seq": 10, "sceneName": "화상상담실 입구" }, { "id": 4389, "groupCode": "3", "groupName": "[1전시장] 1층", "siteId": 8, "sceneId": 2414, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-11-Video_Conferencing_room_02.jpg", "seq": 11, "sceneName": "화상상담실 로비" }, { "id": 4390, "groupCode": "3", "groupName": "[1전시장] 1층", "siteId": 8, "sceneId": 2415, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-12-Video_Conferencing_room_03.jpg", "seq": 12, "sceneName": "화상상담실1" }, { "id": 4391, "groupCode": "3", "groupName": "[1전시장] 1층", "siteId": 8, "sceneId": 2416, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-13-Hall1.jpg", "seq": 13, "sceneName": "전시1홀" }, { "id": 4392, "groupCode": "3", "groupName": "[1전시장] 1층", "siteId": 8, "sceneId": 2418, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-14-Hall2.jpg", "seq": 14, "sceneName": "전시2홀" }, { "id": 4393, "groupCode": "3", "groupName": "[1전시장] 1층", "siteId": 8, "sceneId": 2420, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-15-Hall3.jpg", "seq": 15, "sceneName": "전시3홀" }, { "id": 4394, "groupCode": "3", "groupName": "[1전시장] 1층", "siteId": 8, "sceneId": 2422, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-16 Hall4.jpg", "seq": 16, "sceneName": "전시4홀" }, { "id": 4395, "groupCode": "3", "groupName": "[1전시장] 1층", "siteId": 8, "sceneId": 2424, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-17-5A_5B.jpg", "seq": 17, "sceneName": "전시5홀" }, { "id": 4396, "groupCode": "3", "groupName": "[1전시장] 1층", "siteId": 8, "sceneId": 2426, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-18-Hall_5A.jpg", "seq": 18, "sceneName": "전시5A홀" }, { "id": 4397, "groupCode": "3", "groupName": "[1전시장] 1층", "siteId": 8, "sceneId": 2428, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-19-Hall_5B.jpg", "seq": 19, "sceneName": "전시5B홀" }], "2": [{ "id": 4382, "groupCode": "2", "groupName": "[1전시장] 야외", "siteId": 8, "sceneId": 2407, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-04-Gate1A.jpg", "seq": 4, "sceneName": "Gate1A" }, { "id": 4383, "groupCode": "2", "groupName": "[1전시장] 야외", "siteId": 8, "sceneId": 2408, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-05-Gate2.jpg", "seq": 5, "sceneName": "Gate2" }], "10": [{ "id": 4457, "groupCode": "10", "groupName": "[2전시장] 4층", "siteId": 8, "sceneId": 2611, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-75-4F_Lobby.jpg", "seq": 76, "sceneName": "4F복도" }, { "id": 4458, "groupCode": "10", "groupName": "[2전시장] 4층", "siteId": 8, "sceneId": 2612, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-76-401.jpg", "seq": 77, "sceneName": "401" }, { "id": 4459, "groupCode": "10", "groupName": "[2전시장] 4층", "siteId": 8, "sceneId": 2616, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-77-402.jpg", "seq": 78, "sceneName": "402" }, { "id": 4460, "groupCode": "10", "groupName": "[2전시장] 4층", "siteId": 8, "sceneId": 2620, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-78-403.jpg", "seq": 79, "sceneName": "403" }, { "id": 4461, "groupCode": "10", "groupName": "[2전시장] 4층", "siteId": 8, "sceneId": 2624, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-79-404.jpg", "seq": 80, "sceneName": "404" }, { "id": 4462, "groupCode": "10", "groupName": "[2전시장] 4층", "siteId": 8, "sceneId": 2628, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-80-405.jpg", "seq": 81, "sceneName": "405" }, { "id": 4463, "groupCode": "10", "groupName": "[2전시장] 4층", "siteId": 8, "sceneId": 2636, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-81-406.jpg", "seq": 82, "sceneName": "406" }, { "id": 4464, "groupCode": "10", "groupName": "[2전시장] 4층", "siteId": 8, "sceneId": 2644, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-82-407.jpg", "seq": 83, "sceneName": "407" }, { "id": 4465, "groupCode": "10", "groupName": "[2전시장] 4층", "siteId": 8, "sceneId": 2652, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-83-408.jpg", "seq": 84, "sceneName": "408" }, { "id": 4466, "groupCode": "10", "groupName": "[2전시장] 4층", "siteId": 8, "sceneId": 2660, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-84-401_402.jpg", "seq": 85, "sceneName": "401+402" }, { "id": 4467, "groupCode": "10", "groupName": "[2전시장] 4층", "siteId": 8, "sceneId": 2664, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-85-403_404.jpg", "seq": 86, "sceneName": "403+404" }], "1": [{ "id": 4379, "groupCode": "1", "groupName": "항공", "siteId": 8, "sceneId": 2404, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-01-air01.jpg", "seq": 1, "sceneName": "항공01" }, { "id": 4380, "groupCode": "1", "groupName": "항공", "siteId": 8, "sceneId": 2405, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-02-air02.jpg", "seq": 2, "sceneName": "항공02" }, { "id": 4381, "groupCode": "1", "groupName": "항공", "siteId": 8, "sceneId": 2406, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-03-air03.jpg", "seq": 3, "sceneName": "항공03" }], "7": [{ "id": 4434, "groupCode": "7", "groupName": "[2전시장] 로비", "siteId": 8, "sceneId": 2528, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-52-1F_Lobby.jpg", "seq": 52, "sceneName": "1F로비" }, { "id": 4468, "groupCode": "7", "groupName": "[2전시장] 로비", "siteId": 8, "sceneId": 2668, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-86-2F_Lobby.jpg", "seq": 53, "sceneName": "2F 로비" }, { "id": 4436, "groupCode": "7", "groupName": "[2전시장] 로비", "siteId": 8, "sceneId": 2536, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-54-Hall6_Lobby.jpg", "seq": 54, "sceneName": "6홀 입구" }, { "id": 4437, "groupCode": "7", "groupName": "[2전시장] 로비", "siteId": 8, "sceneId": 2537, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-55-Hall7_Lobby.jpg", "seq": 55, "sceneName": "7홀 입구" }, { "id": 4438, "groupCode": "7", "groupName": "[2전시장] 로비", "siteId": 8, "sceneId": 2538, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-56-Hall8_Lobby.jpg", "seq": 56, "sceneName": "8홀 입구" }, { "id": 4439, "groupCode": "7", "groupName": "[2전시장] 로비", "siteId": 8, "sceneId": 2539, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-57_Hall9_Lobby.jpg", "seq": 57, "sceneName": "9홀 입구" }, { "id": 4440, "groupCode": "7", "groupName": "[2전시장] 로비", "siteId": 8, "sceneId": 2540, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-58_Hall10_Lobby.jpg", "seq": 58, "sceneName": "10홀 입구" }], "6": [{ "id": 4432, "groupCode": "6", "groupName": " 무빙워크", "siteId": 8, "sceneId": 2526, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-50-moving_walkway_01.jpg", "seq": 50, "sceneName": "무빙워크(1전시장)" }, { "id": 4433, "groupCode": "6", "groupName": " 무빙워크", "siteId": 8, "sceneId": 2527, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-51-moving_walkway_02.jpg", "seq": 51, "sceneName": "무빙워크(2전시장)" }], "5": [{ "id": 4416, "groupCode": "5", "groupName": "[1전시장] 3층", "siteId": 8, "sceneId": 2497, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-34-303_Lobby.jpg", "seq": 34, "sceneName": "303 입구" }, { "id": 4417, "groupCode": "5", "groupName": "[1전시장] 3층", "siteId": 8, "sceneId": 2498, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-35-307_308_Lobby.jpg", "seq": 35, "sceneName": "307, 308 입구" }, { "id": 4418, "groupCode": "5", "groupName": "[1전시장] 3층", "siteId": 8, "sceneId": 2499, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-36-301.jpg", "seq": 36, "sceneName": "301" }, { "id": 4419, "groupCode": "5", "groupName": "[1전시장] 3층", "siteId": 8, "sceneId": 2501, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-37-302.jpg", "seq": 37, "sceneName": "302" }, { "id": 4420, "groupCode": "5", "groupName": "[1전시장] 3층", "siteId": 8, "sceneId": 2503, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-38-303.jpg", "seq": 38, "sceneName": "303" }, { "id": 4421, "groupCode": "5", "groupName": "[1전시장] 3층", "siteId": 8, "sceneId": 2506, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-39-304.jpg", "seq": 39, "sceneName": "304" }, { "id": 4422, "groupCode": "5", "groupName": "[1전시장] 3층", "siteId": 8, "sceneId": 2509, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-40-305.jpg", "seq": 40, "sceneName": "305" }, { "id": 4423, "groupCode": "5", "groupName": "[1전시장] 3층", "siteId": 8, "sceneId": 2512, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-41-306.jpg", "seq": 41, "sceneName": "306" }, { "id": 4424, "groupCode": "5", "groupName": "[1전시장] 3층", "siteId": 8, "sceneId": 2514, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-42-307.jpg", "seq": 42, "sceneName": "307" }, { "id": 4425, "groupCode": "5", "groupName": "[1전시장] 3층", "siteId": 8, "sceneId": 2516, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-43-306_307.jpg", "seq": 43, "sceneName": "306+307" }, { "id": 4426, "groupCode": "5", "groupName": "[1전시장] 3층", "siteId": 8, "sceneId": 2519, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-44-308vip.jpg", "seq": 44, "sceneName": "308 (VIP회의실)" }, { "id": 4427, "groupCode": "5", "groupName": "[1전시장] 3층", "siteId": 8, "sceneId": 2520, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-45-309A_vip.jpg", "seq": 45, "sceneName": "309A (VIP회의실)" }, { "id": 4428, "groupCode": "5", "groupName": "[1전시장] 3층", "siteId": 8, "sceneId": 2521, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-46-309B_vip.jpg", "seq": 46, "sceneName": "309B (VIP회의실)" }, { "id": 4429, "groupCode": "5", "groupName": "[1전시장] 3층", "siteId": 8, "sceneId": 2522, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-47-grand_ballroom_A_B.jpg", "seq": 47, "sceneName": "그랜드볼룸A+B" }, { "id": 4430, "groupCode": "5", "groupName": "[1전시장] 3층", "siteId": 8, "sceneId": 2525, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-48-grand_ballroom_A.jpg", "seq": 48, "sceneName": "그랜드볼룸A" }, { "id": 4431, "groupCode": "5", "groupName": "[1전시장] 3층", "siteId": 8, "sceneId": 2524, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-49-grand_ballroom_B.jpg", "seq": 49, "sceneName": "그랜드볼룸B" }], "4": [{ "id": 4398, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2430, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-20-202_Lobby.jpg", "seq": 20, "sceneName": "202입구" }, { "id": 4399, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2431, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-21-207_Lobby.jpg", "seq": 21, "sceneName": "207입구" }, { "id": 4400, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2432, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-22-212AB_Lobby.jpg", "seq": 22, "sceneName": "212AB입구" }, { "id": 4401, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2433, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-23-204.jpg", "seq": 23, "sceneName": "204" }, { "id": 4402, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2435, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-24-205.jpg", "seq": 24, "sceneName": "205" }, { "id": 4403, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2442, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-25-206.jpg", "seq": 25, "sceneName": "206" }, { "id": 4404, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2449, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-26-207.jpg", "seq": 26, "sceneName": "207" }, { "id": 4405, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2456, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-27-208.jpg", "seq": 27, "sceneName": "208" }, { "id": 4406, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2463, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-28-209.jpg", "seq": 28, "sceneName": "209" }, { "id": 4407, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2470, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-29-210.jpg", "seq": 29, "sceneName": "210" }, { "id": 4408, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2477, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-30-211.jpg", "seq": 30, "sceneName": "211" }, { "id": 4409, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2484, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-31-212.jpg", "seq": 31, "sceneName": "212" }, { "id": 4410, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2852, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-31_1-212A.jpg", "seq": 32, "sceneName": "212A" }, { "id": 4411, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2853, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-31_2-212B.jpg", "seq": 33, "sceneName": "212B" }, { "id": 4412, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2489, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-32-213.jpg", "seq": 34, "sceneName": "213" }, { "id": 4413, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2854, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-32_1-213A.jpg", "seq": 35, "sceneName": "213A" }, { "id": 4414, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2855, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-32_2-213B.jpg", "seq": 36, "sceneName": "213B" }, { "id": 4415, "groupCode": "4", "groupName": "[1전시장] 2층", "siteId": 8, "sceneId": 2494, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-33-212_213.jpg", "seq": 37, "sceneName": "212+213" }], "9": [{ "id": 4445, "groupCode": "9", "groupName": "[2전시장] 3층", "siteId": 8, "sceneId": 2553, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-63-301_304_Lobby.jpg", "seq": 64, "sceneName": "301~304복도" }, { "id": 4446, "groupCode": "9", "groupName": "[2전시장] 3층", "siteId": 8, "sceneId": 2554, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-64-305_308_Lobby.jpg", "seq": 65, "sceneName": "305~308 복도" }, { "id": 4447, "groupCode": "9", "groupName": "[2전시장] 3층", "siteId": 8, "sceneId": 2555, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-65-301.jpg", "seq": 66, "sceneName": "301" }, { "id": 4448, "groupCode": "9", "groupName": "[2전시장] 3층", "siteId": 8, "sceneId": 2559, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-66-302.jpg", "seq": 67, "sceneName": "302" }, { "id": 4449, "groupCode": "9", "groupName": "[2전시장] 3층", "siteId": 8, "sceneId": 2563, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-67-303.jpg", "seq": 68, "sceneName": "303" }, { "id": 4450, "groupCode": "9", "groupName": "[2전시장] 3층", "siteId": 8, "sceneId": 2567, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-68-304.jpg", "seq": 69, "sceneName": "304" }, { "id": 4451, "groupCode": "9", "groupName": "[2전시장] 3층", "siteId": 8, "sceneId": 2571, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-69-305.jpg", "seq": 70, "sceneName": "305" }, { "id": 4452, "groupCode": "9", "groupName": "[2전시장] 3층", "siteId": 8, "sceneId": 2579, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-70-306.jpg", "seq": 71, "sceneName": "306" }, { "id": 4453, "groupCode": "9", "groupName": "[2전시장] 3층", "siteId": 8, "sceneId": 2587, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-71-307.jpg", "seq": 72, "sceneName": "307" }, { "id": 4454, "groupCode": "9", "groupName": "[2전시장] 3층", "siteId": 8, "sceneId": 2595, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-72-308.jpg", "seq": 73, "sceneName": "308" }, { "id": 4455, "groupCode": "9", "groupName": "[2전시장] 3층", "siteId": 8, "sceneId": 2603, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-73-301_302.jpg", "seq": 74, "sceneName": "301+302" }, { "id": 4456, "groupCode": "9", "groupName": "[2전시장] 3층", "siteId": 8, "sceneId": 2607, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-74-303_304.jpg", "seq": 75, "sceneName": "303+304" }], "8": [{ "id": 4435, "groupCode": "8", "groupName": "[2전시장] 전시홀", "siteId": 8, "sceneId": 2535, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-53-Hall6.jpg", "seq": 59, "sceneName": "전시6홀A+B+C 강의식" }, { "id": 4441, "groupCode": "8", "groupName": "[2전시장] 전시홀", "siteId": 8, "sceneId": 2541, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-59-Hall7.jpg", "seq": 60, "sceneName": "전시7홀" }, { "id": 4442, "groupCode": "8", "groupName": "[2전시장] 전시홀", "siteId": 8, "sceneId": 2544, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-60-Hall8.jpg", "seq": 61, "sceneName": "전시8홀" }, { "id": 4443, "groupCode": "8", "groupName": "[2전시장] 전시홀", "siteId": 8, "sceneId": 2547, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-61-Hall9.jpg", "seq": 62, "sceneName": "전시9홀" }, { "id": 4444, "groupCode": "8", "groupName": "[2전시장] 전시홀", "siteId": 8, "sceneId": 2550, "language": "ko", "thumbUrl": "/mice/upload/mice_vr/KIN/thumbnail/KIN-62-Hall10.jpg", "seq": 63, "sceneName": "전시10홀" }] };
+    var isCovidValue = false;
+
+    $(document).ready(function () {
+
+      let language = 'ko';
+      $('#langSelect').val(language).selectric('refresh');
+
+      $('#langSelect').on('change', function () {
+        var lang = this.value;
+
+        if (window.location.href.search(/lang=[\w+]/) >= 0) {
+          window.location.href = window.location.href.replace(/lang=\w+/, 'lang=' + lang);
+        } else {
+          if (window.location.href.search('\\?') >= 0)
+            window.location.href = window.location.href + '&lang=' + lang;
+          else
+            window.location.href = window.location.href + '?lang=' + lang;
+        }
+      })
+
+      document.getElementById('vr360_player_area').contentWindow.autoTourInfoRequestURL = '/vr/sites/KIN/tours.kto';
+
+      $.ajax({
+        url: '/vr/map/KIN.kto?lang=ko',
+        type: 'GET',
+        contentType: 'application/json'
+      }).done(function (response) {
+        var _mapObj = JSON.parse(response);
+        mapObj = _mapObj;
+        currMapId = mapObj[0].id;
+        set3Dmap(currMapId, mapObj);
+      }).fail(function (jqXHR, textStatus, errorThrown) {
+        console.log("error");
+      });
+
+      $('#toggle').change(
+        function () {
+          isCovidValue = $(this).is(':checked');
+          setGeneralInfo(generalInfo, false);
+        });
+
+      setAroundInner(sceneGroupData);
+
+      var cookie = getCookie('guideClose');
+      console.log(cookie);
+      if (cookie == 'TRUE') {
+        $('.popup-guide').hide();
+      }
+
+    });
+
+
+
+    function videoVrSelect(evt) {
+      evt.preventDefault();
+      evt.stopPropagation();
+      $('#li-menu-vr-image').removeClass("active");
+      $('#li-menu-vr-video').addClass("active");
+
+      $('#div-3d-map').hide();
+
+      changeChildPage(
+        decodeURIComponent('https://micevr.visitkorea.or.kr:8443/convention_kor/movieScene.html?movieUrl=/content/KIN_KO_3840.mp4/index.m3u8&lang=ko')
+      );
+    }
+
+    function imageVrSelect(evt) {
+      evt.preventDefault();
+      evt.stopPropagation();
+      $('#li-menu-vr-image').addClass("active");
+      $('#li-menu-vr-video').removeClass("active");
+
+      $('#div-3d-map').show();
+
+      changeChildPage('/vr/scenes/2404.kto?lang=ko');
+    }
+
+    //vr tour 클릭 시
+    function vrTourSelect() {
+      location.href = '/vr/consulting/iframe.kto?placeCd=KIN';
+    }
+
+    function changeChildPage(loc) {
+      console.log('changeChildPage');
+
+      document.getElementById('vr360_player_area').src = loc;
+
+    }
+
+    function onSetTitle(_title) {
+      $('#scene-title').text(_title);
+    }
+    function onVideoPopupOpen() {
+      $('#vr360_player_area').css({ zIndex: 999 });
+
+      $('#sub-header').hide();
+      $('#sub-menu').hide();
+      $('#title-wrapper').hide();
+      $('#panorama-logo').hide();
+    }
+
+    function onVideoPopupClose() {
+      $('#vr360_player_area').css({ zIndex: 0 });
+      $('#sub-header').show();
+      $('#sub-menu').show();
+      $('#title-wrapper').show();
+      $('#panorama-logo').show();
+
+    }
+
+    function onPhotoSwipeOpen() {
+      $('#vr360_player_area').css({ zIndex: 999 });
+      $('#sub-header').hide();
+      $('#sub-menu').hide();
+      $('#title-wrapper').hide();
+      $('#panorama-logo').hide();
+    }
+
+    function onPhotoSwipeClose() {
+      $('#vr360_player_area').css({ zIndex: 0 });
+      $('#sub-header').show();
+      $('#sub-menu').show();
+      $('#title-wrapper').show();
+      $('#panorama-logo').show();
+    }
+
+    function changeChildScene(_id) {
+      console.log('changeChildScene');
+      document.getElementById('vr360_player_area').contentWindow.vrplayer.changeScene({ sceneId: _id });
+      $('#floor-view').fadeOut();
+    }
+
+    function setGeneralInfo(_sceneData, spaceUpdate = true) {
+      console.log('sceneData:::' + _sceneData);
+      console.log(_sceneData);
+      generalInfo = _sceneData;
+      var tBody = ""
+      $('#general-info-table').html('');
+      console.log(_sceneData.generalInfo.spaceLayout);
+
+      if (typeof _sceneData.generalInfo.spaceLayout == "undefined") { //공간레이아웃(극장식, 강의식, 연회식) 없는 경우
+        $('#general-info-space-layout').hide();
+        $('#general-info-contents').removeClass('general-info-contents');
+        $('#general-info-contents').addClass('general-info-contents-no-space');
+      }
+      else if (spaceUpdate) {
+        $('#general-info-contents').addClass('general-info-contents');
+        $('#general-info-contents').removeClass('general-info-contents-no-space');
+        $('#general-info-space-layout').show();
+
+
+        var layoutImg = "";
+        var layoutName = "";
+        $('#space-layout-img').html("");
+        $('#space-layout-name').html("");
+
+        _sceneData.generalInfo.spaceLayout.forEach(function (element, index) {
+          layoutImg += '<div id="left-box-tab0' + (index + 1) + '"><img src="' + element.imgUrl + '"></div>'
+
+          layoutName += '<li><a href="#left-box-tab0' + (index + 1) + '" ';
+          if (index == 0) layoutName += ' class="active" ';
+          layoutName += '>' + element.name + '</a></li>';
+
+        });
+
+
+        $('#space-layout-img').append(layoutImg);
+        $('#space-layout-name').append(layoutName);
+
+        $('.tabnav-table a').click(function () {
+          $('.tabcontent-table > div').hide().filter(this.hash).fadeIn();
+          $('.tabnav-table a').removeClass('active');
+          $(this).addClass('active');
+          return false;
+        }).filter(':eq(0)').click();
+      }
+
+      _sceneData.generalInfo.bodyItems.forEach(function (element, index) {
+        var changeCovidText = false;
+        if (isCovidValue) {
+          if (element.covidValue != null && element.covidValue.length > 0) {
+            if (element.value != element.covidValue) {
+              changeCovidText = true;
+            }
+          }
+        }
+        //tBody += "<tr><th>"+element.name.trim().replace(/\n/g, "").replace(/ /g,"")+"</th><td>";
+        tBody += "<tr><th>" + element.name.trim() + "</th><td>";
+        if (changeCovidText) {
+          tBody += '<span style="color:#b80009;">' + element.covidValue + '</span>';
+        }
+        else {
+          tBody += element.value;
+        }
+
+        tBody += "</td></tr>";
+      });
+      $('#general-info-table').append(tBody);
+      $('#general-info-title').html(_sceneData.generalInfo.title)
+
+      document.getElementById('vr360_player_area').contentWindow.checkMenuVisible(_sceneData);
+    }
+
+    function setAroundInner(_sceneGroupData) {
+      $("#around-inner").html("");
+      console.log(_sceneGroupData);
+      var aroundInner = '';
+      for (key in _sceneGroupData) {
+        var idx;
+        aroundInner += '<div class="lookaround-box-title">' + _sceneGroupData[key][0].groupName + '</div> <div class="lookaround-box">';
+        for (idx = 0; idx < _sceneGroupData[key].length; idx++) {
+
+          aroundInner += '<a href="#" class="lookaround" onclick="closeAndMove(' + _sceneGroupData[key][idx].sceneId + ')">'
+            + '<img src="' + _sceneGroupData[key][idx].thumbUrl + '"><div class="img-title">'
+            + _sceneGroupData[key][idx].sceneName + '</div></a>';
+
+        }
+        aroundInner += '</div>';
+
+      }
+      $('#around-inner').append(aroundInner);
+    }
+
+    function viewGeneralInfo() {
+      $('#common-info').fadeIn();
+    }
+
+    function hideGeneralInfo() {
+      $('#common-info').fadeOut();
+    }
+
+    function viewSceneGroup() {
+      $('#around-view').fadeIn();
+    }
+
+    function hideSceneGroup() {
+      $('#around-view').fadeOut();
+    }
+
+    function closeAndMove(_id) {
+      $('#around-view').fadeOut();
+      changeChildScene(_id);
+    }
+
+    function goHostPage() {
+      window.open("/vr/gishost/login.kto?placeCd=KIN&lang=ko");
+    }
+
+    function showVirtualTourMenu() {
+      console.log("showVirtualTourMenu");
+      $('.iframe100').attr('src', '/vr/famtour/reservation/start.kto?placeCd=KIN&lang=ko');
+      $('#virtual-tour-modal').show();
+    }
+
+    function set3Dmap(_mapId, _mapObj) {
+      console.log("set3Dmap::mapId::" + _mapId);
+      console.log("set3Dmap::mapObj::");
+      console.log(_mapObj);
+      var yOffset = 165; //변경된 디자인을 적용하며 Offset 값을 적용함
+      var xOffset = 140; //변경된 디자인을 적용하며 Offset 값을 적용함
+      _mapObj.forEach(function (element) {
+
+        $('#mapimg-' + element.id).attr('src', element.mapImgUrl);
+        $('#mapimg-' + element.id).attr('style', 'width:700px;height:auto;');
+
+        $('#mapSpots-' + element.id).html('');
+
+
+        element.locationMarkers.forEach(function (s) {
+          var _spot = document.createElement('a');
+          $(_spot).html('<span> </span>');
+          $(_spot).css('top', s.y + yOffset + 'px');
+          $(_spot).css('left', s.x + xOffset + 'px');
+          $(_spot).click(function () { changeChildScene(s.moveSceneID); });
+          $(_spot).appendTo($('#mapSpots-' + element.id));
+        });
+
+      });
+    }
+
+    function setCurrentMapIdBySceneId(_sceneId) {
+      currSceneId = _sceneId;
+      console.log("setCurrentMapIdBySceneId::" + _sceneId);
+
+      var rtnValue = -1;
+
+      $("#3d-map-pin").css('visibility', 'hidden');
+      mapObj.forEach(function (f) {
+        f.locationMarkers.forEach(function (s) {
+          if (s.moveSceneID == _sceneId) {
+            currMapId = s.mapsId;
+            rtnValue = s.mapsId;
+            $('#map-' + currMapId).click();
+            $("#3d-map-pin").css('visibility', 'visible');
+            $("#3d-map-pin").css({ top: s.y - 24 + 165, left: s.x - 1 + 139 });
+            return;
+          }
+
+        });
+
+        if (rtnValue != -1)
+          return;
+
+      });
+      if (rtnValue == -1) {
+        $("#3d-map-pin").css('visibility', 'hidden');
+        $("#mini-map").hide();
+      }
+      else {
+        $("#mini-map").show();
+
+      }
+      return rtnValue;
+    }
+
+
+    function checkCookie() {
+      var checked = $('input:checkbox[id=guideClose]').is(":checked");
+
+      if (checked) {
+        setCookie('guideClose', 'TRUE', 9999);
+      }
+    }
+
+    function setCookie(name, value) {
+      document.cookie = name + "=" + value + ";path=/;";
+      $(".toast-container").addClass("toast-container-off");
+    }
+
+    function setCookie(cookie_name, value, days) {
+      var exdate = new Date();
+      exdate.setDate(exdate.getDate() + days);
+      // 설정 일수만큼 현재시간에 만료값으로 지정
+      var cookie_value = escape(value) + ((days == null) ? '' : ';expires=' + exdate.toUTCString());
+      document.cookie = cookie_name + '=' + cookie_value;
+    }
+
+    function getCookie(name) {
+      var cookie = document.cookie;
+      if (document.cookie != "") {
+        var cookieArray = cookie.split("; ");
+        for (var index in cookieArray) {
+          var cookieName = cookieArray[index].split("=");
+          if (cookieName[0] == name) {
+            return cookieName[1];
+          }
+        }
+      } return;
+    }
+
+
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0MFWB1YSF3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-0MFWB1YSF3');
+  </script>
+
+</body>
+
+</html>

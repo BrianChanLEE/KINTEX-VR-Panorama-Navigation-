@@ -1,0 +1,60 @@
+{
+  "source": "https://k-mice.visitkorea.or.kr/convention_kor/css/vr/new/sub.css",
+  "analysisDate": "2026-07-08",
+  "colors": {
+    "panelBackground": "#ffffff",
+    "darkBackground": "#0a1429",
+    "accentRed": "#b80009",
+    "accentBlue": "#0079d5",
+    "textBlack": "#000000",
+    "textWhite": "#ffffff",
+    "textGray": "#888888",
+    "borderGray": "#eeeeee",
+    "tagBackground": "#eee"
+  },
+  "fonts": {
+    "primary": "Noto Sans KR",
+    "display": "NeutraText",
+    "sizes": {
+      "headerTitle": "17px",
+      "navLink": "15px",
+      "buttonLabel": "13px",
+      "mapText": "15px",
+      "tabNavNumber": "35px"
+    }
+  },
+  "panels": {
+    "panoramaLogo": {
+      "borderRadius": "0 20px 20px 20px",
+      "background": "#fff",
+      "boxShadow": "none"
+    },
+    "panoramaMap": {
+      "borderRadius": "0 20px 20px 20px",
+      "background": "#fff",
+      "boxShadow": "0 3px 6px 0 rgba(0,0,0,0.16)"
+    },
+    "panoramaInformation": {
+      "borderRadius": "0 33px 33px 33px",
+      "background": "#fff",
+      "boxShadow": "0 3px 6px 0 rgba(0,0,0,0.16)"
+    },
+    "panoramaMenu": {
+      "borderRadius": "33px 0 33px 33px",
+      "background": "#fff",
+      "boxShadow": "0 3px 6px 0 rgba(0,0,0,0.16)"
+    }
+  },
+  "iconUrls": {
+    "informationNormal": "/convention_kor/images/vr/new/information_normal.png",
+    "informationSafety": "/convention_kor/images/vr/new/information_safety.png",
+    "informationSpace": "/convention_kor/images/vr/new/information_space.png",
+    "informationVr": "/convention_kor/images/vr/new/information_vr.png",
+    "informationFullview": "/convention_kor/images/vr/new/information_fullview.png",
+    "informationLookaround": "/convention_kor/images/vr/new/information_lookaround.png",
+    "mapPinIcon": "/convention_kor/images/vr/new/pannellum_map_icon.png",
+    "mapPlusIcon": "/convention_kor/images/vr/new/pannellum_map_pluse_icon.png",
+    "navMarker": "/mice/upload/mice_vr/marker/marker01.png",
+    "poiMarker": "/mice/upload/mice_vr/marker/marker04.png"
+  }
+}

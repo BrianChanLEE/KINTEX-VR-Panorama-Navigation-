@@ -1,0 +1,127 @@
+{
+  "id": 2410,
+  "desc": "전시3,4홀 로비",
+  "title": "전시3,4홀 로비",
+  "stitchType": "sphere",
+  "mediaInfo": {
+    "mediaType": "multires",
+    "mediaUrl": "/mice/upload/mice_vr/KIN/vr-img/07-A-Hall3_4_lobby.tiles"
+  },
+  "startAngle": {
+    "hDeg": -90,
+    "vDeg": 0
+  },
+  "nextAngle": {
+    "hDeg": 0,
+    "vDeg": 0
+  },
+  "version": "",
+  "mainText": "",
+  "generalInfo": {
+    "title": "전시3,4홀",
+    "bodyItems": []
+  },
+  "controlVisibilities": {
+    "autoTour": false,
+    "commonInfo": false,
+    "diy": false,
+    "safetyLayer": false,
+    "spaceLayer": false,
+    "sampleView": false
+  },
+  "hotspots": [
+    {
+      "layer": "",
+      "id": 1,
+      "name": "전시1,2홀 로비",
+      "url": "/mice/upload/mice_vr/marker/marker01.png",
+      "width": "72",
+      "height": "72",
+      "hDeg": -89.96138351212272,
+      "vDeg": -0.10051413337967856,
+      "rotationX": 0,
+      "rotationY": 0,
+      "rotationZ": 0,
+      "draggable": true,
+      "distortion": false,
+      "description": "",
+      "actions": {
+        "onClick": {
+          "sceneId": 2409,
+          "kind": "CHANGE_SCENE",
+          "changeEffect": "ZOOMBLEND"
+        }
+      }
+    },
+    {
+      "layer": "",
+      "id": 2,
+      "name": "전시3홀",
+      "url": "/mice/upload/mice_vr/marker/marker01.png",
+      "width": "72",
+      "height": "72",
+      "hDeg": -75.31568090624961,
+      "vDeg": -0.14132792973053068,
+      "rotationX": 0,
+      "rotationY": 0,
+      "rotationZ": 0,
+      "draggable": true,
+      "distortion": false,
+      "description": "",
+      "actions": {
+        "onClick": {
+          "sceneId": 2420,
+          "kind": "CHANGE_SCENE",
+          "changeEffect": "ZOOMBLEND"
+        }
+      }
+    },
+    {
+      "layer": "",
+      "id": 3,
+      "name": "전시4홀",
+      "url": "/mice/upload/mice_vr/marker/marker01.png",
+      "width": "72",
+      "height": "72",
+      "hDeg": 76.7694251232507,
+      "vDeg": -0.961463612195913,
+      "rotationX": 0,
+      "rotationY": 0,
+      "rotationZ": 0,
+      "draggable": true,
+      "distortion": false,
+      "description": "",
+      "actions": {
+        "onClick": {
+          "sceneId": 2422,
+          "kind": "CHANGE_SCENE",
+          "changeEffect": "ZOOMBLEND"
+        }
+      }
+    },
+    {
+      "layer": "",
+      "id": 4,
+      "name": "전시5홀 로비",
+      "url": "/mice/upload/mice_vr/marker/marker01.png",
+      "width": "72",
+      "height": "72",
+      "hDeg": 88.96512869928506,
+      "vDeg": 0.45026116133785815,
+      "rotationX": 0,
+      "rotationY": 0,
+      "rotationZ": 0,
+      "draggable": true,
+      "distortion": false,
+      "description": "",
+      "actions": {
+        "onClick": {
+          "sceneId": 2411,
+          "kind": "CHANGE_SCENE",
+          "changeEffect": "ZOOMBLEND"
+        }
+      },
+      "nexthDeg": 90
+    }
+  ]
+}

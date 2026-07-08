@@ -1,0 +1,151 @@
+{
+  "id": 2411,
+  "desc": "전시5홀 로비",
+  "title": "전시5홀 로비",
+  "stitchType": "sphere",
+  "mediaInfo": {
+    "mediaType": "multires",
+    "mediaUrl": "/mice/upload/mice_vr/KIN/vr-img/08-A-Hall5_lobby.tiles"
+  },
+  "startAngle": {
+    "hDeg": -1,
+    "vDeg": 0
+  },
+  "nextAngle": {
+    "hDeg": 0,
+    "vDeg": 0
+  },
+  "version": "",
+  "mainText": "",
+  "generalInfo": {
+    "title": "전시5홀 로비",
+    "bodyItems": []
+  },
+  "controlVisibilities": {
+    "autoTour": false,
+    "commonInfo": false,
+    "diy": false,
+    "safetyLayer": false,
+    "spaceLayer": false,
+    "sampleView": false
+  },
+  "hotspots": [
+    {
+      "layer": "",
+      "id": 1,
+      "name": "전시5홀",
+      "url": "/mice/upload/mice_vr/marker/marker01.png",
+      "width": "72",
+      "height": "72",
+      "hDeg": -5.692169224857935e-7,
+      "vDeg": -1.8334971548752739,
+      "rotationX": 0,
+      "rotationY": 0,
+      "rotationZ": 0,
+      "draggable": true,
+      "distortion": false,
+      "description": "",
+      "actions": {
+        "onClick": {
+          "sceneId": 2424,
+          "kind": "CHANGE_SCENE",
+          "changeEffect": "ZOOMBLEND"
+        }
+      }
+    },
+    {
+      "layer": "",
+      "id": 2,
+      "name": "전시3,4홀 로비",
+      "url": "/mice/upload/mice_vr/marker/marker01.png",
+      "width": "72",
+      "height": "72",
+      "hDeg": -75.06569728529519,
+      "vDeg": -0.6678498860932718,
+      "rotationX": 0,
+      "rotationY": 0,
+      "rotationZ": 0,
+      "draggable": true,
+      "distortion": false,
+      "description": "",
+      "actions": {
+        "onClick": {
+          "sceneId": 2410,
+          "kind": "CHANGE_SCENE",
+          "changeEffect": "ZOOMBLEND"
+        }
+      }
+    },
+    {
+      "layer": "",
+      "id": 3,
+      "name": "화상상담실 입구",
+      "url": "/mice/upload/mice_vr/marker/marker01.png",
+      "width": "72",
+      "height": "72",
+      "hDeg": 53.52605911783081,
+      "vDeg": 0.6401568664131081,
+      "rotationX": 0,
+      "rotationY": 0,
+      "rotationZ": 0,
+      "draggable": true,
+      "distortion": false,
+      "description": "",
+      "actions": {
+        "onClick": {
+          "sceneId": 2413,
+          "kind": "CHANGE_SCENE",
+          "changeEffect": "ZOOMBLEND"
+        }
+      }
+    },
+    {
+      "layer": "",
+      "id": 4,
+      "name": "무빙워크",
+      "url": "/mice/upload/mice_vr/marker/marker01.png",
+      "width": "72",
+      "height": "72",
+      "hDeg": 131.89098273651655,
+      "vDeg": 1.207796027721239,
+      "rotationX": 0,
+      "rotationY": 0,
+      "rotationZ": 0,
+      "draggable": true,
+      "distortion": false,
+      "description": "",
+      "actions": {
+        "onClick": {
+          "sceneId": 2526,
+          "kind": "CHANGE_SCENE",
+          "changeEffect": "ZOOMBLEND"
+        }
+      },
+      "nexthDeg": -180,
+      "nextvDeg": 0
+    },
+    {
+      "layer": "",
+      "id": 5,
+      "name": "2F",
+      "url": "/mice/upload/mice_vr/marker/marker01.png",
+      "width": "72",
+      "height": "72",
+      "hDeg": 115.50482806533614,
+      "vDeg": -5.3171326430128,
+      "rotationX": 0,
+      "rotationY": 0,
+      "rotationZ": 0,
+      "draggable": true,
+      "distortion": false,
+      "description": "",
+      "actions": {
+        "onClick": {
+          "sceneId": 2432,
+          "kind": "CHANGE_SCENE",
+          "changeEffect": "ZOOMBLEND"
+        }
+      }
+    }
+  ]
+}

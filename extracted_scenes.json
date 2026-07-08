@@ -1,0 +1,1465 @@
+[
+  {
+    "key": "aerial01",
+    "id": 2404,
+    "zone": "aerial",
+    "name": "항공01",
+    "groupName": "항공"
+  },
+  {
+    "key": "aerial02",
+    "id": 2405,
+    "zone": "aerial",
+    "name": "항공02",
+    "groupName": "항공"
+  },
+  {
+    "key": "aerial03",
+    "id": 2406,
+    "zone": "aerial",
+    "name": "항공03",
+    "groupName": "항공"
+  },
+  {
+    "key": "gate1a",
+    "id": 2407,
+    "zone": "exterior",
+    "name": "Gate1A",
+    "groupName": "[1전시장] 야외"
+  },
+  {
+    "key": "gate2",
+    "id": 2408,
+    "zone": "exterior",
+    "name": "Gate2",
+    "groupName": "[1전시장] 야외"
+  },
+  {
+    "key": "lobby12",
+    "id": 2409,
+    "zone": "floor1_1",
+    "name": "전시1,2홀 로비",
+    "groupName": "[1전시장] 1층"
+  },
+  {
+    "key": "scene_2410",
+    "id": 2410,
+    "zone": "floor1_1",
+    "name": "전시3,4홀 로비",
+    "groupName": "[1전시장] 1층"
+  },
+  {
+    "key": "lobby5",
+    "id": 2411,
+    "zone": "floor1_1",
+    "name": "전시5홀 로비",
+    "groupName": "[1전시장] 1층"
+  },
+  {
+    "key": "scene_2412",
+    "id": 2412,
+    "zone": "floor1_1",
+    "name": "전시5A,5B 로비",
+    "groupName": "[1전시장] 1층"
+  },
+  {
+    "key": "scene_2413",
+    "id": 2413,
+    "zone": "floor1_1",
+    "name": "화상상담실 입구",
+    "groupName": "[1전시장] 1층"
+  },
+  {
+    "key": "scene_2414",
+    "id": 2414,
+    "zone": "floor1_1",
+    "name": "화상상담실 로비",
+    "groupName": "[1전시장] 1층"
+  },
+  {
+    "key": "scene_2415",
+    "id": 2415,
+    "zone": "floor1_1",
+    "name": "화상상담실1",
+    "groupName": "[1전시장] 1층"
+  },
+  {
+    "key": "hall1",
+    "id": 2416,
+    "zone": "floor1_1",
+    "name": "전시1홀",
+    "groupName": "[1전시장] 1층"
+  },
+  {
+    "key": "hall2",
+    "id": 2418,
+    "zone": "floor1_1",
+    "name": "전시2홀",
+    "groupName": "[1전시장] 1층"
+  },
+  {
+    "key": "scene_2420",
+    "id": 2420,
+    "zone": "floor1_1",
+    "name": "전시3홀",
+    "groupName": "[1전시장] 1층"
+  },
+  {
+    "key": "scene_2422",
+    "id": 2422,
+    "zone": "floor1_1",
+    "name": "전시4홀",
+    "groupName": "[1전시장] 1층"
+  },
+  {
+    "key": "scene_2424",
+    "id": 2424,
+    "zone": "floor1_1",
+    "name": "전시5홀",
+    "groupName": "[1전시장] 1층"
+  },
+  {
+    "key": "scene_2426",
+    "id": 2426,
+    "zone": "floor1_1",
+    "name": "전시5A홀",
+    "groupName": "[1전시장] 1층"
+  },
+  {
+    "key": "scene_2428",
+    "id": 2428,
+    "zone": "floor1_1",
+    "name": "전시5B홀",
+    "groupName": "[1전시장] 1층"
+  },
+  {
+    "key": "scene_2430",
+    "id": 2430,
+    "zone": "floor1_2",
+    "name": "202입구",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2431",
+    "id": 2431,
+    "zone": "floor1_2",
+    "name": "207입구",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2432",
+    "id": 2432,
+    "zone": "floor1_2",
+    "name": "212AB입구",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2433",
+    "id": 2433,
+    "zone": "floor1_2",
+    "name": "204",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2435",
+    "id": 2435,
+    "zone": "floor1_2",
+    "name": "205",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2442",
+    "id": 2442,
+    "zone": "floor1_2",
+    "name": "206",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2449",
+    "id": 2449,
+    "zone": "floor1_2",
+    "name": "207",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2456",
+    "id": 2456,
+    "zone": "floor1_2",
+    "name": "208",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2463",
+    "id": 2463,
+    "zone": "floor1_2",
+    "name": "209",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2470",
+    "id": 2470,
+    "zone": "floor1_2",
+    "name": "210",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2471",
+    "id": 2471,
+    "zone": "floor1_2",
+    "name": "210 극장식",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2472",
+    "id": 2472,
+    "zone": "floor1_2",
+    "name": "210 강의식",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2473",
+    "id": 2473,
+    "zone": "floor1_2",
+    "name": "210A",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2475",
+    "id": 2475,
+    "zone": "floor1_2",
+    "name": "210B",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2477",
+    "id": 2477,
+    "zone": "floor1_2",
+    "name": "211",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2478",
+    "id": 2478,
+    "zone": "floor1_2",
+    "name": "211 극장식",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2479",
+    "id": 2479,
+    "zone": "floor1_2",
+    "name": "211 강의식",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2480",
+    "id": 2480,
+    "zone": "floor1_2",
+    "name": "211A",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2482",
+    "id": 2482,
+    "zone": "floor1_2",
+    "name": "211B",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2484",
+    "id": 2484,
+    "zone": "floor1_2",
+    "name": "212",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2852",
+    "id": 2852,
+    "zone": "floor1_2",
+    "name": "212A",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2853",
+    "id": 2853,
+    "zone": "floor1_2",
+    "name": "212B",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2489",
+    "id": 2489,
+    "zone": "floor1_2",
+    "name": "213",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2854",
+    "id": 2854,
+    "zone": "floor1_2",
+    "name": "213A",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2855",
+    "id": 2855,
+    "zone": "floor1_2",
+    "name": "213B",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2494",
+    "id": 2494,
+    "zone": "floor1_2",
+    "name": "212+213",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2497",
+    "id": 2497,
+    "zone": "floor1_3",
+    "name": "303 입구",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2498",
+    "id": 2498,
+    "zone": "floor1_3",
+    "name": "307, 308 입구",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2499",
+    "id": 2499,
+    "zone": "floor1_3",
+    "name": "301",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2501",
+    "id": 2501,
+    "zone": "floor1_3",
+    "name": "302",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2503",
+    "id": 2503,
+    "zone": "floor1_3",
+    "name": "303",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2506",
+    "id": 2506,
+    "zone": "floor1_3",
+    "name": "304",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2509",
+    "id": 2509,
+    "zone": "floor1_3",
+    "name": "305",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2512",
+    "id": 2512,
+    "zone": "floor1_3",
+    "name": "306",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2514",
+    "id": 2514,
+    "zone": "floor1_3",
+    "name": "307",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2516",
+    "id": 2516,
+    "zone": "floor1_3",
+    "name": "306+307",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2519",
+    "id": 2519,
+    "zone": "floor1_3",
+    "name": "308 (VIP회의실)",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2520",
+    "id": 2520,
+    "zone": "floor1_3",
+    "name": "309A (VIP회의실)",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2521",
+    "id": 2521,
+    "zone": "floor1_3",
+    "name": "309B (VIP회의실)",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2522",
+    "id": 2522,
+    "zone": "floor1_3",
+    "name": "그랜드볼룸A+B",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2525",
+    "id": 2525,
+    "zone": "floor1_3",
+    "name": "그랜드볼룸A",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2524",
+    "id": 2524,
+    "zone": "floor1_3",
+    "name": "그랜드볼룸B",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2526",
+    "id": 2526,
+    "zone": "movingwalk",
+    "name": "무빙워크(1전시장)",
+    "groupName": " 무빙워크"
+  },
+  {
+    "key": "scene_2527",
+    "id": 2527,
+    "zone": "movingwalk",
+    "name": "무빙워크(2전시장)",
+    "groupName": " 무빙워크"
+  },
+  {
+    "key": "scene_2528",
+    "id": 2528,
+    "zone": "floor2_l",
+    "name": "1F로비",
+    "groupName": "[2전시장] 로비"
+  },
+  {
+    "key": "scene_2668",
+    "id": 2668,
+    "zone": "floor2_l",
+    "name": "2F 로비",
+    "groupName": "[2전시장] 로비"
+  },
+  {
+    "key": "scene_2536",
+    "id": 2536,
+    "zone": "floor2_l",
+    "name": "6홀 입구",
+    "groupName": "[2전시장] 로비"
+  },
+  {
+    "key": "scene_2537",
+    "id": 2537,
+    "zone": "floor2_l",
+    "name": "7홀 입구",
+    "groupName": "[2전시장] 로비"
+  },
+  {
+    "key": "scene_2538",
+    "id": 2538,
+    "zone": "floor2_l",
+    "name": "8홀 입구",
+    "groupName": "[2전시장] 로비"
+  },
+  {
+    "key": "scene_2539",
+    "id": 2539,
+    "zone": "floor2_l",
+    "name": "9홀 입구",
+    "groupName": "[2전시장] 로비"
+  },
+  {
+    "key": "scene_2540",
+    "id": 2540,
+    "zone": "floor2_l",
+    "name": "10홀 입구",
+    "groupName": "[2전시장] 로비"
+  },
+  {
+    "key": "scene_2535",
+    "id": 2535,
+    "zone": "floor2_h",
+    "name": "전시6홀A+B+C 강의식",
+    "groupName": "[2전시장] 전시홀"
+  },
+  {
+    "key": "scene_2541",
+    "id": 2541,
+    "zone": "floor2_h",
+    "name": "전시7홀",
+    "groupName": "[2전시장] 전시홀"
+  },
+  {
+    "key": "scene_2544",
+    "id": 2544,
+    "zone": "floor2_h",
+    "name": "전시8홀",
+    "groupName": "[2전시장] 전시홀"
+  },
+  {
+    "key": "scene_2547",
+    "id": 2547,
+    "zone": "floor2_h",
+    "name": "전시9홀",
+    "groupName": "[2전시장] 전시홀"
+  },
+  {
+    "key": "scene_2550",
+    "id": 2550,
+    "zone": "floor2_h",
+    "name": "전시10홀",
+    "groupName": "[2전시장] 전시홀"
+  },
+  {
+    "key": "scene_2553",
+    "id": 2553,
+    "zone": "floor2_3",
+    "name": "301~304복도",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2554",
+    "id": 2554,
+    "zone": "floor2_3",
+    "name": "305~308 복도",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2555",
+    "id": 2555,
+    "zone": "floor2_3",
+    "name": "301",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2559",
+    "id": 2559,
+    "zone": "floor2_3",
+    "name": "302",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2563",
+    "id": 2563,
+    "zone": "floor2_3",
+    "name": "303",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2567",
+    "id": 2567,
+    "zone": "floor2_3",
+    "name": "304",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2571",
+    "id": 2571,
+    "zone": "floor2_3",
+    "name": "305",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2579",
+    "id": 2579,
+    "zone": "floor2_3",
+    "name": "306",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2587",
+    "id": 2587,
+    "zone": "floor2_3",
+    "name": "307",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2595",
+    "id": 2595,
+    "zone": "floor2_3",
+    "name": "308",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2603",
+    "id": 2603,
+    "zone": "floor2_3",
+    "name": "301+302",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2607",
+    "id": 2607,
+    "zone": "floor2_3",
+    "name": "303+304",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2611",
+    "id": 2611,
+    "zone": "floor2_4",
+    "name": "4F복도",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2612",
+    "id": 2612,
+    "zone": "floor2_4",
+    "name": "401",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2616",
+    "id": 2616,
+    "zone": "floor2_4",
+    "name": "402",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2620",
+    "id": 2620,
+    "zone": "floor2_4",
+    "name": "403",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2624",
+    "id": 2624,
+    "zone": "floor2_4",
+    "name": "404",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2628",
+    "id": 2628,
+    "zone": "floor2_4",
+    "name": "405",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2636",
+    "id": 2636,
+    "zone": "floor2_4",
+    "name": "406",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2644",
+    "id": 2644,
+    "zone": "floor2_4",
+    "name": "407",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2652",
+    "id": 2652,
+    "zone": "floor2_4",
+    "name": "408",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2660",
+    "id": 2660,
+    "zone": "floor2_4",
+    "name": "401+402",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2664",
+    "id": 2664,
+    "zone": "floor2_4",
+    "name": "403+404",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2436",
+    "id": 2436,
+    "zone": "floor1_2",
+    "name": "205극장식",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2437",
+    "id": 2437,
+    "zone": "floor1_2",
+    "name": "205 강의식",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2438",
+    "id": 2438,
+    "zone": "floor1_2",
+    "name": "205A",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2440",
+    "id": 2440,
+    "zone": "floor1_2",
+    "name": "205B",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2443",
+    "id": 2443,
+    "zone": "floor1_2",
+    "name": "206 극장식",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2444",
+    "id": 2444,
+    "zone": "floor1_2",
+    "name": "206 강의식",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2445",
+    "id": 2445,
+    "zone": "floor1_2",
+    "name": "206A",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2447",
+    "id": 2447,
+    "zone": "floor1_2",
+    "name": "206B",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2450",
+    "id": 2450,
+    "zone": "floor1_2",
+    "name": "207 극장식",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2451",
+    "id": 2451,
+    "zone": "floor1_2",
+    "name": "207 강의식",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2452",
+    "id": 2452,
+    "zone": "floor1_2",
+    "name": "207A",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2454",
+    "id": 2454,
+    "zone": "floor1_2",
+    "name": "207B",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2457",
+    "id": 2457,
+    "zone": "floor1_2",
+    "name": "208 극장식",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2458",
+    "id": 2458,
+    "zone": "floor1_2",
+    "name": "208 강의식",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2459",
+    "id": 2459,
+    "zone": "floor1_2",
+    "name": "208A",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2461",
+    "id": 2461,
+    "zone": "floor1_2",
+    "name": "208B",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2464",
+    "id": 2464,
+    "zone": "floor1_2",
+    "name": "209 극장식",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2465",
+    "id": 2465,
+    "zone": "floor1_2",
+    "name": "209 강의식",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2466",
+    "id": 2466,
+    "zone": "floor1_2",
+    "name": "209A",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2468",
+    "id": 2468,
+    "zone": "floor1_2",
+    "name": "209B",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2495",
+    "id": 2495,
+    "zone": "floor1_2",
+    "name": "212+213 극장식",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2496",
+    "id": 2496,
+    "zone": "floor1_2",
+    "name": "212+213 강의식",
+    "groupName": "[1전시장] 2층"
+  },
+  {
+    "key": "scene_2504",
+    "id": 2504,
+    "zone": "floor1_3",
+    "name": "303 극장식",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2505",
+    "id": 2505,
+    "zone": "floor1_3",
+    "name": "303 강의식",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2507",
+    "id": 2507,
+    "zone": "floor1_3",
+    "name": "304 극장식",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2508",
+    "id": 2508,
+    "zone": "floor1_3",
+    "name": "304 강의식",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2510",
+    "id": 2510,
+    "zone": "floor1_3",
+    "name": "305 극장식",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2511",
+    "id": 2511,
+    "zone": "floor1_3",
+    "name": "305 강의식",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2517",
+    "id": 2517,
+    "zone": "floor1_3",
+    "name": "306+307 극장식",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2518",
+    "id": 2518,
+    "zone": "floor1_3",
+    "name": "306+307 강의식",
+    "groupName": "[1전시장] 3층"
+  },
+  {
+    "key": "scene_2532",
+    "id": 2532,
+    "zone": "floor2_h",
+    "name": "전시6홀A",
+    "groupName": "[2전시장] 전시홀"
+  },
+  {
+    "key": "scene_2533",
+    "id": 2533,
+    "zone": "floor2_h",
+    "name": "전시6홀B",
+    "groupName": "[2전시장] 전시홀"
+  },
+  {
+    "key": "scene_2534",
+    "id": 2534,
+    "zone": "floor2_h",
+    "name": "전시6홀C",
+    "groupName": "[2전시장] 전시홀"
+  },
+  {
+    "key": "scene_2542",
+    "id": 2542,
+    "zone": "floor2_h",
+    "name": "전시7홀A",
+    "groupName": "[2전시장] 전시홀"
+  },
+  {
+    "key": "scene_2543",
+    "id": 2543,
+    "zone": "floor2_h",
+    "name": "전시7홀B",
+    "groupName": "[2전시장] 전시홀"
+  },
+  {
+    "key": "scene_2545",
+    "id": 2545,
+    "zone": "floor2_h",
+    "name": "전시8홀A",
+    "groupName": "[2전시장] 전시홀"
+  },
+  {
+    "key": "scene_2546",
+    "id": 2546,
+    "zone": "floor2_h",
+    "name": "전시8홀B",
+    "groupName": "[2전시장] 전시홀"
+  },
+  {
+    "key": "scene_2548",
+    "id": 2548,
+    "zone": "floor2_h",
+    "name": "전시9홀A",
+    "groupName": "[2전시장] 전시홀"
+  },
+  {
+    "key": "scene_2549",
+    "id": 2549,
+    "zone": "floor2_h",
+    "name": "전시9홀B",
+    "groupName": "[2전시장] 전시홀"
+  },
+  {
+    "key": "scene_2558",
+    "id": 2558,
+    "zone": "floor2_3",
+    "name": "301 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2557",
+    "id": 2557,
+    "zone": "floor2_3",
+    "name": "301 극장식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2556",
+    "id": 2556,
+    "zone": "floor2_3",
+    "name": "301 연회식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2566",
+    "id": 2566,
+    "zone": "floor2_3",
+    "name": "303 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2565",
+    "id": 2565,
+    "zone": "floor2_3",
+    "name": "303 극장식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2564",
+    "id": 2564,
+    "zone": "floor2_3",
+    "name": "303 연회식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2570",
+    "id": 2570,
+    "zone": "floor2_3",
+    "name": "304 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2569",
+    "id": 2569,
+    "zone": "floor2_3",
+    "name": "304 극장식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2568",
+    "id": 2568,
+    "zone": "floor2_3",
+    "name": "304 연회식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2572",
+    "id": 2572,
+    "zone": "floor2_3",
+    "name": "305 연회식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2573",
+    "id": 2573,
+    "zone": "floor2_3",
+    "name": "305 극장식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2574",
+    "id": 2574,
+    "zone": "floor2_3",
+    "name": "305 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2576",
+    "id": 2576,
+    "zone": "floor2_3",
+    "name": "305A 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2578",
+    "id": 2578,
+    "zone": "floor2_3",
+    "name": "305B 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2580",
+    "id": 2580,
+    "zone": "floor2_3",
+    "name": "306 연회식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2581",
+    "id": 2581,
+    "zone": "floor2_3",
+    "name": "306 극장식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2582",
+    "id": 2582,
+    "zone": "floor2_3",
+    "name": "306 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2584",
+    "id": 2584,
+    "zone": "floor2_3",
+    "name": "306A 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2586",
+    "id": 2586,
+    "zone": "floor2_3",
+    "name": "306B 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2588",
+    "id": 2588,
+    "zone": "floor2_3",
+    "name": "307 연회식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2589",
+    "id": 2589,
+    "zone": "floor2_3",
+    "name": "307 극장식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2590",
+    "id": 2590,
+    "zone": "floor2_3",
+    "name": "307 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2592",
+    "id": 2592,
+    "zone": "floor2_3",
+    "name": "307A 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2594",
+    "id": 2594,
+    "zone": "floor2_3",
+    "name": "307B 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2596",
+    "id": 2596,
+    "zone": "floor2_3",
+    "name": "208 연회식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2597",
+    "id": 2597,
+    "zone": "floor2_3",
+    "name": "308 극장식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2598",
+    "id": 2598,
+    "zone": "floor2_3",
+    "name": "308 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2600",
+    "id": 2600,
+    "zone": "floor2_3",
+    "name": "308A 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2602",
+    "id": 2602,
+    "zone": "floor2_3",
+    "name": "308B 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2604",
+    "id": 2604,
+    "zone": "floor2_3",
+    "name": "301+302 연회식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2605",
+    "id": 2605,
+    "zone": "floor2_3",
+    "name": "301+302 극장식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2606",
+    "id": 2606,
+    "zone": "floor2_3",
+    "name": "301+302 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2608",
+    "id": 2608,
+    "zone": "floor2_3",
+    "name": "303+304 연회식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2609",
+    "id": 2609,
+    "zone": "floor2_3",
+    "name": "303+304 극장식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2610",
+    "id": 2610,
+    "zone": "floor2_3",
+    "name": "303+304 강의식",
+    "groupName": "[2전시장] 3층"
+  },
+  {
+    "key": "scene_2613",
+    "id": 2613,
+    "zone": "floor2_4",
+    "name": "401 연회식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2614",
+    "id": 2614,
+    "zone": "floor2_4",
+    "name": "401 극장식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2615",
+    "id": 2615,
+    "zone": "floor2_4",
+    "name": "401 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2617",
+    "id": 2617,
+    "zone": "floor2_4",
+    "name": "402 연회식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2618",
+    "id": 2618,
+    "zone": "floor2_4",
+    "name": "402 극장식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2619",
+    "id": 2619,
+    "zone": "floor2_4",
+    "name": "402 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2621",
+    "id": 2621,
+    "zone": "floor2_4",
+    "name": "403 연회식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2622",
+    "id": 2622,
+    "zone": "floor2_4",
+    "name": "403 극장식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2623",
+    "id": 2623,
+    "zone": "floor2_4",
+    "name": "403 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2625",
+    "id": 2625,
+    "zone": "floor2_4",
+    "name": "404 연회식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2626",
+    "id": 2626,
+    "zone": "floor2_4",
+    "name": "404 극장식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2627",
+    "id": 2627,
+    "zone": "floor2_4",
+    "name": "404 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2629",
+    "id": 2629,
+    "zone": "floor2_4",
+    "name": "405 연회식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2630",
+    "id": 2630,
+    "zone": "floor2_4",
+    "name": "405 극장식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2631",
+    "id": 2631,
+    "zone": "floor2_4",
+    "name": "405 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2633",
+    "id": 2633,
+    "zone": "floor2_4",
+    "name": "405A 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2635",
+    "id": 2635,
+    "zone": "floor2_4",
+    "name": "405B 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2637",
+    "id": 2637,
+    "zone": "floor2_4",
+    "name": "406 연회식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2638",
+    "id": 2638,
+    "zone": "floor2_4",
+    "name": "406 극장식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2639",
+    "id": 2639,
+    "zone": "floor2_4",
+    "name": "406 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2641",
+    "id": 2641,
+    "zone": "floor2_4",
+    "name": "406A 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2643",
+    "id": 2643,
+    "zone": "floor2_4",
+    "name": "406B 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2645",
+    "id": 2645,
+    "zone": "floor2_4",
+    "name": "407 연회식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2646",
+    "id": 2646,
+    "zone": "floor2_4",
+    "name": "407 극장식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2647",
+    "id": 2647,
+    "zone": "floor2_4",
+    "name": "407 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2649",
+    "id": 2649,
+    "zone": "floor2_4",
+    "name": "407A 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2651",
+    "id": 2651,
+    "zone": "floor2_4",
+    "name": "407B 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2653",
+    "id": 2653,
+    "zone": "floor2_4",
+    "name": "408 연회식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2654",
+    "id": 2654,
+    "zone": "floor2_4",
+    "name": "408 극장식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2655",
+    "id": 2655,
+    "zone": "floor2_4",
+    "name": "408 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2659",
+    "id": 2659,
+    "zone": "floor2_4",
+    "name": "408B 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2663",
+    "id": 2663,
+    "zone": "floor2_4",
+    "name": "401+402 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2662",
+    "id": 2662,
+    "zone": "floor2_4",
+    "name": "401+402 극장식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2661",
+    "id": 2661,
+    "zone": "floor2_4",
+    "name": "401+402 연회식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2667",
+    "id": 2667,
+    "zone": "floor2_4",
+    "name": "403+404 강의식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2666",
+    "id": 2666,
+    "zone": "floor2_4",
+    "name": "403+404 극장식",
+    "groupName": "[2전시장] 4층"
+  },
+  {
+    "key": "scene_2665",
+    "id": 2665,
+    "zone": "floor2_4",
+    "name": "403+404 연회식",
+    "groupName": "[2전시장] 4층"
+  }
+]

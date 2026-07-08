@@ -1,0 +1,32 @@
+[
+  {
+    "hotspot": "Gate1A",
+    "originSceneId": 2407,
+    "localSceneId": "gate1a",
+    "match": true
+  },
+  {
+    "hotspot": "Gate2",
+    "originSceneId": 2408,
+    "localSceneId": "gate2",
+    "match": true
+  },
+  {
+    "hotspot": "무빙워크(1전시장)",
+    "originSceneId": 2526,
+    "localSceneId": "scene_2526",
+    "match": true
+  },
+  {
+    "hotspot": "무빙워크(2전시장)",
+    "originSceneId": 2527,
+    "localSceneId": "scene_2527",
+    "match": true
+  },
+  {
+    "hotspot": "SIC2027 KINTEX1",
+    "originSceneId": 2411,
+    "localSceneId": "lobby5",
+    "match": true
+  }
+]
