@@ -367,8 +367,9 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
 
     const loader = new THREE.TextureLoader();
     loader.setCrossOrigin("anonymous");
+    const relativeImgPath = scene.img.startsWith("/") ? scene.img.substring(1) : scene.img;
     loader.load(
-      scene.img,
+      relativeImgPath,
       (texture) => {
         if (cancelled) {
           texture.dispose();
