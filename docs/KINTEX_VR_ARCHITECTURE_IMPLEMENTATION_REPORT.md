@@ -5,7 +5,8 @@
 **Document ID:** KINTEX_VR_ARCHITECTURE_IMPLEMENTATION_REPORT  
 **Version:** 1.0  
 **Date:** 2026-07-09  
-**Classification:** Technical Architecture & Implementation Report
+**Classification:** Technical Architecture & Implementation Report  
+**Production Live URL:** [GitHub Pages Live Demo](https://sic2027vxwebyc.github.io/KINTEX-VR-Panorama-Navigation-/)
 
 ---
 

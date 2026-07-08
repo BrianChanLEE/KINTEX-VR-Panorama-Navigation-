@@ -8,6 +8,8 @@
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4.17-38B2AC.svg?logo=tailwindcss)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+**GitHub Pages Live Demo URL:** [https://sic2027vxwebyc.github.io/KINTEX-VR-Panorama-Navigation-/](https://sic2027vxwebyc.github.io/KINTEX-VR-Panorama-Navigation-/)
+
 ## 프로젝트 소개
 본 프로젝트는 기존에 개발되어 있던 **`VX_WEB_DEMO`** 프로젝트의 핵심 설계를 물려받아, **AR/VR 기반의 실내외 길찾기 및 3D 공간 지도(Pathfinding Map Navigation) 기능**을 별도로 고도화하여 대폭 강화한 지능형 VR 시뮬레이션 프레임워크입니다. 
 
