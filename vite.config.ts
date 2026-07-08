@@ -158,6 +158,7 @@ function hotspotEditorPlugin() {
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "./",
   plugins: [react(), hotspotEditorPlugin()],
   optimizeDeps: {
     exclude: [
