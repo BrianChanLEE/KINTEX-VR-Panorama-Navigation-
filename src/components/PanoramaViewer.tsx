@@ -1175,78 +1175,52 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
       console.log("[WebXR] navigator.xr exists:", typeof navigator !== "undefined" && "xr" in navigator);
 
       if (!renderer.xr.isPresenting && typeof navigator !== "undefined" && "xr" in navigator && navigator.xr) {
-        // VR 진입 1단계: 캔버스 부모 요소 및 캔버스 스타일의 축소 현상을 방지하도록 화면 강제 가득 점유
-        const mount = mountRef.current;
-        if (mount) {
-          mount.style.width = "100vw";
-          mount.style.height = "100vh";
-        }
-        renderer.domElement.style.width = "100vw";
-        renderer.domElement.style.height = "100vh";
-
-        // VR 진입 2단계: WebXR 세션 런칭 직전, 실제 물리 백버퍼 해상도를 확실히 설정 (1x1 방어)
-        const width = Math.max(mount?.clientWidth || 0, window.innerWidth, 1024);
-        const height = Math.max(mount?.clientHeight || 0, window.innerHeight, 768);
-        
-        console.log("[WebXR] Pre-session scale validation:", {
-          mountWidth: mount?.clientWidth,
-          mountHeight: mount?.clientHeight,
-          windowWidth: window.innerWidth,
-          windowHeight: window.innerHeight,
-          allocatedWidth: width,
-          allocatedHeight: height
-        });
-
-        // isPresenting은 아직 false이므로 프록시 가드를 정상 통과함
-        renderer.setSize(width, height, false);
-
         console.log("[WebXR] requestSession start");
-
-        // WebGL context를 XR 호환 모드로 강제 전환 (MinimalXrScene 검증 패턴)
-        const glCtx = renderer.getContext() as any;
-        const makeCompatible = glCtx.makeXRCompatible
-          ? glCtx.makeXRCompatible()
-          : Promise.resolve();
-
-        makeCompatible.then(() => {
-          console.log("[WebXR] makeXRCompatible done");
-          return navigator.xr!.isSessionSupported("immersive-vr");
-        }).then((supported: boolean) => {
-            console.log("[WebXR] isSessionSupported immersive-vr result:", supported);
-            if (supported && typeof navigator !== "undefined" && navigator.xr) {
-              const sessionInit = { requiredFeatures: ["local"] };
-              navigator.xr.requestSession("immersive-vr", sessionInit).then(async (session) => {
-                console.log("[WebXR] requestSession success");
-
-                // MinimalXrScene 검증 완료 패턴: XRWebGLLayer 수동 바인딩 강제
-                try {
-                  const glCtx = renderer.getContext();
-                  // @ts-ignore
-                  const xrGlLayer = new XRWebGLLayer(session, glCtx);
-                  await session.updateRenderState({ baseLayer: xrGlLayer });
-                  console.log("[WebXR] session.updateRenderState SUCCESS!");
-                } catch (layerErr) {
-                  console.error("[WebXR] Failed to bind custom XRWebGLLayer:", layerErr);
-                }
-
-                await renderer.xr.setSession(session);
-                console.log("[WebXR] renderer.xr.setSession completed");
-              }).catch((err: any) => {
-                console.error("[WebXR] requestSession failed:", err);
-                setVrMode?.(() => false);
-                onXrActiveChange?.(false);
-              });
-            } else {
-              console.warn("WebXR immersive-vr not supported.");
-              setVrMode?.(() => false);
-              onXrActiveChange?.(false);
+        (async () => {
+          try {
+            const mount = mountRef.current;
+            if (mount) {
+              mount.style.width = "100vw";
+              mount.style.height = "100vh";
             }
-          })
-          .catch((err: any) => {
-            console.error("WebXR session check failed:", err);
+            renderer.domElement.style.width = "100vw";
+            renderer.domElement.style.height = "100vh";
+
+            const width = Math.max(mount?.clientWidth || 0, window.innerWidth, 1024);
+            const height = Math.max(mount?.clientHeight || 0, window.innerHeight, 768);
+
+            console.log("[WebXR] Pre-session scale validation:", {
+              mountWidth: mount?.clientWidth,
+              mountHeight: mount?.clientHeight,
+              windowWidth: window.innerWidth,
+              windowHeight: window.innerHeight,
+              allocatedWidth: width,
+              allocatedHeight: height
+            });
+
+            renderer.setSize(width, height, false);
+
+            const session = await navigator.xr!.requestSession("immersive-vr", { requiredFeatures: ["local"] });
+            console.log("[WebXR] requestSession success");
+
+            try {
+              const glCtx = renderer.getContext();
+              // @ts-ignore
+              const xrGlLayer = new XRWebGLLayer(session, glCtx);
+              await session.updateRenderState({ baseLayer: xrGlLayer });
+              console.log("[WebXR] session.updateRenderState SUCCESS!");
+            } catch (layerErr) {
+              console.error("[WebXR] Failed to bind custom XRWebGLLayer:", layerErr);
+            }
+
+            await renderer.xr.setSession(session);
+            console.log("[WebXR] renderer.xr.setSession completed");
+          } catch (err: any) {
+            console.error("[WebXR] requestSession failed:", err);
             setVrMode?.(() => false);
             onXrActiveChange?.(false);
-          });
+          }
+        })();
       }
     },
   }));
