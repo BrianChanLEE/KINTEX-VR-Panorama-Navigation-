@@ -3,6 +3,7 @@ import type { Scene, Hotspot } from "../models/scene.model";
 import type { InteractionMode, ToastModel } from "../models/editor.model";
 import { IconArrowDown, IconPin } from "../components/icons";
 import { SCENES } from "../data/scenes";
+import { resolveAssetPath } from "../utils/assetPath";
 
 // Note 1: KINTEX 커스텀 배지를 프리미엄 카드 형태로 출력할 때 사용하는 다국어 라벨 매퍼 함수입니다.
 const getKintexLabel = (text: string) => {
@@ -573,11 +574,7 @@ function HotspotElement({ h, onNavigate, onInfo, lang, disableClick }: HotspotEl
   }
 
   if (h.kind === "nav") {
-    const imgUrl = h.url
-      ? h.url.startsWith("http")
-        ? h.url
-        : `https://k-mice.visitkorea.or.kr${h.url}`
-      : "https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/marker/marker01.png";
+    const imgUrl = resolveAssetPath(h.url || "/mice/upload/mice_vr/marker/marker01.png");
 
     const isKintexPin =
       imgUrl.includes("KINTEX_Exhibition") ||
@@ -725,11 +722,7 @@ function HotspotElement({ h, onNavigate, onInfo, lang, disableClick }: HotspotEl
 
   if (h.kind === "poi") {
     const isClickable = !!h.target;
-    const imgUrl = h.url
-      ? h.url.startsWith("http")
-        ? h.url
-        : `https://k-mice.visitkorea.or.kr${h.url}`
-      : "https://k-mice.visitkorea.or.kr/mice/upload/mice_vr/marker/marker01.png";
+    const imgUrl = resolveAssetPath(h.url || "/mice/upload/mice_vr/marker/marker01.png");
 
     return (
       <button

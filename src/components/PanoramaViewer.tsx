@@ -13,6 +13,7 @@ import { useHotspotController } from "../controllers/hotspot.controller";
 import { panoramaProjection } from "../utils/panoramaProjection";
 import PanoramaView from "../views/PanoramaView";
 import { updateWebXRStatus } from "../utils/debugLogger";
+import { resolveAssetPath } from "../utils/assetPath";
 
 // Note 1: 환경변수를 활용하여 현재 핫스팟 수정 에디터 모드인지 파악합니다.
 const isHotspotEditMode = import.meta.env.VITE_HOTSPOT_EDIT_MODE === "true";
@@ -286,8 +287,7 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
       const resolvedAtv = override?.atv ?? hp.lat;
 
       // 이미지 경로 매핑 안전 보장
-      let rawPath = hp.url || "assets/images/marker01.png";
-      const imgPath = rawPath.startsWith("/") ? rawPath : `/${rawPath}`;
+      const imgPath = resolveAssetPath(hp.url || "/mice/upload/mice_vr/marker/marker01.png");
 
       // 브라우저 네이티브 Image 객체 로딩
       const img = new Image();
@@ -425,7 +425,7 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
           isFallback = true;
           // 첫 404 실패 시 로컬 기본 마커(marker01.png)로 한 번 폴백 시도
           console.warn("[WebXR Hotspots] Asset 404 load error. Attempting local marker01:", imgPath);
-          img.src = "/mice/upload/mice_vr/marker/marker01.png";
+          img.src = resolveAssetPath("/mice/upload/mice_vr/marker/marker01.png");
         } else {
           // 기본 마커마저 404 에러일 경우, 로컬 캔버스 긴급 자가치유 텍스처로 자동 전환
           console.error("[WebXR Hotspots] Double 404 failure. Activating dynamic fallback texture for:", hp.label);
@@ -1069,9 +1069,8 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
     onLoadingChange?.(true);
 
     const loader = globalTextureLoader;
-    const relativeImgPath = scene.img.startsWith("/") ? scene.img.substring(1) : scene.img;
     loader.load(
-      relativeImgPath,
+      resolveAssetPath(scene.img),
       (texture) => {
         if (cancelled) {
           texture.dispose();
