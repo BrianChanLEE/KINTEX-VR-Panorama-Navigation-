@@ -294,54 +294,7 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
       img.crossOrigin = ""; // CORS 사용 안함 명시
       let isFallback = false;
       
-      const buildCombinedTexture = (imageElement: HTMLImageElement) => {
-        // 아이콘과 텍스트를 위아래로 그릴 고해상도 Canvas 생성
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
-        if (!ctx) return null;
-
-        const labelText = hp.label || "";
-        
-        // 텍스트 너비 계산을 위한 폰트 임시 설정 (고해상도 대응)
-        ctx.font = "bold 24px sans-serif";
-        const textWidth = ctx.measureText(labelText).width;
-        
-        // 캔버스 크기 결정 (아이콘 크기 64x64 + 텍스트 여백 확보)
-        const iconSize = 64;
-        const canvasWidth = Math.max(iconSize, textWidth + 20);
-        const canvasHeight = iconSize + 40; // 텍스트 높이 및 간격 포함
-
-        canvas.width = canvasWidth;
-        canvas.height = canvasHeight;
-
-        // 투명 배경 채우기
-        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-
-        // 1. 중앙에 아이콘 이미지 그리기
-        const iconX = (canvasWidth - iconSize) / 2;
-        ctx.drawImage(imageElement, iconX, 0, iconSize, iconSize);
-
-        // 2. 하단에 이름표 명칭 그리기
-        ctx.font = "bold 22px sans-serif";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "top";
-
-        // 검정색 고대비 아웃라인(외곽선) 적용
-        ctx.strokeStyle = "rgba(0, 0, 0, 0.9)";
-        ctx.lineWidth = 4;
-        ctx.strokeText(labelText, canvasWidth / 2, iconSize + 6);
-
-        // 흰색 채우기
-        ctx.fillStyle = "#ffffff";
-        ctx.fillText(labelText, canvasWidth / 2, iconSize + 6);
-
-        return new THREE.CanvasTexture(canvas);
-      };
-
-      img.onload = () => {
-        const texture = buildCombinedTexture(img);
-        if (!texture) return;
-        
+      const createHotspotSprite = (texture: THREE.CanvasTexture) => {
         texture.colorSpace = THREE.SRGBColorSpace;
         
         const spriteMaterial = new THREE.SpriteMaterial({
@@ -361,23 +314,125 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
           -300 * Math.sin(hphi) * Math.cos(htheta)
         );
         
-        // 이름표 텍스트 가로세로비를 고려해 스프라이트 스케일 조절
-        const aspect = img.width > 0 ? img.width / img.height : 1.0;
-        // 라벨 너비에 맞춰 가로 스케일을 확보
-        sprite.scale.set(30 * (img.width > 0 ? (imageWidthToHeightRatio(img, hp.label)) : 1.2), 30, 1);
+        // 텍스트 길이에 맞춰 가로 비율 확보
+        const ratio = imageWidthToHeightRatio(hp.label);
+        sprite.scale.set(30 * ratio, 30, 1);
         
         sprite.userData = { hotspot: hp };
         sprite.renderOrder = 10;
         group.add(sprite);
       };
 
+      const buildCombinedTexture = (imageElement: HTMLImageElement) => {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return null;
+
+        const labelText = hp.label || "";
+        ctx.font = "bold 24px sans-serif";
+        const textWidth = ctx.measureText(labelText).width;
+        
+        const iconSize = 64;
+        const canvasWidth = Math.max(iconSize, textWidth + 20);
+        const canvasHeight = iconSize + 40;
+
+        canvas.width = canvasWidth;
+        canvas.height = canvasHeight;
+
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+        // 1. 중앙에 아이콘 이미지 그리기
+        const iconX = (canvasWidth - iconSize) / 2;
+        ctx.drawImage(imageElement, iconX, 0, iconSize, iconSize);
+
+        // 2. 하단 명칭 그리기 (아웃라인 + 흰색 채우기)
+        ctx.font = "bold 22px sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "top";
+        ctx.strokeStyle = "rgba(0, 0, 0, 0.9)";
+        ctx.lineWidth = 4;
+        ctx.strokeText(labelText, canvasWidth / 2, iconSize + 6);
+        ctx.fillStyle = "#ffffff";
+        ctx.fillText(labelText, canvasWidth / 2, iconSize + 6);
+
+        return new THREE.CanvasTexture(canvas);
+      };
+
+      // 404 에셋 유실 대비 긴급 자가치유 로컬 캔버스 생성기
+      const buildFallbackTexture = (labelText: string) => {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return null;
+
+        ctx.font = "bold 24px sans-serif";
+        const textWidth = ctx.measureText(labelText).width;
+        
+        const iconSize = 64;
+        const canvasWidth = Math.max(iconSize, textWidth + 24);
+        const canvasHeight = iconSize + 40;
+
+        canvas.width = canvasWidth;
+        canvas.height = canvasHeight;
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+        // [도형 그리기] 이미지 대신 고유 마커 링(Ring) 및 원형을 그림
+        const cx = canvasWidth / 2;
+        const cy = iconSize / 2;
+        
+        // 그림자 및 외부 외곽선
+        ctx.beginPath();
+        ctx.arc(cx, cy, 26, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(0,0,0,0.5)";
+        ctx.fill();
+
+        // 메인 원색 (파노라마 이동 마커는 핫핑크/오렌지 조합으로 이목 집중)
+        ctx.beginPath();
+        ctx.arc(cx, cy, 22, 0, Math.PI * 2);
+        ctx.fillStyle = "#ff007f";
+        ctx.strokeStyle = "#ffffff";
+        ctx.lineWidth = 3;
+        ctx.fill();
+        ctx.stroke();
+
+        // 내부 흰색 포인트 점
+        ctx.beginPath();
+        ctx.arc(cx, cy, 8, 0, Math.PI * 2);
+        ctx.fillStyle = "#ffffff";
+        ctx.fill();
+
+        // 하단 텍스트 이름표 렌더링
+        ctx.font = "bold 22px sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "top";
+        ctx.strokeStyle = "rgba(0, 0, 0, 0.9)";
+        ctx.lineWidth = 4;
+        ctx.strokeText(labelText, cx, iconSize + 6);
+        ctx.fillStyle = "#ffff00"; // 복구 텍스트는 밝은 노란색으로 강조
+        ctx.fillText(labelText, cx, iconSize + 6);
+
+        return new THREE.CanvasTexture(canvas);
+      };
+
+      img.onload = () => {
+        const texture = buildCombinedTexture(img);
+        if (texture) {
+          createHotspotSprite(texture);
+        }
+      };
+
       img.onerror = () => {
         if (!isFallback) {
           isFallback = true;
-          console.warn("[WebXR Hotspots] Retrying with fallback marker for path:", imgPath);
-          img.src = "/mice/upload/mice_vr/marker/marker01.png"; // 실제 로컬에 존재하는 검증된 기본 마커
+          // 첫 404 실패 시 로컬 기본 마커(marker01.png)로 한 번 폴백 시도
+          console.warn("[WebXR Hotspots] Asset 404 load error. Attempting local marker01:", imgPath);
+          img.src = "/mice/upload/mice_vr/marker/marker01.png";
         } else {
-          console.error("[WebXR Hotspots] Double failure on fallback marker. Skipped:", imgPath);
+          // 기본 마커마저 404 에러일 경우, 로컬 캔버스 긴급 자가치유 텍스처로 자동 전환
+          console.error("[WebXR Hotspots] Double 404 failure. Activating dynamic fallback texture for:", hp.label);
+          const texture = buildFallbackTexture(hp.label || "");
+          if (texture) {
+            createHotspotSprite(texture);
+          }
         }
       };
 
@@ -385,7 +440,7 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
     });
 
     // 헬퍼: 텍스트 길이에 따라 스프라이트 스케일 비율 계산
-    function imageWidthToHeightRatio(imgEl: HTMLImageElement, label: string) {
+    function imageWidthToHeightRatio(label: string) {
       const textLen = label ? label.length : 0;
       if (textLen > 6) return 1.8;
       if (textLen > 3) return 1.4;
@@ -973,6 +1028,19 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
       el.removeEventListener("wheel", onWheel);
       geometry.dispose();
       material.dispose();
+
+      // WebGL 컨텍스트 자원 즉각 해제 (InvalidStateError 완전 격퇴)
+      try {
+        const gl = renderer.getContext();
+        const extension = gl?.getExtension("WEBGL_lose_context");
+        if (extension) {
+          extension.loseContext();
+          console.log("[WebGL Cleanup] loseContext() triggered successfully.");
+        }
+      } catch (e) {
+        console.warn("[WebGL Cleanup] Failed to trigger loseContext:", e);
+      }
+
       renderer.dispose();
       if (renderer.domElement.parentNode === mount) {
         mount.removeChild(renderer.domElement);
