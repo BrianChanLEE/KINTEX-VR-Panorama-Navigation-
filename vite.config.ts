@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import basicSsl from "@vitejs/plugin-basic-ssl";
 // @ts-ignore
 import fs from "node:fs";
 // @ts-ignore
@@ -62,6 +63,117 @@ function hotspotEditorPlugin() {
 
               res.setHeader('Content-Type', 'application/json');
               res.end(JSON.stringify({ success: true, overrides }));
+            } catch (err: any) {
+              res.statusCode = 500;
+              res.end(JSON.stringify({ error: err.message }));
+            }
+          });
+        } else if (req.method === 'POST' && req.url === '/__hotspot-editor/add') {
+          let body = '';
+          req.on('data', (chunk: any) => { body += chunk.toString(); });
+          req.on('end', () => {
+            try {
+              const data = JSON.parse(body);
+              const { sceneId, label, labelEn, kind, type, target, sub, ath, atv } = data;
+              
+              if (!sceneId || !label) {
+                res.statusCode = 400;
+                res.end(JSON.stringify({ error: "Missing sceneId or label" }));
+                return;
+              }
+
+              const addedPath = path.resolve(process.cwd(), 'src/data/added-hotspots.json');
+              const backupPath = path.resolve(process.cwd(), 'src/data/added-hotspots.backup.json');
+              
+              let added: Record<string, any> = {};
+              if (fs.existsSync(addedPath)) {
+                try {
+                  added = JSON.parse(fs.readFileSync(addedPath, 'utf-8'));
+                } catch (e) {
+                  // Ignore
+                }
+              }
+
+              // Backup
+              if (Object.keys(added).length > 0) {
+                fs.writeFileSync(backupPath, JSON.stringify(added, null, 2));
+              }
+
+              if (!added[sceneId]) {
+                added[sceneId] = [];
+              }
+
+              const newHotspot = {
+                id: `added-${sceneId}-${Date.now()}`,
+                lon: Number((ath ?? 0).toFixed(2)),
+                lat: Number((atv ?? 0).toFixed(2)),
+                label,
+                labelEn: labelEn || label,
+                kind: kind || "poi",
+                type: type || "custom",
+                target: target || undefined,
+                sub: sub || undefined,
+                url: type === "toilet" ? "/mice/upload/mice_vr/marker/toilet.png" // placeholder/marker path matching presets
+                  : type === "convenience" ? "/mice/upload/mice_vr/marker/convenience.png"
+                  : type === "cafe" ? "/mice/upload/mice_vr/marker/cafe.png"
+                  : type === "elevator" ? "/mice/upload/mice_vr/marker/elevator.png"
+                  : type === "info" ? "/mice/upload/mice_vr/marker/info.png"
+                  : "/mice/upload/mice_vr/marker/marker01.png"
+              };
+
+              added[sceneId].push(newHotspot);
+
+              fs.mkdirSync(path.dirname(addedPath), { recursive: true });
+              fs.writeFileSync(addedPath, JSON.stringify(added, null, 2));
+
+              res.setHeader('Content-Type', 'application/json');
+              res.end(JSON.stringify({ success: true, addedHotspots: added }));
+            } catch (err: any) {
+              res.statusCode = 500;
+              res.end(JSON.stringify({ error: err.message }));
+            }
+          });
+        } else if (req.method === 'POST' && req.url === '/__hotspot-editor/delete') {
+          let body = '';
+          req.on('data', (chunk: any) => { body += chunk.toString(); });
+          req.on('end', () => {
+            try {
+              const data = JSON.parse(body);
+              const { sceneId, hotspotId } = data;
+              
+              if (!sceneId || !hotspotId) {
+                res.statusCode = 400;
+                res.end(JSON.stringify({ error: "Missing sceneId or hotspotId" }));
+                return;
+              }
+
+              const addedPath = path.resolve(process.cwd(), 'src/data/added-hotspots.json');
+              const backupPath = path.resolve(process.cwd(), 'src/data/added-hotspots.backup.json');
+
+              if (fs.existsSync(addedPath)) {
+                let added: Record<string, any> = {};
+                try {
+                  added = JSON.parse(fs.readFileSync(addedPath, 'utf-8'));
+                } catch (e) {
+                  // Ignore
+                }
+
+                if (added[sceneId]) {
+                  // Backup first
+                  fs.writeFileSync(backupPath, JSON.stringify(added, null, 2));
+                  
+                  added[sceneId] = added[sceneId].filter((h: any) => h.id !== hotspotId);
+                  if (added[sceneId].length === 0) {
+                    delete added[sceneId];
+                  }
+                  fs.writeFileSync(addedPath, JSON.stringify(added, null, 2));
+                }
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify({ success: true, addedHotspots: added }));
+              } else {
+                res.statusCode = 404;
+                res.end(JSON.stringify({ error: "Added hotspots file not found" }));
+              }
             } catch (err: any) {
               res.statusCode = 500;
               res.end(JSON.stringify({ error: err.message }));
@@ -159,11 +271,8 @@ function hotspotEditorPlugin() {
 // https://vite.dev/config/
 export default defineConfig({
   base: "./",
-  plugins: [react(), hotspotEditorPlugin()],
+  plugins: [react(), basicSsl(), hotspotEditorPlugin()],
   optimizeDeps: {
-    exclude: [
-      "same-runtime/dist/jsx-dev-runtime",
-      "same-runtime/dist/jsx-runtime",
-    ],
+    exclude: ["same-runtime"],
   },
 });

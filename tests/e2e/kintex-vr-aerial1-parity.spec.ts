@@ -33,9 +33,9 @@ test.describe("SIC27-KINTEX VR Aerial 1 (항공01) Parity Verification", () => {
     await page.goto(LOCAL_URL);
     await page.waitForTimeout(2000);
 
-    const SIC2027 KINTEX1Btn = page.locator("div.will-change-transform button:has-text('SIC2027 KINTEX1')");
-    await expect(SIC2027 KINTEX1Btn.first()).toBeVisible();
-    await SIC2027 KINTEX1Btn.first().click({ force: true });
+    const sicKintex1Btn = page.locator("div.will-change-transform button:has-text('SIC2027 KINTEX1')");
+    await expect(sicKintex1Btn.first()).toBeVisible();
+    await sicKintex1Btn.first().click({ force: true });
     await page.waitForTimeout(1000);
 
     // 이동 완료 후 위치 표시 헤더가 '전시5홀 로비' 또는 영어로 업데이트 되는지 검증

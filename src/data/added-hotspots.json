@@ -1,0 +1,14 @@
+{
+  "lobby12": [
+    {
+      "id": "added-lobby12-1783590235488",
+      "lon": 166.26,
+      "lat": 0.94,
+      "label": "화장실 Gate 1 ",
+      "labelEn": "화장실 Gate 1 ",
+      "kind": "poi",
+      "type": "toilet",
+      "url": "/mice/upload/mice_vr/marker/toilet.png"
+    }
+  ]
+}

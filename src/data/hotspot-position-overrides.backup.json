@@ -8,11 +8,11 @@
       "updatedAt": "2026-07-08T07:03:25.252Z"
     },
     "aerial01-h12": {
-      "ath": 50.46,
-      "atv": -2.23,
-      "screenOffsetX": 1428.36,
-      "screenOffsetY": 690.13,
-      "updatedAt": "2026-07-08T07:03:32.464Z"
+      "ath": 52.31,
+      "atv": -2.03,
+      "screenOffsetX": 175.32,
+      "screenOffsetY": 656.63,
+      "updatedAt": "2026-07-09T13:41:40.610Z"
     },
     "aerial01-h11": {
       "ath": 106.16,
@@ -90,13 +90,6 @@
       "screenOffsetX": 1356.28,
       "screenOffsetY": 774.53,
       "updatedAt": "2026-07-08T07:06:05.095Z"
-    },
-    "aerial01-h8": {
-      "ath": 7.16,
-      "atv": 0.16,
-      "screenOffsetX": 2105.39,
-      "screenOffsetY": 616.53,
-      "updatedAt": "2026-07-08T07:06:16.023Z"
     },
     "aerial01-h9": {
       "ath": 96.47,
@@ -296,6 +289,13 @@
       "screenOffsetX": 2072.79,
       "screenOffsetY": 575.79,
       "updatedAt": "2026-07-08T07:27:05.532Z"
+    },
+    "added-lobby12-1783590235488": {
+      "ath": 164.67,
+      "atv": 4.19,
+      "screenOffsetX": 1124.13,
+      "screenOffsetY": 566.59,
+      "updatedAt": "2026-07-09T09:44:07.104Z"
     }
   },
   "lobby5": {
@@ -551,11 +551,11 @@
       "updatedAt": "2026-07-08T07:55:23.310Z"
     },
     "aerial03-h10": {
-      "ath": 132.23,
-      "atv": -56.03,
-      "screenOffsetX": 2063.37,
-      "screenOffsetY": 1025.91,
-      "updatedAt": "2026-07-08T07:55:59.226Z"
+      "ath": 161.78,
+      "atv": -7.46,
+      "screenOffsetX": 264.21,
+      "screenOffsetY": 789.81,
+      "updatedAt": "2026-07-08T16:52:05.924Z"
     }
   },
   "scene_2413": {

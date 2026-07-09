@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+
+<title>한국관광공사_오류 안내페이지</title>
+
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+
+<STYLE TYPE="text/css">
+
+body{padding:0;margin:0;text-align:center;}
+
+body, div, td{color:#444;font:12px "굴림",Gulim,AppleGothic,sans-serif;}
+
+
+
+</style>
+
+<script language="javascript">
+
+	function setCookie( name, value, expiredays) { //tolips_kysong
+		var todayDate = new Date();
+		todayDate.setDate( todayDate.getDate() + expiredays );
+		document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+	}
+		
+			
+	 
+	function closeWindow() { //tolips_kysong	
+		setCookie("sorry_pop", "no" , 1);
+		self.close();		
+	}
+
+</script>
+
+</head>
+
+<body>
+
+<table width="400" height="400"><tr><td align="center" valign="middle">
+
+<table width="400" border="0" align="center" cellpadding="0" cellspacing="0" style="border:1px solid #e9e9e9">
+
+  <tr>
+
+    <td valign="top" style="padding:30 10 10 10; line-height:14px;">
+
+
+
+		<center><img src="/convention/popup/notice_sorry.jpg" alt="페이지 오류 안내 이미지 " /></center>
+
+		<center>
+
+		<b>[서비스오류안내]</b><br/><br/>
+		요청 페이지의 웹서비스가 정상적이지 않습니다. <br/> 고객 여러분께 양해 말씀 드립니다. <br/> 
+		<br/>
+
+
+		
+
+		</center>
+
+		<br/>
+
+		<div align="center">Korea Tourism Organization 
+
+					<br/>k-mice.visitkorea.or.kr<br/>
+
+					TEL : 033-738-3288
+
+		</div>
+	
+		<br/>
+	</td>
+
+  </tr>
+</table>
+
+</td></tr></table>
+
+</body>
+
+</html>

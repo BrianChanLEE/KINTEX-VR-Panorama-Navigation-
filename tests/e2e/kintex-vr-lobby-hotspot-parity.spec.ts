@@ -15,8 +15,8 @@ test.describe("SIC27-KINTEX VR Lobby Hotspots (전시장 로비) Parity Verifica
     await page.waitForTimeout(2000);
 
     // 항공01에서 SIC2027 KINTEX1(전시5홀 로비) 클릭하여 로비 진입
-    const SIC2027 KINTEX1Btn = page.locator("div.will-change-transform button:has-text('SIC2027 KINTEX1')");
-    await SIC2027 KINTEX1Btn.first().click({ force: true });
+    const sicKintex1Btn = page.locator("div.will-change-transform button:has-text('SIC2027 KINTEX1')");
+    await sicKintex1Btn.first().click({ force: true });
     await page.waitForTimeout(1500);
 
     // 1. 전시3,4홀 로비 이동 검증

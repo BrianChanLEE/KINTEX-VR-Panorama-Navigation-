@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import type * as THREE from "three";
 import hotspotOverridesData from "../data/hotspot-position-overrides.json";
+import addedHotspotsData from "../data/added-hotspots.json";
 import type { Hotspot } from "../models/hotspot.model";
 import type { InteractionMode, ToastModel } from "../models/editor.model";
 import { overrideService } from "../services/override.service";
@@ -15,6 +16,7 @@ export function useEditorController(
 ) {
   const [interactionMode, setInteractionMode] = useState<InteractionMode>("drag");
   const [overrides, setOverrides] = useState<Record<string, any>>(hotspotOverridesData);
+  const [addedHotspots, setAddedHotspots] = useState<Record<string, Hotspot[]>>(addedHotspotsData as Record<string, Hotspot[]>);
   const [selectedHotspot, setSelectedHotspot] = useState<{ hotspot: Hotspot; index: number } | null>(null);
   const [toast, setToast] = useState<ToastModel | null>(null);
 
@@ -34,7 +36,7 @@ export function useEditorController(
     }
   }, [toast]);
 
-  // Note 2: 키보드 'D' 및 'C' 단축키를 처리하여 드래그/클릭 테스트 모드 신속 전환 분기를 수행합니다.
+  // Note 2: 키보드 'D', 'C', 'A' 단축키를 처리하여 드래그/클릭/추가 모드 신속 전환 분기를 수행합니다.
   const handleEditorKeyDown = useCallback((e: KeyboardEvent) => {
     if (guards.isTextInput(e.target)) return;
     
@@ -44,6 +46,9 @@ export function useEditorController(
     } else if (e.key.toLowerCase() === "c") {
       setInteractionMode("click");
       setToast({ message: "Mode: Click Test", type: "success" });
+    } else if (e.key.toLowerCase() === "a") {
+      setInteractionMode("add");
+      setToast({ message: "Mode: Add Hotspot. Click on panorama to place.", type: "success" });
     }
   }, []);
 
@@ -161,11 +166,49 @@ export function useEditorController(
     setToast({ message: "All overrides exported & copied!", type: "success" });
   }, [overrides]);
 
+  const handleCreateHotspot = useCallback(async (
+    label: string,
+    labelEn: string,
+    kind: string,
+    type: string,
+    target: string,
+    sub: string,
+    ath: number,
+    atv: number
+  ) => {
+    try {
+      const result = await overrideService.addHotspot(sceneId, label, labelEn, kind, type, target, sub, ath, atv);
+      setAddedHotspots(result.addedHotspots);
+      setToast({ message: "Hotspot added successfully!", type: "success" });
+    } catch (err: any) {
+      setToast({ message: `Add failed: ${err.message}`, type: "error" });
+    }
+  }, [sceneId]);
+
+  const handleDeleteHotspot = useCallback(async () => {
+    if (!selectedHotspot) return;
+    const h = selectedHotspot.hotspot;
+    if (!h.id.startsWith("added-")) {
+      setToast({ message: "Only custom dynamic hotspots can be deleted.", type: "error" });
+      return;
+    }
+    try {
+      const result = await overrideService.deleteHotspot(sceneId, h.id);
+      setAddedHotspots(result.addedHotspots);
+      setSelectedHotspot(null);
+      setToast({ message: "Hotspot deleted successfully!", type: "success" });
+    } catch (err: any) {
+      setToast({ message: `Delete failed: ${err.message}`, type: "error" });
+    }
+  }, [selectedHotspot, sceneId]);
+
   return {
     interactionMode,
     setInteractionMode,
     overrides,
     setOverrides,
+    addedHotspots,
+    setAddedHotspots,
     selectedHotspot,
     setSelectedHotspot,
     toast,
@@ -178,5 +221,7 @@ export function useEditorController(
     handleReset,
     handleCopyPosition,
     handleExportJSON,
+    handleCreateHotspot,
+    handleDeleteHotspot,
   };
 }

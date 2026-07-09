@@ -41,6 +41,42 @@ export const overrideService = {
     return data.overrides;
   },
 
+  async addHotspot(
+    sceneId: string,
+    label: string,
+    labelEn: string,
+    kind: string,
+    type: string,
+    target: string,
+    sub: string,
+    ath: number,
+    atv: number
+  ): Promise<any> {
+    const response = await fetch("/__hotspot-editor/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sceneId, label, labelEn, kind, type, target, sub, ath, atv }),
+    });
+
+    if (!response.ok) {
+      throw new Error(await response.text());
+    }
+    return response.json();
+  },
+
+  async deleteHotspot(sceneId: string, hotspotId: string): Promise<any> {
+    const response = await fetch("/__hotspot-editor/delete", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sceneId, hotspotId }),
+    });
+
+    if (!response.ok) {
+      throw new Error(await response.text());
+    }
+    return response.json();
+  },
+
   // Note 4: 튜토리얼 다시 보지 않기 여부를 로컬스토리지에 저장합니다.
   dismissTutorialForever(isDismissed: boolean): void {
     try {

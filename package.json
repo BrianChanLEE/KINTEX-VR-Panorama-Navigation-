@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "dev_1": "VITE_HOTSPOT_EDIT_MODE=true vite --host 0.0.0.0",
+    "dev_1": "VITE_HOTSPOT_EDIT_MODE=true VITE_DEBUG_OVERLAY=true vite --host 0.0.0.0",
     "build": "tsc -b && vite build --outDir dist",
     "build-panos-211": "node scripts/build-panos.mjs scene_2478 scene_2479 scene_2480 scene_2482",
     "lint": "bunx tsc --noEmit && bunx biome lint --write",
@@ -29,6 +29,7 @@
     "@types/three": "0.169.0",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.32.1",
+    "@vitejs/plugin-basic-ssl": "^2.3.0",
     "@vitejs/plugin-react": "^4.5.0",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.27.0",

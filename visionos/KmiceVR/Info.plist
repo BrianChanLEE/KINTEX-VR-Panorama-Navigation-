@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSCameraUsageDescription</key>
+	<string>웹 화면의 WebXR 공간 컴퓨팅 센서 렌더링을 위해 카메라 접근 권한이 필요합니다.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>기기 자이로 센서를 매핑하여 360 공간 각도 연동을 위해 센서 권한이 필요합니다.</string>
+	<key>NSHandsTrackingUsageDescription</key>
+	<string>WebXR 공간 상호작용 제스처(집기 동작 등)를 핸드트래킹 센서 정보와 연결하기 위해 권한이 필요합니다.</string>
+</dict>
+</plist>

@@ -1,8 +1,11 @@
 // Note 1: scenes 정적 데이터 모듈에서 Hotspot 및 HotspotKind 기본 타입을 임포트합니다.
-import type { Hotspot, HotspotKind } from "../data/scenes";
+import type { Hotspot as BaseHotspot, HotspotKind } from "../data/scenes";
 
 // Note 2: 타 컴포넌트에서 hotspot 모델을 단일화된 모델 폴더로부터 참조할 수 있도록 재수출합니다.
-export type { Hotspot, HotspotKind };
+export interface Hotspot extends BaseHotspot {
+  type?: string;
+}
+export type { HotspotKind };
 
 // Note 3: 핫스팟 좌표 오버라이드 데이터 구조를 정의합니다.
 // 로컬 스토리지 또는 JSON overrides 파일로부터 읽어온 개별 핫스팟의 수정 좌표 정보입니다.
