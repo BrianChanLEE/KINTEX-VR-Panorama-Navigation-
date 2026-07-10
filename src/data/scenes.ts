@@ -114,7 +114,7 @@ export const SCENES: Scene[] = [
         "id": "aerial01-h5",
         "lon": 114.23,
         "lat": -6.14,
-        "label": "Daehwa-dong_Leports_Park",
+        "label": "대화동 레포츠공원",
         "labelEn": "Daehwa-dong_Leports_Park",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa-dong_Leports_Park.png"
@@ -123,7 +123,7 @@ export const SCENES: Scene[] = [
         "id": "aerial01-h6",
         "lon": 221.19,
         "lat": -3.17,
-        "label": "Goyang_Stadium",
+        "label": "고양스타디움",
         "labelEn": "Goyang_Stadium",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Goyang Stadium.png"
@@ -132,7 +132,7 @@ export const SCENES: Scene[] = [
         "id": "aerial01-h7",
         "lon": 262.34,
         "lat": -2.35,
-        "label": "Daehwa Station",
+        "label": "대화역",
         "labelEn": "Daehwa Station",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa Station.png"
@@ -141,7 +141,7 @@ export const SCENES: Scene[] = [
         "id": "aerial01-h8",
         "lon": 80.93,
         "lat": 5.14,
-        "label": "Ilsan_Bridge",
+        "label": "일산대교",
         "labelEn": "Ilsan_Bridge",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Ilsan_Bridge.png"
@@ -174,7 +174,7 @@ export const SCENES: Scene[] = [
         "labelEn": "SIC2027 KINTEX1",
         "kind": "nav",
         "target": "lobby5",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition_1_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_1_kor.png"
       },
       {
         "id": "aerial01-h12",
@@ -184,7 +184,7 @@ export const SCENES: Scene[] = [
         "labelEn": "SIC2027 KINTEX2",
         "kind": "nav",
         "target": "scene_2668",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition_2_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_2_kor.png"
       },
       {
         "id": "aerial01-h13",
@@ -202,7 +202,7 @@ export const SCENES: Scene[] = [
         "label": "GTX-A 킨텍스역(예정)",
         "labelEn": "GTX-A 킨텍스역(예정)",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_SIC2027 KINTEX_Station_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_KINTEX_Station_kor.png"
       },
       {
         "id": "aerial01-h15",
@@ -220,7 +220,7 @@ export const SCENES: Scene[] = [
         "label": "킨텍스 캠핑장",
         "labelEn": "킨텍스 캠핑장",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_camping_ground_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_camping_ground_kor.png"
       },
       {
         "id": "aerial01-h17",
@@ -229,7 +229,7 @@ export const SCENES: Scene[] = [
         "label": "킨텍스 제3전시장 (예정)",
         "labelEn": "킨텍스 제3전시장 (예정)",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition3_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition3_kor.png"
       }
     ]
   },
@@ -317,7 +317,7 @@ export const SCENES: Scene[] = [
         "labelEn": "SIC2027 KINTEX2",
         "kind": "nav",
         "target": "scene_2668",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition_2_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_2_kor.png"
       },
       {
         "id": "aerial02-h9",
@@ -327,7 +327,7 @@ export const SCENES: Scene[] = [
         "labelEn": "SIC2027 KINTEX1",
         "kind": "nav",
         "target": "lobby5",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition_1_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_1_kor.png"
       },
       {
         "id": "aerial02-h10",
@@ -345,7 +345,7 @@ export const SCENES: Scene[] = [
         "label": "GTX-A 킨텍스역(예정)",
         "labelEn": "GTX-A 킨텍스역(예정)",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_SIC2027 KINTEX_Station_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_KINTEX_Station_kor.png"
       },
       {
         "id": "aerial02-h12",
@@ -363,7 +363,7 @@ export const SCENES: Scene[] = [
         "label": "킨텍스 제3전시장 (예정)",
         "labelEn": "킨텍스 제3전시장 (예정)",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition3_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition3_kor.png"
       },
       {
         "id": "aerial02-h14",
@@ -372,7 +372,7 @@ export const SCENES: Scene[] = [
         "label": "킨텍스 캠핑장",
         "labelEn": "킨텍스 캠핑장",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_camping_ground_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_camping_ground_kor.png"
       }
     ]
   },
@@ -410,7 +410,7 @@ export const SCENES: Scene[] = [
         "id": "aerial03-h3",
         "lon": 332.93,
         "lat": 2.15,
-        "label": "Daehwa-dong_Leports_Park",
+        "label": "대화동 레포츠공원",
         "labelEn": "Daehwa-dong_Leports_Park",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa-dong_Leports_Park.png"
@@ -419,7 +419,7 @@ export const SCENES: Scene[] = [
         "id": "aerial03-h4",
         "lon": 2.86,
         "lat": 3.71,
-        "label": "Goyang_Stadium",
+        "label": "고양스타디움",
         "labelEn": "Goyang_Stadium",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Goyang Stadium.png"
@@ -428,7 +428,7 @@ export const SCENES: Scene[] = [
         "id": "aerial03-h5",
         "lon": 21.71,
         "lat": 4.37,
-        "label": "Daehwa Station",
+        "label": "대화역",
         "labelEn": "Daehwa Station",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa Station.png"
@@ -437,7 +437,7 @@ export const SCENES: Scene[] = [
         "id": "aerial03-h6",
         "lon": 281.33,
         "lat": 5.51,
-        "label": "Ilsan_Bridge",
+        "label": "일산대교",
         "labelEn": "Ilsan_Bridge",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Ilsan_Bridge.png"
@@ -470,7 +470,7 @@ export const SCENES: Scene[] = [
         "labelEn": "SIC2027 KINTEX1",
         "kind": "nav",
         "target": "lobby5",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition_1_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_1_kor.png"
       },
       {
         "id": "aerial03-h10",
@@ -480,7 +480,7 @@ export const SCENES: Scene[] = [
         "labelEn": "SIC2027 KINTEX2",
         "kind": "nav",
         "target": "scene_2668",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_SIC2027 KINTEX_Station_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_KINTEX_Station_kor.png"
       },
       {
         "id": "aerial03-h11",
@@ -498,7 +498,7 @@ export const SCENES: Scene[] = [
         "label": "GTX-A 킨텍스역(예정)",
         "labelEn": "GTX-A 킨텍스역(예정)",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_SIC2027 KINTEX_Station_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_KINTEX_Station_kor.png"
       },
       {
         "id": "aerial03-h13",
@@ -516,7 +516,7 @@ export const SCENES: Scene[] = [
         "label": "킨텍스 제3전시장 (예정)",
         "labelEn": "킨텍스 제3전시장 (예정)",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition3_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition3_kor.png"
       },
       {
         "id": "aerial03-h15",
@@ -525,7 +525,7 @@ export const SCENES: Scene[] = [
         "label": "SIC2027 KINTEX2",
         "labelEn": "SIC2027 KINTEX2",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition_2_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_2_kor.png"
       }
     ]
   },

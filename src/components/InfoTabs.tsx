@@ -39,9 +39,9 @@ export default function InfoTabs({
       {TAB_ITEMS.map((tab) => {
         // Note 9: 현재 탭의 활성화 여부를 상태 비교하여 정의합니다.
         const isActive = tab.id === activeTab;
-        // Note 10: VisitKorea 서버에서 호스팅되는 이미지 파일명 패턴 규칙에 맞게 아이콘 주소를 동적 계산합니다.
+        // Note 10: 로컬 public 아이콘 파일명 패턴 규칙에 맞게 아이콘 주소를 동적 계산합니다.
         const iconName = tab.iconClass.replace("information-", "information_");
-        const iconUrl = `https://k-mice.visitkorea.or.kr/convention_kor/images/vr/new/${
+        const iconUrl = `/convention_kor/images/vr/new/${
           isActive ? `${iconName}_on` : iconName
         }.png`;
 
@@ -66,4 +66,3 @@ export default function InfoTabs({
     </div>
   );
 }
-

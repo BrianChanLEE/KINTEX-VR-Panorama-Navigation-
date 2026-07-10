@@ -1,5 +1,6 @@
 import {
   forwardRef,
+  useCallback,
   useEffect,
   useImperativeHandle,
   useRef,
@@ -10,10 +11,11 @@ import { getScene } from "../data/scenes";
 import type { Hotspot, Scene } from "../models/scene.model";
 import { useEditorController } from "../controllers/editor.controller";
 import { useHotspotController } from "../controllers/hotspot.controller";
+import { usePanoramaTextureController } from "../controllers/panoramaTexture.controller";
+import { useWebXrHotspotController } from "../controllers/webxr.controller";
 import { panoramaProjection } from "../utils/panoramaProjection";
 import PanoramaView from "../views/PanoramaView";
-import { updateWebXRStatus } from "../utils/debugLogger";
-import { resolveAssetPath } from "../utils/assetPath";
+import { rebuildPanoramaHotspotSprites } from "../services/panoramaHotspotSprite.service";
 
 // Note 1: 환경변수를 활용하여 현재 핫스팟 수정 에디터 모드인지 파악합니다.
 const isHotspotEditMode = import.meta.env.VITE_HOTSPOT_EDIT_MODE === "true";
@@ -41,19 +43,15 @@ interface Props {
   vrMode?: boolean;
   setVrMode?: (fn: (v: boolean) => boolean) => void;
   onXrActiveChange?: (active: boolean) => void;
+  onVrHardwareUnavailable?: () => void;
 }
 
 const clamp = (v: number, min: number, max: number) =>
   Math.max(min, Math.min(max, v));
 
-const globalTextureLoader = new THREE.TextureLoader();
-// 로컬 경로의 파일 불러오기 시 CORS anonymous 차단 현상 방지를 위해 crossOrigin 비활성
-// const globalTextureLoader_crossOrigin = "anonymous";
-// globalTextureLoader.setCrossOrigin(globalTextureLoader_crossOrigin);
-
 // Note 2: PanoramaViewer 컴포넌트는 Controller 역할을 수행하며 Three.js 초기화, 렌더링 루프 스케줄링 및 에디터 상태 조율을 중개합니다.
 const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
-  { scene, autoRotate, showHotspots, headingRef, onNavigate, onInfo, onLoadingChange, lang, activeTab, highlightedHotspotId, vrMode, setVrMode, onXrActiveChange },
+  { scene, autoRotate, showHotspots, headingRef, onNavigate, onInfo, onLoadingChange, lang, activeTab, highlightedHotspotId, vrMode, setVrMode, onXrActiveChange, onVrHardwareUnavailable },
   ref,
 ) {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -88,7 +86,9 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
   // Note 3: Editor Controller 훅을 호출하여 단축키, 포인터 드래그 좌표 투영, reset/save 비즈니스 로직 상태를 인출합니다.
   const editor = useEditorController(scene.id, cameraRef, hotspotLayerRef);
   // Note 4: Hotspot Controller 훅을 호출하여 현재 탭 상태(safety 여부)에 최적화된 핫스팟 목록 필터 동작을 수행합니다.
-  const hotspotCtl = useHotspotController();
+  const { filterHotspots } = useHotspotController();
+  // Note 5: 파노라마 텍스처 캐시 정책은 전용 컨트롤러를 통해 서비스와 분리합니다.
+  const { getTexture, warmCurrentSceneWindow, releaseColdTextures } = usePanoramaTextureController(scene.id);
 
   const overridesRef = useRef(editor.overrides);
   const addedHotspotsRef = useRef(editor.addedHotspots);
@@ -115,385 +115,27 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
 
   // WebXR용 3D 핫스팟 그룹 생성
   const xrHotspotsGroupRef = useRef<THREE.Group>(new THREE.Group());
-
-  // WebXR 세션 라이프사이클 처리 효과
-  useEffect(() => {
-    const renderer = rendererRef.current;
-    if (!renderer) return;
-
-    renderer.xr.enabled = true;
-
-    const onSessionStart = () => {
-      setVrMode?.(() => true);
-      onXrActiveChange?.(true);
-
-      console.log("[WebXR] sessionstart");
-      console.log("[WebXR] renderer.xr.isPresenting true");
-
-      // Scene 그래프에서 직접 이름으로 조회하여 클로저 Ref 렉시컬 소실 예방
-      const tscene = sceneRef.current;
-      if (tscene) {
-        const cube = tscene.getObjectByName("testCube");
-        const grid = tscene.getObjectByName("testGrid");
-        const axes = tscene.getObjectByName("testAxes");
-        if (cube) cube.visible = true;
-        if (grid) grid.visible = true;
-        if (axes) axes.visible = true;
-
-        // 최초 VR 기동 시의 메쉬 및 핫스팟 회전각 정렬 동기화
-        const mesh = meshRef.current;
-        if (mesh) {
-          const rotationAngle = THREE.MathUtils.degToRad(sceneDataRef.current.startLon);
-          mesh.rotation.y = rotationAngle;
-          if (xrHotspotsGroupRef.current) {
-            xrHotspotsGroupRef.current.rotation.y = rotationAngle;
-          }
-          console.log("[WebXR Session Start Sync] Aligned Y rotation to startLon:", sceneDataRef.current.startLon);
-        }
-      }
-
-      // WebXR 스펙 검증 및 런타임 진단 로그 출력
-      const session = renderer.xr.getSession();
-      const mesh = meshRef.current;
-      const mat = mesh?.material as THREE.MeshBasicMaterial;
-      const img = mat?.map?.image;
-      const width = img?.width || 0;
-      const height = img?.height || 0;
-      const ratio = height > 0 ? width / height : 0;
-
-      updateWebXRStatus({
-        rendererXrEnabled: renderer.xr.enabled,
-        rendererXrIsPresenting: renderer.xr.isPresenting,
-        sessionMode: (session as any)?.mode || "N/A",
-        currentVrMode: true,
-        currentIsPresenting: true,
-        sphereMeshExists: !!mesh,
-        sphereMaterialSide: mat ? (mat.side === THREE.BackSide ? "BackSide" : String(mat.side)) : "N/A",
-        textureWidthHeight: `${width}x${height}`,
-        imageRatio: ratio,
-        isEquirectangular: Math.abs(ratio - 2) < 0.02,
-      });
-
-      console.log("[WebXR Runtime Audit Log]", {
-        "renderer.xr.enabled": renderer.xr.enabled,
-        "renderer.xr.isPresenting": renderer.xr.isPresenting,
-        "session.mode": (session as any)?.mode || "N/A",
-        "camera.position": cameraRef.current?.position,
-        "camera.quaternion": cameraRef.current?.quaternion,
-        "panorama mesh 존재 여부": !!mesh,
-        "panorama material.side": mat?.side,
-        "panorama texture image width/height": `${width}x${height}`,
-        "image ratio": ratio,
-        "isEquirectangular": ratio === 2,
-        "current vrMode": true
-      });
-    };
-
-    const onSessionEnd = () => {
-      setVrMode?.(() => false);
-      onXrActiveChange?.(false);
-      
-      console.log("[WebXR] sessionend");
-      console.log("[WebXR] renderer.xr.isPresenting false");
-
-      const tscene = sceneRef.current;
-      if (tscene) {
-        const cube = tscene.getObjectByName("testCube");
-        const grid = tscene.getObjectByName("testGrid");
-        const axes = tscene.getObjectByName("testAxes");
-        if (cube) cube.visible = false;
-        if (grid) grid.visible = false;
-        if (axes) axes.visible = false;
-
-        // WebXR 세션 종료 시 메쉬 및 핫스팟 회전 오프셋 원상복구
-        const mesh = meshRef.current;
-        if (mesh) {
-          mesh.rotation.y = 0;
-          if (xrHotspotsGroupRef.current) {
-            xrHotspotsGroupRef.current.rotation.y = 0;
-          }
-        }
-      }
-
-      updateWebXRStatus({
-        rendererXrIsPresenting: false,
-        sessionMode: "N/A",
-        currentVrMode: false,
-        currentIsPresenting: false,
-      });
-    };
-
-    renderer.xr.addEventListener("sessionstart", onSessionStart);
-    renderer.xr.addEventListener("sessionend", onSessionEnd);
-
-    // vrMode 상태가 꺼지면 실행 중인 WebXR 세션을 중단
-    if (!vrMode) {
-      if (renderer.xr.isPresenting) {
-        renderer.xr.getSession()?.end();
-      }
-    }
-
-    return () => {
-      renderer.xr.removeEventListener("sessionstart", onSessionStart);
-      renderer.xr.removeEventListener("sessionend", onSessionEnd);
-    };
-  }, [vrMode, setVrMode]);
+  // WebXR 관련 상태와 입력 처리는 별도 컨트롤러에서 관리합니다.
 
   // WebXR 3D 핫스팟 갱신 효과
   useEffect(() => {
-    const group = xrHotspotsGroupRef.current;
-    if (!group) return;
-
-    // 기존 3D 핫스팟 클리어
-    while (group.children.length > 0) {
-      const child = group.children[0] as THREE.Sprite;
-      group.remove(child);
-      child.geometry.dispose();
-      if (child.material) {
-        if (child.material.map) {
-          child.material.map.dispose();
-        }
-        child.material.dispose();
-      }
-    }
-
     const currentAdded = editor.addedHotspots[scene.id] || [];
-    const allHotspots = [...scene.hotspots, ...currentAdded];
-    const filtered = hotspotCtl.filterHotspots(allHotspots, showHotspotsRef.current, activeTabRef.current);
+    const mergedHotspots = [...scene.hotspots, ...currentAdded];
+    const filtered = filterHotspots(mergedHotspots, showHotspots, activeTab);
 
     console.log("[WebXR Hotspots] Rebuilding 3D sprites. Count:", filtered.length);
 
-    filtered.forEach((hp) => {
-      // 1. 소방/안전 탭 및 디멘션 핫스팟 가시성 필터링 (2D 뷰포트와 100% 동기화)
-      const isSafetyHotspot =
-        hp.url?.includes("marker-fire") ||
-        hp.url?.includes("marker-cctv") ||
-        hp.url?.includes("marker-aed") ||
-        hp.url?.includes("marker-safety") ||
-        hp.url?.includes("marker-exit");
-
-      const shouldShowSafety = activeTab === "safety";
-      const isDimHotspot = hp.url?.includes("dim-img");
-
-      // 필터 조건 미충족 시 스프라이트 생성을 건너뜀
-      if ((isSafetyHotspot && !shouldShowSafety) || isDimHotspot) {
-        return;
-      }
-
-      // 2. 에디터 오버라이드 좌표 반영
-      const sceneOverrides = editor.overrides[scene.id] || {};
-      const override = sceneOverrides[hp.id || hp.label];
-      const resolvedAth = override?.ath ?? hp.lon;
-      const resolvedAtv = override?.atv ?? hp.lat;
-
-      // 이미지 경로 매핑 안전 보장
-      const imgPath = resolveAssetPath(hp.url || "/mice/upload/mice_vr/marker/marker01.png");
-
-      // 브라우저 네이티브 Image 객체 로딩
-      const img = new Image();
-      img.crossOrigin = ""; // CORS 사용 안함 명시
-      let isFallback = false;
-      
-      const createHotspotSprite = (texture: THREE.CanvasTexture) => {
-        texture.colorSpace = THREE.SRGBColorSpace;
-        
-        const spriteMaterial = new THREE.SpriteMaterial({
-          map: texture,
-          transparent: true,
-          depthWrite: false,
-          depthTest: true
-        });
-        const sprite = new THREE.Sprite(spriteMaterial);
-        
-        const hphi = THREE.MathUtils.degToRad(90 - resolvedAtv);
-        const htheta = THREE.MathUtils.degToRad(resolvedAth);
-        
-        sprite.position.set(
-          -300 * Math.sin(hphi) * Math.sin(htheta),
-          300 * Math.cos(hphi),
-          -300 * Math.sin(hphi) * Math.cos(htheta)
-        );
-        
-        // 텍스트 길이에 맞춰 가로 비율 확보
-        const ratio = imageWidthToHeightRatio(hp.label);
-        sprite.scale.set(30 * ratio, 30, 1);
-        
-        sprite.userData = { hotspot: hp };
-        sprite.renderOrder = 10;
-        group.add(sprite);
-      };
-
-      const buildCombinedTexture = (imageElement: HTMLImageElement) => {
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
-        if (!ctx) return null;
-
-        const labelText = hp.label || "";
-        ctx.font = "bold 24px sans-serif";
-        const textWidth = ctx.measureText(labelText).width;
-        
-        const iconSize = 64;
-        const canvasWidth = Math.max(iconSize, textWidth + 20);
-        const canvasHeight = iconSize + 40;
-
-        canvas.width = canvasWidth;
-        canvas.height = canvasHeight;
-
-        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-
-        // 1. 중앙에 아이콘 이미지 그리기
-        const iconX = (canvasWidth - iconSize) / 2;
-        ctx.drawImage(imageElement, iconX, 0, iconSize, iconSize);
-
-        // 2. 하단 명칭 그리기 (아웃라인 + 흰색 채우기)
-        ctx.font = "bold 22px sans-serif";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "top";
-        ctx.strokeStyle = "rgba(0, 0, 0, 0.9)";
-        ctx.lineWidth = 4;
-        ctx.strokeText(labelText, canvasWidth / 2, iconSize + 6);
-        ctx.fillStyle = "#ffffff";
-        ctx.fillText(labelText, canvasWidth / 2, iconSize + 6);
-
-        return new THREE.CanvasTexture(canvas);
-      };
-
-      // 404 에셋 유실 대비 긴급 자가치유 로컬 캔버스 생성기
-      const buildFallbackTexture = (labelText: string) => {
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
-        if (!ctx) return null;
-
-        ctx.font = "bold 24px sans-serif";
-        const textWidth = ctx.measureText(labelText).width;
-        
-        const iconSize = 64;
-        const canvasWidth = Math.max(iconSize, textWidth + 24);
-        const canvasHeight = iconSize + 40;
-
-        canvas.width = canvasWidth;
-        canvas.height = canvasHeight;
-        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-
-        // [도형 그리기] 이미지 대신 고유 마커 링(Ring) 및 원형을 그림
-        const cx = canvasWidth / 2;
-        const cy = iconSize / 2;
-        
-        // 그림자 및 외부 외곽선
-        ctx.beginPath();
-        ctx.arc(cx, cy, 26, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(0,0,0,0.5)";
-        ctx.fill();
-
-        // 메인 원색 (파노라마 이동 마커는 핫핑크/오렌지 조합으로 이목 집중)
-        ctx.beginPath();
-        ctx.arc(cx, cy, 22, 0, Math.PI * 2);
-        ctx.fillStyle = "#ff007f";
-        ctx.strokeStyle = "#ffffff";
-        ctx.lineWidth = 3;
-        ctx.fill();
-        ctx.stroke();
-
-        // 내부 흰색 포인트 점
-        ctx.beginPath();
-        ctx.arc(cx, cy, 8, 0, Math.PI * 2);
-        ctx.fillStyle = "#ffffff";
-        ctx.fill();
-
-        // 하단 텍스트 이름표 렌더링
-        ctx.font = "bold 22px sans-serif";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "top";
-        ctx.strokeStyle = "rgba(0, 0, 0, 0.9)";
-        ctx.lineWidth = 4;
-        ctx.strokeText(labelText, cx, iconSize + 6);
-        ctx.fillStyle = "#ffff00"; // 복구 텍스트는 밝은 노란색으로 강조
-        ctx.fillText(labelText, cx, iconSize + 6);
-
-        return new THREE.CanvasTexture(canvas);
-      };
-
-      img.onload = () => {
-        const texture = buildCombinedTexture(img);
-        if (texture) {
-          createHotspotSprite(texture);
-        }
-      };
-
-      img.onerror = () => {
-        if (!isFallback) {
-          isFallback = true;
-          // 첫 404 실패 시 로컬 기본 마커(marker01.png)로 한 번 폴백 시도
-          console.warn("[WebXR Hotspots] Asset 404 load error. Attempting local marker01:", imgPath);
-          img.src = resolveAssetPath("/mice/upload/mice_vr/marker/marker01.png");
-        } else {
-          // 기본 마커마저 404 에러일 경우, 로컬 캔버스 긴급 자가치유 텍스처로 자동 전환
-          console.error("[WebXR Hotspots] Double 404 failure. Activating dynamic fallback texture for:", hp.label);
-          const texture = buildFallbackTexture(hp.label || "");
-          if (texture) {
-            createHotspotSprite(texture);
-          }
-        }
-      };
-
-      img.src = imgPath;
+    return rebuildPanoramaHotspotSprites({
+      sceneId: scene.id,
+      lang,
+      group: xrHotspotsGroupRef.current,
+      renderer: rendererRef.current,
+      hotspots: filtered,
+      overrides: editor.overrides,
+      showHotspots,
+      activeTab,
     });
-
-    // 헬퍼: 텍스트 길이에 따라 스프라이트 스케일 비율 계산
-    function imageWidthToHeightRatio(label: string) {
-      const textLen = label ? label.length : 0;
-      if (textLen > 6) return 1.8;
-      if (textLen > 3) return 1.4;
-      return 1.1;
-    }
-  }, [scene.id, activeTab, showHotspots, editor.addedHotspots, editor.overrides]);
-
-  // WebXR 컨트롤러 및 레이캐스터 연동
-  useEffect(() => {
-    const renderer = rendererRef.current;
-    const tscene = sceneRef.current;
-    if (!renderer || !tscene) return;
-
-    const raycaster = new THREE.Raycaster();
-    const tempMatrix = new THREE.Matrix4();
-
-    const onSelectStart = (event: any) => {
-      const controller = event.target;
-      tempMatrix.identity().extractRotation(controller.matrixWorld);
-      raycaster.ray.origin.setFromMatrixPosition(controller.matrixWorld);
-      raycaster.ray.direction.set(0, 0, -1).applyMatrix4(tempMatrix);
-
-      const group = xrHotspotsGroupRef.current;
-      if (group) {
-        const intersects = raycaster.intersectObjects(group.children);
-        if (intersects.length > 0) {
-          const clickedSprite = intersects[0].object;
-          const hotspot = clickedSprite.userData?.hotspot;
-          if (hotspot && hotspot.target) {
-            handleHotspotClick(hotspot.target, hotspot);
-          }
-        }
-      }
-    };
-
-    // 활성화된 모든 컨트롤러 객체들에 리스너 등록
-    const controllers: THREE.XRTargetRaySpace[] = [];
-    
-    // Three.js 가상 디바이스 매핑 범위(최대 4개) 전체 커버
-    for (let i = 0; i < 4; i++) {
-      const controller = renderer.xr.getController(i);
-      controller.addEventListener("selectstart", onSelectStart);
-      tscene.add(controller);
-      controllers.push(controller);
-    }
-
-    return () => {
-      controllers.forEach((controller) => {
-        controller.removeEventListener("selectstart", onSelectStart);
-        tscene.remove(controller);
-      });
-    };
-  }, [lang]);
+  }, [scene.id, lang, showHotspots, activeTab, editor.addedHotspots, editor.overrides, filterHotspots]);
 
   // WebGL 3D Evacuation Arrows dynamic updates
   useEffect(() => {
@@ -569,7 +211,7 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
     return () => window.removeEventListener("keydown", editor.handleEditorKeyDown);
   }, [editor.handleEditorKeyDown]);
 
-  const handleHotspotClick = (targetId: string, h: Hotspot) => {
+  const handleHotspotClick = useCallback((targetId: string, h: Hotspot) => {
     const text = lang === "KOR" ? h.label : h.labelEn || h.label;
     if (isHotspotEditMode && editor.interactionMode === "click") {
       const targetScene = getScene(targetId);
@@ -585,7 +227,21 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
     } else {
       onNavigate(targetId);
     }
-  };
+  }, [editor.interactionMode, isHotspotEditMode, lang, onNavigate, scene.id]);
+
+  const webxr = useWebXrHotspotController({
+    rendererRef,
+    sceneRef,
+    cameraRef,
+    meshRef,
+    xrHotspotsGroupRef,
+    sceneDataRef,
+    onNavigateHotspot: handleHotspotClick,
+    vrMode,
+    setVrMode,
+    onXrActiveChange,
+    onVrHardwareUnavailable,
+  });
 
   /* ---------------- Note 5: WebGL Three.js Renderer & Sphere Geometry 초기 설정 ---------------- */
   useEffect(() => {
@@ -641,7 +297,7 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
       originalSetSize(w, h, updateStyle);
     };
 
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 4));
     renderer.setSize(width, height, false);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.setClearColor(0x0d151d, 1);
@@ -816,7 +472,7 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
     const forward = new THREE.Vector3();
     let raf = 0;
 
-    const animate = () => {
+    const animate = (_time?: number, frame?: XRFrame) => {
       const isPresenting = renderer.xr.isPresenting;
 
       // WebXR 세션 작동 중에는 카메라의 투영 행렬 및 잘림 한계를 안전값으로 강제하고
@@ -826,14 +482,6 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
         cameraRef.current.near = 0.01;
         cameraRef.current.far = 2000;
         cameraRef.current.updateProjectionMatrix();
-
-        // 렉시컬 스코프 소실 예방을 위해 매 프레임 테스트용 헬퍼 visible 강제 보정 주입
-        const cube = tscene.getObjectByName("testCube");
-        const grid = tscene.getObjectByName("testGrid");
-        const axes = tscene.getObjectByName("testAxes");
-        if (cube) cube.visible = true;
-        if (grid) grid.visible = true;
-        if (axes) axes.visible = true;
       }
 
       // WebXR 세션 중 60프레임마다 상세 파이프라인 진단 덤프 로그 출력
@@ -868,6 +516,10 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
       // 평상시 2D 화면에서 HTML 마커와 WebGL 3D 마커가 이중 노출되는 것을 차단.
       if (xrHotspotsGroupRef.current) {
         xrHotspotsGroupRef.current.visible = isPresenting;
+      }
+
+      if (isPresenting && frame) {
+        webxr.handleWebXrFrameInput(frame);
       }
 
       // 자동 회전 루프 처리
@@ -919,39 +571,6 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
       }
 
       renderer.render(tscene, camera);
-
-      // WebXR 상태 갱신 유틸 기동 (약 15프레임마다 주기적 수집)
-      if (Math.random() < 0.07) {
-        const session = renderer.xr.getSession();
-        const mesh = meshRef.current;
-        const mat = mesh?.material as THREE.MeshBasicMaterial;
-        const img = mat?.map?.image;
-        const width = img?.width || 0;
-        const height = img?.height || 0;
-        const ratio = height > 0 ? width / height : 0;
-        const el = renderer.domElement;
-
-        updateWebXRStatus({
-          rendererXrEnabled: renderer.xr.enabled,
-          rendererXrIsPresenting: renderer.xr.isPresenting,
-          sessionMode: (session as any)?.mode || "N/A",
-          currentVrMode: vrMode,
-          currentIsPresenting: isPresenting,
-          cameraPosition: camera
-            ? `${camera.position.x.toFixed(2)}, ${camera.position.y.toFixed(2)}, ${camera.position.z.toFixed(2)}`
-            : "N/A",
-          cameraQuaternion: camera
-            ? `${camera.quaternion.x.toFixed(2)}, ${camera.quaternion.y.toFixed(2)}, ${camera.quaternion.z.toFixed(2)}, ${camera.quaternion.w.toFixed(2)}`
-            : "N/A",
-          sphereMeshExists: !!mesh,
-          sphereMaterialSide: mat ? (mat.side === THREE.BackSide ? "BackSide" : String(mat.side)) : "N/A",
-          textureWidthHeight: `${width}x${height}`,
-          imageRatio: ratio,
-          isEquirectangular: Math.abs(ratio - 2) < 0.02,
-          canvasWidthHeight: el ? `${el.clientWidth}x${el.clientHeight}` : "0x0",
-          devicePixelRatio: window.devicePixelRatio,
-        });
-      }
 
       // 핫스팟을 2D 뷰포트 스크린 영역에 2차원 매핑 투사 처리
       const layer = hotspotLayerRef.current;
@@ -1068,23 +687,24 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
     setFade(true);
     onLoadingChange?.(true);
 
-    const loader = globalTextureLoader;
-    loader.load(
-      resolveAssetPath(scene.img),
-      (texture) => {
+    // Note 6: 씬 윈도우를 먼저 예열해 두면 다음 전환에서 texture.map 교체만 수행할 수 있습니다.
+    warmCurrentSceneWindow(scene.id);
+
+    void (async () => {
+      try {
+        const texture = await getTexture(scene.img);
         if (cancelled) {
-          texture.dispose();
           return;
         }
-        texture.colorSpace = THREE.SRGBColorSpace;
-        texture.minFilter = THREE.LinearFilter;
-        texture.generateMipmaps = false;
+
+        texture.anisotropy = rendererRef.current?.capabilities.getMaxAnisotropy() || 1;
+
         const mat = mesh.material as THREE.MeshBasicMaterial;
-        const old = mat.map;
+        const previousTexture = mat.map;
         mat.map = texture;
         mat.color.set(0xffffff);
         mat.needsUpdate = true;
-        old?.dispose();
+        previousTexture?.dispose();
 
         // 씬 회전 기준점 리셋
         lonRef.current = scene.startLon;
@@ -1113,18 +733,18 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
 
         setTimeout(() => {
           if (cancelled) return;
+          releaseColdTextures(scene.id);
           setFade(false);
           onLoadingChange?.(false);
         }, 120);
-      },
-      undefined,
-      () => {
+      } catch (error) {
+        console.error("[PanoramaViewer] panorama texture load failed", error);
         if (!cancelled) {
           setFade(false);
           onLoadingChange?.(false);
         }
       }
-    );
+    })();
 
     return () => {
       cancelled = true;
@@ -1169,59 +789,7 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
       velRef.current = { x: 0, y: 0 };
     },
     enterVR() {
-      const renderer = rendererRef.current;
-      if (!renderer) return;
-
-      console.log("[WebXR] navigator.xr exists:", typeof navigator !== "undefined" && "xr" in navigator);
-
-      if (!renderer.xr.isPresenting && typeof navigator !== "undefined" && "xr" in navigator && navigator.xr) {
-        console.log("[WebXR] requestSession start");
-        (async () => {
-          try {
-            const mount = mountRef.current;
-            if (mount) {
-              mount.style.width = "100vw";
-              mount.style.height = "100vh";
-            }
-            renderer.domElement.style.width = "100vw";
-            renderer.domElement.style.height = "100vh";
-
-            const width = Math.max(mount?.clientWidth || 0, window.innerWidth, 1024);
-            const height = Math.max(mount?.clientHeight || 0, window.innerHeight, 768);
-
-            console.log("[WebXR] Pre-session scale validation:", {
-              mountWidth: mount?.clientWidth,
-              mountHeight: mount?.clientHeight,
-              windowWidth: window.innerWidth,
-              windowHeight: window.innerHeight,
-              allocatedWidth: width,
-              allocatedHeight: height
-            });
-
-            renderer.setSize(width, height, false);
-
-            const session = await navigator.xr!.requestSession("immersive-vr", { requiredFeatures: ["local"] });
-            console.log("[WebXR] requestSession success");
-
-            try {
-              const glCtx = renderer.getContext();
-              // @ts-ignore
-              const xrGlLayer = new XRWebGLLayer(session, glCtx);
-              await session.updateRenderState({ baseLayer: xrGlLayer });
-              console.log("[WebXR] session.updateRenderState SUCCESS!");
-            } catch (layerErr) {
-              console.error("[WebXR] Failed to bind custom XRWebGLLayer:", layerErr);
-            }
-
-            await renderer.xr.setSession(session);
-            console.log("[WebXR] renderer.xr.setSession completed");
-          } catch (err: any) {
-            console.error("[WebXR] requestSession failed:", err);
-            setVrMode?.(() => false);
-            onXrActiveChange?.(false);
-          }
-        })();
-      }
+      webxr.enterVR();
     },
   }));
 
@@ -1238,7 +806,7 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
     hotspots: [...scene.hotspots, ...currentAdded]
   };
 
-  const filteredHotspots = hotspotCtl.filterHotspots(mergedScene.hotspots, showHotspots, activeTab);
+  const filteredHotspots = filterHotspots(mergedScene.hotspots, showHotspots, activeTab);
 
   return (
     <PanoramaView

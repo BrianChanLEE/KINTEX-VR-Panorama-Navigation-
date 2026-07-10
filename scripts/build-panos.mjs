@@ -7,8 +7,11 @@ import path from "node:path";
 
 const BASE = "https://k-mice.visitkorea.or.kr";
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64)";
-const LEVEL = process.env.LEVEL || "l2";
-const OUT_W = Number(process.env.OUT_W || 4096);
+const LEVELS = (process.env.LEVELS || "l4,l3,l2")
+  .split(",")
+  .map((level) => level.trim())
+  .filter(Boolean);
+const OUT_W = Number(process.env.OUT_W || 12288);
 const OUT_H = OUT_W / 2;
 const OUT_DIR = path.resolve("public/panos");
 const FACES = ["f", "b", "l", "r", "u", "d"];
@@ -37,8 +40,8 @@ async function sceneJson(id) {
   return JSON.parse(j.sceneData);
 }
 
-async function getTile(folder, face, v, h, ref) {
-  const url = `${BASE}${folder}/${face}/${LEVEL}/${v}/${LEVEL}_${face}_${v}_${h}.jpg`;
+async function getTile(folder, face, level, v, h, ref) {
+  const url = `${BASE}${folder}/${face}/${level}/${v}/${level}_${face}_${v}_${h}.jpg`;
   const ctrl = new AbortController();
   const to = setTimeout(() => ctrl.abort(), 20000);
   try {
@@ -58,17 +61,17 @@ async function getTile(folder, face, v, h, ref) {
 }
 
 // stitch one cube face from its tile grid -> {data,w,h} raw RGB
-async function buildFace(folder, face, ref) {
+async function buildFace(folder, face, level, ref) {
   // detect grid size
   let cols = 0;
   for (let h = 1; h <= 16; h++) {
-    const t = await getTile(folder, face, 1, h, ref);
+    const t = await getTile(folder, face, level, 1, h, ref);
     if (!t) break;
     cols++;
   }
   let rows = 0;
   for (let v = 1; v <= 16; v++) {
-    const t = await getTile(folder, face, v, 1, ref);
+    const t = await getTile(folder, face, level, v, 1, ref);
     if (!t) break;
     rows++;
   }
@@ -77,7 +80,7 @@ async function buildFace(folder, face, ref) {
   // download all tiles in parallel
   const coords = [];
   for (let v = 1; v <= rows; v++) for (let h = 1; h <= cols; h++) coords.push({ v, h });
-  const bufs = await Promise.all(coords.map((c) => getTile(folder, face, c.v, c.h, ref)));
+  const bufs = await Promise.all(coords.map((c) => getTile(folder, face, level, c.v, c.h, ref)));
 
   const parts = [];
   let faceW = 0;
@@ -164,6 +167,35 @@ function mapHotspots(hotspots) {
     .filter((h) => h.kind !== "nav" || h.target); // drop nav to scenes we don't include
 }
 
+async function writePlaceholderPano(filePath, title) {
+  const background = sharp({
+    create: {
+      width: OUT_W,
+      height: OUT_H,
+      channels: 3,
+      background: { r: 13, g: 21, b: 29 },
+    },
+  });
+
+  const overlay = Buffer.from(`
+    <svg width="${OUT_W}" height="${OUT_H}" viewBox="0 0 ${OUT_W} ${OUT_H}" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="rgba(13,21,29,1)"/>
+      <circle cx="${OUT_W / 2}" cy="${OUT_H / 2 - 120}" r="180" fill="#1f2937" opacity="0.8"/>
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="96" font-family="Arial, sans-serif" font-weight="700">
+        ${title || "Panorama"}
+      </text>
+      <text x="50%" y="50%" dy="130" dominant-baseline="middle" text-anchor="middle" fill="#cbd5e1" font-size="54" font-family="Arial, sans-serif">
+        Source panorama unavailable
+      </text>
+    </svg>
+  `);
+
+  await background
+    .composite([{ input: overlay }])
+    .jpeg({ quality: 92, mozjpeg: true })
+    .toFile(filePath);
+}
+
 async function run() {
   const only = process.argv.slice(2).filter((a) => !a.startsWith("-"));
   await mkdir(OUT_DIR, { recursive: true });
@@ -181,6 +213,22 @@ async function run() {
     if (i >= 0) meta[i] = row;
     else meta.push(row);
   };
+
+  const detectLevel = async (folder, ref) => {
+    for (const level of LEVELS) {
+      let hasAllFaces = true;
+      for (const face of FACES) {
+        const tile = await getTile(folder, face, level, 1, 1, ref);
+        if (!tile) {
+          hasAllFaces = false;
+          break;
+        }
+      }
+      if (hasAllFaces) return level;
+    }
+    return null;
+  };
+
   for (const sc of SCENES) {
     if (only.length && !only.includes(sc.key)) continue;
     const checkPath = path.join(OUT_DIR, `${sc.key}.jpg`);
@@ -194,13 +242,37 @@ async function run() {
       continue;
     }
 
-    if (!existsSync(checkPath)) {
-      const folder = data.mediaInfo.mediaUrl;
-      process.stdout.write(`\n[${sc.key}] ${data.title} (${folder}) `);
+    const folder = String(data.mediaInfo.mediaUrl || "").trim();
+    const selectedLevel = await detectLevel(folder, ref);
+    if (!selectedLevel) {
+      console.warn(`[${sc.key}] No complete tile level found. Writing placeholder panorama.`);
+      await writePlaceholderPano(checkPath, data.title);
+      upsert({
+        key: sc.key,
+        zone: sc.zone,
+        title: data.title,
+        desc: data.desc || "",
+        startLon: norm(data.startAngle?.hDeg || 0),
+        startLat: -(data.startAngle?.vDeg || 0),
+        generalInfo: data.generalInfo || "",
+        hotspots: mapHotspots(data.hotspots),
+      });
+      await writeFile(metaPath, JSON.stringify(meta, null, 2));
+      continue;
+    }
+    const shouldRebuild = async () => {
+      if (!existsSync(checkPath)) return true;
+      const meta = await sharp(checkPath).metadata();
+      return meta.width !== OUT_W || meta.height !== OUT_H;
+    };
+
+    const rebuild = await shouldRebuild();
+    if (rebuild) {
+      process.stdout.write(`\n[${sc.key}] ${data.title} (${folder}) level=${selectedLevel} `);
       try {
         const faces = {};
         for (const face of FACES) {
-          faces[face] = await buildFace(folder, face, ref);
+          faces[face] = await buildFace(folder, face, selectedLevel, ref);
           process.stdout.write(`${face}${faces[face].w} `);
         }
         const eq = toEquirect(faces);
@@ -212,7 +284,7 @@ async function run() {
         console.error(`Stitching failed for ${sc.key}:`, err);
       }
     } else {
-      console.log(`[${sc.key}] Image already exists. Updating metadata only.`);
+      console.log(`[${sc.key}] Image already matches ${OUT_W}x${OUT_H}. Updating metadata only. level=${selectedLevel}`);
     }
 
     upsert({

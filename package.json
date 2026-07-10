@@ -8,6 +8,7 @@
     "dev_1": "VITE_HOTSPOT_EDIT_MODE=true VITE_DEBUG_OVERLAY=true vite --host 0.0.0.0",
     "build": "tsc -b && vite build --outDir dist",
     "build-panos-211": "node scripts/build-panos.mjs scene_2478 scene_2479 scene_2480 scene_2482",
+    "audit:assets": "node scripts/audit-assets.mjs",
     "lint": "bunx tsc --noEmit && bunx biome lint --write",
     "format": "bunx biome format --write",
     "preview": "vite preview"

@@ -3,15 +3,7 @@ import type { Scene, Hotspot } from "../models/scene.model";
 import type { InteractionMode, ToastModel } from "../models/editor.model";
 import { IconArrowDown, IconPin } from "../components/icons";
 import { SCENES } from "../data/scenes";
-import { resolveAssetPath } from "../utils/assetPath";
-
-// Note 1: KINTEX 커스텀 배지를 프리미엄 카드 형태로 출력할 때 사용하는 다국어 라벨 매퍼 함수입니다.
-const getKintexLabel = (text: string) => {
-  return text
-    .replace("SIC2027 ", "")
-    .replace("KINTEX1", "제1전시장")
-    .replace("KINTEX2", "제2전시장");
-};
+import { getHotspotBadgeConfig, getHotspotBadgeDataUrl } from "../utils/hotspotBadge";
 
 interface PanoramaViewProps {
   scene: Scene;
@@ -538,52 +530,38 @@ function HotspotElement({ h, onNavigate, onInfo, lang, disableClick }: HotspotEl
   const text = lang === "KOR" ? h.label : h.labelEn || h.label;
 
   if (h.type && ["toilet", "convenience", "cafe", "elevator", "nursing", "locker", "smoking"].includes(h.type)) {
-    const emojiMap = {
-      toilet: "🚻",
-      convenience: "🏪",
-      cafe: "☕",
-      elevator: "🛗",
-      nursing: "🍼",
-      locker: "🛅",
-      smoking: "🚬",
-    };
-    const colorMap = {
-      toilet: "from-blue-600/95 to-indigo-700/95 hover:shadow-indigo-500/40",
-      convenience: "from-emerald-600/95 to-teal-700/95 hover:shadow-teal-500/40",
-      cafe: "from-amber-600/95 to-orange-700/95 hover:shadow-orange-500/40",
-      elevator: "from-cyan-600/95 to-blue-700/95 hover:shadow-cyan-500/40",
-      nursing: "from-pink-600/95 to-rose-700/95 hover:shadow-rose-500/40",
-      locker: "from-purple-600/95 to-fuchsia-700/95 hover:shadow-fuchsia-500/40",
-      smoking: "from-zinc-600/95 to-slate-700/95 hover:shadow-slate-500/40",
-    };
-    const emoji = emojiMap[h.type as keyof typeof emojiMap] || "📍";
-    const bgGradient = colorMap[h.type as keyof typeof colorMap] || "from-zinc-700/95 to-zinc-800/95";
+    const badgeConfig = getHotspotBadgeConfig(h, lang);
+    const badgeSrc = getHotspotBadgeDataUrl(badgeConfig);
 
     return (
       <button
         type="button"
         disabled={disableClick}
         onClick={() => !disableClick && h.target && onNavigate(h.target)}
-        className={`flex items-center gap-2 rounded-full bg-gradient-to-r ${bgGradient} border border-white/20 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 shadow-xl select-none`}
+        aria-label={text}
+        title={text}
+        className="flex flex-col items-center gap-1 border-0 bg-transparent p-0 text-white transition-transform duration-300 hover:scale-105 select-none"
       >
-        <span className="text-sm">{emoji}</span>
-        <span className="whitespace-nowrap">{text}</span>
-        {h.sub && <span className="opacity-60 font-normal">| {h.sub}</span>}
+        <img
+          src={badgeSrc}
+          alt={text}
+          width={badgeConfig.width}
+          height={badgeConfig.height}
+          style={{
+            width: badgeConfig.width,
+            height: badgeConfig.height,
+            objectFit: "contain",
+            imageRendering: "auto",
+            filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))",
+          }}
+        />
       </button>
     );
   }
 
   if (h.kind === "nav") {
-    const imgUrl = resolveAssetPath(h.url || "/mice/upload/mice_vr/marker/marker01.png");
-
-    const isKintexPin =
-      imgUrl.includes("KINTEX_Exhibition") ||
-      imgUrl.includes("SIC2027 KINTEX_Exhibition") ||
-      h.label?.includes("KINTEX");
-    const width = isKintexPin ? 75 : 72;
-    const height = isKintexPin ? 90 : 72;
-
-    const [imgErr, setImgErr] = useState(false);
+    const badgeConfig = getHotspotBadgeConfig(h, lang);
+    const badgeSrc = getHotspotBadgeDataUrl(badgeConfig);
 
     const isExit = h.url?.includes("marker-exit") || h.label?.includes("비상구") || h.labelEn?.includes("Exit");
 
@@ -595,11 +573,13 @@ function HotspotElement({ h, onNavigate, onInfo, lang, disableClick }: HotspotEl
         <button
           type="button"
           onClick={() => !disableClick && h.target && onNavigate(h.target)}
+          aria-label={text}
+          title={text}
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: 4,
+            gap: 6,
             background: "none",
             border: "none",
             cursor: "pointer",
@@ -607,97 +587,20 @@ function HotspotElement({ h, onNavigate, onInfo, lang, disableClick }: HotspotEl
             zIndex: 10
           }}
         >
-          {isKintexPin ? (
-            /* Custom Premium White Card style for KINTEX pins */
-            <div
-              className="animate-floaty"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "space-between",
-                background: "#ffffff",
-                color: "#1f1f1f",
-                borderRadius: "20px",
-                padding: "10px 14px",
-                boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
-                border: "1px solid #e5e5e5",
-                position: "relative",
-                minWidth: "120px",
-                zIndex: 999,
-              }}
-            >
-              <span
-                style={{
-                  fontSize: "9px",
-                  fontWeight: 700,
-                  backgroundColor: "#c40012",
-                  color: "#ffffff",
-                  padding: "2px 6px",
-                  borderRadius: "10px",
-                  marginBottom: "4px",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.05em",
-                }}
-              >
-                KINTEX
-              </span>
-              <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-                <svg style={{ width: "12px", height: "14px" }} viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M8.5 0C3.81 0 0 3.81 0 8.5C0 14.875 8.5 20 8.5 20S17 14.875 17 8.5C17 3.81 13.19 0 8.5 0ZM8.5 11.5C6.84 11.5 5.5 10.16 5.5 8.5S6.84 5.5 8.5 5.5S11.5 6.84 11.5 8.5S10.16 11.5 8.5 11.5Z"
-                    fill="#c40012"
-                  />
-                </svg>
-                <span style={{ fontSize: "12px", fontWeight: 700, color: "#1f1f1f", whiteSpace: "nowrap" }}>
-                  {getKintexLabel(text)}
-                </span>
-              </div>
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "-8px",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  width: 0,
-                  height: 0,
-                  borderLeft: "8px solid transparent",
-                  borderRight: "8px solid transparent",
-                  borderTop: "8px solid #ffffff",
-                }}
-              />
-            </div>
-          ) : (
-            <img
-              src={imgUrl}
-              alt={text}
-              style={{
-                width,
-                height,
-                objectFit: "contain",
-                filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))",
-                transition: "transform 0.2s",
-              }}
-              onError={() => {
-                setImgErr(true);
-              }}
-            />
-          )}
-          {!isKintexPin && (
-            <span
-              style={{
-                whiteSpace: "nowrap",
-                borderRadius: 12,
-                background: "#0a1429",
-                padding: "4px 10px",
-                fontSize: 13,
-                color: "#fff",
-                boxShadow: "0 2px 6px rgba(0,0,0,0.3)",
-              }}
-            >
-              {text}
-            </span>
-          )}
+          <img
+            src={badgeSrc}
+            alt={text}
+            width={badgeConfig.width}
+            height={badgeConfig.height}
+            style={{
+              width: badgeConfig.width,
+              height: badgeConfig.height,
+              objectFit: "contain",
+              imageRendering: "auto",
+              filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))",
+              transition: "transform 0.2s",
+            }}
+          />
         </button>
       </div>
     );
@@ -722,18 +625,21 @@ function HotspotElement({ h, onNavigate, onInfo, lang, disableClick }: HotspotEl
 
   if (h.kind === "poi") {
     const isClickable = !!h.target;
-    const imgUrl = resolveAssetPath(h.url || "/mice/upload/mice_vr/marker/marker01.png");
+    const badgeConfig = getHotspotBadgeConfig(h, lang);
+    const badgeSrc = getHotspotBadgeDataUrl(badgeConfig);
 
     return (
       <button
         type="button"
         disabled={!isClickable}
         onClick={() => !disableClick && isClickable && h.target && onNavigate(h.target)}
+        aria-label={text}
+        title={text}
         style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: 2,
+          gap: 4,
           background: "none",
           border: "none",
           padding: 0,
@@ -742,11 +648,16 @@ function HotspotElement({ h, onNavigate, onInfo, lang, disableClick }: HotspotEl
         }}
       >
         <img
-          src={imgUrl}
+          src={badgeSrc}
           alt={text}
-          style={{ height: "auto", maxWidth: 120, objectFit: "contain", filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))" }}
-          onError={(e) => {
-            (e.target as HTMLElement).style.display = "none";
+          width={badgeConfig.width}
+          height={badgeConfig.height}
+          style={{
+            width: badgeConfig.width,
+            height: badgeConfig.height,
+            objectFit: "contain",
+            imageRendering: "auto",
+            filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))",
           }}
         />
       </button>

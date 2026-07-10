@@ -26,6 +26,10 @@ export interface WebXRStatus {
   isEquirectangular: boolean;
   canvasWidthHeight: string;
   devicePixelRatio: number;
+  lastInputEvent: string;
+  lastInputSourceKey: string;
+  lastInputTargetRayMode: string;
+  lastInputTimestamp: string;
 }
 
 // 글로벌 공유 큐 & 상태
@@ -52,6 +56,10 @@ export const webXrStatus: WebXRStatus = {
   isEquirectangular: false,
   canvasWidthHeight: "0x0",
   devicePixelRatio: typeof window !== "undefined" ? window.devicePixelRatio : 1,
+  lastInputEvent: "N/A",
+  lastInputSourceKey: "N/A",
+  lastInputTargetRayMode: "N/A",
+  lastInputTimestamp: "N/A",
 };
 
 function notify() {

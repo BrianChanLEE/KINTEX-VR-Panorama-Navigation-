@@ -187,6 +187,10 @@ export default function DebugOverlay() {
             <div>Equirectangular: <span className={status.isEquirectangular ? "text-emerald-400" : "text-rose-500"}>{String(status.isEquirectangular)}</span></div>
             <div>Canvas Size: <span className="text-zinc-400">{status.canvasWidthHeight}</span></div>
             <div>DPR: <span className="text-zinc-400">{status.devicePixelRatio}</span></div>
+            <div>Last Input: <span className="text-sky-300">{status.lastInputEvent}</span></div>
+            <div>Input Mode: <span className="text-sky-300">{status.lastInputTargetRayMode}</span></div>
+            <div>Input Key: <span className="text-sky-300">{status.lastInputSourceKey}</span></div>
+            <div>Input Time: <span className="text-zinc-400">{status.lastInputTimestamp}</span></div>
           </div>
 
           {/* Logs Terminal */}

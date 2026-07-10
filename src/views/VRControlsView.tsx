@@ -26,6 +26,8 @@ export default function VRControlsView({
   onFullscreen,
   onLook,
 }: VRControlsViewProps) {
+  const vrIconUrl = `${import.meta.env.BASE_URL}icons8-vision-pro-50.png`;
+
   const handlers: Record<ControlItem["id"], () => void> = {
     vr: onVR,
     full: onFullscreen,
@@ -42,9 +44,10 @@ export default function VRControlsView({
     <div className="panorama-menu">
       {CONTROLS.map((control) => {
         const isActive = activeMap[control.id];
-        const iconUrl = `https://k-mice.visitkorea.or.kr/convention_kor/images/vr/new/${
-          isActive ? `${control.icon}_on` : control.icon
-        }.png`;
+        const iconUrl =
+          control.id === "vr"
+            ? vrIconUrl
+            : `${import.meta.env.BASE_URL}convention_kor/images/vr/new/${isActive ? `${control.icon}_on` : control.icon}.png`;
 
         return (
           <button
@@ -54,12 +57,7 @@ export default function VRControlsView({
             className={`panorama-btn ${isActive ? "enabled" : ""}`}
             title={control.ko}
           >
-            <span
-              className="btn-icon"
-              style={{
-                backgroundImage: `url(${iconUrl})`,
-              }}
-            />
+            <img className="btn-icon" src={iconUrl} alt="" aria-hidden="true" />
             <span className="btn-text">{control.ko}</span>
           </button>
         );

@@ -1,20 +1,22 @@
-export function resolveAssetPath(path: string) {
-  if (!path) return path;
+export function resolveAssetPath(rawPath: string) {
+  if (!rawPath) return rawPath;
+
   if (
-    path.startsWith("http://") ||
-    path.startsWith("https://") ||
-    path.startsWith("data:") ||
-    path.startsWith("blob:")
+    rawPath.startsWith("http://") ||
+    rawPath.startsWith("https://") ||
+    rawPath.startsWith("data:") ||
+    rawPath.startsWith("blob:")
   ) {
-    return path;
+    return encodeURI(rawPath);
   }
 
-  const normalizedPath = path.startsWith("/") ? path.slice(1) : path;
-  if (typeof document !== "undefined" && document.baseURI) {
-    return new URL(normalizedPath, document.baseURI).toString();
+  const normalizedPath = rawPath.startsWith("/") ? rawPath : `/${rawPath}`;
+
+  if (typeof window !== "undefined" && window.location?.origin) {
+    return encodeURI(new URL(normalizedPath, window.location.origin).toString());
   }
 
   const baseUrl = import.meta.env.BASE_URL || "/";
   const normalizedBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
-  return `${normalizedBase}${normalizedPath}`;
+  return encodeURI(`${normalizedBase}${normalizedPath.replace(/^\//, "")}`);
 }

@@ -71,7 +71,7 @@
       },
       {
         "id": "6",
-        "name": "Daehwa Station",
+        "name": "대화역",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa Station.png",
         "lon": 262.336226646767,
         "lat": -2.3467064164784266,
@@ -80,7 +80,7 @@
       },
       {
         "id": "7",
-        "name": "Ilsan_Bridge",
+        "name": "일산대교",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Ilsan_Bridge.png",
         "lon": 80.93264963700926,
         "lat": 5.144289980825421,
@@ -109,8 +109,8 @@
       },
       {
         "id": "10",
-        "name": "SIC2027 KINTEX1",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition_1_kor.png",
+        "name": "킨텍스 제1전시장",
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_1_kor.png",
         "lon": 348.7735326983325,
         "lat": -6.294807373906632,
         "kind": "nav",
@@ -119,8 +119,8 @@
       },
       {
         "id": "11",
-        "name": "SIC2027 KINTEX2",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition_2_kor.png",
+        "name": "킨텍스 제2전시장",
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_2_kor.png",
         "lon": 39.809520663389094,
         "lat": -0.3257520941798772,
         "kind": "nav",
@@ -139,7 +139,7 @@
       {
         "id": "13",
         "name": "GTX-A 킨텍스역(예정)",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_SIC2027 KINTEX_Station_kor.png",
+        "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_KINTEX_Station_kor.png",
         "lon": 359.3983948380708,
         "lat": 6.487153184351224,
         "kind": "poi",
@@ -157,7 +157,7 @@
       {
         "id": "15",
         "name": "킨텍스 캠핑장",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_camping_ground_kor.png",
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_camping_ground_kor.png",
         "lon": 57.935493103946044,
         "lat": 0.6014135690650673,
         "kind": "poi",
@@ -166,7 +166,7 @@
       {
         "id": "16",
         "name": "킨텍스 제3전시장 (예정)",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition3_kor.png",
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition3_kor.png",
         "lon": 67.16297637517494,
         "lat": -4.035308131136956,
         "kind": "poi",
@@ -208,7 +208,7 @@
       },
       {
         "id": "3",
-        "name": "Daehwa-dong_Leports_Park",
+        "name": "대화동 레포츠공원",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa-dong_Leports_Park.png",
         "lon": 291.3471825560178,
         "lat": 0.36275269463793436,
@@ -217,7 +217,7 @@
       },
       {
         "id": "4",
-        "name": "Goyang_Stadium",
+        "name": "고양 스타디움",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Goyang Stadium.png",
         "lon": 306.3555370601591,
         "lat": 3.74879654855999,
@@ -226,7 +226,7 @@
       },
       {
         "id": "5",
-        "name": "Daehwa Station",
+        "name": "대화역",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa Station.png",
         "lon": 323.86042746496685,
         "lat": 5.318841026789257,
@@ -235,7 +235,7 @@
       },
       {
         "id": "6",
-        "name": "Ilsan_Bridge",
+        "name": "일산대교",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Ilsan_Bridge.png",
         "lon": 157.5556754622737,
         "lat": 4.43859886080328,
@@ -254,8 +254,8 @@
       },
       {
         "id": "8",
-        "name": "SIC2027 KINTEX2",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition_2_kor.png",
+        "name": "KINTEX2",
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_2_kor.png",
         "lon": 8.873541811789892,
         "lat": -4.408361139070667,
         "kind": "nav",
@@ -264,8 +264,8 @@
       },
       {
         "id": "9",
-        "name": "SIC2027 KINTEX1",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition_1_kor.png",
+        "name": "KINTEX1",
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_1_kor.png",
         "lon": 341.02682473984214,
         "lat": 0.625247836815042,
         "kind": "nav",
@@ -284,7 +284,7 @@
       {
         "id": "11",
         "name": "GTX-A 킨텍스역(예정)",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_SIC2027 KINTEX_Station_kor.png",
+        "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_KINTEX_Station_kor.png",
         "lon": 10.39316370279846,
         "lat": 10.805060284523973,
         "kind": "poi",
@@ -302,7 +302,7 @@
       {
         "id": "13",
         "name": "킨텍스 제3전시장 (예정)",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition3_kor.png",
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition3_kor.png",
         "lon": 312.5465788954103,
         "lat": -17.96500640827967,
         "kind": "poi",
@@ -311,7 +311,7 @@
       {
         "id": "14",
         "name": "킨텍스 캠핑장",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_camping_ground_kor.png",
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_camping_ground_kor.png",
         "lon": 54.07523442076314,
         "lat": -33.24807355109919,
         "kind": "poi",
@@ -353,7 +353,7 @@
       },
       {
         "id": "3",
-        "name": "Daehwa-dong_Leports_Park",
+        "name": "대화동 레포츠공원",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa-dong_Leports_Park.png",
         "lon": 332.93123193581897,
         "lat": 2.1451902478058575,
@@ -362,7 +362,7 @@
       },
       {
         "id": "4",
-        "name": "Goyang_Stadium",
+        "name": "고양 스타디움",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Goyang Stadium.png",
         "lon": 2.8614887635854416,
         "lat": 3.706246189796418,
@@ -371,7 +371,7 @@
       },
       {
         "id": "5",
-        "name": "Daehwa Station",
+        "name": "대화역",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa Station.png",
         "lon": 21.70619104777802,
         "lat": 4.368951273394298,
@@ -380,7 +380,7 @@
       },
       {
         "id": "6",
-        "name": "Ilsan_Bridge",
+        "name": "일산대교",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Ilsan_Bridge.png",
         "lon": 281.33151153077273,
         "lat": 5.509702452602572,
@@ -409,8 +409,8 @@
       },
       {
         "id": "9",
-        "name": "SIC2027 KINTEX1",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition_1_kor.png",
+        "name": "KINTEX1",
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_1_kor.png",
         "lon": 7.191194212718528,
         "lat": -6.163631042388383,
         "kind": "nav",
@@ -419,8 +419,8 @@
       },
       {
         "id": "10",
-        "name": "SIC2027 KINTEX2",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_SIC2027 KINTEX_Station_kor.png",
+        "name": "KINTEX2",
+        "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_KINTEX_Station_kor.png",
         "lon": 129.2028928587515,
         "lat": -43.41111467067095,
         "kind": "nav",
@@ -439,7 +439,7 @@
       {
         "id": "12",
         "name": "GTX-A 킨텍스역(예정)",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_SIC2027 KINTEX_Station_kor.png",
+        "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_KINTEX_Station_kor.png",
         "lon": 129.20289529277932,
         "lat": -43.41111398272768,
         "kind": "poi",
@@ -457,7 +457,7 @@
       {
         "id": "14",
         "name": "킨텍스 제3전시장 (예정)",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition3_kor.png",
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition3_kor.png",
         "lon": 309.8209936984609,
         "lat": -0.419948215994947,
         "kind": "poi",
@@ -465,8 +465,8 @@
       },
       {
         "id": "15",
-        "name": "SIC2027 KINTEX2",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX_Exhibition_2_kor.png",
+        "name": "KINTEX2",
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_2_kor.png",
         "lon": 284.690981372051,
         "lat": -2.8335021649828107,
         "kind": "poi",

@@ -52,6 +52,7 @@ export default function App() {
   const [hint, setHint] = useState(false);
   const [vrMode, setVrMode] = useState(false);
   const [isPresenting, setIsPresenting] = useState(false);
+  const [vrHardwarePromptVisible, setVrHardwarePromptVisible] = useState(false);
 
   // 통합 검색 하이라이트 핫스팟 ID 상태
   const [highlightedHotspotId, setHighlightedHotspotId] = useState<string | null>(null);
@@ -90,6 +91,12 @@ export default function App() {
       console.warn("localStorage write failed:", error);
     }
   }, []);
+
+  useEffect(() => {
+    if (isPresenting) {
+      setVrHardwarePromptVisible(false);
+    }
+  }, [isPresenting]);
 
   // 통합 검색 선택 결과 이동 핸들러
   const handleSelectSearchResult = useCallback((sceneId: string, hotspot?: any) => {
@@ -188,6 +195,9 @@ export default function App() {
       setTourStep={setTourStep}
       tourSubtitle={tourSubtitle}
       onSelectSearchResult={handleSelectSearchResult}
+      vrHardwarePromptVisible={vrHardwarePromptVisible}
+      dismissVrHardwarePrompt={() => setVrHardwarePromptVisible(false)}
+      onVrHardwareUnavailable={() => setVrHardwarePromptVisible(true)}
     />
     {import.meta.env.VITE_DEBUG_OVERLAY === "true" && <DebugOverlay />}
     </>

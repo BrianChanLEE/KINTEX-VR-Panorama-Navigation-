@@ -11,6 +11,7 @@ import SearchPanel from "../components/SearchPanel";
 import TopNav from "../components/TopNav";
 import TutorialOverlay from "../components/TutorialOverlay";
 import VRControls from "../components/VRControls";
+import VRHardwarePromptView from "./VRHardwarePromptView";
 
 interface AppViewProps {
   sceneId: string;
@@ -49,6 +50,9 @@ interface AppViewProps {
   setTourStep: (step: number) => void;
   tourSubtitle: string;
   onSelectSearchResult: (sceneId: string, hotspot?: any) => void;
+  vrHardwarePromptVisible: boolean;
+  dismissVrHardwarePrompt: () => void;
+  onVrHardwareUnavailable: () => void;
 }
 
 // Note 1: AppView는 전체 레이아웃 구조 디자인 및 자식 컴포넌트 조합만을 담당하는 최상위 뷰 컴포넌트입니다.
@@ -85,6 +89,9 @@ export default function AppView({
   setTourStep,
   tourSubtitle,
   onSelectSearchResult,
+  vrHardwarePromptVisible,
+  dismissVrHardwarePrompt,
+  onVrHardwareUnavailable,
 }: AppViewProps) {
   return (
     <div className="relative h-full w-full overflow-hidden bg-black">
@@ -103,6 +110,7 @@ export default function AppView({
         vrMode={vrMode}
         setVrMode={setVrMode}
         onXrActiveChange={setIsPresenting}
+        onVrHardwareUnavailable={onVrHardwareUnavailable}
       />
 
       {/* VR Mode일 때는 2D HTML UI 패널들을 완전히 가려 브라우저 연산 최소화 및 몰입감 보장 */}
@@ -235,6 +243,11 @@ export default function AppView({
 
       {/* VR goggle frame */}
       {vrMode && !isPresenting && <VRFrame onExit={exitVR} />}
+
+      {/* XR 하드웨어 안내 */}
+      {vrHardwarePromptVisible && (
+        <VRHardwarePromptView onDismiss={dismissVrHardwarePrompt} />
+      )}
 
       {/* tutorial */}
       {tutorial && (
