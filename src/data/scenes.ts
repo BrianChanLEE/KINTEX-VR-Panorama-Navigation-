@@ -114,7 +114,7 @@ export const SCENES: Scene[] = [
         "id": "aerial01-h5",
         "lon": 114.23,
         "lat": -6.14,
-        "label": "Daehwa-dong_Leports_Park",
+        "label": "대화 레포츠공원",
         "labelEn": "Daehwa-dong_Leports_Park",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa-dong_Leports_Park.png"
@@ -123,7 +123,7 @@ export const SCENES: Scene[] = [
         "id": "aerial01-h6",
         "lon": 221.19,
         "lat": -3.17,
-        "label": "Goyang_Stadium",
+        "label": "고양스타디움",
         "labelEn": "Goyang_Stadium",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Goyang Stadium.png"
