@@ -56,23 +56,20 @@ body {
   align-items: center;
   width: 200px;
   height: 52px;
-  padding: 10px 15px;
+  padding: 0;
   background-color: #fff;
   border-radius: 0 20px 20px 20px;
   box-shadow: var(--origin-shadow);
   z-index: 30;
+  overflow: hidden;
 }
 
-.panorama-logo img {
+.panorama-logo__image {
+  width: 100%;
   height: 100%;
-  object-fit: contain;
-}
-
-.panorama-logo .logo-text {
-  font-size: 22px;
-  font-weight: bold;
-  color: #000;
-  letter-spacing: 0.06em;
+  object-fit: cover;
+  object-position: center 38%;
+  display: block;
 }
 
 /* Panorama map / location bar (below logo) */

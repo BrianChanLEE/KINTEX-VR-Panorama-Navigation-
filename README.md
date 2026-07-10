@@ -15,6 +15,12 @@
 
 **K-MICE KINTEX VR** 투어의 파노라마 웹뷰어를 현대적인 웹 기술 스택(React, TypeScript, Three.js, Vite)으로 1:1 정밀 복원하고, 기존의 플래시 또는 krpano 솔루션을 대체하여 WebGL 기반의 유연하고 빠른 3D 구면 좌표 투영 뷰어를 제공하며, 핫스팟의 상대적 각도(ath/atv) 좌표 오차를 최소화하고 E2E 자동화 테스트를 통해 검증 체계를 확보했습니다.
 
+### 현행 반영 메모
+- 정적 자산 경로는 `BASE_URL` 기준으로 통일되어 있으며, 파노라마/마커/아이콘은 로컬 `public/` 자산을 우선 사용합니다.
+- 파노라마 텍스처는 브라우저 캐시와 GPU 업로드를 분리해 관리합니다.
+- VR 모드는 XR 하드웨어가 없으면 중앙 안내 패널을 표시합니다.
+- 전시투어 / 대피훈련 관련 자동 흐름은 현재 비활성화 상태입니다.
+
 ---
 
 ## 프로젝트 목적
@@ -32,6 +38,9 @@
 - **Floor Navigation / Selector**: 층별/구역별 씬 목록 조회 및 필터 기반 필터링 이동 제어.
 - **White Card UI System**: 원본 디자인 언어를 준수하는 화이트 라운드 카드 기반 테마 디자인(White + Black + Red pin).
 - **Hotspot Editor**: 브라우저 상에서 핫스팟을 마우스 드래그하여 각도를 맞추고 JSON 오버라이드 코드를 생성하는 전용 모드 탑재.
+- **Asset Pipeline Cache**: 파노라마 원본은 `TextureCache`로 관리하고, 자주 보는 씬만 GPU에 유지합니다.
+- **VR Hardware Prompt**: Vision Pro/WebXR 하드웨어가 없을 때 중앙 안내 오버레이를 표시합니다.
+- **Local Share Metadata**: 파비콘, 애플 터치 아이콘, 공유 미리보기 이미지를 로컬 정적 자산으로 제공합니다.
 
 ---
 
@@ -82,12 +91,13 @@ kmice-vr/
 │   │   ├── scene.service.ts       # 씬 리스트 필터링 및 노출 조건 제어 서비스
 │   │   ├── hotspot.service.ts     # 안전장치 연계 핫스팟 노출 조건 계산 서비스
 │   │   ├── override.service.ts    # 에디터 로컬 파일 저장/초기화 REST 서비스
+│   │   ├── panoramaTextureCache.service.ts # 파노라마 텍스처 브라우저/GPU 캐시 관리
 │   │   └── translation.service.ts # 다국어 번역 데이터 및 레이블 사전 서비스
 │   ├── controllers/               # 이벤트 연동, 브라우저 API 및 상태 제어 핸들러 (C)
 │   │   ├── navigation.controller.ts # 씬 이동 및 층/구역 스위칭 조정기
 │   │   ├── info.controller.ts     # 시설정보 사이드바 개폐 및 활성 탭 제어기
 │   │   ├── editor.controller.ts   # 핫스팟 드래그 캡처 및 REST API 트랜잭션 처리기
-│   │   ├── scene.controller.ts    # 자동 투어 타이머 루프 및 전체화면 상태 제어기
+│   │   ├── scene.controller.ts    # 씬 전환 및 전체화면 상태 제어기
 │   │   └── hotspot.controller.ts  # 가시성 규칙 필터링 전담 제어기
 │   ├── views/                     # 비즈니스 로직과 분리된 순수 JSX 마크업 및 스타일 (V)
 │   │   ├── AppView.tsx            # 최상위 뷰 및 VR 프레임 렌더러
@@ -96,6 +106,7 @@ kmice-vr/
 │   │   ├── MiniMapView.tsx        # 미니맵 방위계 그래픽 렌더러
 │   │   ├── SceneDropdownView.tsx  # 씬 드롭다운 메뉴 레이아웃
 │   │   ├── VRControlsView.tsx     # 우하단 VR/전체화면 버튼 컨테이너
+│   │   ├── VRHardwarePromptView.tsx # XR 하드웨어 미탑재 시 안내 오버레이
 │   │   └── PanoramaView.tsx       # Three.js 캔버스 영역 및 핫스팟 레이어 투영 뷰
 │   ├── components/                # 뷰 컴포넌트 중개용 Delegate (Controller Wrapper)
 │   │   ├── FloorSelector.tsx
@@ -110,6 +121,7 @@ kmice-vr/
 │   │   └── VRControls.tsx
 │   ├── utils/                     # 극좌표 변환, 타입 가드, 에디터 로거 등 공통 유틸
 │   │   ├── panoramaProjection.ts  # NDC 투영 및 삼각함수 구면각(Latitude/Longitude) 변환
+│   │   ├── assetPath.ts           # BASE_URL 기준 정적 자산 URL 정규화
 │   │   ├── logger.ts              # 핫스팟 좌표 실시간 로그 수집기
 │   │   └── guards.ts              # 안전 폼 인풋 유효성 검사 가드
 │   ├── index.css                  # 글로벌 스타일 및 글래스/화이트 카드 스타일
@@ -160,6 +172,8 @@ bun run dev
 ```
 - 기본 실행 포트: `http://localhost:5173/`
 - 마우스 드래그를 이용해 파노라마 뷰어를 제어하고 하단 탭 및 우측 사이드바로 씬 간 이동이 가능합니다.
+- VR 버튼은 Vision Pro/WebXR 지원 하드웨어가 있을 때만 세션이 시작되며, 미지원 환경에서는 안내 오버레이를 표시합니다.
+- 씬 전환 시에는 공통 로딩 오버레이가 노출되고, 파노라마는 백그라운드 캐시를 통해 교체됩니다.
 
 ---
 
@@ -186,6 +200,7 @@ npm run dev_1
 - **Save**: 수정한 단일 핫스팟 정보를 로컬 환경 overrides JSON 파일에 기록합니다.
 - **Reset**: 보정된 수치를 공장 초기화하여 원본 `scenes.ts` 기본값으로 복구시킵니다.
 - **Export JSON**: 현재 씬 전체 및 프로젝트 내 모든 변경 사항을 클립보드에 JSON 형식으로 직관 복사합니다.
+- **비활성화 항목**: 전시투어 / 대피훈련 관련 자동 재생 흐름은 현재 사용하지 않습니다.
 
 ### 일반 실행과 에디터 모드 차이점
 
@@ -213,6 +228,11 @@ bun run build
 # Panorama Data
 
 파노라마 데이터는 씬 정보 및 연결된 핫스팟의 좌표, 유형을 객체 지향 형태로 정의합니다.
+
+### 자산 경로 규칙
+- 씬 배경 이미지는 `public/panos/*.jpg` 기준으로 제공합니다.
+- 핫스팟/마커/외부 연계 이미지는 로컬 `public/mice/...` 경로를 우선합니다.
+- 경로 불일치는 `src/utils/assetPath.ts`와 `scripts/generate-scenes-data.mjs`를 기준으로 정규화합니다.
 
 ### 데이터 구조 명세 (`scenes.ts` 예시)
 ```json
