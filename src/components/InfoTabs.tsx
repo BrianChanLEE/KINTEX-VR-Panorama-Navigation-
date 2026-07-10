@@ -1,5 +1,6 @@
 // Note 1: facility 데이터 모듈에서 정보 탭 식별용 InfoTab 유니온 타입을 임포트합니다.
 import type { InfoTab } from "../data/facility";
+import { resolveAssetPath } from "../utils/assetPath";
 
 // Note 2: 각 탭 항목을 나타내는 데이터 객체의 인터페이스 정의입니다.
 interface TabItem {
@@ -41,9 +42,9 @@ export default function InfoTabs({
         const isActive = tab.id === activeTab;
         // Note 10: 로컬 public 아이콘 파일명 패턴 규칙에 맞게 아이콘 주소를 동적 계산합니다.
         const iconName = tab.iconClass.replace("information-", "information_");
-        const iconUrl = `/convention_kor/images/vr/new/${
+        const iconUrl = resolveAssetPath(`/convention_kor/images/vr/new/${
           isActive ? `${iconName}_on` : iconName
-        }.png`;
+        }.png`);
 
         return (
           <button
