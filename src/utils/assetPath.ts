@@ -10,13 +10,15 @@ export function resolveAssetPath(rawPath: string) {
     return encodeURI(rawPath);
   }
 
-  const normalizedPath = rawPath.startsWith("/") ? rawPath : `/${rawPath}`;
-
-  if (typeof window !== "undefined" && window.location?.origin) {
-    return encodeURI(new URL(normalizedPath, window.location.origin).toString());
-  }
-
   const baseUrl = import.meta.env.BASE_URL || "/";
   const normalizedBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
-  return encodeURI(`${normalizedBase}${normalizedPath.replace(/^\//, "")}`);
+  const normalizedPath = rawPath.startsWith("/") ? rawPath.slice(1) : rawPath;
+
+  // Note: `/panos/...` 같은 앱 내부 정적 자산은 현재 배포 base 경로를 따라가야
+  // GitHub Pages 하위 경로와 로컬 개발 서버 둘 다에서 동일하게 동작합니다.
+  if (rawPath.startsWith("/mice/") || rawPath.startsWith("/convention_kor/")) {
+    return encodeURI(rawPath);
+  }
+
+  return encodeURI(`${normalizedBase}${normalizedPath}`);
 }

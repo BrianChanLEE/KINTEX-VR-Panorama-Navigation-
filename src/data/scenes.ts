@@ -114,7 +114,7 @@ export const SCENES: Scene[] = [
         "id": "aerial01-h5",
         "lon": 114.23,
         "lat": -6.14,
-        "label": "대화동 레포츠공원",
+        "label": "Daehwa-dong_Leports_Park",
         "labelEn": "Daehwa-dong_Leports_Park",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa-dong_Leports_Park.png"
@@ -123,7 +123,7 @@ export const SCENES: Scene[] = [
         "id": "aerial01-h6",
         "lon": 221.19,
         "lat": -3.17,
-        "label": "고양스타디움",
+        "label": "Goyang_Stadium",
         "labelEn": "Goyang_Stadium",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Goyang Stadium.png"
@@ -133,7 +133,7 @@ export const SCENES: Scene[] = [
         "lon": 262.34,
         "lat": -2.35,
         "label": "대화역",
-        "labelEn": "Daehwa Station",
+        "labelEn": "대화역",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa Station.png"
       },
@@ -142,7 +142,7 @@ export const SCENES: Scene[] = [
         "lon": 80.93,
         "lat": 5.14,
         "label": "일산대교",
-        "labelEn": "Ilsan_Bridge",
+        "labelEn": "일산대교",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Ilsan_Bridge.png"
       },
@@ -170,8 +170,8 @@ export const SCENES: Scene[] = [
         "id": "aerial01-h11",
         "lon": 348.77,
         "lat": -6.29,
-        "label": "SIC2027 KINTEX1",
-        "labelEn": "SIC2027 KINTEX1",
+        "label": "킨텍스 제1전시장",
+        "labelEn": "킨텍스 제1전시장",
         "kind": "nav",
         "target": "lobby5",
         "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_1_kor.png"
@@ -180,8 +180,8 @@ export const SCENES: Scene[] = [
         "id": "aerial01-h12",
         "lon": 39.81,
         "lat": -0.33,
-        "label": "SIC2027 KINTEX2",
-        "labelEn": "SIC2027 KINTEX2",
+        "label": "킨텍스 제2전시장",
+        "labelEn": "킨텍스 제2전시장",
         "kind": "nav",
         "target": "scene_2668",
         "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_2_kor.png"
@@ -267,8 +267,8 @@ export const SCENES: Scene[] = [
         "id": "aerial02-h3",
         "lon": 291.35,
         "lat": 0.36,
-        "label": "Daehwa-dong_Leports_Park",
-        "labelEn": "Daehwa-dong_Leports_Park",
+        "label": "대화동 레포츠공원",
+        "labelEn": "대화동 레포츠공원",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa-dong_Leports_Park.png"
       },
@@ -276,8 +276,8 @@ export const SCENES: Scene[] = [
         "id": "aerial02-h4",
         "lon": 306.36,
         "lat": 3.75,
-        "label": "Goyang_Stadium",
-        "labelEn": "Goyang_Stadium",
+        "label": "고양 스타디움",
+        "labelEn": "고양 스타디움",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Goyang Stadium.png"
       },
@@ -285,8 +285,8 @@ export const SCENES: Scene[] = [
         "id": "aerial02-h5",
         "lon": 323.86,
         "lat": 5.32,
-        "label": "Daehwa Station",
-        "labelEn": "Daehwa Station",
+        "label": "대화역",
+        "labelEn": "대화역",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa Station.png"
       },
@@ -294,8 +294,8 @@ export const SCENES: Scene[] = [
         "id": "aerial02-h6",
         "lon": 157.56,
         "lat": 4.44,
-        "label": "Ilsan_Bridge",
-        "labelEn": "Ilsan_Bridge",
+        "label": "일산대교",
+        "labelEn": "일산대교",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Ilsan_Bridge.png"
       },
@@ -313,8 +313,8 @@ export const SCENES: Scene[] = [
         "id": "aerial02-h8",
         "lon": 8.87,
         "lat": -4.41,
-        "label": "SIC2027 KINTEX2",
-        "labelEn": "SIC2027 KINTEX2",
+        "label": "KINTEX2",
+        "labelEn": "KINTEX2",
         "kind": "nav",
         "target": "scene_2668",
         "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_2_kor.png"
@@ -323,8 +323,8 @@ export const SCENES: Scene[] = [
         "id": "aerial02-h9",
         "lon": 341.03,
         "lat": 0.63,
-        "label": "SIC2027 KINTEX1",
-        "labelEn": "SIC2027 KINTEX1",
+        "label": "KINTEX1",
+        "labelEn": "KINTEX1",
         "kind": "nav",
         "target": "lobby5",
         "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_1_kor.png"
@@ -411,7 +411,7 @@ export const SCENES: Scene[] = [
         "lon": 332.93,
         "lat": 2.15,
         "label": "대화동 레포츠공원",
-        "labelEn": "Daehwa-dong_Leports_Park",
+        "labelEn": "대화동 레포츠공원",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa-dong_Leports_Park.png"
       },
@@ -419,8 +419,8 @@ export const SCENES: Scene[] = [
         "id": "aerial03-h4",
         "lon": 2.86,
         "lat": 3.71,
-        "label": "고양스타디움",
-        "labelEn": "Goyang_Stadium",
+        "label": "고양 스타디움",
+        "labelEn": "고양 스타디움",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Goyang Stadium.png"
       },
@@ -429,7 +429,7 @@ export const SCENES: Scene[] = [
         "lon": 21.71,
         "lat": 4.37,
         "label": "대화역",
-        "labelEn": "Daehwa Station",
+        "labelEn": "대화역",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa Station.png"
       },
@@ -438,7 +438,7 @@ export const SCENES: Scene[] = [
         "lon": 281.33,
         "lat": 5.51,
         "label": "일산대교",
-        "labelEn": "Ilsan_Bridge",
+        "labelEn": "일산대교",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/Ilsan_Bridge.png"
       },
@@ -466,8 +466,8 @@ export const SCENES: Scene[] = [
         "id": "aerial03-h9",
         "lon": 7.19,
         "lat": -6.16,
-        "label": "SIC2027 KINTEX1",
-        "labelEn": "SIC2027 KINTEX1",
+        "label": "KINTEX1",
+        "labelEn": "KINTEX1",
         "kind": "nav",
         "target": "lobby5",
         "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_1_kor.png"
@@ -476,8 +476,8 @@ export const SCENES: Scene[] = [
         "id": "aerial03-h10",
         "lon": 129.2,
         "lat": -43.41,
-        "label": "SIC2027 KINTEX2",
-        "labelEn": "SIC2027 KINTEX2",
+        "label": "KINTEX2",
+        "labelEn": "KINTEX2",
         "kind": "nav",
         "target": "scene_2668",
         "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_KINTEX_Station_kor.png"
@@ -522,8 +522,8 @@ export const SCENES: Scene[] = [
         "id": "aerial03-h15",
         "lon": 284.69,
         "lat": -2.83,
-        "label": "SIC2027 KINTEX2",
-        "labelEn": "SIC2027 KINTEX2",
+        "label": "KINTEX2",
+        "labelEn": "KINTEX2",
         "kind": "poi",
         "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_2_kor.png"
       }

@@ -837,6 +837,7 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
       setInteractionMode={editor.setInteractionMode}
       setToast={editor.setToast}
       highlightedHotspotId={highlightedHotspotId}
+      vrMode={vrMode}
       addModalState={addModalState}
       setAddModalState={setAddModalState}
       handleCreateHotspot={editor.handleCreateHotspot}

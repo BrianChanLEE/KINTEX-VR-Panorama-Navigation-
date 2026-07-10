@@ -1,10 +1,10 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-const META_PATH = "/Users/youngchanlee/Downloads/kmice-vr/public/panos/meta.json";
-const EXTRACTED_PATH = "/Users/youngchanlee/Downloads/kmice-vr/extracted_scenes.json";
-const TARGET_SCENES_PATH = "/Users/youngchanlee/Downloads/kmice-vr/src/data/scenes.ts";
-const TARGET_FACILITY_PATH = "/Users/youngchanlee/Downloads/kmice-vr/src/data/facility.ts";
+const META_PATH = "public/panos/meta.json";
+const EXTRACTED_PATH = "extracted_scenes.json";
+const TARGET_SCENES_PATH = "src/data/scenes.ts";
+const TARGET_FACILITY_PATH = "src/data/facility.ts";
 
 const translateText = (text) => {
   if (!text) return "";

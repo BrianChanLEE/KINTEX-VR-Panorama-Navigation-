@@ -53,6 +53,8 @@ interface AppViewProps {
   vrHardwarePromptVisible: boolean;
   dismissVrHardwarePrompt: () => void;
   onVrHardwareUnavailable: () => void;
+  panoramaLoading: boolean;
+  setPanoramaLoading: (loading: boolean) => void;
 }
 
 // Note 1: AppView는 전체 레이아웃 구조 디자인 및 자식 컴포넌트 조합만을 담당하는 최상위 뷰 컴포넌트입니다.
@@ -92,6 +94,8 @@ export default function AppView({
   vrHardwarePromptVisible,
   dismissVrHardwarePrompt,
   onVrHardwareUnavailable,
+  panoramaLoading,
+  setPanoramaLoading,
 }: AppViewProps) {
   return (
     <div className="relative h-full w-full overflow-hidden bg-black">
@@ -111,7 +115,18 @@ export default function AppView({
         setVrMode={setVrMode}
         onXrActiveChange={setIsPresenting}
         onVrHardwareUnavailable={onVrHardwareUnavailable}
+        onLoadingChange={setPanoramaLoading}
       />
+
+      {/* VR/2D 공통 파노라마 로딩 오버레이 */}
+      {panoramaLoading && (
+        <div className="pointer-events-none absolute inset-0 z-[90] flex items-center justify-center bg-[#0d151d]/95">
+          <div className="flex flex-col items-center gap-3">
+            <div className="h-9 w-9 animate-spin-slow rounded-full border-2 border-white/15 border-t-kx-bright" />
+            <span className="font-cond text-xs uppercase tracking-[0.35em] text-white/50">Loading panorama</span>
+          </div>
+        </div>
+      )}
 
       {/* VR Mode일 때는 2D HTML UI 패널들을 완전히 가려 브라우저 연산 최소화 및 몰입감 보장 */}
       <div className={vrMode ? "hidden pointer-events-none" : ""}>
@@ -127,60 +142,7 @@ export default function AppView({
         {/* 통합 검색창 */}
         <SearchPanel lang={lang} onSelectResult={onSelectSearchResult} />
 
-        {/* 가이드 투어 제어 바 (상단 우측) */}
-        <div 
-          className="absolute top-[82px] right-[80px] z-30 flex items-center gap-2"
-          style={{ pointerEvents: "auto" }}
-        >
-          {activeTour ? (
-            <div className="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-black/80 px-3.5 py-1.5 backdrop-blur-md shadow-lg animate-pulse">
-              <span className="flex h-2 w-2 rounded-full bg-emerald-500" />
-              <span className="text-[11px] font-semibold text-white">
-                {activeTour === "safety" ? "대피 가이드 실행 중" : "전시 투어 실행 중"}
-              </span>
-              <button
-                onClick={() => {
-                  setActiveTour(null);
-                  setTourStep(0);
-                }}
-                className="ml-2 rounded-full bg-rose-600 hover:bg-rose-500 px-2 py-0.5 text-[9px] font-bold text-white transition active:scale-95"
-              >
-                종료 (Stop)
-              </button>
-            </div>
-          ) : (
-            <div className="flex gap-2">
-              <button
-                onClick={() => {
-                  setActiveTour("exhibition");
-                  setTourStep(0);
-                }}
-                className="rounded-full border border-zinc-200/80 bg-white/90 hover:bg-white px-3.5 py-1.5 text-[11px] font-bold text-zinc-800 backdrop-blur-md shadow-lg transition active:scale-95"
-              >
-                🎙️ 전시 투어 시작
-              </button>
-              <button
-                onClick={() => {
-                  setActiveTour("safety");
-                  setTourStep(0);
-                }}
-                className="rounded-full border border-red-500/20 bg-red-600/90 hover:bg-red-600 px-3.5 py-1.5 text-[11px] font-bold text-white backdrop-blur-md shadow-lg transition active:scale-95"
-              >
-                🚨 대피 훈련 시작
-              </button>
-            </div>
-          )}
-        </div>
-
-        {/* 가이드 투어 자막 레이어 */}
-        {tourSubtitle && (
-          <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-40 w-[560px] max-w-[90%] bg-zinc-950/90 border border-white/10 rounded-2xl p-4 text-center shadow-2xl backdrop-blur-md animate-floaty">
-            <div className="text-[10px] text-emerald-400 font-bold tracking-wider uppercase mb-1">
-              {activeTour === "safety" ? "🚨 안전 대피 안내방송" : "🎙️ KINTEX 도슨트 가이드"}
-            </div>
-            <p className="text-xs font-semibold text-white leading-relaxed">{tourSubtitle}</p>
-          </div>
-        )}
+        {/* 전시 투어 / 대피 훈련 UI는 비활성화 상태이므로 렌더하지 않습니다. */}
 
         {/* right-center: 구역/층 선택 사이드바 */}
         <div className="absolute right-3.5 top-1/2 -translate-y-1/2 z-30">

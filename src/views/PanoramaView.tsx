@@ -17,6 +17,7 @@ interface PanoramaViewProps {
   isHotspotEditMode: boolean;
   draggingRef: React.MutableRefObject<boolean>;
   highlightedHotspotId?: string | null;
+  vrMode?: boolean;
   
   // Refs
   mountRef: React.RefObject<HTMLDivElement>;
@@ -73,6 +74,7 @@ export default function PanoramaView({
   handleCreateHotspot,
   handleDeleteHotspot,
   highlightedHotspotId,
+  vrMode,
 }: PanoramaViewProps) {
   const [formLabel, setFormLabel] = useState("");
   const [formLabelEn, setFormLabelEn] = useState("");
@@ -340,16 +342,18 @@ export default function PanoramaView({
       )}
 
       {/* Loading veil / crossfade */}
-      <div
-        className={`pointer-events-none absolute inset-0 z-20 flex items-center justify-center bg-[#0d151d] transition-opacity duration-500 ${
-          fade ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <div className="flex flex-col items-center gap-3">
-          <div className="h-9 w-9 animate-spin-slow rounded-full border-2 border-white/15 border-t-kx-bright" />
-          <span className="font-cond text-xs uppercase tracking-[0.35em] text-white/50">Loading panorama</span>
+      {!vrMode && (
+        <div
+          className={`pointer-events-none absolute inset-0 z-20 flex items-center justify-center bg-[#0d151d] transition-opacity duration-500 ${
+            fade ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <div className="flex flex-col items-center gap-3">
+            <div className="h-9 w-9 animate-spin-slow rounded-full border-2 border-white/15 border-t-kx-bright" />
+            <span className="font-cond text-xs uppercase tracking-[0.35em] text-white/50">Loading panorama</span>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Add Hotspot Modal */}
       {addModalState?.visible && (
