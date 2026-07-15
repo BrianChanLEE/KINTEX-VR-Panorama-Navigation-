@@ -4,7 +4,7 @@
     "title": "항공01",
     "status": "FAIL",
     "failures": [
-      "로컬 UI 컴포넌트(TopNav, SIC2027 KINTEXLogo, SceneDropdown, FloorSelector, InfoTabs, VRControls, App, index.css)를 원본과 동일한 흰색 패널 디자인으로 전면 교체하였으나, 아직 육안 픽셀 검증이 완료되지 않음. 사용자의 로컬 캡처 확인 전까지 FAIL로 유지."
+      "로컬 UI 컴포넌트(TopNav, SIC2027 SIC27Logo, SceneDropdown, FloorSelector, InfoTabs, VRControls, App, index.css)를 원본과 동일한 흰색 패널 디자인으로 전면 교체하였으나, 아직 육안 픽셀 검증이 완료되지 않음. 사용자의 로컬 캡처 확인 전까지 FAIL로 유지."
     ]
   },
   {

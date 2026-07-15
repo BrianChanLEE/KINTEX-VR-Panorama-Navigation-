@@ -1,30 +1,27 @@
 import type { Scene } from "../models/scene.model";
-import type { InfoTab } from "../models/info.model";
 import FloorSelector from "../components/FloorSelector";
-import InfoPanel from "../components/InfoPanel";
-import InfoTabs from "../components/InfoTabs";
-import KintexLogo from "../components/KintexLogo";
+import SiC27Logo from "../components/SiC27Logo";
 import MiniMap from "../components/MiniMap";
 import PanoramaViewer, { type ViewerHandle } from "../components/PanoramaViewer";
 import SceneDropdown from "../components/SceneDropdown";
 import SearchPanel from "../components/SearchPanel";
+import ServiceMenu from "../components/ServiceMenu";
 import TopNav from "../components/TopNav";
 import TutorialOverlay from "../components/TutorialOverlay";
 import VRControls from "../components/VRControls";
 import VRHardwarePromptView from "./VRHardwarePromptView";
+import { useServiceMenuController } from "../controllers/serviceMenu.controller";
 
 interface AppViewProps {
   sceneId: string;
   scene: Scene;
   lang: "KOR" | "ENG";
   tutorial: boolean;
-  infoTab: InfoTab | null;
   autoTour: boolean;
   diy: boolean;
   vrMode: boolean;
   fullActive: boolean;
   hint: boolean;
-  showInfoTabs: boolean;
 
   viewerRef: React.RefObject<ViewerHandle>;
   headingRef: React.MutableRefObject<number>;
@@ -33,9 +30,6 @@ interface AppViewProps {
   setLang: (lang: "KOR" | "ENG") => void;
   goScene: (id: string) => void;
   goZone: (zone: any) => void;
-  onInfoHotspot: (h: any) => void;
-  toggleInfoTab: (t: InfoTab) => void;
-  setInfoTab: (t: InfoTab | null) => void;
   setVrMode: (fn: (v: boolean) => boolean) => void;
   isPresenting: boolean;
   setIsPresenting: (v: boolean) => void;
@@ -45,10 +39,6 @@ interface AppViewProps {
   exitVR: () => void;
 
   highlightedHotspotId: string | null;
-  activeTour: "exhibition" | "safety" | null;
-  setActiveTour: (tour: "exhibition" | "safety" | null) => void;
-  setTourStep: (step: number) => void;
-  tourSubtitle: string;
   onSelectSearchResult: (sceneId: string, hotspot?: any) => void;
   vrHardwarePromptVisible: boolean;
   dismissVrHardwarePrompt: () => void;
@@ -63,21 +53,16 @@ export default function AppView({
   scene,
   lang,
   tutorial,
-  infoTab,
   autoTour,
   diy,
   vrMode,
   fullActive,
   hint,
-  showInfoTabs,
   viewerRef,
   headingRef,
   setLang,
   goScene,
   goZone,
-  onInfoHotspot,
-  toggleInfoTab,
-  setInfoTab,
   setVrMode,
   isPresenting,
   setIsPresenting,
@@ -86,10 +71,6 @@ export default function AppView({
   dismissForever,
   exitVR,
   highlightedHotspotId,
-  activeTour,
-  setActiveTour,
-  setTourStep,
-  tourSubtitle,
   onSelectSearchResult,
   vrHardwarePromptVisible,
   dismissVrHardwarePrompt,
@@ -97,6 +78,8 @@ export default function AppView({
   panoramaLoading,
   setPanoramaLoading,
 }: AppViewProps) {
+  const mapTourController = useServiceMenuController(scene);
+
   return (
     <div className="relative h-full w-full overflow-hidden bg-black">
       {/* 360 viewer */}
@@ -107,19 +90,20 @@ export default function AppView({
         showHotspots={!diy}
         headingRef={headingRef}
         onNavigate={goScene}
-        onInfo={onInfoHotspot}
+        onInfo={() => undefined}
         lang={lang}
-        activeTab={infoTab}
+        activeTab={null}
         highlightedHotspotId={highlightedHotspotId}
         vrMode={vrMode}
         setVrMode={setVrMode}
         onXrActiveChange={setIsPresenting}
         onVrHardwareUnavailable={onVrHardwareUnavailable}
         onLoadingChange={setPanoramaLoading}
+        mapTourSelection={mapTourController.selection}
       />
 
       {/* VR/2D 공통 파노라마 로딩 오버레이 */}
-      {panoramaLoading && (
+      {panoramaLoading && !vrMode && (
         <div className="pointer-events-none absolute inset-0 z-[90] flex items-center justify-center bg-[#0d151d]/95">
           <div className="flex flex-col items-center gap-3">
             <div className="h-9 w-9 animate-spin-slow rounded-full border-2 border-white/15 border-t-kx-bright" />
@@ -133,8 +117,8 @@ export default function AppView({
         {/* TopNav — iframe 상단 내비바 */}
         <TopNav lang={lang} onLang={setLang} onHome={() => goScene("aerial01")} />
 
-        {/* top-left: KINTEX 로고 배지 */}
-        <KintexLogo />
+        {/* top-left: SiC27Logo 로고 배지 */}
+        <SiC27Logo />
 
         {/* top-left 아래: 씬 리스트 드롭다운 */}
         <SceneDropdown currentId={sceneId} onSelect={goScene} />
@@ -142,15 +126,25 @@ export default function AppView({
         {/* 통합 검색창 */}
         <SearchPanel lang={lang} onSelectResult={onSelectSearchResult} />
 
-        {/* 전시 투어 / 대피 훈련 UI는 비활성화 상태이므로 렌더하지 않습니다. */}
-
         {/* right-center: 구역/층 선택 사이드바 */}
         <div className="absolute right-3.5 top-1/2 -translate-y-1/2 z-30">
           <FloorSelector currentZone={scene.zone} onSelectZone={goZone} />
         </div>
 
-        {/* bottom-left: 시설 분류 탭 */}
-        <InfoTabs activeTab={infoTab} onSelect={toggleInfoTab} visible={showInfoTabs} />
+        {/* bottom-left: 서비스 메뉴 */}
+        <ServiceMenu
+          scene={scene}
+          serviceTab={mapTourController.serviceTab}
+          menuCollapsed={mapTourController.menuCollapsed}
+          selection={mapTourController.selection}
+          onSelectTab={mapTourController.selectTab}
+          onToggleCollapsed={mapTourController.toggleMenuCollapsed}
+          onSelectExhibition={mapTourController.selectExhibition}
+          onSelectFloor={mapTourController.selectFloor}
+          onSelectDestination={mapTourController.selectDestination}
+          onStartNavigation={mapTourController.startNavigation}
+          onResetNavigation={mapTourController.resetNavigation}
+        />
 
         {/* bottom-right: 나침반 미니맵 */}
         <div className="absolute right-4 bottom-28 z-30">
@@ -178,16 +172,6 @@ export default function AppView({
           }}
           onFullscreen={toggleFullscreen}
           onLook={() => viewerRef.current?.lookAround()}
-        />
-
-        {/* facility detail drawer */}
-        <InfoPanel
-          open={infoTab !== null}
-          sceneId={sceneId}
-          tab={infoTab ?? "general"}
-          onTab={setInfoTab}
-          onClose={() => setInfoTab(null)}
-          lang={lang}
         />
 
         {/* drag hint */}

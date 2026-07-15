@@ -9,6 +9,34 @@ export const hotspotService = {
     return safetyKeywords.some((keyword) => url.includes(keyword));
   },
 
+  resolveHotspot(
+    hotspot: Hotspot,
+    sceneId: string,
+    overrides: ProjectOverrides,
+  ): Hotspot {
+    const sceneOverrides = overrides[sceneId] || {};
+    const override = sceneOverrides[hotspot.id || hotspot.label];
+
+    return {
+      ...hotspot,
+      lon: override?.ath ?? hotspot.lon,
+      lat: override?.atv ?? hotspot.lat,
+      label: override?.label ?? hotspot.label,
+      labelEn: override?.labelEn ?? hotspot.labelEn,
+      sub: override?.sub ?? hotspot.sub,
+      target: override?.target ?? hotspot.target,
+      url: override?.url ?? hotspot.url,
+    };
+  },
+
+  resolveHotspots(
+    hotspots: Hotspot[],
+    sceneId: string,
+    overrides: ProjectOverrides,
+  ): Hotspot[] {
+    return hotspots.map((hotspot) => hotspotService.resolveHotspot(hotspot, sceneId, overrides));
+  },
+
   // Note 2: 원본 핫스팟 좌표(lon, lat)와 사용자가 에디터를 통해 커스텀 수정한 오버라이드 좌표 중 최종 적용 좌표를 해결(Resolve)해 줍니다.
   resolveHotspotCoordinates(
     h: Hotspot,

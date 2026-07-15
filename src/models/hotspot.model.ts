@@ -4,6 +4,7 @@ import type { Hotspot as BaseHotspot, HotspotKind } from "../data/scenes";
 // Note 2: 타 컴포넌트에서 hotspot 모델을 단일화된 모델 폴더로부터 참조할 수 있도록 재수출합니다.
 export interface Hotspot extends BaseHotspot {
   type?: string;
+  category?: string;
 }
 export type { HotspotKind };
 
@@ -14,6 +15,13 @@ export interface HotspotOverride {
   atv: number;          // 수정된 vertical 각도 (latitude)
   screenOffsetX?: number; // 드래그 시 마우스 x 좌표 오프셋
   screenOffsetY?: number; // 드래그 시 마우스 y 좌표 오프셋
+  label?: string;       // 표시 이름(KOR)
+  labelEn?: string;     // 표시 이름(ENG)
+  kind?: string;        // hotspot kind(nav/poi/info)
+  type?: string;        // hotspot preset type
+  target?: string;      // 이동 대상 씬
+  sub?: string;         // 부가 설명
+  url?: string;         // 표시 마커 이미지 경로
   updatedAt?: string;   // 수정 일시 타임스탬프
 }
 

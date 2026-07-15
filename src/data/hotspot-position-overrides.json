@@ -36,11 +36,18 @@
       "updatedAt": "2026-07-08T07:04:05.660Z"
     },
     "aerial01-h5": {
-      "ath": 333.11,
-      "atv": -10.43,
-      "screenOffsetX": 1573.1,
-      "screenOffsetY": 865.31,
-      "updatedAt": "2026-07-08T07:04:33.945Z"
+      "label": "대화 레포츠공원",
+      "labelEn": "Daehwa-dong_Leports_Park",
+      "kind": "poi",
+      "type": "custom",
+      "target": "",
+      "sub": "",
+      "url": "/mice/upload/mice_vr/KIN/air/kor/Daehwa-dong_Leports_Park.png",
+      "ath": 338.26,
+      "atv": -7.25,
+      "screenOffsetX": 842.22,
+      "screenOffsetY": 368.88,
+      "updatedAt": "2026-07-11T04:58:52.885Z"
     },
     "aerial01-h13": {
       "ath": 119.72,
@@ -307,11 +314,18 @@
   },
   "lobby5": {
     "lobby5-h3": {
-      "ath": 28.77,
-      "atv": -0.52,
-      "screenOffsetX": 2069.24,
-      "screenOffsetY": 719.21,
-      "updatedAt": "2026-07-08T07:35:19.632Z"
+      "label": "화상상담실 입구",
+      "labelEn": "Video Conferencing Room Entrance",
+      "kind": "nav",
+      "type": "custom",
+      "target": "scene_2413",
+      "sub": "",
+      "url": "/mice/upload/mice_vr/marker/nav.png",
+      "ath": 29.86,
+      "atv": 2.36,
+      "screenOffsetX": 492.07,
+      "screenOffsetY": 610.08,
+      "updatedAt": "2026-07-11T03:54:11.647Z"
     },
     "lobby5-h5": {
       "ath": 329.7,
@@ -340,6 +354,34 @@
       "screenOffsetX": 880.45,
       "screenOffsetY": 634.96,
       "updatedAt": "2026-07-08T07:36:16.539Z"
+    },
+    "added-lobby5-1783730734948": {
+      "label": "화장실",
+      "labelEn": "lavatory",
+      "kind": "poi",
+      "type": "toilet",
+      "target": "",
+      "sub": "제1전시장 4관 5관 사이",
+      "url": "/mice/upload/mice_vr/marker/toilet.png",
+      "ath": 156.42,
+      "atv": 5.3,
+      "screenOffsetX": 1142.39,
+      "screenOffsetY": 741.46,
+      "updatedAt": "2026-07-11T03:54:03.933Z"
+    },
+    "added-lobby5-1783731129419": {
+      "label": "안내",
+      "labelEn": "INFO",
+      "kind": "poi",
+      "type": "info",
+      "target": "",
+      "sub": "제1 전시장 5홀 앞",
+      "url": "/mice/upload/mice_vr/marker/Info.png",
+      "ath": 253.79,
+      "atv": 4.83,
+      "screenOffsetX": 0,
+      "screenOffsetY": 0,
+      "updatedAt": "2026-07-11T03:59:04.650Z"
     }
   },
   "scene_2410": {
@@ -480,13 +522,6 @@
       "screenOffsetY": 724.06,
       "updatedAt": "2026-07-08T07:51:20.850Z"
     },
-    "aerial03-h15": {
-      "ath": 162.44,
-      "atv": -7.68,
-      "screenOffsetX": 654.6,
-      "screenOffsetY": 749.48,
-      "updatedAt": "2026-07-08T07:51:33.936Z"
-    },
     "aerial03-h5": {
       "ath": 71.59,
       "atv": -0.9,
@@ -558,11 +593,18 @@
       "updatedAt": "2026-07-08T07:55:23.310Z"
     },
     "aerial03-h10": {
-      "ath": 161.78,
-      "atv": -7.46,
-      "screenOffsetX": 264.21,
-      "screenOffsetY": 789.81,
-      "updatedAt": "2026-07-08T16:52:05.924Z"
+      "label": "KINTEX2",
+      "labelEn": "KINTEX2",
+      "kind": "nav",
+      "type": "custom",
+      "target": "scene_2668",
+      "sub": "",
+      "url": "/mice/upload/mice_vr/KIN/air/kor/GTX-A_KINTEX_Station_kor.png",
+      "ath": 158.59,
+      "atv": -58.69,
+      "screenOffsetX": 890.48,
+      "screenOffsetY": 958.66,
+      "updatedAt": "2026-07-11T14:04:12.081Z"
     }
   },
   "scene_2413": {
@@ -2213,11 +2255,18 @@
       "updatedAt": "2026-07-08T14:28:19.328Z"
     },
     "scene_2668-h9": {
-      "ath": 267.54,
-      "atv": -0.24,
-      "screenOffsetX": 970.91,
-      "screenOffsetY": 1061.32,
-      "updatedAt": "2026-07-08T14:29:47.057Z"
+      "label": "무빙워크(2전시장)",
+      "labelEn": "Moving Walkway(2전시장)",
+      "kind": "nav",
+      "type": "custom",
+      "target": "scene_2527",
+      "sub": "",
+      "url": "/mice/upload/mice_vr/marker/nav.png",
+      "ath": 266.46,
+      "atv": 2.33,
+      "screenOffsetX": 559.64,
+      "screenOffsetY": 449.54,
+      "updatedAt": "2026-07-11T14:07:15.435Z"
     },
     "scene_2668-h2": {
       "ath": 311.72,

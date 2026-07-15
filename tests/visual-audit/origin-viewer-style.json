@@ -54,7 +54,7 @@
     "informationLookaround": "/convention_kor/images/vr/new/information_lookaround.png",
     "mapPinIcon": "/convention_kor/images/vr/new/pannellum_map_icon.png",
     "mapPlusIcon": "/convention_kor/images/vr/new/pannellum_map_pluse_icon.png",
-    "navMarker": "/mice/upload/mice_vr/marker/marker01.png",
-    "poiMarker": "/mice/upload/mice_vr/marker/marker04.png"
+    "navMarker": "/mice/upload/mice_vr/marker/nav.png",
+    "poiMarker": "/mice/upload/mice_vr/marker/aerial.png"
   }
 }

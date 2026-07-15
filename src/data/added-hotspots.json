@@ -9,6 +9,98 @@
       "kind": "poi",
       "type": "toilet",
       "url": "/mice/upload/mice_vr/marker/toilet.png"
+    },
+    {
+      "id": "added-lobby12-1783730947437",
+      "lon": 103.34,
+      "lat": -1.61,
+      "label": "편의점 ",
+      "labelEn": "convenience store",
+      "kind": "poi",
+      "type": "convenience",
+      "sub": "제1전시장 1홀 2홀 사이",
+      "url": "/mice/upload/mice_vr/marker/convenience.png"
+    },
+    {
+      "id": "added-lobby12-1783731023516",
+      "lon": 225.52,
+      "lat": 4.32,
+      "label": "식당 ",
+      "labelEn": "Cafe",
+      "kind": "poi",
+      "type": "cafe",
+      "sub": "제1 전시장 1홀 2홀 사이",
+      "url": "/mice/upload/mice_vr/marker/cafe.png"
+    }
+  ],
+  "lobby5": [
+    {
+      "id": "added-lobby5-1783730617238",
+      "lon": 58.04,
+      "lat": 1.76,
+      "label": "수유실 ",
+      "labelEn": "Nursing room",
+      "kind": "poi",
+      "type": "nursing",
+      "sub": "제1전시장 5홀 ",
+      "url": "/mice/upload/mice_vr/marker/nav.png"
+    },
+    {
+      "id": "added-lobby5-1783730734948",
+      "lon": 169.96,
+      "lat": -17.09,
+      "label": "화장실",
+      "labelEn": "lavatory",
+      "kind": "poi",
+      "type": "toilet",
+      "sub": "제1전시장 4관 5관 사이",
+      "url": "/mice/upload/mice_vr/marker/toilet.png"
+    },
+    {
+      "id": "added-lobby5-1783731129419",
+      "lon": 253.79,
+      "lat": 4.83,
+      "label": "안내",
+      "labelEn": "INFO",
+      "kind": "poi",
+      "type": "info",
+      "sub": "제1 전시장 5홀 앞",
+      "url": "/mice/upload/mice_vr/marker/info.png"
+    }
+  ],
+  "scene_2410": [
+    {
+      "id": "added-scene_2410-1783730818579",
+      "lon": 36.96,
+      "lat": 5.17,
+      "label": "화장실",
+      "labelEn": "lavatory",
+      "kind": "poi",
+      "type": "toilet",
+      "sub": "1전시장 3,4홀 사이",
+      "url": "/mice/upload/mice_vr/marker/toilet.png"
+    },
+    {
+      "id": "added-scene_2410-1783730850864",
+      "lon": 143.24,
+      "lat": 4.35,
+      "label": "화장실",
+      "labelEn": "lavatory",
+      "kind": "poi",
+      "type": "toilet",
+      "sub": "제1전시장 3,4홀 사이",
+      "url": "/mice/upload/mice_vr/marker/toilet.png"
+    },
+    {
+      "id": "added-scene_2410-1783730899929",
+      "lon": 257.63,
+      "lat": 4.37,
+      "label": "편의점 ",
+      "labelEn": "convenience store",
+      "kind": "poi",
+      "type": "convenience",
+      "sub": "제1 전시장 3,4홀 사이",
+      "url": "/mice/upload/mice_vr/marker/convenience.png"
     }
   ]
 }

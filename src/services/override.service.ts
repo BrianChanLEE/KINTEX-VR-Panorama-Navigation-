@@ -1,4 +1,5 @@
 import type { ProjectOverrides } from "../models/hotspot.model";
+import type { HotspotOverride } from "../models/hotspot.model";
 
 const TUTORIAL_KEY = "kmice_hide_tutorial";
 
@@ -11,12 +12,13 @@ export const overrideService = {
     ath: number,
     atv: number,
     screenX: number,
-    screenY: number
+    screenY: number,
+    patch?: Partial<HotspotOverride>
   ): Promise<ProjectOverrides> {
     const response = await fetch("/__hotspot-editor/save", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sceneKey, hotspotKey, ath, atv, screenX, screenY }),
+      body: JSON.stringify({ sceneKey, hotspotKey, ath, atv, screenX, screenY, patch }),
     });
 
     if (!response.ok) {

@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import type * as THREE from "three";
 import hotspotOverridesData from "../data/hotspot-position-overrides.json";
 import addedHotspotsData from "../data/added-hotspots.json";
-import type { Hotspot } from "../models/hotspot.model";
+import type { Hotspot, HotspotOverride } from "../models/hotspot.model";
 import type { InteractionMode, ToastModel } from "../models/editor.model";
 import { overrideService } from "../services/override.service";
 import { panoramaProjection } from "../utils/panoramaProjection";
@@ -42,7 +42,7 @@ export function useEditorController(
     
     if (e.key.toLowerCase() === "d") {
       setInteractionMode("drag");
-      setToast({ message: "Mode: Drag Edit", type: "success" });
+      setToast({ message: "Mode: Edit", type: "success" });
     } else if (e.key.toLowerCase() === "c") {
       setInteractionMode("click");
       setToast({ message: "Mode: Click Test", type: "success" });
@@ -110,21 +110,27 @@ export function useEditorController(
   }, [interactionMode]);
 
   // Note 7: 디스크 overrides 파일에 좌표 변경 정보를 최종 보존하는 비즈니스 콜백입니다.
-  const handleSave = useCallback(async () => {
+  const handleSave = useCallback(async (patch?: Partial<HotspotOverride>) => {
     if (!selectedHotspot) return;
     const h = selectedHotspot.hotspot;
     const sceneOverrides = overrides[sceneId] || {};
     const override = sceneOverrides[h.id || h.label];
-    if (!override) return;
+    const resolvedOverride = override || {
+      ath: h.lon,
+      atv: h.lat,
+      screenOffsetX: 0,
+      screenOffsetY: 0,
+    };
 
     try {
       const updatedOverrides = await overrideService.saveOverride(
         sceneId,
         h.id || h.label,
-        override.ath,
-        override.atv,
-        override.screenOffsetX,
-        override.screenOffsetY
+        resolvedOverride.ath,
+        resolvedOverride.atv,
+        resolvedOverride.screenOffsetX || 0,
+        resolvedOverride.screenOffsetY || 0,
+        patch
       );
       setOverrides(updatedOverrides);
       setToast({ message: "Saved successfully!", type: "success" });

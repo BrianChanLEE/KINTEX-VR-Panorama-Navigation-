@@ -97,7 +97,16 @@ function loadImageElement(rawUrl: string) {
     const image = new Image();
     image.decoding = "async";
     image.crossOrigin = "";
-    image.onload = () => resolve(image);
+    image.onload = async () => {
+      try {
+        if (typeof image.decode === "function") {
+          await image.decode();
+        }
+      } catch (error) {
+        console.warn(`[PanoramaTextureCache] image.decode() failed for ${rawUrl}`, error);
+      }
+      resolve(image);
+    };
     image.onerror = () => reject(new Error(`Failed to load panorama image: ${rawUrl}`));
     image.src = rawUrl;
   });
@@ -145,9 +154,12 @@ export const panoramaTextureCacheService = {
   },
 
   // Note 7: 현재 씬 주변만 GPU 상주시키고 나머지는 느슨하게 내립니다.
-  async prepareSceneWindow(sceneId: string) {
+  async prepareSceneWindow(sceneId: string, options?: { disposeColdTextures?: boolean }) {
     const windowScenes = getSceneWindow(sceneId);
     await Promise.allSettled(windowScenes.map((scene) => createTextureFromImageSource(scene.img)));
+    if (options?.disposeColdTextures === false) {
+      return;
+    }
     disposeColdTextures(buildKeepSet(sceneId));
   },
 

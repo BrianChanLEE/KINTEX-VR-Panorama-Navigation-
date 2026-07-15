@@ -7,7 +7,6 @@ import DebugOverlay from "./components/DebugOverlay";
 import MinimalXrScene from "./components/MinimalXrScene";
 // Note 3: MVC Controllers에서 상태 관리 비즈니스 로직 훅들을 임포트합니다.
 import { useNavigationController } from "./controllers/navigation.controller";
-import { useInfoController } from "./controllers/info.controller";
 import { useSceneController } from "./controllers/scene.controller";
 // Note 4: 뷰어 기능 제어에 사용되는 ViewerHandle 타입입니다.
 import type { ViewerHandle } from "./components/PanoramaViewer";
@@ -48,14 +47,8 @@ export default function App() {
   const headingRef = useRef(0);
 
   const nav = useNavigationController("aerial01");
-  const info = useInfoController();
   const sceneCtl = useSceneController(nav.sceneId, nav.goScene);
   const scene = getScene(nav.sceneId);
-  const showInfoTabs = info.checkShowInfoTabs(nav.sceneId);
-
-  const onInfoHotspot = useCallback((_h: any) => {
-    info.setInfoTab("general");
-  }, [info]);
 
   const closeTutorial = useCallback(() => {
     setTutorial(false);
@@ -111,21 +104,16 @@ export default function App() {
       scene={scene}
       lang={lang}
       tutorial={tutorial}
-      infoTab={info.infoTab}
       autoTour={sceneCtl.autoTour}
       diy={sceneCtl.diy}
       vrMode={vrMode}
       fullActive={sceneCtl.fullActive}
       hint={hint}
-      showInfoTabs={showInfoTabs}
       viewerRef={viewerRef}
       headingRef={headingRef}
       setLang={setLang}
       goScene={nav.goScene}
       goZone={nav.goZone}
-      onInfoHotspot={onInfoHotspot}
-      toggleInfoTab={info.toggleInfoTab}
-      setInfoTab={info.setInfoTab}
       setVrMode={setVrMode}
       isPresenting={isPresenting}
       setIsPresenting={setIsPresenting}
@@ -144,10 +132,6 @@ export default function App() {
       onVrHardwareUnavailable={() => setVrHardwarePromptVisible(true)}
       panoramaLoading={panoramaLoading}
       setPanoramaLoading={setPanoramaLoading}
-      activeTour={null}
-      setActiveTour={() => undefined}
-      setTourStep={() => undefined}
-      tourSubtitle=""
     />
     {import.meta.env.VITE_DEBUG_OVERLAY === "true" && <DebugOverlay />}
     </>

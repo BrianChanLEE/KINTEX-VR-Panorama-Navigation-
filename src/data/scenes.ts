@@ -78,7 +78,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Gate1A",
         "kind": "nav",
         "target": "gate1a",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "aerial01-h2",
@@ -88,7 +88,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Gate2",
         "kind": "nav",
         "target": "gate2",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "aerial01-h3",
@@ -98,7 +98,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Moving Walkway(1전시장)",
         "kind": "nav",
         "target": "scene_2526",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "aerial01-h4",
@@ -108,7 +108,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Moving Walkway(2전시장)",
         "kind": "nav",
         "target": "scene_2527",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "aerial01-h5",
@@ -154,7 +154,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 03",
         "kind": "nav",
         "target": "aerial03",
-        "url": "/mice/upload/mice_vr/marker/marker04.png"
+        "url": "/mice/upload/mice_vr/marker/aerial.png"
       },
       {
         "id": "aerial01-h10",
@@ -164,7 +164,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 02",
         "kind": "nav",
         "target": "aerial02",
-        "url": "/mice/upload/mice_vr/marker/marker04.png"
+        "url": "/mice/upload/mice_vr/marker/aerial.png"
       },
       {
         "id": "aerial01-h11",
@@ -174,7 +174,7 @@ export const SCENES: Scene[] = [
         "labelEn": "킨텍스 제1전시장",
         "kind": "nav",
         "target": "lobby5",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_1_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_1_kor.svg"
       },
       {
         "id": "aerial01-h12",
@@ -184,7 +184,7 @@ export const SCENES: Scene[] = [
         "labelEn": "킨텍스 제2전시장",
         "kind": "nav",
         "target": "scene_2668",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_2_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_2_kor.svg"
       },
       {
         "id": "aerial01-h13",
@@ -251,7 +251,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 01",
         "kind": "nav",
         "target": "aerial01",
-        "url": "/mice/upload/mice_vr/marker/marker04.png"
+        "url": "/mice/upload/mice_vr/marker/aerial.png"
       },
       {
         "id": "aerial02-h2",
@@ -261,7 +261,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 03",
         "kind": "nav",
         "target": "aerial03",
-        "url": "/mice/upload/mice_vr/marker/marker04.png"
+        "url": "/mice/upload/mice_vr/marker/aerial.png"
       },
       {
         "id": "aerial02-h3",
@@ -307,7 +307,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Moving Walkway(제2전시장)",
         "kind": "nav",
         "target": "scene_2527",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "aerial02-h8",
@@ -317,7 +317,7 @@ export const SCENES: Scene[] = [
         "labelEn": "KINTEX2",
         "kind": "nav",
         "target": "scene_2668",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_2_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_2_kor.svg"
       },
       {
         "id": "aerial02-h9",
@@ -327,7 +327,7 @@ export const SCENES: Scene[] = [
         "labelEn": "KINTEX1",
         "kind": "nav",
         "target": "lobby5",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_1_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_1_kor.svg"
       },
       {
         "id": "aerial02-h10",
@@ -394,7 +394,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 01",
         "kind": "nav",
         "target": "aerial01",
-        "url": "/mice/upload/mice_vr/marker/marker04.png"
+        "url": "/mice/upload/mice_vr/marker/aerial.png"
       },
       {
         "id": "aerial03-h2",
@@ -404,7 +404,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 02",
         "kind": "nav",
         "target": "aerial02",
-        "url": "/mice/upload/mice_vr/marker/marker04.png"
+        "url": "/mice/upload/mice_vr/marker/aerial.png"
       },
       {
         "id": "aerial03-h3",
@@ -450,7 +450,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Moving Walkway (1전시장)",
         "kind": "nav",
         "target": "scene_2526",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "aerial03-h8",
@@ -460,7 +460,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Moving Walkway (2전시장)",
         "kind": "nav",
         "target": "scene_2527",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "aerial03-h9",
@@ -470,7 +470,7 @@ export const SCENES: Scene[] = [
         "labelEn": "KINTEX1",
         "kind": "nav",
         "target": "lobby5",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_1_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_1_kor.svg"
       },
       {
         "id": "aerial03-h10",
@@ -525,7 +525,7 @@ export const SCENES: Scene[] = [
         "label": "KINTEX2",
         "labelEn": "KINTEX2",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_2_kor.png"
+        "url": "/mice/upload/mice_vr/KIN/air/kor/KINTEX_Exhibition_2_kor.svg"
       }
     ]
   },
@@ -547,7 +547,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 01",
         "kind": "nav",
         "target": "aerial01",
-        "url": "/mice/upload/mice_vr/marker/marker04.png"
+        "url": "/mice/upload/mice_vr/marker/aerial.png"
       },
       {
         "id": "gate1a-h2",
@@ -557,7 +557,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 03",
         "kind": "nav",
         "target": "aerial03",
-        "url": "/mice/upload/mice_vr/marker/marker04.png"
+        "url": "/mice/upload/mice_vr/marker/aerial.png"
       },
       {
         "id": "gate1a-h3",
@@ -567,7 +567,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 02",
         "kind": "nav",
         "target": "aerial02",
-        "url": "/mice/upload/mice_vr/marker/marker04.png"
+        "url": "/mice/upload/mice_vr/marker/aerial.png"
       },
       {
         "id": "gate1a-h4",
@@ -577,7 +577,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 1-2 Lobby",
         "kind": "nav",
         "target": "lobby12",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "gate1a-h5",
@@ -587,7 +587,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Gate2",
         "kind": "nav",
         "target": "gate2",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -609,7 +609,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 1-2 Lobby",
         "kind": "nav",
         "target": "lobby12",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "gate2-h2",
@@ -619,7 +619,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Gate1A",
         "kind": "nav",
         "target": "gate1a",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "gate2-h3",
@@ -629,7 +629,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Moving Walkway(1전시장)",
         "kind": "nav",
         "target": "scene_2526",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "gate2-h4",
@@ -639,7 +639,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 01",
         "kind": "nav",
         "target": "aerial01",
-        "url": "/mice/upload/mice_vr/marker/marker04.png"
+        "url": "/mice/upload/mice_vr/marker/aerial.png"
       },
       {
         "id": "gate2-h5",
@@ -649,7 +649,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 03",
         "kind": "nav",
         "target": "aerial03",
-        "url": "/mice/upload/mice_vr/marker/marker04.png"
+        "url": "/mice/upload/mice_vr/marker/aerial.png"
       },
       {
         "id": "gate2-h6",
@@ -659,7 +659,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 02",
         "kind": "nav",
         "target": "aerial02",
-        "url": "/mice/upload/mice_vr/marker/marker04.png"
+        "url": "/mice/upload/mice_vr/marker/aerial.png"
       }
     ]
   },
@@ -681,7 +681,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 3-4 Lobby",
         "kind": "nav",
         "target": "scene_2410",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "lobby12-h2",
@@ -691,7 +691,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 2",
         "kind": "nav",
         "target": "hall2",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "lobby12-h3",
@@ -701,7 +701,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 1",
         "kind": "nav",
         "target": "hall1",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "lobby12-h4",
@@ -711,7 +711,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Gate2",
         "kind": "nav",
         "target": "gate2",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "lobby12-h5",
@@ -721,7 +721,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Gate1A",
         "kind": "nav",
         "target": "gate1a",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -743,7 +743,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 5",
         "kind": "nav",
         "target": "scene_2424",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "lobby5-h2",
@@ -753,7 +753,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 3-4 Lobby",
         "kind": "nav",
         "target": "scene_2410",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "lobby5-h3",
@@ -763,7 +763,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Video Conferencing Room Entrance",
         "kind": "nav",
         "target": "scene_2413",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "lobby5-h4",
@@ -773,7 +773,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Moving Walkway",
         "kind": "nav",
         "target": "scene_2526",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "lobby5-h5",
@@ -783,7 +783,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 2F",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -805,7 +805,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 1-2 Lobby",
         "kind": "nav",
         "target": "lobby12",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "hall1-h2",
@@ -815,7 +815,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 2",
         "kind": "nav",
         "target": "hall2",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "hall1-h3",
@@ -1058,7 +1058,7 @@ export const SCENES: Scene[] = [
         "label": "popup",
         "labelEn": "popup",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/marker/marker03.png"
+        "url": "/mice/upload/mice_vr/marker/camera.png"
       }
     ]
   },
@@ -1206,7 +1206,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 1-2 Lobby",
         "kind": "nav",
         "target": "lobby12",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "hall2-h16",
@@ -1216,7 +1216,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 1",
         "kind": "nav",
         "target": "hall1",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "hall2-h17",
@@ -1226,7 +1226,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 3",
         "kind": "nav",
         "target": "scene_2420",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "hall2-h18",
@@ -1289,7 +1289,7 @@ export const SCENES: Scene[] = [
         "label": "popup",
         "labelEn": "popup",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/marker/marker03.png"
+        "url": "/mice/upload/mice_vr/marker/camera.png"
       },
       {
         "id": "hall2-h25",
@@ -1298,7 +1298,7 @@ export const SCENES: Scene[] = [
         "label": "popup",
         "labelEn": "popup",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/marker/marker03.png"
+        "url": "/mice/upload/mice_vr/marker/camera.png"
       }
     ]
   },
@@ -1320,7 +1320,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 1-2 Lobby",
         "kind": "nav",
         "target": "lobby12",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2410-h2",
@@ -1330,7 +1330,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 3",
         "kind": "nav",
         "target": "scene_2420",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2410-h3",
@@ -1340,7 +1340,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 4",
         "kind": "nav",
         "target": "scene_2422",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2410-h4",
@@ -1350,7 +1350,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 5 로비",
         "kind": "nav",
         "target": "lobby5",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -1372,7 +1372,7 @@ export const SCENES: Scene[] = [
         "labelEn": "전시5A홀",
         "kind": "nav",
         "target": "scene_2426",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2412-h2",
@@ -1382,7 +1382,7 @@ export const SCENES: Scene[] = [
         "labelEn": "전시5B홀",
         "kind": "nav",
         "target": "scene_2428",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2412-h3",
@@ -1392,7 +1392,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Video Conferencing Room Entrance",
         "kind": "nav",
         "target": "scene_2413",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -1414,7 +1414,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Video Conferencing Room Lobby",
         "kind": "nav",
         "target": "scene_2414",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2413-h2",
@@ -1424,7 +1424,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 5 로비",
         "kind": "nav",
         "target": "lobby5",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2413-h3",
@@ -1434,7 +1434,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 5A-5B Lobby",
         "kind": "nav",
         "target": "scene_2412",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -1456,7 +1456,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Video Conferencing Room 1",
         "kind": "nav",
         "target": "scene_2415",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2414-h2",
@@ -1466,7 +1466,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Video Conferencing Room Entrance",
         "kind": "nav",
         "target": "scene_2413",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2414-h3",
@@ -1506,7 +1506,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Video Conferencing Room Lobby",
         "kind": "nav",
         "target": "scene_2414",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -1681,7 +1681,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 3-4 Lobby",
         "kind": "nav",
         "target": "scene_2410",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2420-h19",
@@ -1691,7 +1691,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 2",
         "kind": "nav",
         "target": "hall2",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2420-h20",
@@ -1701,7 +1701,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 4",
         "kind": "nav",
         "target": "scene_2422",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2420-h21",
@@ -1710,7 +1710,7 @@ export const SCENES: Scene[] = [
         "label": "popup",
         "labelEn": "popup",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/marker/marker03.png"
+        "url": "/mice/upload/mice_vr/marker/camera.png"
       }
     ]
   },
@@ -1813,7 +1813,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 3-4 Lobby",
         "kind": "nav",
         "target": "scene_2410",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2422-h11",
@@ -1823,7 +1823,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 3",
         "kind": "nav",
         "target": "scene_2420",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2422-h12",
@@ -1833,7 +1833,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 5",
         "kind": "nav",
         "target": "scene_2424",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2422-h13",
@@ -1896,7 +1896,7 @@ export const SCENES: Scene[] = [
         "label": "popup",
         "labelEn": "popup",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/marker/marker03.png"
+        "url": "/mice/upload/mice_vr/marker/camera.png"
       }
     ]
   },
@@ -2116,7 +2116,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 5 로비",
         "kind": "nav",
         "target": "lobby5",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2424-h24",
@@ -2126,7 +2126,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 4",
         "kind": "nav",
         "target": "scene_2422",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2424-h25",
@@ -2136,7 +2136,7 @@ export const SCENES: Scene[] = [
         "labelEn": "전시5B홀",
         "kind": "nav",
         "target": "scene_2428",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2424-h26",
@@ -2146,7 +2146,7 @@ export const SCENES: Scene[] = [
         "labelEn": "전시5A홀",
         "kind": "nav",
         "target": "scene_2426",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2424-h27",
@@ -2156,7 +2156,7 @@ export const SCENES: Scene[] = [
         "labelEn": "전시5A,5B홀 로비",
         "kind": "nav",
         "target": "scene_2412",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2424-h28",
@@ -2166,7 +2166,7 @@ export const SCENES: Scene[] = [
         "labelEn": "전시5A,5B홀 로비",
         "kind": "nav",
         "target": "scene_2412",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2424-h29",
@@ -2175,7 +2175,7 @@ export const SCENES: Scene[] = [
         "label": "popup",
         "labelEn": "popup",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/marker/marker03.png"
+        "url": "/mice/upload/mice_vr/marker/camera.png"
       }
     ]
   },
@@ -2197,7 +2197,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 5 로비",
         "kind": "nav",
         "target": "lobby5",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2426-h2",
@@ -2207,7 +2207,7 @@ export const SCENES: Scene[] = [
         "labelEn": "전시5A,5B홀 로비",
         "kind": "nav",
         "target": "scene_2412",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2426-h3",
@@ -2217,7 +2217,7 @@ export const SCENES: Scene[] = [
         "labelEn": "전시5B홀",
         "kind": "nav",
         "target": "scene_2428",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2426-h4",
@@ -2227,7 +2227,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 4",
         "kind": "nav",
         "target": "scene_2422",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2426-h5",
@@ -2399,7 +2399,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 5",
         "kind": "nav",
         "target": "scene_2424",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -2421,7 +2421,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 4",
         "kind": "nav",
         "target": "scene_2422",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2428-h2",
@@ -2431,7 +2431,7 @@ export const SCENES: Scene[] = [
         "labelEn": "전시5A홀",
         "kind": "nav",
         "target": "scene_2426",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2428-h3",
@@ -2441,7 +2441,7 @@ export const SCENES: Scene[] = [
         "labelEn": "전시5A,5B홀 로비",
         "kind": "nav",
         "target": "scene_2412",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2428-h4",
@@ -2595,7 +2595,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 5",
         "kind": "nav",
         "target": "scene_2424",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -2617,7 +2617,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 207 Entrance",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -2639,7 +2639,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 204",
         "kind": "nav",
         "target": "scene_2433",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2431-h2",
@@ -2649,7 +2649,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 205",
         "kind": "nav",
         "target": "scene_2435",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2431-h3",
@@ -2659,7 +2659,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 206",
         "kind": "nav",
         "target": "scene_2442",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2431-h4",
@@ -2669,7 +2669,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 207",
         "kind": "nav",
         "target": "scene_2449",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2431-h5",
@@ -2679,7 +2679,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 202 Entrance",
         "kind": "nav",
         "target": "scene_2430",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2431-h6",
@@ -2689,7 +2689,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 208",
         "kind": "nav",
         "target": "scene_2456",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2431-h7",
@@ -2699,7 +2699,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 209",
         "kind": "nav",
         "target": "scene_2463",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2431-h8",
@@ -2709,7 +2709,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -2731,7 +2731,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 212",
         "kind": "nav",
         "target": "scene_2484",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2432-h2",
@@ -2741,7 +2741,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 210",
         "kind": "nav",
         "target": "scene_2470",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2432-h3",
@@ -2751,7 +2751,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 211",
         "kind": "nav",
         "target": "scene_2477",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2432-h4",
@@ -2761,7 +2761,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 207 Entrance",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2432-h5",
@@ -2771,7 +2771,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 213",
         "kind": "nav",
         "target": "scene_2489",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2432-h6",
@@ -2781,7 +2781,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 5 로비",
         "kind": "nav",
         "target": "lobby5",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2432-h7",
@@ -2791,7 +2791,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2432-h8",
@@ -2801,7 +2801,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212+213",
         "kind": "nav",
         "target": "scene_2494",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -2823,7 +2823,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2433-h2",
@@ -2833,7 +2833,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2433-h3",
@@ -2945,7 +2945,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2435-h2",
@@ -3027,7 +3027,7 @@ export const SCENES: Scene[] = [
         "labelEn": "205 극장식",
         "kind": "nav",
         "target": "scene_2436",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2435-h11",
@@ -3037,7 +3037,7 @@ export const SCENES: Scene[] = [
         "labelEn": "205 강의식",
         "kind": "nav",
         "target": "scene_2437",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2435-h12",
@@ -3047,7 +3047,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 205A",
         "kind": "nav",
         "target": "scene_2438",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2435-h13",
@@ -3057,7 +3057,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 205B",
         "kind": "nav",
         "target": "scene_2440",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -3079,7 +3079,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2442-h2",
@@ -3161,7 +3161,7 @@ export const SCENES: Scene[] = [
         "labelEn": "206 극장식",
         "kind": "nav",
         "target": "scene_2443",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2442-h11",
@@ -3171,7 +3171,7 @@ export const SCENES: Scene[] = [
         "labelEn": "206 강의식",
         "kind": "nav",
         "target": "scene_2444",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2442-h12",
@@ -3181,7 +3181,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 206A",
         "kind": "nav",
         "target": "scene_2445",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2442-h13",
@@ -3191,7 +3191,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 206B",
         "kind": "nav",
         "target": "scene_2447",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -3213,7 +3213,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2449-h2",
@@ -3295,7 +3295,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 극장식",
         "kind": "nav",
         "target": "scene_2450",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2449-h11",
@@ -3305,7 +3305,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 강의식",
         "kind": "nav",
         "target": "scene_2451",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2449-h12",
@@ -3315,7 +3315,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 207A",
         "kind": "nav",
         "target": "scene_2452",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2449-h13",
@@ -3325,7 +3325,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 207B",
         "kind": "nav",
         "target": "scene_2454",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -3347,7 +3347,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2456-h2",
@@ -3429,7 +3429,7 @@ export const SCENES: Scene[] = [
         "labelEn": "208 극장식",
         "kind": "nav",
         "target": "scene_2457",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2456-h11",
@@ -3439,7 +3439,7 @@ export const SCENES: Scene[] = [
         "labelEn": "208 강의식",
         "kind": "nav",
         "target": "scene_2458",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2456-h12",
@@ -3449,7 +3449,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 208A",
         "kind": "nav",
         "target": "scene_2459",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2456-h13",
@@ -3459,7 +3459,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 208B",
         "kind": "nav",
         "target": "scene_2461",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -3481,7 +3481,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2463-h2",
@@ -3563,7 +3563,7 @@ export const SCENES: Scene[] = [
         "labelEn": "209 극장식",
         "kind": "nav",
         "target": "scene_2464",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2463-h11",
@@ -3573,7 +3573,7 @@ export const SCENES: Scene[] = [
         "labelEn": "209 극장식",
         "kind": "nav",
         "target": "scene_2465",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2463-h12",
@@ -3583,7 +3583,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 209A",
         "kind": "nav",
         "target": "scene_2466",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2463-h13",
@@ -3593,7 +3593,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 209B",
         "kind": "nav",
         "target": "scene_2468",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -3615,7 +3615,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2470-h2",
@@ -3697,7 +3697,7 @@ export const SCENES: Scene[] = [
         "labelEn": "210 극장식",
         "kind": "nav",
         "target": "scene_2471",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2470-h11",
@@ -3707,7 +3707,7 @@ export const SCENES: Scene[] = [
         "labelEn": "210 강의식",
         "kind": "nav",
         "target": "scene_2472",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2470-h12",
@@ -3717,7 +3717,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 210A",
         "kind": "nav",
         "target": "scene_2473",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2470-h13",
@@ -3727,7 +3727,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 210B",
         "kind": "nav",
         "target": "scene_2475",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -3749,7 +3749,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2477-h2",
@@ -3831,7 +3831,7 @@ export const SCENES: Scene[] = [
         "labelEn": "211 극장식",
         "kind": "nav",
         "target": "scene_2478",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2477-h11",
@@ -3841,7 +3841,7 @@ export const SCENES: Scene[] = [
         "labelEn": "211 강의식",
         "kind": "nav",
         "target": "scene_2479",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2477-h12",
@@ -3851,7 +3851,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 211A",
         "kind": "nav",
         "target": "scene_2480",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2477-h13",
@@ -3861,7 +3861,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 211B",
         "kind": "nav",
         "target": "scene_2482",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -3883,7 +3883,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2484-h2",
@@ -3893,7 +3893,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 212A",
         "kind": "nav",
         "target": "scene_2852",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2484-h3",
@@ -3903,7 +3903,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 212B",
         "kind": "nav",
         "target": "scene_2853",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2484-h4",
@@ -3997,7 +3997,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2852-h2",
@@ -4079,7 +4079,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 212",
         "kind": "nav",
         "target": "scene_2484",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -4101,7 +4101,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2853-h2",
@@ -4174,7 +4174,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 212",
         "kind": "nav",
         "target": "scene_2484",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -4196,7 +4196,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2489-h2",
@@ -4206,7 +4206,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 213A",
         "kind": "nav",
         "target": "scene_2854",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2489-h3",
@@ -4216,7 +4216,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 213B",
         "kind": "nav",
         "target": "scene_2855",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2489-h4",
@@ -4310,7 +4310,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2854-h2",
@@ -4320,7 +4320,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 213",
         "kind": "nav",
         "target": "scene_2489",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2854-h3",
@@ -4405,7 +4405,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2855-h2",
@@ -4415,7 +4415,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 213",
         "kind": "nav",
         "target": "scene_2489",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2855-h3",
@@ -4500,7 +4500,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2494-h2",
@@ -4510,7 +4510,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2494-h3",
@@ -4601,7 +4601,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212+213 극장식",
         "kind": "nav",
         "target": "scene_2495",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2494-h13",
@@ -4611,7 +4611,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212+213 강의식",
         "kind": "nav",
         "target": "scene_2496",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -4633,7 +4633,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 303",
         "kind": "nav",
         "target": "scene_2503",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2497-h2",
@@ -4643,7 +4643,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 301",
         "kind": "nav",
         "target": "scene_2499",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2497-h3",
@@ -4653,7 +4653,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 302",
         "kind": "nav",
         "target": "scene_2501",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2497-h4",
@@ -4663,7 +4663,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 304",
         "kind": "nav",
         "target": "scene_2506",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2497-h5",
@@ -4673,7 +4673,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -4695,7 +4695,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 305",
         "kind": "nav",
         "target": "scene_2509",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2498-h2",
@@ -4705,7 +4705,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 306",
         "kind": "nav",
         "target": "scene_2512",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2498-h3",
@@ -4715,7 +4715,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 307",
         "kind": "nav",
         "target": "scene_2514",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2498-h4",
@@ -4725,7 +4725,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 308",
         "kind": "nav",
         "target": "scene_2519",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2498-h5",
@@ -4735,7 +4735,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 309A",
         "kind": "nav",
         "target": "scene_2520",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2498-h6",
@@ -4745,7 +4745,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2498-h7",
@@ -4755,7 +4755,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Grand Ballroom A+B",
         "kind": "nav",
         "target": "scene_2522",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2498-h8",
@@ -4765,7 +4765,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 입구",
         "kind": "nav",
         "target": "scene_2497",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2498-h9",
@@ -4775,7 +4775,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 309B",
         "kind": "nav",
         "target": "scene_2521",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2498-h10",
@@ -4785,7 +4785,7 @@ export const SCENES: Scene[] = [
         "labelEn": "306+307",
         "kind": "nav",
         "target": "scene_2516",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -4807,7 +4807,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 입구",
         "kind": "nav",
         "target": "scene_2497",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2499-h2",
@@ -4817,7 +4817,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 입구",
         "kind": "nav",
         "target": "scene_2497",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2499-h3",
@@ -4911,7 +4911,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 입구",
         "kind": "nav",
         "target": "scene_2497",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2501-h2",
@@ -5005,7 +5005,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 입구",
         "kind": "nav",
         "target": "scene_2497",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2503-h2",
@@ -5087,7 +5087,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 극장식",
         "kind": "nav",
         "target": "scene_2504",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2503-h11",
@@ -5097,7 +5097,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 강의식",
         "kind": "nav",
         "target": "scene_2505",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -5119,7 +5119,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 입구",
         "kind": "nav",
         "target": "scene_2497",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2506-h2",
@@ -5201,7 +5201,7 @@ export const SCENES: Scene[] = [
         "labelEn": "304 극장식",
         "kind": "nav",
         "target": "scene_2507",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2506-h11",
@@ -5211,7 +5211,7 @@ export const SCENES: Scene[] = [
         "labelEn": "304 강의식",
         "kind": "nav",
         "target": "scene_2508",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -5233,7 +5233,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 입구",
         "kind": "nav",
         "target": "scene_2497",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2509-h2",
@@ -5315,7 +5315,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305 극장식",
         "kind": "nav",
         "target": "scene_2510",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2509-h11",
@@ -5325,7 +5325,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305 강의식",
         "kind": "nav",
         "target": "scene_2511",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -5347,7 +5347,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2512-h2",
@@ -5357,7 +5357,7 @@ export const SCENES: Scene[] = [
         "labelEn": "306+307",
         "kind": "nav",
         "target": "scene_2516",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2512-h3",
@@ -5451,7 +5451,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2514-h2",
@@ -5461,7 +5461,7 @@ export const SCENES: Scene[] = [
         "labelEn": "306+307",
         "kind": "nav",
         "target": "scene_2516",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2514-h3",
@@ -5555,7 +5555,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2516-h2",
@@ -5565,7 +5565,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2516-h3",
@@ -5656,7 +5656,7 @@ export const SCENES: Scene[] = [
         "labelEn": "306+307 극장식",
         "kind": "nav",
         "target": "scene_2517",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2516-h13",
@@ -5666,7 +5666,7 @@ export const SCENES: Scene[] = [
         "labelEn": "306+307 강의식",
         "kind": "nav",
         "target": "scene_2518",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2516-h14",
@@ -5676,7 +5676,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 306",
         "kind": "nav",
         "target": "scene_2512",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2516-h15",
@@ -5686,7 +5686,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 307",
         "kind": "nav",
         "target": "scene_2514",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -5708,7 +5708,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, Room 308 Entrance",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2519-h2",
@@ -5793,7 +5793,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2520-h2",
@@ -5878,7 +5878,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2521-h2",
@@ -5972,7 +5972,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2522-h2",
@@ -5982,7 +5982,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2522-h3",
@@ -5992,7 +5992,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Grand Ballroom A",
         "kind": "nav",
         "target": "scene_2525",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2522-h4",
@@ -6002,7 +6002,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Grand Ballroom B",
         "kind": "nav",
         "target": "scene_2524",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2522-h5",
@@ -6195,7 +6195,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2525-h2",
@@ -6205,7 +6205,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2525-h3",
@@ -6215,7 +6215,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Grand Ballroom B",
         "kind": "nav",
         "target": "scene_2524",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2525-h4",
@@ -6225,7 +6225,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Grand Ballroom A+B",
         "kind": "nav",
         "target": "scene_2522",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2525-h5",
@@ -6355,7 +6355,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2524-h2",
@@ -6365,7 +6365,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2524-h3",
@@ -6375,7 +6375,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Grand Ballroom A",
         "kind": "nav",
         "target": "scene_2525",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2524-h4",
@@ -6385,7 +6385,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Grand Ballroom A+B",
         "kind": "nav",
         "target": "scene_2522",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2524-h5",
@@ -6524,7 +6524,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 5로비",
         "kind": "nav",
         "target": "lobby5",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2526-h2",
@@ -6534,7 +6534,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Gate2A",
         "kind": "nav",
         "target": "gate2",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2526-h3",
@@ -6544,7 +6544,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Moving Walkway (2전시장)",
         "kind": "nav",
         "target": "scene_2527",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2526-h4",
@@ -6554,7 +6554,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 01",
         "kind": "nav",
         "target": "aerial01",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2526-h5",
@@ -6564,7 +6564,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 02",
         "kind": "nav",
         "target": "aerial02",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2526-h6",
@@ -6574,7 +6574,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 03",
         "kind": "nav",
         "target": "aerial03",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -6596,7 +6596,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 6 Entrance",
         "kind": "nav",
         "target": "scene_2536",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2527-h2",
@@ -6606,7 +6606,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Moving Walkway (1전시장)",
         "kind": "nav",
         "target": "scene_2526",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2527-h3",
@@ -6616,7 +6616,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 10 Entrance",
         "kind": "nav",
         "target": "scene_2540",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2527-h4",
@@ -6626,7 +6626,7 @@ export const SCENES: Scene[] = [
         "labelEn": "1F Lobby",
         "kind": "nav",
         "target": "scene_2528",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2527-h5",
@@ -6636,7 +6636,7 @@ export const SCENES: Scene[] = [
         "labelEn": "2F Lobby",
         "kind": "nav",
         "target": "scene_2668",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2527-h6",
@@ -6646,7 +6646,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 02",
         "kind": "nav",
         "target": "aerial02",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2527-h7",
@@ -6656,7 +6656,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 03",
         "kind": "nav",
         "target": "aerial03",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2527-h8",
@@ -6666,7 +6666,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Aerial View 01",
         "kind": "nav",
         "target": "aerial01",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -6688,7 +6688,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 7",
         "kind": "nav",
         "target": "scene_2541",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2528-h2",
@@ -6698,7 +6698,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 8",
         "kind": "nav",
         "target": "scene_2544",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2528-h3",
@@ -6708,7 +6708,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Moving Walkway(2전시장)",
         "kind": "nav",
         "target": "scene_2527",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2528-h4",
@@ -6718,7 +6718,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 10",
         "kind": "nav",
         "target": "scene_2550",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2528-h5",
@@ -6728,7 +6728,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 9",
         "kind": "nav",
         "target": "scene_2547",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2528-h6",
@@ -6738,7 +6738,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6",
         "kind": "nav",
         "target": "scene_2535",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -6760,7 +6760,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 9 Entrance",
         "kind": "nav",
         "target": "scene_2539",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2668-h2",
@@ -6770,7 +6770,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 10 Entrance",
         "kind": "nav",
         "target": "scene_2540",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2668-h3",
@@ -6780,7 +6780,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 7 Entrance",
         "kind": "nav",
         "target": "scene_2537",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2668-h4",
@@ -6790,7 +6790,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 8 Entrance",
         "kind": "nav",
         "target": "scene_2538",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2668-h5",
@@ -6800,7 +6800,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2668-h6",
@@ -6810,7 +6810,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2668-h7",
@@ -6820,7 +6820,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2668-h8",
@@ -6830,7 +6830,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2668-h9",
@@ -6840,7 +6840,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Moving Walkway(2전시장)",
         "kind": "nav",
         "target": "scene_2527",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -6862,7 +6862,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6",
         "kind": "nav",
         "target": "scene_2535",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2536-h2",
@@ -6872,7 +6872,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6",
         "kind": "nav",
         "target": "scene_2535",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2536-h3",
@@ -6882,7 +6882,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6",
         "kind": "nav",
         "target": "scene_2535",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2536-h4",
@@ -6892,7 +6892,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 7 Entrance",
         "kind": "nav",
         "target": "scene_2537",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2536-h5",
@@ -6902,7 +6902,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Moving Walkway",
         "kind": "nav",
         "target": "scene_2527",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -6924,7 +6924,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 7",
         "kind": "nav",
         "target": "scene_2541",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2537-h2",
@@ -6934,7 +6934,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 7",
         "kind": "nav",
         "target": "scene_2541",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2537-h3",
@@ -6944,7 +6944,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 8 Entrance",
         "kind": "nav",
         "target": "scene_2538",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2537-h4",
@@ -6954,7 +6954,7 @@ export const SCENES: Scene[] = [
         "labelEn": "2F Lobby",
         "kind": "nav",
         "target": "scene_2668",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2537-h5",
@@ -6964,7 +6964,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 6 Entrance",
         "kind": "nav",
         "target": "scene_2536",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -6986,7 +6986,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 8",
         "kind": "nav",
         "target": "scene_2544",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2538-h2",
@@ -6996,7 +6996,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 8",
         "kind": "nav",
         "target": "scene_2544",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2538-h3",
@@ -7006,7 +7006,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 7 Entrance",
         "kind": "nav",
         "target": "scene_2537",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2538-h4",
@@ -7016,7 +7016,7 @@ export const SCENES: Scene[] = [
         "labelEn": "2F Lobby",
         "kind": "nav",
         "target": "scene_2668",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -7038,7 +7038,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 9",
         "kind": "nav",
         "target": "scene_2547",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2539-h2",
@@ -7048,7 +7048,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 9",
         "kind": "nav",
         "target": "scene_2547",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2539-h3",
@@ -7058,7 +7058,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 10 Entrance",
         "kind": "nav",
         "target": "scene_2540",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2539-h4",
@@ -7068,7 +7068,7 @@ export const SCENES: Scene[] = [
         "labelEn": "2F Lobby",
         "kind": "nav",
         "target": "scene_2668",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -7090,7 +7090,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 10",
         "kind": "nav",
         "target": "scene_2550",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2540-h2",
@@ -7100,7 +7100,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 10",
         "kind": "nav",
         "target": "scene_2550",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2540-h3",
@@ -7110,7 +7110,7 @@ export const SCENES: Scene[] = [
         "labelEn": "2F Lobby",
         "kind": "nav",
         "target": "scene_2668",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2540-h4",
@@ -7120,7 +7120,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 9 Entrance",
         "kind": "nav",
         "target": "scene_2539",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2540-h5",
@@ -7130,7 +7130,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Moving Walkway(2전시장)",
         "kind": "nav",
         "target": "scene_2527",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -7152,7 +7152,7 @@ export const SCENES: Scene[] = [
         "labelEn": "6홀입구",
         "kind": "nav",
         "target": "scene_2536",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2535-h2",
@@ -7162,7 +7162,7 @@ export const SCENES: Scene[] = [
         "labelEn": "6홀입구",
         "kind": "nav",
         "target": "scene_2536",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2535-h3",
@@ -7172,7 +7172,7 @@ export const SCENES: Scene[] = [
         "labelEn": "6홀입구",
         "kind": "nav",
         "target": "scene_2536",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2535-h4",
@@ -7182,7 +7182,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6A",
         "kind": "nav",
         "target": "scene_2532",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2535-h5",
@@ -7192,7 +7192,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6B",
         "kind": "nav",
         "target": "scene_2533",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2535-h6",
@@ -7202,7 +7202,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6C",
         "kind": "nav",
         "target": "scene_2534",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2535-h7",
@@ -7409,7 +7409,7 @@ export const SCENES: Scene[] = [
         "label": "popup",
         "labelEn": "popup",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/marker/marker03.png"
+        "url": "/mice/upload/mice_vr/marker/camera.png"
       }
     ]
   },
@@ -7431,7 +7431,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 7 Entrance",
         "kind": "nav",
         "target": "scene_2537",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2541-h2",
@@ -7441,7 +7441,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 7 Entrance",
         "kind": "nav",
         "target": "scene_2537",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2541-h3",
@@ -7451,7 +7451,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6",
         "kind": "nav",
         "target": "scene_2535",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2541-h4",
@@ -7461,7 +7461,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 8",
         "kind": "nav",
         "target": "scene_2544",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2541-h5",
@@ -7471,7 +7471,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 7A",
         "kind": "nav",
         "target": "scene_2542",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2541-h6",
@@ -7481,7 +7481,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 7B",
         "kind": "nav",
         "target": "scene_2543",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2541-h7",
@@ -7697,7 +7697,7 @@ export const SCENES: Scene[] = [
         "label": "popup",
         "labelEn": "popup",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/marker/marker03.png"
+        "url": "/mice/upload/mice_vr/marker/camera.png"
       },
       {
         "id": "scene_2541-h31",
@@ -7707,7 +7707,7 @@ export const SCENES: Scene[] = [
         "labelEn": "1F Lobby",
         "kind": "nav",
         "target": "scene_2528",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2541-h32",
@@ -7717,7 +7717,7 @@ export const SCENES: Scene[] = [
         "labelEn": "1F Lobby",
         "kind": "nav",
         "target": "scene_2528",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -7739,7 +7739,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 8A",
         "kind": "nav",
         "target": "scene_2545",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2544-h2",
@@ -7749,7 +7749,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 8B",
         "kind": "nav",
         "target": "scene_2546",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2544-h3",
@@ -7759,7 +7759,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 7",
         "kind": "nav",
         "target": "scene_2541",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2544-h4",
@@ -7769,7 +7769,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 7B",
         "kind": "nav",
         "target": "scene_2543",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2544-h5",
@@ -7779,7 +7779,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 8 Entrance",
         "kind": "nav",
         "target": "scene_2538",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2544-h6",
@@ -7789,7 +7789,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 8 Entrance",
         "kind": "nav",
         "target": "scene_2538",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2544-h7",
@@ -8014,7 +8014,7 @@ export const SCENES: Scene[] = [
         "label": "popup",
         "labelEn": "popup",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/marker/marker03.png"
+        "url": "/mice/upload/mice_vr/marker/camera.png"
       },
       {
         "id": "scene_2544-h32",
@@ -8024,7 +8024,7 @@ export const SCENES: Scene[] = [
         "labelEn": "1F Lobby",
         "kind": "nav",
         "target": "scene_2528",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2544-h33",
@@ -8034,7 +8034,7 @@ export const SCENES: Scene[] = [
         "labelEn": "1F Lobby",
         "kind": "nav",
         "target": "scene_2528",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -8056,7 +8056,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 9A",
         "kind": "nav",
         "target": "scene_2548",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2547-h2",
@@ -8066,7 +8066,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 9B",
         "kind": "nav",
         "target": "scene_2549",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2547-h3",
@@ -8076,7 +8076,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 10",
         "kind": "nav",
         "target": "scene_2550",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2547-h4",
@@ -8086,7 +8086,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 9 Entrance",
         "kind": "nav",
         "target": "scene_2539",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2547-h5",
@@ -8096,7 +8096,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 9 Entrance",
         "kind": "nav",
         "target": "scene_2539",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2547-h6",
@@ -8303,7 +8303,7 @@ export const SCENES: Scene[] = [
         "label": "popup",
         "labelEn": "popup",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/marker/marker03.png"
+        "url": "/mice/upload/mice_vr/marker/camera.png"
       },
       {
         "id": "scene_2547-h29",
@@ -8313,7 +8313,7 @@ export const SCENES: Scene[] = [
         "labelEn": "1F Lobby",
         "kind": "nav",
         "target": "scene_2528",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2547-h30",
@@ -8323,7 +8323,7 @@ export const SCENES: Scene[] = [
         "labelEn": "1F Lobby",
         "kind": "nav",
         "target": "scene_2528",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -8345,7 +8345,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 10 Entrance",
         "kind": "nav",
         "target": "scene_2540",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2550-h2",
@@ -8355,7 +8355,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 10 Entrance",
         "kind": "nav",
         "target": "scene_2540",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2550-h3",
@@ -8365,7 +8365,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 9",
         "kind": "nav",
         "target": "scene_2547",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2550-h4",
@@ -8536,7 +8536,7 @@ export const SCENES: Scene[] = [
         "label": "popup",
         "labelEn": "popup",
         "kind": "poi",
-        "url": "/mice/upload/mice_vr/marker/marker03.png"
+        "url": "/mice/upload/mice_vr/marker/camera.png"
       },
       {
         "id": "scene_2550-h23",
@@ -8600,7 +8600,7 @@ export const SCENES: Scene[] = [
         "labelEn": "1F Lobby",
         "kind": "nav",
         "target": "scene_2528",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2550-h30",
@@ -8610,7 +8610,7 @@ export const SCENES: Scene[] = [
         "labelEn": "1F Lobby",
         "kind": "nav",
         "target": "scene_2528",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -8632,7 +8632,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 301",
         "kind": "nav",
         "target": "scene_2555",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2553-h2",
@@ -8642,7 +8642,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 302",
         "kind": "nav",
         "target": "scene_2559",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2553-h3",
@@ -8652,7 +8652,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 303",
         "kind": "nav",
         "target": "scene_2563",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2553-h4",
@@ -8662,7 +8662,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 304",
         "kind": "nav",
         "target": "scene_2567",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2553-h5",
@@ -8672,7 +8672,7 @@ export const SCENES: Scene[] = [
         "labelEn": "2F Lobby",
         "kind": "nav",
         "target": "scene_2668",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2553-h6",
@@ -8682,7 +8682,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F Hallway",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2553-h7",
@@ -8692,7 +8692,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -8714,7 +8714,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 305",
         "kind": "nav",
         "target": "scene_2571",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2554-h2",
@@ -8724,7 +8724,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 305",
         "kind": "nav",
         "target": "scene_2571",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2554-h3",
@@ -8734,7 +8734,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 306",
         "kind": "nav",
         "target": "scene_2579",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2554-h4",
@@ -8744,7 +8744,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 306",
         "kind": "nav",
         "target": "scene_2579",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2554-h5",
@@ -8754,7 +8754,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 307",
         "kind": "nav",
         "target": "scene_2587",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2554-h6",
@@ -8764,7 +8764,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 307",
         "kind": "nav",
         "target": "scene_2587",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2554-h7",
@@ -8774,7 +8774,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 308",
         "kind": "nav",
         "target": "scene_2595",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2554-h8",
@@ -8784,7 +8784,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 308",
         "kind": "nav",
         "target": "scene_2595",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2554-h9",
@@ -8794,7 +8794,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -8816,7 +8816,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2555-h2",
@@ -8826,7 +8826,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301+302",
         "kind": "nav",
         "target": "scene_2603",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2555-h3",
@@ -8908,7 +8908,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301 강의식",
         "kind": "nav",
         "target": "scene_2558",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2555-h12",
@@ -8918,7 +8918,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301 극장식",
         "kind": "nav",
         "target": "scene_2557",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2555-h13",
@@ -8928,7 +8928,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301 연회식",
         "kind": "nav",
         "target": "scene_2556",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2555-h14",
@@ -8959,7 +8959,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 302",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2559-h2",
@@ -8969,7 +8969,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301+302",
         "kind": "nav",
         "target": "scene_2603",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2559-h3",
@@ -9060,7 +9060,7 @@ export const SCENES: Scene[] = [
         "labelEn": "302 강의식",
         "kind": "nav",
         "target": "scene_2558",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2559-h13",
@@ -9070,7 +9070,7 @@ export const SCENES: Scene[] = [
         "labelEn": "302 극장식",
         "kind": "nav",
         "target": "scene_2557",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2559-h14",
@@ -9080,7 +9080,7 @@ export const SCENES: Scene[] = [
         "labelEn": "302 연회식",
         "kind": "nav",
         "target": "scene_2556",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -9102,7 +9102,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2563-h2",
@@ -9193,7 +9193,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 강의식",
         "kind": "nav",
         "target": "scene_2566",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2563-h12",
@@ -9203,7 +9203,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 극장식",
         "kind": "nav",
         "target": "scene_2565",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2563-h13",
@@ -9213,7 +9213,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 연회식",
         "kind": "nav",
         "target": "scene_2564",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -9235,7 +9235,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2567-h2",
@@ -9344,7 +9344,7 @@ export const SCENES: Scene[] = [
         "labelEn": "304 강의식",
         "kind": "nav",
         "target": "scene_2570",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2567-h14",
@@ -9354,7 +9354,7 @@ export const SCENES: Scene[] = [
         "labelEn": "304 극장식",
         "kind": "nav",
         "target": "scene_2569",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2567-h15",
@@ -9364,7 +9364,7 @@ export const SCENES: Scene[] = [
         "labelEn": "304 연회식",
         "kind": "nav",
         "target": "scene_2568",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -9386,7 +9386,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2571-h2",
@@ -9396,7 +9396,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2571-h3",
@@ -9532,7 +9532,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305 연회식",
         "kind": "nav",
         "target": "scene_2572",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2571-h18",
@@ -9542,7 +9542,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305 극장식",
         "kind": "nav",
         "target": "scene_2573",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2571-h19",
@@ -9552,7 +9552,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305 강의식",
         "kind": "nav",
         "target": "scene_2574",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2571-h20",
@@ -9562,7 +9562,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305A강의식",
         "kind": "nav",
         "target": "scene_2576",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2571-h21",
@@ -9572,7 +9572,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305B강의식",
         "kind": "nav",
         "target": "scene_2578",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -9594,7 +9594,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2579-h2",
@@ -9604,7 +9604,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2579-h3",
@@ -9740,7 +9740,7 @@ export const SCENES: Scene[] = [
         "labelEn": "306 연회식",
         "kind": "nav",
         "target": "scene_2580",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2579-h18",
@@ -9750,7 +9750,7 @@ export const SCENES: Scene[] = [
         "labelEn": "306 극장식",
         "kind": "nav",
         "target": "scene_2581",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2579-h19",
@@ -9760,7 +9760,7 @@ export const SCENES: Scene[] = [
         "labelEn": "306 강의식",
         "kind": "nav",
         "target": "scene_2582",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2579-h20",
@@ -9770,7 +9770,7 @@ export const SCENES: Scene[] = [
         "labelEn": "306A강의식",
         "kind": "nav",
         "target": "scene_2584",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2579-h21",
@@ -9780,7 +9780,7 @@ export const SCENES: Scene[] = [
         "labelEn": "306B강의식",
         "kind": "nav",
         "target": "scene_2586",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -9802,7 +9802,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2587-h2",
@@ -9812,7 +9812,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2587-h3",
@@ -9948,7 +9948,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307 연회식",
         "kind": "nav",
         "target": "scene_2588",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2587-h18",
@@ -9958,7 +9958,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307 극장식",
         "kind": "nav",
         "target": "scene_2589",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2587-h19",
@@ -9968,7 +9968,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307 강의식",
         "kind": "nav",
         "target": "scene_2590",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2587-h20",
@@ -9978,7 +9978,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307A강의식",
         "kind": "nav",
         "target": "scene_2592",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2587-h21",
@@ -9988,7 +9988,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307B강의식",
         "kind": "nav",
         "target": "scene_2594",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -10010,7 +10010,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2595-h2",
@@ -10020,7 +10020,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2595-h3",
@@ -10147,7 +10147,7 @@ export const SCENES: Scene[] = [
         "labelEn": "308 연회식",
         "kind": "nav",
         "target": "scene_2596",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2595-h17",
@@ -10157,7 +10157,7 @@ export const SCENES: Scene[] = [
         "labelEn": "308 극장식",
         "kind": "nav",
         "target": "scene_2597",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2595-h18",
@@ -10167,7 +10167,7 @@ export const SCENES: Scene[] = [
         "labelEn": "308 강의식",
         "kind": "nav",
         "target": "scene_2598",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2595-h19",
@@ -10177,7 +10177,7 @@ export const SCENES: Scene[] = [
         "labelEn": "308A강의식",
         "kind": "nav",
         "target": "scene_2600",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2595-h20",
@@ -10187,7 +10187,7 @@ export const SCENES: Scene[] = [
         "labelEn": "308B강의식",
         "kind": "nav",
         "target": "scene_2602",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -10209,7 +10209,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2603-h2",
@@ -10219,7 +10219,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2603-h3",
@@ -10229,7 +10229,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 301",
         "kind": "nav",
         "target": "scene_2555",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2603-h4",
@@ -10239,7 +10239,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 302",
         "kind": "nav",
         "target": "scene_2559",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2603-h5",
@@ -10357,7 +10357,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301+302 연회식",
         "kind": "nav",
         "target": "scene_2604",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2603-h18",
@@ -10367,7 +10367,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301+302 극장식",
         "kind": "nav",
         "target": "scene_2605",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2603-h19",
@@ -10377,7 +10377,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301+302 강의식",
         "kind": "nav",
         "target": "scene_2606",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -10399,7 +10399,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2607-h2",
@@ -10409,7 +10409,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2607-h3",
@@ -10419,7 +10419,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 303",
         "kind": "nav",
         "target": "scene_2563",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2607-h4",
@@ -10429,7 +10429,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 304",
         "kind": "nav",
         "target": "scene_2567",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2607-h5",
@@ -10547,7 +10547,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303+304 연회식",
         "kind": "nav",
         "target": "scene_2608",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2607-h18",
@@ -10557,7 +10557,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303+304 극장식",
         "kind": "nav",
         "target": "scene_2609",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2607-h19",
@@ -10567,7 +10567,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303+304 강의식",
         "kind": "nav",
         "target": "scene_2610",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -10589,7 +10589,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 405",
         "kind": "nav",
         "target": "scene_2628",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2611-h2",
@@ -10599,7 +10599,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 406",
         "kind": "nav",
         "target": "scene_2636",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2611-h3",
@@ -10609,7 +10609,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 407",
         "kind": "nav",
         "target": "scene_2644",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2611-h4",
@@ -10619,7 +10619,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 408",
         "kind": "nav",
         "target": "scene_2652",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2611-h5",
@@ -10629,7 +10629,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 401",
         "kind": "nav",
         "target": "scene_2612",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2611-h6",
@@ -10639,7 +10639,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 402",
         "kind": "nav",
         "target": "scene_2616",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2611-h7",
@@ -10649,7 +10649,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 403",
         "kind": "nav",
         "target": "scene_2620",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2611-h8",
@@ -10659,7 +10659,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 404",
         "kind": "nav",
         "target": "scene_2624",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2611-h9",
@@ -10669,7 +10669,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -10691,7 +10691,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F Lobby",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2612-h2",
@@ -10701,7 +10701,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 402",
         "kind": "nav",
         "target": "scene_2616",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2612-h3",
@@ -10792,7 +10792,7 @@ export const SCENES: Scene[] = [
         "labelEn": "401 연회식",
         "kind": "nav",
         "target": "scene_2613",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2612-h13",
@@ -10802,7 +10802,7 @@ export const SCENES: Scene[] = [
         "labelEn": "401 극장식",
         "kind": "nav",
         "target": "scene_2614",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2612-h14",
@@ -10812,7 +10812,7 @@ export const SCENES: Scene[] = [
         "labelEn": "401 강의식",
         "kind": "nav",
         "target": "scene_2615",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -10834,7 +10834,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2616-h2",
@@ -10844,7 +10844,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 401",
         "kind": "nav",
         "target": "scene_2612",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2616-h3",
@@ -10953,7 +10953,7 @@ export const SCENES: Scene[] = [
         "labelEn": "402 연회식",
         "kind": "nav",
         "target": "scene_2617",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2616-h15",
@@ -10963,7 +10963,7 @@ export const SCENES: Scene[] = [
         "labelEn": "402 극장식",
         "kind": "nav",
         "target": "scene_2618",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2616-h16",
@@ -10973,7 +10973,7 @@ export const SCENES: Scene[] = [
         "labelEn": "402 강의식",
         "kind": "nav",
         "target": "scene_2619",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -10995,7 +10995,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2620-h2",
@@ -11005,7 +11005,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 404",
         "kind": "nav",
         "target": "scene_2624",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2620-h3",
@@ -11096,7 +11096,7 @@ export const SCENES: Scene[] = [
         "labelEn": "403 연회식",
         "kind": "nav",
         "target": "scene_2621",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2620-h13",
@@ -11106,7 +11106,7 @@ export const SCENES: Scene[] = [
         "labelEn": "403 극장식",
         "kind": "nav",
         "target": "scene_2622",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2620-h14",
@@ -11116,7 +11116,7 @@ export const SCENES: Scene[] = [
         "labelEn": "403 강의식",
         "kind": "nav",
         "target": "scene_2623",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -11138,7 +11138,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2624-h2",
@@ -11148,7 +11148,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 403",
         "kind": "nav",
         "target": "scene_2620",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2624-h3",
@@ -11239,7 +11239,7 @@ export const SCENES: Scene[] = [
         "labelEn": "404 연회식",
         "kind": "nav",
         "target": "scene_2625",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2624-h13",
@@ -11249,7 +11249,7 @@ export const SCENES: Scene[] = [
         "labelEn": "404 극장식",
         "kind": "nav",
         "target": "scene_2626",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2624-h14",
@@ -11259,7 +11259,7 @@ export const SCENES: Scene[] = [
         "labelEn": "404 강의식",
         "kind": "nav",
         "target": "scene_2627",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -11281,7 +11281,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2628-h2",
@@ -11291,7 +11291,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2628-h3",
@@ -11427,7 +11427,7 @@ export const SCENES: Scene[] = [
         "labelEn": "405 연회식",
         "kind": "nav",
         "target": "scene_2629",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2628-h18",
@@ -11437,7 +11437,7 @@ export const SCENES: Scene[] = [
         "labelEn": "405 극장식",
         "kind": "nav",
         "target": "scene_2630",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2628-h19",
@@ -11447,7 +11447,7 @@ export const SCENES: Scene[] = [
         "labelEn": "405 강의식",
         "kind": "nav",
         "target": "scene_2631",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2628-h20",
@@ -11457,7 +11457,7 @@ export const SCENES: Scene[] = [
         "labelEn": "405A강의식",
         "kind": "nav",
         "target": "scene_2633",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2628-h21",
@@ -11467,7 +11467,7 @@ export const SCENES: Scene[] = [
         "labelEn": "405B강의식",
         "kind": "nav",
         "target": "scene_2635",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -11489,7 +11489,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2636-h2",
@@ -11499,7 +11499,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2636-h3",
@@ -11635,7 +11635,7 @@ export const SCENES: Scene[] = [
         "labelEn": "406 연회식",
         "kind": "nav",
         "target": "scene_2637",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2636-h18",
@@ -11645,7 +11645,7 @@ export const SCENES: Scene[] = [
         "labelEn": "406 극장식",
         "kind": "nav",
         "target": "scene_2638",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2636-h19",
@@ -11655,7 +11655,7 @@ export const SCENES: Scene[] = [
         "labelEn": "406 강의식",
         "kind": "nav",
         "target": "scene_2639",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2636-h20",
@@ -11665,7 +11665,7 @@ export const SCENES: Scene[] = [
         "labelEn": "406A강의식",
         "kind": "nav",
         "target": "scene_2641",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2636-h21",
@@ -11675,7 +11675,7 @@ export const SCENES: Scene[] = [
         "labelEn": "406B강의식",
         "kind": "nav",
         "target": "scene_2643",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -11697,7 +11697,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2644-h2",
@@ -11707,7 +11707,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2644-h3",
@@ -11843,7 +11843,7 @@ export const SCENES: Scene[] = [
         "labelEn": "407 연회식",
         "kind": "nav",
         "target": "scene_2645",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2644-h18",
@@ -11853,7 +11853,7 @@ export const SCENES: Scene[] = [
         "labelEn": "407 극장식",
         "kind": "nav",
         "target": "scene_2646",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2644-h19",
@@ -11863,7 +11863,7 @@ export const SCENES: Scene[] = [
         "labelEn": "407 강의식",
         "kind": "nav",
         "target": "scene_2647",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2644-h20",
@@ -11873,7 +11873,7 @@ export const SCENES: Scene[] = [
         "labelEn": "407A강의식",
         "kind": "nav",
         "target": "scene_2649",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2644-h21",
@@ -11883,7 +11883,7 @@ export const SCENES: Scene[] = [
         "labelEn": "407B강의식",
         "kind": "nav",
         "target": "scene_2651",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -11905,7 +11905,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2652-h2",
@@ -11915,7 +11915,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2652-h3",
@@ -12051,7 +12051,7 @@ export const SCENES: Scene[] = [
         "labelEn": "408 연회식",
         "kind": "nav",
         "target": "scene_2653",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2652-h18",
@@ -12061,7 +12061,7 @@ export const SCENES: Scene[] = [
         "labelEn": "408 극장식",
         "kind": "nav",
         "target": "scene_2654",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2652-h19",
@@ -12071,7 +12071,7 @@ export const SCENES: Scene[] = [
         "labelEn": "408 강의식",
         "kind": "nav",
         "target": "scene_2655",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2652-h20",
@@ -12081,7 +12081,7 @@ export const SCENES: Scene[] = [
         "labelEn": "408B강의식",
         "kind": "nav",
         "target": "scene_2659",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2652-h21",
@@ -12091,7 +12091,7 @@ export const SCENES: Scene[] = [
         "labelEn": "408B강의식",
         "kind": "nav",
         "target": "scene_2659",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -12113,7 +12113,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2660-h2",
@@ -12123,7 +12123,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2660-h3",
@@ -12133,7 +12133,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 401",
         "kind": "nav",
         "target": "scene_2612",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2660-h4",
@@ -12143,7 +12143,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 402",
         "kind": "nav",
         "target": "scene_2616",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2660-h5",
@@ -12261,7 +12261,7 @@ export const SCENES: Scene[] = [
         "labelEn": "401+402 강의식",
         "kind": "nav",
         "target": "scene_2663",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2660-h18",
@@ -12271,7 +12271,7 @@ export const SCENES: Scene[] = [
         "labelEn": "401+402 극장식",
         "kind": "nav",
         "target": "scene_2662",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2660-h19",
@@ -12281,7 +12281,7 @@ export const SCENES: Scene[] = [
         "labelEn": "401+402 연회식",
         "kind": "nav",
         "target": "scene_2661",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -12303,7 +12303,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2664-h2",
@@ -12313,7 +12313,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2664-h3",
@@ -12323,7 +12323,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 402",
         "kind": "nav",
         "target": "scene_2616",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2664-h4",
@@ -12333,7 +12333,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 401",
         "kind": "nav",
         "target": "scene_2612",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2664-h5",
@@ -12451,7 +12451,7 @@ export const SCENES: Scene[] = [
         "labelEn": "403+404 강의식",
         "kind": "nav",
         "target": "scene_2667",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2664-h18",
@@ -12461,7 +12461,7 @@ export const SCENES: Scene[] = [
         "labelEn": "403+404 극장식",
         "kind": "nav",
         "target": "scene_2666",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2664-h19",
@@ -12471,7 +12471,7 @@ export const SCENES: Scene[] = [
         "labelEn": "403+404 연회식",
         "kind": "nav",
         "target": "scene_2665",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -12493,7 +12493,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2478-h2",
@@ -12503,7 +12503,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 211",
         "kind": "nav",
         "target": "scene_2477",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -12525,7 +12525,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2479-h2",
@@ -12535,7 +12535,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 211",
         "kind": "nav",
         "target": "scene_2477",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -12557,7 +12557,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2480-h2",
@@ -12639,7 +12639,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 211",
         "kind": "nav",
         "target": "scene_2477",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -12661,7 +12661,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2482-h2",
@@ -12734,7 +12734,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 211",
         "kind": "nav",
         "target": "scene_2477",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -12756,7 +12756,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2471-h2",
@@ -12766,7 +12766,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 210",
         "kind": "nav",
         "target": "scene_2470",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -12788,7 +12788,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2472-h2",
@@ -12798,7 +12798,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 210",
         "kind": "nav",
         "target": "scene_2470",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -12820,7 +12820,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2473-h2",
@@ -12902,7 +12902,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 210",
         "kind": "nav",
         "target": "scene_2470",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -12924,7 +12924,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2475-h2",
@@ -12997,7 +12997,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 210",
         "kind": "nav",
         "target": "scene_2470",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -13019,7 +13019,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2436-h2",
@@ -13029,7 +13029,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 205",
         "kind": "nav",
         "target": "scene_2435",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -13051,7 +13051,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2437-h2",
@@ -13061,7 +13061,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 205",
         "kind": "nav",
         "target": "scene_2435",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -13083,7 +13083,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2438-h2",
@@ -13165,7 +13165,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 205",
         "kind": "nav",
         "target": "scene_2435",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -13187,7 +13187,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2440-h2",
@@ -13260,7 +13260,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 205",
         "kind": "nav",
         "target": "scene_2435",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -13282,7 +13282,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2443-h2",
@@ -13292,7 +13292,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 206",
         "kind": "nav",
         "target": "scene_2442",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -13314,7 +13314,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2444-h2",
@@ -13324,7 +13324,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 206",
         "kind": "nav",
         "target": "scene_2442",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -13346,7 +13346,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2445-h2",
@@ -13428,7 +13428,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 206",
         "kind": "nav",
         "target": "scene_2442",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -13450,7 +13450,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2447-h2",
@@ -13523,7 +13523,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 206",
         "kind": "nav",
         "target": "scene_2442",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -13545,7 +13545,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2450-h2",
@@ -13555,7 +13555,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 207",
         "kind": "nav",
         "target": "scene_2449",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -13577,7 +13577,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2451-h2",
@@ -13587,7 +13587,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 207",
         "kind": "nav",
         "target": "scene_2449",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -13609,7 +13609,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2452-h2",
@@ -13691,7 +13691,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 207",
         "kind": "nav",
         "target": "scene_2449",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -13713,7 +13713,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2454-h2",
@@ -13786,7 +13786,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 207",
         "kind": "nav",
         "target": "scene_2449",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -13808,7 +13808,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2457-h2",
@@ -13818,7 +13818,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 208",
         "kind": "nav",
         "target": "scene_2456",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -13840,7 +13840,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2458-h2",
@@ -13850,7 +13850,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 208",
         "kind": "nav",
         "target": "scene_2456",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -13872,7 +13872,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2459-h2",
@@ -13954,7 +13954,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 208",
         "kind": "nav",
         "target": "scene_2456",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -13976,7 +13976,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2461-h2",
@@ -14049,7 +14049,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 208",
         "kind": "nav",
         "target": "scene_2456",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -14071,7 +14071,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2464-h2",
@@ -14081,7 +14081,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 209",
         "kind": "nav",
         "target": "scene_2463",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -14103,7 +14103,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2465-h2",
@@ -14113,7 +14113,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 209",
         "kind": "nav",
         "target": "scene_2463",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -14135,7 +14135,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2466-h2",
@@ -14217,7 +14217,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 209",
         "kind": "nav",
         "target": "scene_2463",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -14239,7 +14239,7 @@ export const SCENES: Scene[] = [
         "labelEn": "207 입구",
         "kind": "nav",
         "target": "scene_2431",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2468-h2",
@@ -14312,7 +14312,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 209",
         "kind": "nav",
         "target": "scene_2463",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -14334,7 +14334,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2495-h2",
@@ -14344,7 +14344,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2495-h3",
@@ -14381,7 +14381,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212+213",
         "kind": "nav",
         "target": "scene_2494",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -14403,7 +14403,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2496-h2",
@@ -14413,7 +14413,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212AB 입구",
         "kind": "nav",
         "target": "scene_2432",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2496-h3",
@@ -14441,7 +14441,7 @@ export const SCENES: Scene[] = [
         "labelEn": "212+213",
         "kind": "nav",
         "target": "scene_2494",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -14463,7 +14463,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 입구",
         "kind": "nav",
         "target": "scene_2497",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2504-h2",
@@ -14473,7 +14473,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 303",
         "kind": "nav",
         "target": "scene_2503",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -14495,7 +14495,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 입구",
         "kind": "nav",
         "target": "scene_2497",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2505-h2",
@@ -14505,7 +14505,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 303",
         "kind": "nav",
         "target": "scene_2503",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -14527,7 +14527,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 입구",
         "kind": "nav",
         "target": "scene_2497",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2507-h2",
@@ -14537,7 +14537,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 304",
         "kind": "nav",
         "target": "scene_2506",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -14559,7 +14559,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 입구",
         "kind": "nav",
         "target": "scene_2497",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2508-h2",
@@ -14569,7 +14569,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 304",
         "kind": "nav",
         "target": "scene_2506",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -14591,7 +14591,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 입구",
         "kind": "nav",
         "target": "scene_2497",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2510-h2",
@@ -14601,7 +14601,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 305",
         "kind": "nav",
         "target": "scene_2509",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -14623,7 +14623,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303 입구",
         "kind": "nav",
         "target": "scene_2497",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2511-h2",
@@ -14633,7 +14633,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 305",
         "kind": "nav",
         "target": "scene_2509",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -14655,7 +14655,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2517-h2",
@@ -14665,7 +14665,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2517-h3",
@@ -14711,7 +14711,7 @@ export const SCENES: Scene[] = [
         "labelEn": "306+307",
         "kind": "nav",
         "target": "scene_2516",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -14733,7 +14733,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2518-h2",
@@ -14743,7 +14743,7 @@ export const SCENES: Scene[] = [
         "labelEn": "307, 308 입구",
         "kind": "nav",
         "target": "scene_2498",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2518-h3",
@@ -14780,7 +14780,7 @@ export const SCENES: Scene[] = [
         "labelEn": "306+307",
         "kind": "nav",
         "target": "scene_2516",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       }
     ]
   },
@@ -14802,7 +14802,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6B",
         "kind": "nav",
         "target": "scene_2533",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2532-h2",
@@ -14812,7 +14812,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6A+B+C",
         "kind": "nav",
         "target": "scene_2535",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2532-h3",
@@ -14822,7 +14822,7 @@ export const SCENES: Scene[] = [
         "labelEn": "6홀입구",
         "kind": "nav",
         "target": "scene_2536",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2532-h4",
@@ -14952,7 +14952,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6A",
         "kind": "nav",
         "target": "scene_2532",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2533-h2",
@@ -14962,7 +14962,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6C",
         "kind": "nav",
         "target": "scene_2534",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2533-h3",
@@ -14972,7 +14972,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 6 Entrance",
         "kind": "nav",
         "target": "scene_2536",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2533-h4",
@@ -14982,7 +14982,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6 A+B+C",
         "kind": "nav",
         "target": "scene_2535",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2533-h5",
@@ -14992,7 +14992,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6 A+B+C",
         "kind": "nav",
         "target": "scene_2535",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2533-h6",
@@ -15131,7 +15131,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6B",
         "kind": "nav",
         "target": "scene_2533",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2534-h2",
@@ -15141,7 +15141,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 6 Entrance",
         "kind": "nav",
         "target": "scene_2536",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2534-h3",
@@ -15151,7 +15151,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6 A+B+C",
         "kind": "nav",
         "target": "scene_2535",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2534-h4",
@@ -15290,7 +15290,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 6",
         "kind": "nav",
         "target": "scene_2535",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2542-h2",
@@ -15300,7 +15300,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 7 (A+B)",
         "kind": "nav",
         "target": "scene_2541",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2542-h3",
@@ -15310,7 +15310,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 7 Entrance",
         "kind": "nav",
         "target": "scene_2537",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2542-h4",
@@ -15320,7 +15320,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 7B",
         "kind": "nav",
         "target": "scene_2543",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2542-h5",
@@ -15483,7 +15483,7 @@ export const SCENES: Scene[] = [
         "labelEn": "1F Lobby",
         "kind": "nav",
         "target": "scene_2528",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -15505,7 +15505,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 7 (A+B)",
         "kind": "nav",
         "target": "scene_2541",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2543-h2",
@@ -15515,7 +15515,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 7A",
         "kind": "nav",
         "target": "scene_2542",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2543-h3",
@@ -15525,7 +15525,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 7 Entrance",
         "kind": "nav",
         "target": "scene_2537",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2543-h4",
@@ -15535,7 +15535,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 8",
         "kind": "nav",
         "target": "scene_2544",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2543-h5",
@@ -15545,7 +15545,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 8A",
         "kind": "nav",
         "target": "scene_2545",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2543-h6",
@@ -15690,7 +15690,7 @@ export const SCENES: Scene[] = [
         "labelEn": "1F Lobby",
         "kind": "nav",
         "target": "scene_2528",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -15712,7 +15712,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 7",
         "kind": "nav",
         "target": "scene_2541",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2545-h2",
@@ -15722,7 +15722,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 7B",
         "kind": "nav",
         "target": "scene_2543",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2545-h3",
@@ -15732,7 +15732,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 8(A+B)",
         "kind": "nav",
         "target": "scene_2544",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2545-h4",
@@ -15742,7 +15742,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 8B",
         "kind": "nav",
         "target": "scene_2546",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2545-h5",
@@ -15752,7 +15752,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 8 Entrance",
         "kind": "nav",
         "target": "scene_2538",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2545-h6",
@@ -15906,7 +15906,7 @@ export const SCENES: Scene[] = [
         "labelEn": "1F Lobby",
         "kind": "nav",
         "target": "scene_2528",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -15928,7 +15928,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 8A",
         "kind": "nav",
         "target": "scene_2545",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2546-h2",
@@ -15938,7 +15938,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 8 (A+B)",
         "kind": "nav",
         "target": "scene_2544",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2546-h3",
@@ -15948,7 +15948,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 8 Entrance",
         "kind": "nav",
         "target": "scene_2538",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2546-h4",
@@ -16111,7 +16111,7 @@ export const SCENES: Scene[] = [
         "labelEn": "1F Lobby",
         "kind": "nav",
         "target": "scene_2528",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -16133,7 +16133,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 9 (A+B)",
         "kind": "nav",
         "target": "scene_2547",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2548-h2",
@@ -16143,7 +16143,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 9B",
         "kind": "nav",
         "target": "scene_2549",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2548-h3",
@@ -16153,7 +16153,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 9 Entrance",
         "kind": "nav",
         "target": "scene_2539",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2548-h4",
@@ -16316,7 +16316,7 @@ export const SCENES: Scene[] = [
         "labelEn": "1F Lobby",
         "kind": "nav",
         "target": "scene_2528",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -16338,7 +16338,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Hall 9 Entrance",
         "kind": "nav",
         "target": "scene_2539",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2549-h2",
@@ -16348,7 +16348,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 10",
         "kind": "nav",
         "target": "scene_2550",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2549-h3",
@@ -16358,7 +16358,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 9 (A+B)",
         "kind": "nav",
         "target": "scene_2547",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2549-h4",
@@ -16368,7 +16368,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Exhibition Hall 9A",
         "kind": "nav",
         "target": "scene_2548",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2549-h5",
@@ -16513,7 +16513,7 @@ export const SCENES: Scene[] = [
         "labelEn": "1F Lobby",
         "kind": "nav",
         "target": "scene_2528",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -16535,7 +16535,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2558-h2",
@@ -16545,7 +16545,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 301",
         "kind": "nav",
         "target": "scene_2555",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2558-h3",
@@ -16648,7 +16648,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2557-h2",
@@ -16658,7 +16658,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 301",
         "kind": "nav",
         "target": "scene_2555",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2557-h3",
@@ -16761,7 +16761,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2556-h2",
@@ -16771,7 +16771,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 301",
         "kind": "nav",
         "target": "scene_2555",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2556-h3",
@@ -16874,7 +16874,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2566-h2",
@@ -16884,7 +16884,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 303",
         "kind": "nav",
         "target": "scene_2563",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2566-h3",
@@ -16987,7 +16987,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2565-h2",
@@ -16997,7 +16997,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 303",
         "kind": "nav",
         "target": "scene_2563",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2565-h3",
@@ -17100,7 +17100,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2564-h2",
@@ -17110,7 +17110,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 303",
         "kind": "nav",
         "target": "scene_2563",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2564-h3",
@@ -17213,7 +17213,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2570-h2",
@@ -17223,7 +17223,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 304",
         "kind": "nav",
         "target": "scene_2567",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2570-h3",
@@ -17326,7 +17326,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2569-h2",
@@ -17336,7 +17336,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 304",
         "kind": "nav",
         "target": "scene_2567",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2569-h3",
@@ -17439,7 +17439,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2568-h2",
@@ -17449,7 +17449,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 304",
         "kind": "nav",
         "target": "scene_2567",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2568-h3",
@@ -17552,7 +17552,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2572-h2",
@@ -17562,7 +17562,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2572-h3",
@@ -17572,7 +17572,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 305",
         "kind": "nav",
         "target": "scene_2571",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -17594,7 +17594,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2573-h2",
@@ -17604,7 +17604,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2573-h3",
@@ -17614,7 +17614,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 305",
         "kind": "nav",
         "target": "scene_2571",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -17636,7 +17636,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2574-h2",
@@ -17646,7 +17646,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2574-h3",
@@ -17656,7 +17656,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 305",
         "kind": "nav",
         "target": "scene_2571",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -17678,7 +17678,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 305",
         "kind": "nav",
         "target": "scene_2571",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2576-h2",
@@ -17772,7 +17772,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 305",
         "kind": "nav",
         "target": "scene_2571",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2578-h2",
@@ -17866,7 +17866,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2580-h2",
@@ -17876,7 +17876,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2580-h3",
@@ -17886,7 +17886,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 306",
         "kind": "nav",
         "target": "scene_2579",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -17908,7 +17908,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2581-h2",
@@ -17918,7 +17918,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2581-h3",
@@ -17928,7 +17928,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 306",
         "kind": "nav",
         "target": "scene_2579",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -17950,7 +17950,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2582-h2",
@@ -17960,7 +17960,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2582-h3",
@@ -17970,7 +17970,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 306",
         "kind": "nav",
         "target": "scene_2579",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -17992,7 +17992,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 306",
         "kind": "nav",
         "target": "scene_2579",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2584-h2",
@@ -18086,7 +18086,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 306",
         "kind": "nav",
         "target": "scene_2579",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2586-h2",
@@ -18180,7 +18180,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2588-h2",
@@ -18190,7 +18190,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2588-h3",
@@ -18200,7 +18200,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 307",
         "kind": "nav",
         "target": "scene_2587",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -18222,7 +18222,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2589-h2",
@@ -18232,7 +18232,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2589-h3",
@@ -18242,7 +18242,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 307",
         "kind": "nav",
         "target": "scene_2587",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -18264,7 +18264,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2590-h2",
@@ -18274,7 +18274,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2590-h3",
@@ -18284,7 +18284,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 307",
         "kind": "nav",
         "target": "scene_2587",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -18306,7 +18306,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 307",
         "kind": "nav",
         "target": "scene_2587",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2592-h2",
@@ -18400,7 +18400,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 307",
         "kind": "nav",
         "target": "scene_2587",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2594-h2",
@@ -18494,7 +18494,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2596-h2",
@@ -18504,7 +18504,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2596-h3",
@@ -18514,7 +18514,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 308",
         "kind": "nav",
         "target": "scene_2595",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -18536,7 +18536,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2597-h2",
@@ -18546,7 +18546,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2597-h3",
@@ -18556,7 +18556,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 308",
         "kind": "nav",
         "target": "scene_2595",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -18578,7 +18578,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2598-h2",
@@ -18588,7 +18588,7 @@ export const SCENES: Scene[] = [
         "labelEn": "305-308 Hallway",
         "kind": "nav",
         "target": "scene_2554",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2598-h3",
@@ -18598,7 +18598,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 308",
         "kind": "nav",
         "target": "scene_2595",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -18620,7 +18620,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 308",
         "kind": "nav",
         "target": "scene_2595",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2600-h2",
@@ -18714,7 +18714,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 308",
         "kind": "nav",
         "target": "scene_2595",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2602-h2",
@@ -18808,7 +18808,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2604-h2",
@@ -18818,7 +18818,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2604-h3",
@@ -18828,7 +18828,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 301",
         "kind": "nav",
         "target": "scene_2555",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2604-h4",
@@ -18838,7 +18838,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 302",
         "kind": "nav",
         "target": "scene_2559",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2604-h5",
@@ -18848,7 +18848,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301+302",
         "kind": "nav",
         "target": "scene_2603",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -18870,7 +18870,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2605-h2",
@@ -18880,7 +18880,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2605-h3",
@@ -18890,7 +18890,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 301",
         "kind": "nav",
         "target": "scene_2555",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2605-h4",
@@ -18900,7 +18900,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 302",
         "kind": "nav",
         "target": "scene_2559",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2605-h5",
@@ -18910,7 +18910,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301+302",
         "kind": "nav",
         "target": "scene_2603",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -18932,7 +18932,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2606-h2",
@@ -18942,7 +18942,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2606-h3",
@@ -18952,7 +18952,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 301",
         "kind": "nav",
         "target": "scene_2555",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2606-h4",
@@ -18962,7 +18962,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 302",
         "kind": "nav",
         "target": "scene_2559",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2606-h5",
@@ -18972,7 +18972,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301+302",
         "kind": "nav",
         "target": "scene_2603",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -18994,7 +18994,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2608-h2",
@@ -19004,7 +19004,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2608-h3",
@@ -19014,7 +19014,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 303",
         "kind": "nav",
         "target": "scene_2563",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2608-h4",
@@ -19024,7 +19024,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 304",
         "kind": "nav",
         "target": "scene_2567",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2608-h5",
@@ -19034,7 +19034,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303+304",
         "kind": "nav",
         "target": "scene_2607",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -19056,7 +19056,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2609-h2",
@@ -19066,7 +19066,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2609-h3",
@@ -19076,7 +19076,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 303",
         "kind": "nav",
         "target": "scene_2563",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2609-h4",
@@ -19086,7 +19086,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 304",
         "kind": "nav",
         "target": "scene_2567",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2609-h5",
@@ -19096,7 +19096,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303+304",
         "kind": "nav",
         "target": "scene_2607",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -19118,7 +19118,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2610-h2",
@@ -19128,7 +19128,7 @@ export const SCENES: Scene[] = [
         "labelEn": "301-304 Hallway",
         "kind": "nav",
         "target": "scene_2553",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2610-h3",
@@ -19138,7 +19138,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 303",
         "kind": "nav",
         "target": "scene_2563",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2610-h4",
@@ -19148,7 +19148,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 304",
         "kind": "nav",
         "target": "scene_2567",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2610-h5",
@@ -19158,7 +19158,7 @@ export const SCENES: Scene[] = [
         "labelEn": "303+304",
         "kind": "nav",
         "target": "scene_2607",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -19180,7 +19180,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F Lobby",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2613-h2",
@@ -19190,7 +19190,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 401",
         "kind": "nav",
         "target": "scene_2612",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2613-h3",
@@ -19293,7 +19293,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2614-h2",
@@ -19303,7 +19303,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 401",
         "kind": "nav",
         "target": "scene_2612",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2614-h3",
@@ -19406,7 +19406,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2615-h2",
@@ -19416,7 +19416,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 401",
         "kind": "nav",
         "target": "scene_2612",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2615-h3",
@@ -19519,7 +19519,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2617-h2",
@@ -19529,7 +19529,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 402",
         "kind": "nav",
         "target": "scene_2616",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2617-h3",
@@ -19632,7 +19632,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2618-h2",
@@ -19642,7 +19642,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 402",
         "kind": "nav",
         "target": "scene_2616",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2618-h3",
@@ -19745,7 +19745,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2619-h2",
@@ -19755,7 +19755,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 402",
         "kind": "nav",
         "target": "scene_2616",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2619-h3",
@@ -19858,7 +19858,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2621-h2",
@@ -19868,7 +19868,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 403",
         "kind": "nav",
         "target": "scene_2620",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2621-h3",
@@ -19971,7 +19971,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2622-h2",
@@ -19981,7 +19981,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 403",
         "kind": "nav",
         "target": "scene_2620",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2622-h3",
@@ -20084,7 +20084,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2623-h2",
@@ -20094,7 +20094,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 403",
         "kind": "nav",
         "target": "scene_2620",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2623-h3",
@@ -20197,7 +20197,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2625-h2",
@@ -20207,7 +20207,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 404",
         "kind": "nav",
         "target": "scene_2624",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2625-h3",
@@ -20310,7 +20310,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2626-h2",
@@ -20320,7 +20320,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 404",
         "kind": "nav",
         "target": "scene_2624",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2626-h3",
@@ -20423,7 +20423,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2627-h2",
@@ -20433,7 +20433,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 404",
         "kind": "nav",
         "target": "scene_2624",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2627-h3",
@@ -20536,7 +20536,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2629-h2",
@@ -20546,7 +20546,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2629-h3",
@@ -20556,7 +20556,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 405",
         "kind": "nav",
         "target": "scene_2628",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -20578,7 +20578,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2630-h2",
@@ -20588,7 +20588,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2630-h3",
@@ -20598,7 +20598,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 405",
         "kind": "nav",
         "target": "scene_2628",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -20620,7 +20620,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2631-h2",
@@ -20630,7 +20630,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2631-h3",
@@ -20640,7 +20640,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 405",
         "kind": "nav",
         "target": "scene_2628",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -20662,7 +20662,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 405",
         "kind": "nav",
         "target": "scene_2628",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2633-h2",
@@ -20756,7 +20756,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 405",
         "kind": "nav",
         "target": "scene_2628",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2635-h2",
@@ -20850,7 +20850,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2637-h2",
@@ -20860,7 +20860,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2637-h3",
@@ -20870,7 +20870,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 406",
         "kind": "nav",
         "target": "scene_2636",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -20892,7 +20892,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2638-h2",
@@ -20902,7 +20902,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2638-h3",
@@ -20912,7 +20912,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 406",
         "kind": "nav",
         "target": "scene_2636",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -20934,7 +20934,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2639-h2",
@@ -20944,7 +20944,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2639-h3",
@@ -20954,7 +20954,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 406",
         "kind": "nav",
         "target": "scene_2636",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -20976,7 +20976,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 406",
         "kind": "nav",
         "target": "scene_2636",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2641-h2",
@@ -21070,7 +21070,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 406",
         "kind": "nav",
         "target": "scene_2636",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2643-h2",
@@ -21164,7 +21164,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2645-h2",
@@ -21174,7 +21174,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2645-h3",
@@ -21184,7 +21184,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 407",
         "kind": "nav",
         "target": "scene_2644",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -21206,7 +21206,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2646-h2",
@@ -21216,7 +21216,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2646-h3",
@@ -21226,7 +21226,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 407",
         "kind": "nav",
         "target": "scene_2644",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -21248,7 +21248,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2647-h2",
@@ -21258,7 +21258,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2647-h3",
@@ -21268,7 +21268,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 407",
         "kind": "nav",
         "target": "scene_2644",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -21290,7 +21290,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 407",
         "kind": "nav",
         "target": "scene_2644",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2649-h2",
@@ -21384,7 +21384,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 407",
         "kind": "nav",
         "target": "scene_2644",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2651-h2",
@@ -21478,7 +21478,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2653-h2",
@@ -21488,7 +21488,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2653-h3",
@@ -21498,7 +21498,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 408",
         "kind": "nav",
         "target": "scene_2652",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -21520,7 +21520,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2654-h2",
@@ -21530,7 +21530,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2654-h3",
@@ -21540,7 +21540,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 408",
         "kind": "nav",
         "target": "scene_2652",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -21562,7 +21562,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2655-h2",
@@ -21572,7 +21572,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2655-h3",
@@ -21582,7 +21582,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 408",
         "kind": "nav",
         "target": "scene_2652",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -21604,7 +21604,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 408",
         "kind": "nav",
         "target": "scene_2652",
-        "url": "/mice/upload/mice_vr/marker/marker07.png"
+        "url": "/mice/upload/mice_vr/marker/vewer.png"
       },
       {
         "id": "scene_2659-h2",
@@ -21698,7 +21698,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2663-h2",
@@ -21708,7 +21708,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2663-h3",
@@ -21718,7 +21718,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 401",
         "kind": "nav",
         "target": "scene_2612",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2663-h4",
@@ -21728,7 +21728,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 402",
         "kind": "nav",
         "target": "scene_2616",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2663-h5",
@@ -21738,7 +21738,7 @@ export const SCENES: Scene[] = [
         "labelEn": "401+402",
         "kind": "nav",
         "target": "scene_2660",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -21760,7 +21760,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2662-h2",
@@ -21770,7 +21770,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2662-h3",
@@ -21780,7 +21780,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 401",
         "kind": "nav",
         "target": "scene_2612",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2662-h4",
@@ -21790,7 +21790,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 402",
         "kind": "nav",
         "target": "scene_2616",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2662-h5",
@@ -21800,7 +21800,7 @@ export const SCENES: Scene[] = [
         "labelEn": "401+402",
         "kind": "nav",
         "target": "scene_2660",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -21822,7 +21822,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2661-h2",
@@ -21832,7 +21832,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2661-h3",
@@ -21842,7 +21842,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 402",
         "kind": "nav",
         "target": "scene_2616",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2661-h4",
@@ -21852,7 +21852,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 401",
         "kind": "nav",
         "target": "scene_2612",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2661-h5",
@@ -21862,7 +21862,7 @@ export const SCENES: Scene[] = [
         "labelEn": "401+402",
         "kind": "nav",
         "target": "scene_2660",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -21884,7 +21884,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2667-h2",
@@ -21894,7 +21894,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2667-h3",
@@ -21904,7 +21904,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 401",
         "kind": "nav",
         "target": "scene_2612",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2667-h4",
@@ -21914,7 +21914,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 402",
         "kind": "nav",
         "target": "scene_2616",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2667-h5",
@@ -21924,7 +21924,7 @@ export const SCENES: Scene[] = [
         "labelEn": "403+404",
         "kind": "nav",
         "target": "scene_2664",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -21946,7 +21946,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2666-h2",
@@ -21956,7 +21956,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2666-h3",
@@ -21966,7 +21966,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 401",
         "kind": "nav",
         "target": "scene_2612",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2666-h4",
@@ -21976,7 +21976,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 402",
         "kind": "nav",
         "target": "scene_2616",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2666-h5",
@@ -21986,7 +21986,7 @@ export const SCENES: Scene[] = [
         "labelEn": "403+404",
         "kind": "nav",
         "target": "scene_2664",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   },
@@ -22008,7 +22008,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2665-h2",
@@ -22018,7 +22018,7 @@ export const SCENES: Scene[] = [
         "labelEn": "4F 복도",
         "kind": "nav",
         "target": "scene_2611",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2665-h3",
@@ -22028,7 +22028,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 401",
         "kind": "nav",
         "target": "scene_2612",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2665-h4",
@@ -22038,7 +22038,7 @@ export const SCENES: Scene[] = [
         "labelEn": "Room 402",
         "kind": "nav",
         "target": "scene_2616",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       },
       {
         "id": "scene_2665-h5",
@@ -22048,7 +22048,7 @@ export const SCENES: Scene[] = [
         "labelEn": "403+404",
         "kind": "nav",
         "target": "scene_2664",
-        "url": "/mice/upload/mice_vr/marker/marker01.png"
+        "url": "/mice/upload/mice_vr/marker/nav.png"
       }
     ]
   }

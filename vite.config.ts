@@ -21,8 +21,8 @@ function hotspotEditorPlugin() {
           req.on('end', () => {
             try {
               const data = JSON.parse(body);
-              const { sceneKey, hotspotKey, ath, atv, screenX, screenY } = data;
-              
+              const { sceneKey, hotspotKey, ath, atv, screenX, screenY, patch } = data;
+
               if (!sceneKey || !hotspotKey) {
                 res.statusCode = 400;
                 res.end(JSON.stringify({ error: "Missing sceneKey or hotspotKey" }));
@@ -31,7 +31,7 @@ function hotspotEditorPlugin() {
 
               const overridesPath = path.resolve(process.cwd(), 'src/data/hotspot-position-overrides.json');
               const backupPath = path.resolve(process.cwd(), 'src/data/hotspot-position-overrides.backup.json');
-              
+
               let overrides: Record<string, any> = {};
               if (fs.existsSync(overridesPath)) {
                 try {
@@ -49,8 +49,9 @@ function hotspotEditorPlugin() {
               if (!overrides[sceneKey]) {
                 overrides[sceneKey] = {};
               }
-              
+
               overrides[sceneKey][hotspotKey] = {
+                ...(patch || {}),
                 ath: Number(ath.toFixed(2)),
                 atv: Number(atv.toFixed(2)),
                 screenOffsetX: screenX ? Number(screenX.toFixed(2)) : 0,
@@ -75,7 +76,7 @@ function hotspotEditorPlugin() {
             try {
               const data = JSON.parse(body);
               const { sceneId, label, labelEn, kind, type, target, sub, ath, atv } = data;
-              
+
               if (!sceneId || !label) {
                 res.statusCode = 400;
                 res.end(JSON.stringify({ error: "Missing sceneId or label" }));
@@ -84,7 +85,7 @@ function hotspotEditorPlugin() {
 
               const addedPath = path.resolve(process.cwd(), 'src/data/added-hotspots.json');
               const backupPath = path.resolve(process.cwd(), 'src/data/added-hotspots.backup.json');
-              
+
               let added: Record<string, any> = {};
               if (fs.existsSync(addedPath)) {
                 try {
@@ -114,11 +115,11 @@ function hotspotEditorPlugin() {
                 target: target || undefined,
                 sub: sub || undefined,
                 url: type === "toilet" ? "/mice/upload/mice_vr/marker/toilet.png" // placeholder/marker path matching presets
-                  : type === "convenience" ? "/mice/upload/mice_vr/marker/convenience.png"
-                  : type === "cafe" ? "/mice/upload/mice_vr/marker/cafe.png"
-                  : type === "elevator" ? "/mice/upload/mice_vr/marker/elevator.png"
-                  : type === "info" ? "/mice/upload/mice_vr/marker/info.png"
-                  : "/mice/upload/mice_vr/marker/marker01.png"
+                  : type === "convenience" ? "/mice/upload/mice_vr/marker/Convenience.png"
+                    : type === "cafe" ? "/mice/upload/mice_vr/marker/cafe.png"
+                      : type === "elevator" ? "/mice/upload/mice_vr/marker/Elevator.png"
+                        : type === "info" ? "/mice/upload/mice_vr/marker/Info.png"
+                          : "/mice/upload/mice_vr/marker/nav.png"
               };
 
               added[sceneId].push(newHotspot);
@@ -140,7 +141,7 @@ function hotspotEditorPlugin() {
             try {
               const data = JSON.parse(body);
               const { sceneId, hotspotId } = data;
-              
+
               if (!sceneId || !hotspotId) {
                 res.statusCode = 400;
                 res.end(JSON.stringify({ error: "Missing sceneId or hotspotId" }));
@@ -161,7 +162,7 @@ function hotspotEditorPlugin() {
                 if (added[sceneId]) {
                   // Backup first
                   fs.writeFileSync(backupPath, JSON.stringify(added, null, 2));
-                  
+
                   added[sceneId] = added[sceneId].filter((h: any) => h.id !== hotspotId);
                   if (added[sceneId].length === 0) {
                     delete added[sceneId];
@@ -186,7 +187,7 @@ function hotspotEditorPlugin() {
             try {
               const data = JSON.parse(body);
               const { sceneKey, hotspotKey } = data;
-              
+
               if (!sceneKey || !hotspotKey) {
                 res.statusCode = 400;
                 res.end(JSON.stringify({ error: "Missing sceneKey or hotspotKey" }));
@@ -202,12 +203,12 @@ function hotspotEditorPlugin() {
                   overrides = JSON.parse(fs.readFileSync(overridesPath, 'utf-8'));
                 } catch (e) {
                   // Ignore
-                 }
+                }
 
                 if (overrides[sceneKey] && overrides[sceneKey][hotspotKey]) {
                   // Backup first
                   fs.writeFileSync(backupPath, JSON.stringify(overrides, null, 2));
-                  
+
                   delete overrides[sceneKey][hotspotKey];
                   if (Object.keys(overrides[sceneKey]).length === 0) {
                     delete overrides[sceneKey];
@@ -232,7 +233,7 @@ function hotspotEditorPlugin() {
             try {
               const data = JSON.parse(body);
               const { keys } = data;
-              
+
               if (!keys || !Array.isArray(keys)) {
                 res.statusCode = 400;
                 res.end(JSON.stringify({ error: "Missing keys array" }));

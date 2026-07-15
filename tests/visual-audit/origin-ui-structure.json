@@ -147,22 +147,22 @@
   },
   "hotspots": {
     "navMarker": {
-      "image": "marker01.png",
+      "image": "nav.png",
       "width": 108,
       "height": 108,
       "description": "Orange circle with directional arrow, pulsing animation"
     },
     "poiMarker": {
-      "image": "marker04.png",
+      "image": "aerial.png",
       "width": 108,
       "height": 108,
       "description": "Dark circle with pin icon"
     },
     "poiLabel": {
       "type": "image",
-      "description": "Korean text rendered as PNG images (e.g. SIC2027 KINTEX_Exhibition_1_kor.png)",
+      "description": "Korean text rendered as PNG images (e.g. SIC2027 KINTEX_Exhibition_1_kor.svg)",
       "examples": [
-        "SIC2027 KINTEX_Exhibition_1_kor.png (178x213px)",
+        "SIC2027 KINTEX_Exhibition_1_kor.svg (178x213px)",
         "SIC2027 KINTEX_Exhibition_2_kor.png (178x213px)",
         "Hyundai_Department_Store_kor.png (200x166px)",
         "GTX-A_SIC2027 KINTEX_Station_kor.png (200x166px)"

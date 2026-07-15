@@ -22,6 +22,8 @@ interface WebXrHotspotActivation {
   selectFromRay: (origin: THREE.Vector3, direction: THREE.Vector3) => boolean;
 }
 
+const XR_HOTSPOT_FALLBACK_MAX_ANGLE_RAD = THREE.MathUtils.degToRad(8);
+
 export function useWebXrHotspotController({
   rendererRef,
   sceneRef,
@@ -75,6 +77,79 @@ export function useWebXrHotspotController({
     });
   }, [getSourceKey]);
 
+  const tryActivateNearestHotspotFromRay = useCallback((
+    origin: THREE.Vector3,
+    direction: THREE.Vector3,
+  ) => {
+    const group = xrHotspotsGroupRef.current;
+    if (!group?.visible || group.children.length === 0) {
+      console.log("[WebXR Input] hotspot ray fallback skipped", {
+        reason: !group?.visible ? "group-hidden" : "empty-group",
+        sceneId: sceneDataRef.current.id,
+      });
+      return false;
+    }
+
+    const normalizedDirection = direction.clone().normalize();
+    const worldPosition = new THREE.Vector3();
+    const toHotspot = new THREE.Vector3();
+    let closestAngle = Infinity;
+    let closestDistance = 0;
+    let closestHotspot: Hotspot | null = null;
+    let closestTarget: string | null = null;
+
+    for (const child of group.children) {
+      const hotspot = child.userData?.hotspot as Hotspot | undefined;
+      if (!hotspot?.target) continue;
+
+      child.getWorldPosition(worldPosition);
+      toHotspot.copy(worldPosition).sub(origin).normalize();
+      const angle = normalizedDirection.angleTo(toHotspot);
+      if (!Number.isFinite(angle)) continue;
+
+      const distance = origin.distanceTo(worldPosition);
+      if (angle < closestAngle) {
+        closestAngle = angle;
+        closestDistance = distance;
+        closestHotspot = hotspot;
+        closestTarget = hotspot.target;
+      }
+    }
+
+    if (!closestHotspot || !closestTarget) {
+      console.log("[WebXR Input] hotspot ray fallback missed", {
+        reason: "no-navigation-hotspots",
+        sceneId: sceneDataRef.current.id,
+        spriteCount: group.children.length,
+      });
+      return false;
+    }
+
+    const angleDeg = THREE.MathUtils.radToDeg(closestAngle);
+    if (closestAngle > XR_HOTSPOT_FALLBACK_MAX_ANGLE_RAD) {
+      console.log("[WebXR Input] hotspot ray fallback missed", {
+        reason: "nearest-out-of-range",
+        sceneId: sceneDataRef.current.id,
+        nearestHotspotId: closestHotspot.id,
+        nearestTarget: closestTarget,
+        nearestAngleDeg: Number(angleDeg.toFixed(2)),
+        nearestDistance: Number(closestDistance.toFixed(2)),
+        thresholdDeg: Number(THREE.MathUtils.radToDeg(XR_HOTSPOT_FALLBACK_MAX_ANGLE_RAD).toFixed(2)),
+      });
+      return false;
+    }
+
+    console.log("[WebXR Input] hotspot ray fallback hit", {
+      sceneId: sceneDataRef.current.id,
+      hotspotId: closestHotspot.id,
+      target: closestTarget,
+      angleDeg: Number(angleDeg.toFixed(2)),
+      distance: Number(closestDistance.toFixed(2)),
+    });
+    onNavigateHotspot(closestTarget, closestHotspot);
+    return true;
+  }, [onNavigateHotspot, sceneDataRef, xrHotspotsGroupRef]);
+
   const tryActivateHotspotFromRay = useCallback((origin: THREE.Vector3, direction: THREE.Vector3) => {
     const renderer = rendererRef.current;
     const group = xrHotspotsGroupRef.current;
@@ -87,15 +162,25 @@ export function useWebXrHotspotController({
     raycaster.camera = baseCamera as THREE.Camera;
 
     const intersects = raycaster.intersectObjects(group.children, true);
-    if (intersects.length === 0) return false;
+    if (intersects.length === 0) {
+      return tryActivateNearestHotspotFromRay(origin, direction);
+    }
 
     const clickedSprite = intersects[0].object as THREE.Sprite;
     const hotspot = clickedSprite.userData?.hotspot as Hotspot | undefined;
-    if (!hotspot?.target) return false;
+    if (!hotspot?.target) {
+      return tryActivateNearestHotspotFromRay(origin, direction);
+    }
 
     onNavigateHotspot(hotspot.target, hotspot);
     return true;
-  }, [cameraRef, onNavigateHotspot, rendererRef, xrHotspotsGroupRef]);
+  }, [
+    cameraRef,
+    onNavigateHotspot,
+    rendererRef,
+    tryActivateNearestHotspotFromRay,
+    xrHotspotsGroupRef,
+  ]);
 
   const handleSessionSelect = useCallback((event: any) => {
     const source = event?.inputSource;
@@ -252,6 +337,17 @@ export function useWebXrHotspotController({
         lastInputTargetRayMode: "N/A",
         lastInputTimestamp: new Date().toISOString(),
       });
+      console.log("[WebXR Session State]", {
+        event: "sessionstart",
+        currentSceneState: sceneDataRef.current.id,
+        pendingScene: "N/A",
+        rendererXrIsPresenting: renderer.xr.isPresenting,
+        sceneChildrenCount: sceneRef.current?.children.length ?? 0,
+        materialUuid: (meshRef.current?.material as THREE.Material | undefined)?.uuid ?? "N/A",
+        textureUuid: ((meshRef.current?.material as THREE.MeshBasicMaterial | undefined)?.map as THREE.Texture | undefined)?.uuid ?? "N/A",
+        rendererInfoTextures: renderer.info.memory.textures,
+        rendererInfoRenderCalls: renderer.info.render.calls,
+      });
     };
 
     const onSessionEnd = () => {
@@ -289,6 +385,17 @@ export function useWebXrHotspotController({
         lastInputSourceKey: "N/A",
         lastInputTargetRayMode: "N/A",
         lastInputTimestamp: new Date().toISOString(),
+      });
+      console.log("[WebXR Session State]", {
+        event: "sessionend",
+        currentSceneState: sceneDataRef.current.id,
+        pendingScene: "N/A",
+        rendererXrIsPresenting: renderer.xr.isPresenting,
+        sceneChildrenCount: sceneRef.current?.children.length ?? 0,
+        materialUuid: (meshRef.current?.material as THREE.Material | undefined)?.uuid ?? "N/A",
+        textureUuid: ((meshRef.current?.material as THREE.MeshBasicMaterial | undefined)?.map as THREE.Texture | undefined)?.uuid ?? "N/A",
+        rendererInfoTextures: renderer.info.memory.textures,
+        rendererInfoRenderCalls: renderer.info.render.calls,
       });
     };
 
@@ -398,6 +505,53 @@ export function useWebXrHotspotController({
       bindSessionListeners(renderer.xr.getSession() as XRSession);
     }
 
+    const onWebGlContextLost = (event: Event) => {
+      event.preventDefault?.();
+      console.error("[WebGL Context]", {
+        event: "webglcontextlost",
+        currentSceneState: sceneDataRef.current.id,
+        pendingScene: "N/A",
+        rendererXrIsPresenting: renderer.xr.isPresenting,
+        sceneChildrenCount: sceneRef.current?.children.length ?? 0,
+      });
+    };
+    const onWebGlContextRestored = () => {
+      console.warn("[WebGL Context]", {
+        event: "webglcontextrestored",
+        currentSceneState: sceneDataRef.current.id,
+        pendingScene: "N/A",
+        rendererXrIsPresenting: renderer.xr.isPresenting,
+        sceneChildrenCount: sceneRef.current?.children.length ?? 0,
+      });
+    };
+    const onVisibilityChange = () => {
+      console.log("[WebXR Lifecycle]", {
+        event: "visibilitychange",
+        visibilityState: document.visibilityState,
+        currentSceneState: sceneDataRef.current.id,
+        rendererXrIsPresenting: renderer.xr.isPresenting,
+      });
+    };
+    const onWindowError = (event: ErrorEvent) => {
+      console.error("[WebXR Lifecycle]", {
+        event: "error",
+        message: event.message,
+        currentSceneState: sceneDataRef.current.id,
+      });
+    };
+    const onUnhandledRejection = (event: PromiseRejectionEvent) => {
+      console.error("[WebXR Lifecycle]", {
+        event: "unhandledrejection",
+        reason: String(event.reason || "unknown"),
+        currentSceneState: sceneDataRef.current.id,
+      });
+    };
+    renderer.domElement.addEventListener("webglcontextlost", onWebGlContextLost);
+    renderer.domElement.addEventListener("webglcontextrestored", onWebGlContextRestored);
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    window.addEventListener("error", onWindowError);
+    window.addEventListener("unhandledrejection", onUnhandledRejection);
+
     renderer.xr.addEventListener("sessionstart", onSessionStartInputs);
     renderer.xr.addEventListener("sessionend", onSessionEndInputs);
 
@@ -406,6 +560,11 @@ export function useWebXrHotspotController({
       sessionCleanupRef.current = null;
       controllerCleanupRef.current.forEach((cleanup) => cleanup());
       controllerCleanupRef.current = [];
+      renderer.domElement.removeEventListener("webglcontextlost", onWebGlContextLost);
+      renderer.domElement.removeEventListener("webglcontextrestored", onWebGlContextRestored);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      window.removeEventListener("error", onWindowError);
+      window.removeEventListener("unhandledrejection", onUnhandledRejection);
       renderer.xr.removeEventListener("sessionstart", onSessionStartInputs);
       renderer.xr.removeEventListener("sessionend", onSessionEndInputs);
     };

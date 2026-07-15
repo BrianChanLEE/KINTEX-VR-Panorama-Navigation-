@@ -7,8 +7,8 @@
       "title": "항공01",
       "zone": "aerial",
       "startDirection": {
-        "hDeg": -10,
-        "vDeg": 5
+        "hDeg": 350,
+        "vDeg": -5
       },
       "adjacentScenes": [
         {
@@ -19,7 +19,7 @@
         {
           "label": "Gate2",
           "target": "gate2",
-          "direction": "North-West"
+          "direction": "North"
         },
         {
           "label": "무빙워크(1전시장)",
@@ -32,9 +32,305 @@
           "direction": "North-East"
         },
         {
-          "label": "SIC2027 KINTEX1",
-          "target": "scene_2411",
+          "label": "항공03",
+          "target": "aerial03",
           "direction": "North"
+        },
+        {
+          "label": "항공02",
+          "target": "aerial02",
+          "direction": "North-East"
+        },
+        {
+          "label": "전시5홀 로비",
+          "target": "lobby5",
+          "direction": "North"
+        },
+        {
+          "label": "2F 로비",
+          "target": "scene_2668",
+          "direction": "North-East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "aerial02",
+      "originalSceneId": 2405,
+      "title": "항공02",
+      "zone": "aerial",
+      "startDirection": {
+        "hDeg": 5,
+        "vDeg": -5
+      },
+      "adjacentScenes": [
+        {
+          "label": "항공01",
+          "target": "aerial01",
+          "direction": "North-West"
+        },
+        {
+          "label": "항공03",
+          "target": "aerial03",
+          "direction": "North"
+        },
+        {
+          "label": "무빙워크(2전시장)",
+          "target": "scene_2527",
+          "direction": "North"
+        },
+        {
+          "label": "2F 로비",
+          "target": "scene_2668",
+          "direction": "North"
+        },
+        {
+          "label": "전시5홀 로비",
+          "target": "lobby5",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "aerial03",
+      "originalSceneId": 2406,
+      "title": "항공03",
+      "zone": "aerial",
+      "startDirection": {
+        "hDeg": 339,
+        "vDeg": -10
+      },
+      "adjacentScenes": [
+        {
+          "label": "항공01",
+          "target": "aerial01",
+          "direction": "North"
+        },
+        {
+          "label": "항공02",
+          "target": "aerial02",
+          "direction": "North-West"
+        },
+        {
+          "label": "무빙워크(1전시장)",
+          "target": "scene_2526",
+          "direction": "North-West"
+        },
+        {
+          "label": "무빙워크(2전시장)",
+          "target": "scene_2527",
+          "direction": "North-West"
+        },
+        {
+          "label": "전시5홀 로비",
+          "target": "lobby5",
+          "direction": "North"
+        },
+        {
+          "label": "2F 로비",
+          "target": "scene_2668",
+          "direction": "South-East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "gate1a",
+      "originalSceneId": 2407,
+      "title": "Gate1A",
+      "zone": "exterior",
+      "startDirection": {
+        "hDeg": 5,
+        "vDeg": 6
+      },
+      "adjacentScenes": [
+        {
+          "label": "항공01",
+          "target": "aerial01",
+          "direction": "South-West"
+        },
+        {
+          "label": "항공03",
+          "target": "aerial03",
+          "direction": "North-East"
+        },
+        {
+          "label": "항공02",
+          "target": "aerial02",
+          "direction": "South-East"
+        },
+        {
+          "label": "전시1,2홀 로비",
+          "target": "lobby12",
+          "direction": "North"
+        },
+        {
+          "label": "Gate2",
+          "target": "gate2",
+          "direction": "East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "gate2",
+      "originalSceneId": 2408,
+      "title": "Gate2",
+      "zone": "exterior",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 7
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시1,2홀 로비",
+          "target": "lobby12",
+          "direction": "North"
+        },
+        {
+          "label": "Gate1A",
+          "target": "gate1a",
+          "direction": "West"
+        },
+        {
+          "label": "무빙워크(1전시장)",
+          "target": "scene_2526",
+          "direction": "East"
+        },
+        {
+          "label": "항공01",
+          "target": "aerial01",
+          "direction": "South-West"
+        },
+        {
+          "label": "항공03",
+          "target": "aerial03",
+          "direction": "North-East"
+        },
+        {
+          "label": "항공02",
+          "target": "aerial02",
+          "direction": "South-East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "lobby12",
+      "originalSceneId": 2409,
+      "title": "전시1,2홀 로비",
+      "zone": "floor1_1",
+      "startDirection": {
+        "hDeg": 270,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시3,4홀 로비",
+          "target": "scene_2410",
+          "direction": "East"
+        },
+        {
+          "label": "전시2홀",
+          "target": "hall2",
+          "direction": "North-East"
+        },
+        {
+          "label": "전시1홀",
+          "target": "hall1",
+          "direction": "West"
+        },
+        {
+          "label": "Gate2",
+          "target": "gate2",
+          "direction": "South-East"
+        },
+        {
+          "label": "Gate1A",
+          "target": "gate1a",
+          "direction": "West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "lobby5",
+      "originalSceneId": 2411,
+      "title": "전시5홀 로비",
+      "zone": "floor1_1",
+      "startDirection": {
+        "hDeg": 359,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시5홀",
+          "target": "scene_2424",
+          "direction": "North"
+        },
+        {
+          "label": "전시3,4홀 로비",
+          "target": "scene_2410",
+          "direction": "West"
+        },
+        {
+          "label": "화상상담실 입구",
+          "target": "scene_2413",
+          "direction": "North-East"
+        },
+        {
+          "label": "무빙워크(1전시장)",
+          "target": "scene_2526",
+          "direction": "South-East"
+        },
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "South-East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "hall1",
+      "originalSceneId": 2416,
+      "title": "전시1홀",
+      "zone": "floor1_1",
+      "startDirection": {
+        "hDeg": 271,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시1,2홀 로비",
+          "target": "lobby12",
+          "direction": "West"
+        },
+        {
+          "label": "전시2홀",
+          "target": "hall2",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "hall2",
+      "originalSceneId": 2418,
+      "title": "전시2홀",
+      "zone": "floor1_1",
+      "startDirection": {
+        "hDeg": 270,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시1,2홀 로비",
+          "target": "lobby12",
+          "direction": "West"
+        },
+        {
+          "label": "전시1홀",
+          "target": "hall1",
+          "direction": "North"
+        },
+        {
+          "label": "전시3홀",
+          "target": "scene_2420",
+          "direction": "South"
         }
       ]
     },
@@ -44,14 +340,14 @@
       "title": "전시3,4홀 로비",
       "zone": "floor1_1",
       "startDirection": {
-        "hDeg": -90,
+        "hDeg": 270,
         "vDeg": 0
       },
       "adjacentScenes": [
         {
           "label": "전시1,2홀 로비",
           "target": "lobby12",
-          "direction": "West (Opposite to Exhibition 5 Lobby)"
+          "direction": "West"
         },
         {
           "label": "전시3홀",
@@ -71,39 +367,5875 @@
       ]
     },
     {
-      "sceneKey": "lobby5",
-      "originalSceneId": 2411,
-      "title": "전시5홀 로비",
+      "sceneKey": "scene_2412",
+      "originalSceneId": 2412,
+      "title": "전시5A,5B 로비",
       "zone": "floor1_1",
       "startDirection": {
-        "hDeg": -1,
+        "hDeg": 4,
         "vDeg": 0
       },
       "adjacentScenes": [
         {
-          "label": "전시5홀",
-          "target": "scene_2424",
+          "label": "전시5A홀",
+          "target": "scene_2426",
           "direction": "North"
         },
+        {
+          "label": "전시5B홀",
+          "target": "scene_2428",
+          "direction": "North-East"
+        },
+        {
+          "label": "화상상담실 입구",
+          "target": "scene_2413",
+          "direction": "West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2413",
+      "originalSceneId": 2413,
+      "title": "화상상담실 입구",
+      "zone": "floor1_1",
+      "startDirection": {
+        "hDeg": 10,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "화상상담실 로비",
+          "target": "scene_2414",
+          "direction": "North"
+        },
+        {
+          "label": "전시5홀 로비",
+          "target": "lobby5",
+          "direction": "North-West"
+        },
+        {
+          "label": "전시5A,5B 로비",
+          "target": "scene_2412",
+          "direction": "East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2414",
+      "originalSceneId": 2414,
+      "title": "화상상담실 로비",
+      "zone": "floor1_1",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "화상상담실1",
+          "target": "scene_2415",
+          "direction": "North-West"
+        },
+        {
+          "label": "화상상담실 입구",
+          "target": "scene_2413",
+          "direction": "North-East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2415",
+      "originalSceneId": 2415,
+      "title": "화상상담실1",
+      "zone": "floor1_1",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "화상상담실 로비",
+          "target": "scene_2414",
+          "direction": "South-East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2420",
+      "originalSceneId": 2420,
+      "title": "전시3홀",
+      "zone": "floor1_1",
+      "startDirection": {
+        "hDeg": 269,
+        "vDeg": 2
+      },
+      "adjacentScenes": [
         {
           "label": "전시3,4홀 로비",
           "target": "scene_2410",
           "direction": "West"
         },
         {
-          "label": "화상상담실 입구",
-          "target": "scene_2413",
+          "label": "전시2홀",
+          "target": "hall2",
+          "direction": "North"
+        },
+        {
+          "label": "전시4홀",
+          "target": "scene_2422",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2422",
+      "originalSceneId": 2422,
+      "title": "전시4홀",
+      "zone": "floor1_1",
+      "startDirection": {
+        "hDeg": 270,
+        "vDeg": 2
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시3,4홀 로비",
+          "target": "scene_2410",
+          "direction": "West"
+        },
+        {
+          "label": "전시3홀",
+          "target": "scene_2420",
+          "direction": "North"
+        },
+        {
+          "label": "전시5홀",
+          "target": "scene_2424",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2424",
+      "originalSceneId": 2424,
+      "title": "전시5홀",
+      "zone": "floor1_1",
+      "startDirection": {
+        "hDeg": 271,
+        "vDeg": 3
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시5홀 로비",
+          "target": "lobby5",
+          "direction": "West"
+        },
+        {
+          "label": "전시4홀",
+          "target": "scene_2422",
+          "direction": "North"
+        },
+        {
+          "label": "전시5B홀",
+          "target": "scene_2428",
           "direction": "East"
         },
         {
-          "label": "무빙워크",
-          "target": "scene_2526",
+          "label": "전시5A홀",
+          "target": "scene_2426",
+          "direction": "West"
+        },
+        {
+          "label": "전시5A,5B 로비",
+          "target": "scene_2412",
+          "direction": "South-West"
+        },
+        {
+          "label": "전시5A,5B 로비",
+          "target": "scene_2412",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2426",
+      "originalSceneId": 2426,
+      "title": "전시5A홀",
+      "zone": "floor1_1",
+      "startDirection": {
+        "hDeg": 267,
+        "vDeg": 2
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시5홀 로비",
+          "target": "lobby5",
+          "direction": "West"
+        },
+        {
+          "label": "전시5A,5B 로비",
+          "target": "scene_2412",
+          "direction": "South-East"
+        },
+        {
+          "label": "전시5B홀",
+          "target": "scene_2428",
           "direction": "East"
         },
         {
-          "label": "2F",
+          "label": "전시4홀",
+          "target": "scene_2422",
+          "direction": "North"
+        },
+        {
+          "label": "전시5홀",
+          "target": "scene_2424",
+          "direction": "East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2428",
+      "originalSceneId": 2428,
+      "title": "전시5B홀",
+      "zone": "floor1_1",
+      "startDirection": {
+        "hDeg": 90,
+        "vDeg": 3
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시4홀",
+          "target": "scene_2422",
+          "direction": "North"
+        },
+        {
+          "label": "전시5A홀",
+          "target": "scene_2426",
+          "direction": "West"
+        },
+        {
+          "label": "전시5A,5B 로비",
+          "target": "scene_2412",
+          "direction": "South-West"
+        },
+        {
+          "label": "전시5홀",
+          "target": "scene_2424",
+          "direction": "West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2430",
+      "originalSceneId": 2430,
+      "title": "202입구",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2431",
+      "originalSceneId": 2431,
+      "title": "207입구",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "204",
+          "target": "scene_2433",
+          "direction": "West"
+        },
+        {
+          "label": "205",
+          "target": "scene_2435",
+          "direction": "West"
+        },
+        {
+          "label": "206",
+          "target": "scene_2442",
+          "direction": "West"
+        },
+        {
+          "label": "207",
+          "target": "scene_2449",
+          "direction": "North"
+        },
+        {
+          "label": "202입구",
+          "target": "scene_2430",
+          "direction": "West"
+        },
+        {
+          "label": "208",
+          "target": "scene_2456",
+          "direction": "East"
+        },
+        {
+          "label": "209",
+          "target": "scene_2463",
+          "direction": "East"
+        },
+        {
+          "label": "212AB입구",
           "target": "scene_2432",
           "direction": "East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2432",
+      "originalSceneId": 2432,
+      "title": "212AB입구",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212",
+          "target": "scene_2484",
+          "direction": "North"
+        },
+        {
+          "label": "210",
+          "target": "scene_2470",
+          "direction": "West"
+        },
+        {
+          "label": "211",
+          "target": "scene_2477",
+          "direction": "West"
+        },
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "West"
+        },
+        {
+          "label": "213",
+          "target": "scene_2489",
+          "direction": "North-East"
+        },
+        {
+          "label": "전시5홀 로비",
+          "target": "lobby5",
+          "direction": "East"
+        },
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "South-West"
+        },
+        {
+          "label": "212+213",
+          "target": "scene_2494",
+          "direction": "North-East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2433",
+      "originalSceneId": 2433,
+      "title": "204",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 359,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "North-West"
+        },
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "South-West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2435",
+      "originalSceneId": 2435,
+      "title": "205",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "West"
+        },
+        {
+          "label": "205극장식",
+          "target": "scene_2436",
+          "direction": "North"
+        },
+        {
+          "label": "205 강의식",
+          "target": "scene_2437",
+          "direction": "North"
+        },
+        {
+          "label": "205A",
+          "target": "scene_2438",
+          "direction": "North"
+        },
+        {
+          "label": "205B",
+          "target": "scene_2440",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2442",
+      "originalSceneId": 2442,
+      "title": "206",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "West"
+        },
+        {
+          "label": "206 극장식",
+          "target": "scene_2443",
+          "direction": "North"
+        },
+        {
+          "label": "206 강의식",
+          "target": "scene_2444",
+          "direction": "North"
+        },
+        {
+          "label": "206A",
+          "target": "scene_2445",
+          "direction": "North"
+        },
+        {
+          "label": "206B",
+          "target": "scene_2447",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2449",
+      "originalSceneId": 2449,
+      "title": "207",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "West"
+        },
+        {
+          "label": "207 극장식",
+          "target": "scene_2450",
+          "direction": "North"
+        },
+        {
+          "label": "207 강의식",
+          "target": "scene_2451",
+          "direction": "North"
+        },
+        {
+          "label": "207A",
+          "target": "scene_2452",
+          "direction": "North"
+        },
+        {
+          "label": "207B",
+          "target": "scene_2454",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2456",
+      "originalSceneId": 2456,
+      "title": "208",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "West"
+        },
+        {
+          "label": "208 극장식",
+          "target": "scene_2457",
+          "direction": "North"
+        },
+        {
+          "label": "208 강의식",
+          "target": "scene_2458",
+          "direction": "North"
+        },
+        {
+          "label": "208A",
+          "target": "scene_2459",
+          "direction": "North"
+        },
+        {
+          "label": "208B",
+          "target": "scene_2461",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2463",
+      "originalSceneId": 2463,
+      "title": "209",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "West"
+        },
+        {
+          "label": "209 극장식",
+          "target": "scene_2464",
+          "direction": "North"
+        },
+        {
+          "label": "209 강의식",
+          "target": "scene_2465",
+          "direction": "North"
+        },
+        {
+          "label": "209A",
+          "target": "scene_2466",
+          "direction": "North"
+        },
+        {
+          "label": "209B",
+          "target": "scene_2468",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2470",
+      "originalSceneId": 2470,
+      "title": "210",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "West"
+        },
+        {
+          "label": "210 극장식",
+          "target": "scene_2471",
+          "direction": "North"
+        },
+        {
+          "label": "210 강의식",
+          "target": "scene_2472",
+          "direction": "North"
+        },
+        {
+          "label": "210A",
+          "target": "scene_2473",
+          "direction": "North"
+        },
+        {
+          "label": "210B",
+          "target": "scene_2475",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2477",
+      "originalSceneId": 2477,
+      "title": "211",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "West"
+        },
+        {
+          "label": "211 극장식",
+          "target": "scene_2478",
+          "direction": "North"
+        },
+        {
+          "label": "211 강의식",
+          "target": "scene_2479",
+          "direction": "North"
+        },
+        {
+          "label": "211A",
+          "target": "scene_2480",
+          "direction": "North"
+        },
+        {
+          "label": "211B",
+          "target": "scene_2482",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2484",
+      "originalSceneId": 2484,
+      "title": "212",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "West"
+        },
+        {
+          "label": "212A",
+          "target": "scene_2852",
+          "direction": "North"
+        },
+        {
+          "label": "212B",
+          "target": "scene_2853",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2852",
+      "originalSceneId": 2852,
+      "title": "212A",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 2,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "South-West"
+        },
+        {
+          "label": "212",
+          "target": "scene_2484",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2853",
+      "originalSceneId": 2853,
+      "title": "212B",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 270,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "South-West"
+        },
+        {
+          "label": "212",
+          "target": "scene_2484",
+          "direction": "West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2489",
+      "originalSceneId": 2489,
+      "title": "213",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "West"
+        },
+        {
+          "label": "213A",
+          "target": "scene_2854",
+          "direction": "North"
+        },
+        {
+          "label": "213B",
+          "target": "scene_2855",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2854",
+      "originalSceneId": 2854,
+      "title": "213A",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 90,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "South-East"
+        },
+        {
+          "label": "213",
+          "target": "scene_2489",
+          "direction": "East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2855",
+      "originalSceneId": 2855,
+      "title": "213B",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 270,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "South-West"
+        },
+        {
+          "label": "213",
+          "target": "scene_2489",
+          "direction": "West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2494",
+      "originalSceneId": 2494,
+      "title": "212+213",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 358,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "North-West"
+        },
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "South-West"
+        },
+        {
+          "label": "212+213 극장식",
+          "target": "scene_2495",
+          "direction": "North"
+        },
+        {
+          "label": "212+213 강의식",
+          "target": "scene_2496",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2497",
+      "originalSceneId": 2497,
+      "title": "303 입구",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "303",
+          "target": "scene_2503",
+          "direction": "North"
+        },
+        {
+          "label": "301",
+          "target": "scene_2499",
+          "direction": "West"
+        },
+        {
+          "label": "302",
+          "target": "scene_2501",
+          "direction": "West"
+        },
+        {
+          "label": "304",
+          "target": "scene_2506",
+          "direction": "East"
+        },
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2498",
+      "originalSceneId": 2498,
+      "title": "307, 308 입구",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 358,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305",
+          "target": "scene_2509",
+          "direction": "West"
+        },
+        {
+          "label": "306",
+          "target": "scene_2512",
+          "direction": "West"
+        },
+        {
+          "label": "307",
+          "target": "scene_2514",
+          "direction": "North-West"
+        },
+        {
+          "label": "308 (VIP회의실)",
+          "target": "scene_2519",
+          "direction": "North-East"
+        },
+        {
+          "label": "309A (VIP회의실)",
+          "target": "scene_2520",
+          "direction": "East"
+        },
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "East"
+        },
+        {
+          "label": "그랜드볼룸A+B",
+          "target": "scene_2522",
+          "direction": "East"
+        },
+        {
+          "label": "303 입구",
+          "target": "scene_2497",
+          "direction": "West"
+        },
+        {
+          "label": "309B (VIP회의실)",
+          "target": "scene_2521",
+          "direction": "East"
+        },
+        {
+          "label": "306+307",
+          "target": "scene_2516",
+          "direction": "North-West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2499",
+      "originalSceneId": 2499,
+      "title": "301",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 359,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "303 입구",
+          "target": "scene_2497",
+          "direction": "South-West"
+        },
+        {
+          "label": "303 입구",
+          "target": "scene_2497",
+          "direction": "North-West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2501",
+      "originalSceneId": 2501,
+      "title": "302",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 357,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "303 입구",
+          "target": "scene_2497",
+          "direction": "South-West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2503",
+      "originalSceneId": 2503,
+      "title": "303",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "303 입구",
+          "target": "scene_2497",
+          "direction": "West"
+        },
+        {
+          "label": "303 극장식",
+          "target": "scene_2504",
+          "direction": "North"
+        },
+        {
+          "label": "303 강의식",
+          "target": "scene_2505",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2506",
+      "originalSceneId": 2506,
+      "title": "304",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "303 입구",
+          "target": "scene_2497",
+          "direction": "West"
+        },
+        {
+          "label": "304 극장식",
+          "target": "scene_2507",
+          "direction": "North"
+        },
+        {
+          "label": "304 강의식",
+          "target": "scene_2508",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2509",
+      "originalSceneId": 2509,
+      "title": "305",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "303 입구",
+          "target": "scene_2497",
+          "direction": "West"
+        },
+        {
+          "label": "305 극장식",
+          "target": "scene_2510",
+          "direction": "North"
+        },
+        {
+          "label": "305 강의식",
+          "target": "scene_2511",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2512",
+      "originalSceneId": 2512,
+      "title": "306",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "West"
+        },
+        {
+          "label": "306+307",
+          "target": "scene_2516",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2514",
+      "originalSceneId": 2514,
+      "title": "307",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 357,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "West"
+        },
+        {
+          "label": "306+307",
+          "target": "scene_2516",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2516",
+      "originalSceneId": 2516,
+      "title": "306+307",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "North-West"
+        },
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "South-West"
+        },
+        {
+          "label": "306+307 극장식",
+          "target": "scene_2517",
+          "direction": "North"
+        },
+        {
+          "label": "306+307 강의식",
+          "target": "scene_2518",
+          "direction": "North"
+        },
+        {
+          "label": "306",
+          "target": "scene_2512",
+          "direction": "North"
+        },
+        {
+          "label": "307",
+          "target": "scene_2514",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2519",
+      "originalSceneId": 2519,
+      "title": "308 (VIP회의실)",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2520",
+      "originalSceneId": 2520,
+      "title": "309A (VIP회의실)",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 359,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "South-West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2521",
+      "originalSceneId": 2521,
+      "title": "309B (VIP회의실)",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "South-West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2522",
+      "originalSceneId": 2522,
+      "title": "그랜드볼룸A+B",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "North-West"
+        },
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "South-West"
+        },
+        {
+          "label": "그랜드볼룸A",
+          "target": "scene_2525",
+          "direction": "North"
+        },
+        {
+          "label": "그랜드볼룸B",
+          "target": "scene_2524",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2525",
+      "originalSceneId": 2525,
+      "title": "그랜드볼룸A",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "North-West"
+        },
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "West"
+        },
+        {
+          "label": "그랜드볼룸B",
+          "target": "scene_2524",
+          "direction": "South"
+        },
+        {
+          "label": "그랜드볼룸A+B",
+          "target": "scene_2522",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2524",
+      "originalSceneId": 2524,
+      "title": "그랜드볼룸B",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "East"
+        },
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "North-East"
+        },
+        {
+          "label": "그랜드볼룸A",
+          "target": "scene_2525",
+          "direction": "South"
+        },
+        {
+          "label": "그랜드볼룸A+B",
+          "target": "scene_2522",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2526",
+      "originalSceneId": 2526,
+      "title": "무빙워크(1전시장)",
+      "zone": "movingwalk",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 10
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시5홀 로비",
+          "target": "lobby5",
+          "direction": "North"
+        },
+        {
+          "label": "Gate2",
+          "target": "gate2",
+          "direction": "North-West"
+        },
+        {
+          "label": "무빙워크(2전시장)",
+          "target": "scene_2527",
+          "direction": "South"
+        },
+        {
+          "label": "항공01",
+          "target": "aerial01",
+          "direction": "North-West"
+        },
+        {
+          "label": "항공02",
+          "target": "aerial02",
+          "direction": "South-West"
+        },
+        {
+          "label": "항공03",
+          "target": "aerial03",
+          "direction": "East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2527",
+      "originalSceneId": 2527,
+      "title": "무빙워크(2전시장)",
+      "zone": "movingwalk",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 7
+      },
+      "adjacentScenes": [
+        {
+          "label": "6홀 입구",
+          "target": "scene_2536",
+          "direction": "North-West"
+        },
+        {
+          "label": "무빙워크(1전시장)",
+          "target": "scene_2526",
+          "direction": "South"
+        },
+        {
+          "label": "10홀 입구",
+          "target": "scene_2540",
+          "direction": "North-East"
+        },
+        {
+          "label": "1F로비",
+          "target": "scene_2528",
+          "direction": "North-East"
+        },
+        {
+          "label": "2F 로비",
+          "target": "scene_2668",
+          "direction": "North-East"
+        },
+        {
+          "label": "항공02",
+          "target": "aerial02",
+          "direction": "East"
+        },
+        {
+          "label": "항공03",
+          "target": "aerial03",
+          "direction": "West"
+        },
+        {
+          "label": "항공01",
+          "target": "aerial01",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2528",
+      "originalSceneId": 2528,
+      "title": "1F로비",
+      "zone": "floor2_l",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시7홀",
+          "target": "scene_2541",
+          "direction": "West"
+        },
+        {
+          "label": "전시8홀",
+          "target": "scene_2544",
+          "direction": "West"
+        },
+        {
+          "label": "무빙워크(2전시장)",
+          "target": "scene_2527",
+          "direction": "South"
+        },
+        {
+          "label": "전시10홀",
+          "target": "scene_2550",
+          "direction": "East"
+        },
+        {
+          "label": "전시9홀",
+          "target": "scene_2547",
+          "direction": "East"
+        },
+        {
+          "label": "전시6홀A+B+C 강의식",
+          "target": "scene_2535",
+          "direction": "West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2668",
+      "originalSceneId": 2668,
+      "title": "2F 로비",
+      "zone": "floor2_l",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "9홀 입구",
+          "target": "scene_2539",
+          "direction": "North-East"
+        },
+        {
+          "label": "10홀 입구",
+          "target": "scene_2540",
+          "direction": "South-East"
+        },
+        {
+          "label": "7홀 입구",
+          "target": "scene_2537",
+          "direction": "South-West"
+        },
+        {
+          "label": "8홀 입구",
+          "target": "scene_2538",
+          "direction": "North-West"
+        },
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "North-West"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "North-East"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-West"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-East"
+        },
+        {
+          "label": "무빙워크(2전시장)",
+          "target": "scene_2527",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2536",
+      "originalSceneId": 2536,
+      "title": "6홀 입구",
+      "zone": "floor2_l",
+      "startDirection": {
+        "hDeg": 333,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시6홀A+B+C 강의식",
+          "target": "scene_2535",
+          "direction": "West"
+        },
+        {
+          "label": "전시6홀A+B+C 강의식",
+          "target": "scene_2535",
+          "direction": "North-West"
+        },
+        {
+          "label": "전시6홀A+B+C 강의식",
+          "target": "scene_2535",
+          "direction": "North"
+        },
+        {
+          "label": "7홀 입구",
+          "target": "scene_2537",
+          "direction": "South-East"
+        },
+        {
+          "label": "무빙워크(2전시장)",
+          "target": "scene_2527",
+          "direction": "West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2537",
+      "originalSceneId": 2537,
+      "title": "7홀 입구",
+      "zone": "floor2_l",
+      "startDirection": {
+        "hDeg": 35,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시7홀",
+          "target": "scene_2541",
+          "direction": "North"
+        },
+        {
+          "label": "전시7홀",
+          "target": "scene_2541",
+          "direction": "North-East"
+        },
+        {
+          "label": "8홀 입구",
+          "target": "scene_2538",
+          "direction": "East"
+        },
+        {
+          "label": "2F 로비",
+          "target": "scene_2668",
+          "direction": "South-East"
+        },
+        {
+          "label": "6홀 입구",
+          "target": "scene_2536",
+          "direction": "West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2538",
+      "originalSceneId": 2538,
+      "title": "8홀 입구",
+      "zone": "floor2_l",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시8홀",
+          "target": "scene_2544",
+          "direction": "North"
+        },
+        {
+          "label": "전시8홀",
+          "target": "scene_2544",
+          "direction": "North-East"
+        },
+        {
+          "label": "7홀 입구",
+          "target": "scene_2537",
+          "direction": "South-West"
+        },
+        {
+          "label": "2F 로비",
+          "target": "scene_2668",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2539",
+      "originalSceneId": 2539,
+      "title": "9홀 입구",
+      "zone": "floor2_l",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시9홀",
+          "target": "scene_2547",
+          "direction": "North"
+        },
+        {
+          "label": "전시9홀",
+          "target": "scene_2547",
+          "direction": "North-East"
+        },
+        {
+          "label": "10홀 입구",
+          "target": "scene_2540",
+          "direction": "South-East"
+        },
+        {
+          "label": "2F 로비",
+          "target": "scene_2668",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2540",
+      "originalSceneId": 2540,
+      "title": "10홀 입구",
+      "zone": "floor2_l",
+      "startDirection": {
+        "hDeg": 358,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시10홀",
+          "target": "scene_2550",
+          "direction": "North-West"
+        },
+        {
+          "label": "전시10홀",
+          "target": "scene_2550",
+          "direction": "North-East"
+        },
+        {
+          "label": "2F 로비",
+          "target": "scene_2668",
+          "direction": "West"
+        },
+        {
+          "label": "9홀 입구",
+          "target": "scene_2539",
+          "direction": "West"
+        },
+        {
+          "label": "무빙워크(2전시장)",
+          "target": "scene_2527",
+          "direction": "South-East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2535",
+      "originalSceneId": 2535,
+      "title": "전시6홀A+B+C 강의식",
+      "zone": "floor2_h",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "6홀 입구",
+          "target": "scene_2536",
+          "direction": "South-East"
+        },
+        {
+          "label": "6홀 입구",
+          "target": "scene_2536",
+          "direction": "South"
+        },
+        {
+          "label": "6홀 입구",
+          "target": "scene_2536",
+          "direction": "South-West"
+        },
+        {
+          "label": "전시6홀A",
+          "target": "scene_2532",
+          "direction": "West"
+        },
+        {
+          "label": "전시6홀B",
+          "target": "scene_2533",
+          "direction": "North"
+        },
+        {
+          "label": "전시6홀C",
+          "target": "scene_2534",
+          "direction": "East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2541",
+      "originalSceneId": 2541,
+      "title": "전시7홀",
+      "zone": "floor2_h",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "7홀 입구",
+          "target": "scene_2537",
+          "direction": "South-West"
+        },
+        {
+          "label": "7홀 입구",
+          "target": "scene_2537",
+          "direction": "South-East"
+        },
+        {
+          "label": "전시6홀A+B+C 강의식",
+          "target": "scene_2535",
+          "direction": "West"
+        },
+        {
+          "label": "전시8홀",
+          "target": "scene_2544",
+          "direction": "East"
+        },
+        {
+          "label": "전시7홀A",
+          "target": "scene_2542",
+          "direction": "North-West"
+        },
+        {
+          "label": "전시7홀B",
+          "target": "scene_2543",
+          "direction": "North-East"
+        },
+        {
+          "label": "1F로비",
+          "target": "scene_2528",
+          "direction": "South-East"
+        },
+        {
+          "label": "1F로비",
+          "target": "scene_2528",
+          "direction": "South-West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2544",
+      "originalSceneId": 2544,
+      "title": "전시8홀",
+      "zone": "floor2_h",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시8홀A",
+          "target": "scene_2545",
+          "direction": "North-West"
+        },
+        {
+          "label": "전시8홀B",
+          "target": "scene_2546",
+          "direction": "North-East"
+        },
+        {
+          "label": "전시7홀",
+          "target": "scene_2541",
+          "direction": "North-West"
+        },
+        {
+          "label": "전시7홀B",
+          "target": "scene_2543",
+          "direction": "North-West"
+        },
+        {
+          "label": "8홀 입구",
+          "target": "scene_2538",
+          "direction": "South-East"
+        },
+        {
+          "label": "8홀 입구",
+          "target": "scene_2538",
+          "direction": "South-West"
+        },
+        {
+          "label": "1F로비",
+          "target": "scene_2528",
+          "direction": "South-East"
+        },
+        {
+          "label": "1F로비",
+          "target": "scene_2528",
+          "direction": "South-West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2547",
+      "originalSceneId": 2547,
+      "title": "전시9홀",
+      "zone": "floor2_h",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시9홀A",
+          "target": "scene_2548",
+          "direction": "North"
+        },
+        {
+          "label": "전시9홀B",
+          "target": "scene_2549",
+          "direction": "North"
+        },
+        {
+          "label": "전시10홀",
+          "target": "scene_2550",
+          "direction": "East"
+        },
+        {
+          "label": "9홀 입구",
+          "target": "scene_2539",
+          "direction": "South-East"
+        },
+        {
+          "label": "9홀 입구",
+          "target": "scene_2539",
+          "direction": "South-West"
+        },
+        {
+          "label": "1F로비",
+          "target": "scene_2528",
+          "direction": "South-East"
+        },
+        {
+          "label": "1F로비",
+          "target": "scene_2528",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2550",
+      "originalSceneId": 2550,
+      "title": "전시10홀",
+      "zone": "floor2_h",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "10홀 입구",
+          "target": "scene_2540",
+          "direction": "South-East"
+        },
+        {
+          "label": "10홀 입구",
+          "target": "scene_2540",
+          "direction": "South"
+        },
+        {
+          "label": "전시9홀",
+          "target": "scene_2547",
+          "direction": "West"
+        },
+        {
+          "label": "1F로비",
+          "target": "scene_2528",
+          "direction": "South-East"
+        },
+        {
+          "label": "1F로비",
+          "target": "scene_2528",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2553",
+      "originalSceneId": 2553,
+      "title": "301~304복도",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301",
+          "target": "scene_2555",
+          "direction": "West"
+        },
+        {
+          "label": "302",
+          "target": "scene_2559",
+          "direction": "North-West"
+        },
+        {
+          "label": "303",
+          "target": "scene_2563",
+          "direction": "North-East"
+        },
+        {
+          "label": "304",
+          "target": "scene_2567",
+          "direction": "East"
+        },
+        {
+          "label": "2F 로비",
+          "target": "scene_2668",
+          "direction": "South-West"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-East"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2554",
+      "originalSceneId": 2554,
+      "title": "305~308 복도",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 352,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305",
+          "target": "scene_2571",
+          "direction": "West"
+        },
+        {
+          "label": "305",
+          "target": "scene_2571",
+          "direction": "West"
+        },
+        {
+          "label": "306",
+          "target": "scene_2579",
+          "direction": "West"
+        },
+        {
+          "label": "306",
+          "target": "scene_2579",
+          "direction": "North-West"
+        },
+        {
+          "label": "307",
+          "target": "scene_2587",
+          "direction": "North-East"
+        },
+        {
+          "label": "307",
+          "target": "scene_2587",
+          "direction": "North-East"
+        },
+        {
+          "label": "308",
+          "target": "scene_2595",
+          "direction": "East"
+        },
+        {
+          "label": "308",
+          "target": "scene_2595",
+          "direction": "East"
+        },
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2555",
+      "originalSceneId": 2555,
+      "title": "301",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "West"
+        },
+        {
+          "label": "301+302",
+          "target": "scene_2603",
+          "direction": "South"
+        },
+        {
+          "label": "301 강의식",
+          "target": "scene_2558",
+          "direction": "North"
+        },
+        {
+          "label": "301 극장식",
+          "target": "scene_2557",
+          "direction": "North"
+        },
+        {
+          "label": "301 연회식",
+          "target": "scene_2556",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2559",
+      "originalSceneId": 2559,
+      "title": "302",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "East"
+        },
+        {
+          "label": "301+302",
+          "target": "scene_2603",
+          "direction": "South"
+        },
+        {
+          "label": "301 강의식",
+          "target": "scene_2558",
+          "direction": "North"
+        },
+        {
+          "label": "301 극장식",
+          "target": "scene_2557",
+          "direction": "North"
+        },
+        {
+          "label": "301 연회식",
+          "target": "scene_2556",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2563",
+      "originalSceneId": 2563,
+      "title": "303",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "West"
+        },
+        {
+          "label": "303 강의식",
+          "target": "scene_2566",
+          "direction": "North"
+        },
+        {
+          "label": "303 극장식",
+          "target": "scene_2565",
+          "direction": "North"
+        },
+        {
+          "label": "303 연회식",
+          "target": "scene_2564",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2567",
+      "originalSceneId": 2567,
+      "title": "304",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "East"
+        },
+        {
+          "label": "304 강의식",
+          "target": "scene_2570",
+          "direction": "North"
+        },
+        {
+          "label": "304 극장식",
+          "target": "scene_2569",
+          "direction": "North"
+        },
+        {
+          "label": "304 연회식",
+          "target": "scene_2568",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2571",
+      "originalSceneId": 2571,
+      "title": "305",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "North-West"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-West"
+        },
+        {
+          "label": "305 연회식",
+          "target": "scene_2572",
+          "direction": "North"
+        },
+        {
+          "label": "305 극장식",
+          "target": "scene_2573",
+          "direction": "North"
+        },
+        {
+          "label": "305 강의식",
+          "target": "scene_2574",
+          "direction": "North"
+        },
+        {
+          "label": "305A 강의식",
+          "target": "scene_2576",
+          "direction": "North"
+        },
+        {
+          "label": "305B 강의식",
+          "target": "scene_2578",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2579",
+      "originalSceneId": 2579,
+      "title": "306",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-West"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "North-West"
+        },
+        {
+          "label": "306 연회식",
+          "target": "scene_2580",
+          "direction": "North"
+        },
+        {
+          "label": "306 극장식",
+          "target": "scene_2581",
+          "direction": "North"
+        },
+        {
+          "label": "306 강의식",
+          "target": "scene_2582",
+          "direction": "North"
+        },
+        {
+          "label": "306A 강의식",
+          "target": "scene_2584",
+          "direction": "North"
+        },
+        {
+          "label": "306B 강의식",
+          "target": "scene_2586",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2587",
+      "originalSceneId": 2587,
+      "title": "307",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-West"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "North-West"
+        },
+        {
+          "label": "307 연회식",
+          "target": "scene_2588",
+          "direction": "North"
+        },
+        {
+          "label": "307 극장식",
+          "target": "scene_2589",
+          "direction": "North"
+        },
+        {
+          "label": "307 강의식",
+          "target": "scene_2590",
+          "direction": "North"
+        },
+        {
+          "label": "307A 강의식",
+          "target": "scene_2592",
+          "direction": "North"
+        },
+        {
+          "label": "307B 강의식",
+          "target": "scene_2594",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2595",
+      "originalSceneId": 2595,
+      "title": "308",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-West"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "North-West"
+        },
+        {
+          "label": "208 연회식",
+          "target": "scene_2596",
+          "direction": "North"
+        },
+        {
+          "label": "308 극장식",
+          "target": "scene_2597",
+          "direction": "North"
+        },
+        {
+          "label": "308 강의식",
+          "target": "scene_2598",
+          "direction": "North"
+        },
+        {
+          "label": "308A 강의식",
+          "target": "scene_2600",
+          "direction": "North"
+        },
+        {
+          "label": "308B 강의식",
+          "target": "scene_2602",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2603",
+      "originalSceneId": 2603,
+      "title": "301+302",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "North-East"
+        },
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "South-East"
+        },
+        {
+          "label": "301",
+          "target": "scene_2555",
+          "direction": "South"
+        },
+        {
+          "label": "302",
+          "target": "scene_2559",
+          "direction": "North"
+        },
+        {
+          "label": "301+302 연회식",
+          "target": "scene_2604",
+          "direction": "North"
+        },
+        {
+          "label": "301+302 극장식",
+          "target": "scene_2605",
+          "direction": "North"
+        },
+        {
+          "label": "301+302 강의식",
+          "target": "scene_2606",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2607",
+      "originalSceneId": 2607,
+      "title": "303+304",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "North-East"
+        },
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "South-East"
+        },
+        {
+          "label": "303",
+          "target": "scene_2563",
+          "direction": "South"
+        },
+        {
+          "label": "304",
+          "target": "scene_2567",
+          "direction": "North"
+        },
+        {
+          "label": "303+304 연회식",
+          "target": "scene_2608",
+          "direction": "North"
+        },
+        {
+          "label": "303+304 극장식",
+          "target": "scene_2609",
+          "direction": "North"
+        },
+        {
+          "label": "303+304 강의식",
+          "target": "scene_2610",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2611",
+      "originalSceneId": 2611,
+      "title": "4F복도",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "405",
+          "target": "scene_2628",
+          "direction": "West"
+        },
+        {
+          "label": "406",
+          "target": "scene_2636",
+          "direction": "North-West"
+        },
+        {
+          "label": "407",
+          "target": "scene_2644",
+          "direction": "North-West"
+        },
+        {
+          "label": "408",
+          "target": "scene_2652",
+          "direction": "North-West"
+        },
+        {
+          "label": "401",
+          "target": "scene_2612",
+          "direction": "North-East"
+        },
+        {
+          "label": "402",
+          "target": "scene_2616",
+          "direction": "North-East"
+        },
+        {
+          "label": "403",
+          "target": "scene_2620",
+          "direction": "East"
+        },
+        {
+          "label": "404",
+          "target": "scene_2624",
+          "direction": "East"
+        },
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2612",
+      "originalSceneId": 2612,
+      "title": "401",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "West"
+        },
+        {
+          "label": "402",
+          "target": "scene_2616",
+          "direction": "South"
+        },
+        {
+          "label": "401 연회식",
+          "target": "scene_2613",
+          "direction": "North"
+        },
+        {
+          "label": "401 극장식",
+          "target": "scene_2614",
+          "direction": "North"
+        },
+        {
+          "label": "401 강의식",
+          "target": "scene_2615",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2616",
+      "originalSceneId": 2616,
+      "title": "402",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "East"
+        },
+        {
+          "label": "401",
+          "target": "scene_2612",
+          "direction": "South"
+        },
+        {
+          "label": "402 연회식",
+          "target": "scene_2617",
+          "direction": "North"
+        },
+        {
+          "label": "402 극장식",
+          "target": "scene_2618",
+          "direction": "North"
+        },
+        {
+          "label": "402 강의식",
+          "target": "scene_2619",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2620",
+      "originalSceneId": 2620,
+      "title": "403",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 2,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "West"
+        },
+        {
+          "label": "404",
+          "target": "scene_2624",
+          "direction": "South"
+        },
+        {
+          "label": "403 연회식",
+          "target": "scene_2621",
+          "direction": "North"
+        },
+        {
+          "label": "403 극장식",
+          "target": "scene_2622",
+          "direction": "North"
+        },
+        {
+          "label": "403 강의식",
+          "target": "scene_2623",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2624",
+      "originalSceneId": 2624,
+      "title": "404",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "West"
+        },
+        {
+          "label": "403",
+          "target": "scene_2620",
+          "direction": "South"
+        },
+        {
+          "label": "404 연회식",
+          "target": "scene_2625",
+          "direction": "North"
+        },
+        {
+          "label": "404 극장식",
+          "target": "scene_2626",
+          "direction": "North"
+        },
+        {
+          "label": "404 강의식",
+          "target": "scene_2627",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2628",
+      "originalSceneId": 2628,
+      "title": "405",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-West"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-West"
+        },
+        {
+          "label": "405 연회식",
+          "target": "scene_2629",
+          "direction": "North"
+        },
+        {
+          "label": "405 극장식",
+          "target": "scene_2630",
+          "direction": "North"
+        },
+        {
+          "label": "405 강의식",
+          "target": "scene_2631",
+          "direction": "North"
+        },
+        {
+          "label": "405A 강의식",
+          "target": "scene_2633",
+          "direction": "North"
+        },
+        {
+          "label": "405B 강의식",
+          "target": "scene_2635",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2636",
+      "originalSceneId": 2636,
+      "title": "406",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-West"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-West"
+        },
+        {
+          "label": "406 연회식",
+          "target": "scene_2637",
+          "direction": "North"
+        },
+        {
+          "label": "406 극장식",
+          "target": "scene_2638",
+          "direction": "North"
+        },
+        {
+          "label": "406 강의식",
+          "target": "scene_2639",
+          "direction": "North"
+        },
+        {
+          "label": "406A 강의식",
+          "target": "scene_2641",
+          "direction": "North"
+        },
+        {
+          "label": "406B 강의식",
+          "target": "scene_2643",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2644",
+      "originalSceneId": 2644,
+      "title": "407",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-West"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-West"
+        },
+        {
+          "label": "407 연회식",
+          "target": "scene_2645",
+          "direction": "North"
+        },
+        {
+          "label": "407 극장식",
+          "target": "scene_2646",
+          "direction": "North"
+        },
+        {
+          "label": "407 강의식",
+          "target": "scene_2647",
+          "direction": "North"
+        },
+        {
+          "label": "407A 강의식",
+          "target": "scene_2649",
+          "direction": "North"
+        },
+        {
+          "label": "407B 강의식",
+          "target": "scene_2651",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2652",
+      "originalSceneId": 2652,
+      "title": "408",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-West"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-West"
+        },
+        {
+          "label": "408 연회식",
+          "target": "scene_2653",
+          "direction": "North"
+        },
+        {
+          "label": "408 극장식",
+          "target": "scene_2654",
+          "direction": "North"
+        },
+        {
+          "label": "408 강의식",
+          "target": "scene_2655",
+          "direction": "North"
+        },
+        {
+          "label": "408B 강의식",
+          "target": "scene_2659",
+          "direction": "North"
+        },
+        {
+          "label": "408B 강의식",
+          "target": "scene_2659",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2660",
+      "originalSceneId": 2660,
+      "title": "401+402",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-East"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-East"
+        },
+        {
+          "label": "401",
+          "target": "scene_2612",
+          "direction": "South"
+        },
+        {
+          "label": "402",
+          "target": "scene_2616",
+          "direction": "North"
+        },
+        {
+          "label": "401+402 강의식",
+          "target": "scene_2663",
+          "direction": "North"
+        },
+        {
+          "label": "401+402 극장식",
+          "target": "scene_2662",
+          "direction": "North"
+        },
+        {
+          "label": "401+402 연회식",
+          "target": "scene_2661",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2664",
+      "originalSceneId": 2664,
+      "title": "403+404",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-East"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-East"
+        },
+        {
+          "label": "402",
+          "target": "scene_2616",
+          "direction": "North"
+        },
+        {
+          "label": "401",
+          "target": "scene_2612",
+          "direction": "South"
+        },
+        {
+          "label": "403+404 강의식",
+          "target": "scene_2667",
+          "direction": "North"
+        },
+        {
+          "label": "403+404 극장식",
+          "target": "scene_2666",
+          "direction": "North"
+        },
+        {
+          "label": "403+404 연회식",
+          "target": "scene_2665",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2478",
+      "originalSceneId": 2478,
+      "title": "211 극장식",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "West"
+        },
+        {
+          "label": "211",
+          "target": "scene_2477",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2479",
+      "originalSceneId": 2479,
+      "title": "211 강의식",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "West"
+        },
+        {
+          "label": "211",
+          "target": "scene_2477",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2480",
+      "originalSceneId": 2480,
+      "title": "211A",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 358,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "South-West"
+        },
+        {
+          "label": "211",
+          "target": "scene_2477",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2482",
+      "originalSceneId": 2482,
+      "title": "211B",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "South-West"
+        },
+        {
+          "label": "211",
+          "target": "scene_2477",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2471",
+      "originalSceneId": 2471,
+      "title": "210 극장식",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "West"
+        },
+        {
+          "label": "210",
+          "target": "scene_2470",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2472",
+      "originalSceneId": 2472,
+      "title": "210 강의식",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "West"
+        },
+        {
+          "label": "210",
+          "target": "scene_2470",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2473",
+      "originalSceneId": 2473,
+      "title": "210A",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 358,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "South-West"
+        },
+        {
+          "label": "210",
+          "target": "scene_2470",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2475",
+      "originalSceneId": 2475,
+      "title": "210B",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "South-West"
+        },
+        {
+          "label": "210",
+          "target": "scene_2470",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2436",
+      "originalSceneId": 2436,
+      "title": "205극장식",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "West"
+        },
+        {
+          "label": "205",
+          "target": "scene_2435",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2437",
+      "originalSceneId": 2437,
+      "title": "205 강의식",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "West"
+        },
+        {
+          "label": "205",
+          "target": "scene_2435",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2438",
+      "originalSceneId": 2438,
+      "title": "205A",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 358,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "South-West"
+        },
+        {
+          "label": "205",
+          "target": "scene_2435",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2440",
+      "originalSceneId": 2440,
+      "title": "205B",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "South-West"
+        },
+        {
+          "label": "205",
+          "target": "scene_2435",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2443",
+      "originalSceneId": 2443,
+      "title": "206 극장식",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "West"
+        },
+        {
+          "label": "206",
+          "target": "scene_2442",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2444",
+      "originalSceneId": 2444,
+      "title": "206 강의식",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "West"
+        },
+        {
+          "label": "206",
+          "target": "scene_2442",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2445",
+      "originalSceneId": 2445,
+      "title": "206A",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 358,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "South-West"
+        },
+        {
+          "label": "206",
+          "target": "scene_2442",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2447",
+      "originalSceneId": 2447,
+      "title": "206B",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 2,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "South-West"
+        },
+        {
+          "label": "206",
+          "target": "scene_2442",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2450",
+      "originalSceneId": 2450,
+      "title": "207 극장식",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "West"
+        },
+        {
+          "label": "207",
+          "target": "scene_2449",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2451",
+      "originalSceneId": 2451,
+      "title": "207 강의식",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "West"
+        },
+        {
+          "label": "207",
+          "target": "scene_2449",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2452",
+      "originalSceneId": 2452,
+      "title": "207A",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 358,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "South-West"
+        },
+        {
+          "label": "207",
+          "target": "scene_2449",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2454",
+      "originalSceneId": 2454,
+      "title": "207B",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "South-West"
+        },
+        {
+          "label": "207",
+          "target": "scene_2449",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2457",
+      "originalSceneId": 2457,
+      "title": "208 극장식",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "West"
+        },
+        {
+          "label": "208",
+          "target": "scene_2456",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2458",
+      "originalSceneId": 2458,
+      "title": "208 강의식",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "West"
+        },
+        {
+          "label": "208",
+          "target": "scene_2456",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2459",
+      "originalSceneId": 2459,
+      "title": "208A",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 358,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "South-West"
+        },
+        {
+          "label": "208",
+          "target": "scene_2456",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2461",
+      "originalSceneId": 2461,
+      "title": "208B",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "South-West"
+        },
+        {
+          "label": "208",
+          "target": "scene_2456",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2464",
+      "originalSceneId": 2464,
+      "title": "209 극장식",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "West"
+        },
+        {
+          "label": "209",
+          "target": "scene_2463",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2465",
+      "originalSceneId": 2465,
+      "title": "209 강의식",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "West"
+        },
+        {
+          "label": "209",
+          "target": "scene_2463",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2466",
+      "originalSceneId": 2466,
+      "title": "209A",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 358,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "South-West"
+        },
+        {
+          "label": "209",
+          "target": "scene_2463",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2468",
+      "originalSceneId": 2468,
+      "title": "209B",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "207입구",
+          "target": "scene_2431",
+          "direction": "South-West"
+        },
+        {
+          "label": "209",
+          "target": "scene_2463",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2495",
+      "originalSceneId": 2495,
+      "title": "212+213 극장식",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 359,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "North-West"
+        },
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "South-West"
+        },
+        {
+          "label": "212+213",
+          "target": "scene_2494",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2496",
+      "originalSceneId": 2496,
+      "title": "212+213 강의식",
+      "zone": "floor1_2",
+      "startDirection": {
+        "hDeg": 359,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "North-West"
+        },
+        {
+          "label": "212AB입구",
+          "target": "scene_2432",
+          "direction": "South-West"
+        },
+        {
+          "label": "212+213",
+          "target": "scene_2494",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2504",
+      "originalSceneId": 2504,
+      "title": "303 극장식",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "303 입구",
+          "target": "scene_2497",
+          "direction": "West"
+        },
+        {
+          "label": "303",
+          "target": "scene_2503",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2505",
+      "originalSceneId": 2505,
+      "title": "303 강의식",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 2,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "303 입구",
+          "target": "scene_2497",
+          "direction": "West"
+        },
+        {
+          "label": "303",
+          "target": "scene_2503",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2507",
+      "originalSceneId": 2507,
+      "title": "304 극장식",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "303 입구",
+          "target": "scene_2497",
+          "direction": "West"
+        },
+        {
+          "label": "304",
+          "target": "scene_2506",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2508",
+      "originalSceneId": 2508,
+      "title": "304 강의식",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "303 입구",
+          "target": "scene_2497",
+          "direction": "West"
+        },
+        {
+          "label": "304",
+          "target": "scene_2506",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2510",
+      "originalSceneId": 2510,
+      "title": "305 극장식",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "303 입구",
+          "target": "scene_2497",
+          "direction": "West"
+        },
+        {
+          "label": "305",
+          "target": "scene_2509",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2511",
+      "originalSceneId": 2511,
+      "title": "305 강의식",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "303 입구",
+          "target": "scene_2497",
+          "direction": "West"
+        },
+        {
+          "label": "305",
+          "target": "scene_2509",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2517",
+      "originalSceneId": 2517,
+      "title": "306+307 극장식",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "North-West"
+        },
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "South-West"
+        },
+        {
+          "label": "306+307",
+          "target": "scene_2516",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2518",
+      "originalSceneId": 2518,
+      "title": "306+307 강의식",
+      "zone": "floor1_3",
+      "startDirection": {
+        "hDeg": 1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "North-West"
+        },
+        {
+          "label": "307, 308 입구",
+          "target": "scene_2498",
+          "direction": "South-West"
+        },
+        {
+          "label": "306+307",
+          "target": "scene_2516",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2532",
+      "originalSceneId": 2532,
+      "title": "전시6홀A",
+      "zone": "floor2_h",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시6홀B",
+          "target": "scene_2533",
+          "direction": "East"
+        },
+        {
+          "label": "전시6홀A+B+C 강의식",
+          "target": "scene_2535",
+          "direction": "East"
+        },
+        {
+          "label": "6홀 입구",
+          "target": "scene_2536",
+          "direction": "South"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2533",
+      "originalSceneId": 2533,
+      "title": "전시6홀B",
+      "zone": "floor2_h",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시6홀A",
+          "target": "scene_2532",
+          "direction": "West"
+        },
+        {
+          "label": "전시6홀C",
+          "target": "scene_2534",
+          "direction": "East"
+        },
+        {
+          "label": "6홀 입구",
+          "target": "scene_2536",
+          "direction": "South"
+        },
+        {
+          "label": "전시6홀A+B+C 강의식",
+          "target": "scene_2535",
+          "direction": "East"
+        },
+        {
+          "label": "전시6홀A+B+C 강의식",
+          "target": "scene_2535",
+          "direction": "West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2534",
+      "originalSceneId": 2534,
+      "title": "전시6홀C",
+      "zone": "floor2_h",
+      "startDirection": {
+        "hDeg": 357,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시6홀B",
+          "target": "scene_2533",
+          "direction": "West"
+        },
+        {
+          "label": "6홀 입구",
+          "target": "scene_2536",
+          "direction": "South"
+        },
+        {
+          "label": "전시6홀A+B+C 강의식",
+          "target": "scene_2535",
+          "direction": "West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2542",
+      "originalSceneId": 2542,
+      "title": "전시7홀A",
+      "zone": "floor2_h",
+      "startDirection": {
+        "hDeg": 359,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시6홀A+B+C 강의식",
+          "target": "scene_2535",
+          "direction": "West"
+        },
+        {
+          "label": "전시7홀",
+          "target": "scene_2541",
+          "direction": "East"
+        },
+        {
+          "label": "7홀 입구",
+          "target": "scene_2537",
+          "direction": "South-East"
+        },
+        {
+          "label": "전시7홀B",
+          "target": "scene_2543",
+          "direction": "East"
+        },
+        {
+          "label": "1F로비",
+          "target": "scene_2528",
+          "direction": "South-East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2543",
+      "originalSceneId": 2543,
+      "title": "전시7홀B",
+      "zone": "floor2_h",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시7홀",
+          "target": "scene_2541",
+          "direction": "West"
+        },
+        {
+          "label": "전시7홀A",
+          "target": "scene_2542",
+          "direction": "West"
+        },
+        {
+          "label": "7홀 입구",
+          "target": "scene_2537",
+          "direction": "South-West"
+        },
+        {
+          "label": "전시8홀",
+          "target": "scene_2544",
+          "direction": "East"
+        },
+        {
+          "label": "전시8홀A",
+          "target": "scene_2545",
+          "direction": "East"
+        },
+        {
+          "label": "1F로비",
+          "target": "scene_2528",
+          "direction": "South-West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2545",
+      "originalSceneId": 2545,
+      "title": "전시8홀A",
+      "zone": "floor2_h",
+      "startDirection": {
+        "hDeg": 1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시7홀",
+          "target": "scene_2541",
+          "direction": "West"
+        },
+        {
+          "label": "전시7홀B",
+          "target": "scene_2543",
+          "direction": "West"
+        },
+        {
+          "label": "전시8홀",
+          "target": "scene_2544",
+          "direction": "East"
+        },
+        {
+          "label": "전시8홀B",
+          "target": "scene_2546",
+          "direction": "East"
+        },
+        {
+          "label": "8홀 입구",
+          "target": "scene_2538",
+          "direction": "South-East"
+        },
+        {
+          "label": "1F로비",
+          "target": "scene_2528",
+          "direction": "South-East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2546",
+      "originalSceneId": 2546,
+      "title": "전시8홀B",
+      "zone": "floor2_h",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시8홀A",
+          "target": "scene_2545",
+          "direction": "West"
+        },
+        {
+          "label": "전시8홀",
+          "target": "scene_2544",
+          "direction": "West"
+        },
+        {
+          "label": "8홀 입구",
+          "target": "scene_2538",
+          "direction": "South-West"
+        },
+        {
+          "label": "1F로비",
+          "target": "scene_2528",
+          "direction": "South-West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2548",
+      "originalSceneId": 2548,
+      "title": "전시9홀A",
+      "zone": "floor2_h",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "전시9홀",
+          "target": "scene_2547",
+          "direction": "East"
+        },
+        {
+          "label": "전시9홀B",
+          "target": "scene_2549",
+          "direction": "East"
+        },
+        {
+          "label": "9홀 입구",
+          "target": "scene_2539",
+          "direction": "South-East"
+        },
+        {
+          "label": "1F로비",
+          "target": "scene_2528",
+          "direction": "South-East"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2549",
+      "originalSceneId": 2549,
+      "title": "전시9홀B",
+      "zone": "floor2_h",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "9홀 입구",
+          "target": "scene_2539",
+          "direction": "South-West"
+        },
+        {
+          "label": "전시10홀",
+          "target": "scene_2550",
+          "direction": "East"
+        },
+        {
+          "label": "전시9홀",
+          "target": "scene_2547",
+          "direction": "West"
+        },
+        {
+          "label": "전시9홀A",
+          "target": "scene_2548",
+          "direction": "West"
+        },
+        {
+          "label": "1F로비",
+          "target": "scene_2528",
+          "direction": "South-West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2558",
+      "originalSceneId": 2558,
+      "title": "301 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 356,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "East"
+        },
+        {
+          "label": "301",
+          "target": "scene_2555",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2557",
+      "originalSceneId": 2557,
+      "title": "301 극장식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "West"
+        },
+        {
+          "label": "301",
+          "target": "scene_2555",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2556",
+      "originalSceneId": 2556,
+      "title": "301 연회식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "East"
+        },
+        {
+          "label": "301",
+          "target": "scene_2555",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2566",
+      "originalSceneId": 2566,
+      "title": "303 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 357,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "East"
+        },
+        {
+          "label": "303",
+          "target": "scene_2563",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2565",
+      "originalSceneId": 2565,
+      "title": "303 극장식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "West"
+        },
+        {
+          "label": "303",
+          "target": "scene_2563",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2564",
+      "originalSceneId": 2564,
+      "title": "303 연회식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "East"
+        },
+        {
+          "label": "303",
+          "target": "scene_2563",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2570",
+      "originalSceneId": 2570,
+      "title": "304 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 357,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "East"
+        },
+        {
+          "label": "304",
+          "target": "scene_2567",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2569",
+      "originalSceneId": 2569,
+      "title": "304 극장식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 359,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "West"
+        },
+        {
+          "label": "304",
+          "target": "scene_2567",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2568",
+      "originalSceneId": 2568,
+      "title": "304 연회식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 2,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "East"
+        },
+        {
+          "label": "304",
+          "target": "scene_2567",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2572",
+      "originalSceneId": 2572,
+      "title": "305 연회식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-East"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-West"
+        },
+        {
+          "label": "305",
+          "target": "scene_2571",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2573",
+      "originalSceneId": 2573,
+      "title": "305 극장식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-West"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "North-West"
+        },
+        {
+          "label": "305",
+          "target": "scene_2571",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2574",
+      "originalSceneId": 2574,
+      "title": "305 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-West"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "West"
+        },
+        {
+          "label": "305",
+          "target": "scene_2571",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2576",
+      "originalSceneId": 2576,
+      "title": "305A 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305",
+          "target": "scene_2571",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2578",
+      "originalSceneId": 2578,
+      "title": "305B 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 4,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305",
+          "target": "scene_2571",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2580",
+      "originalSceneId": 2580,
+      "title": "306 연회식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 269,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-East"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-West"
+        },
+        {
+          "label": "306",
+          "target": "scene_2579",
+          "direction": "West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2581",
+      "originalSceneId": 2581,
+      "title": "306 극장식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-West"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "North-West"
+        },
+        {
+          "label": "306",
+          "target": "scene_2579",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2582",
+      "originalSceneId": 2582,
+      "title": "306 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-West"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "West"
+        },
+        {
+          "label": "306",
+          "target": "scene_2579",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2584",
+      "originalSceneId": 2584,
+      "title": "306A 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 2,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "306",
+          "target": "scene_2579",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2586",
+      "originalSceneId": 2586,
+      "title": "306B 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 4,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "306",
+          "target": "scene_2579",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2588",
+      "originalSceneId": 2588,
+      "title": "307 연회식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-East"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-West"
+        },
+        {
+          "label": "307",
+          "target": "scene_2587",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2589",
+      "originalSceneId": 2589,
+      "title": "307 극장식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-West"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "North-West"
+        },
+        {
+          "label": "307",
+          "target": "scene_2587",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2590",
+      "originalSceneId": 2590,
+      "title": "307 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-West"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "West"
+        },
+        {
+          "label": "307",
+          "target": "scene_2587",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2592",
+      "originalSceneId": 2592,
+      "title": "307A 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 2,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "307",
+          "target": "scene_2587",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2594",
+      "originalSceneId": 2594,
+      "title": "307B 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "307",
+          "target": "scene_2587",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2596",
+      "originalSceneId": 2596,
+      "title": "208 연회식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-East"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-West"
+        },
+        {
+          "label": "308",
+          "target": "scene_2595",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2597",
+      "originalSceneId": 2597,
+      "title": "308 극장식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-West"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "North-West"
+        },
+        {
+          "label": "308",
+          "target": "scene_2595",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2598",
+      "originalSceneId": 2598,
+      "title": "308 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "South-West"
+        },
+        {
+          "label": "305~308 복도",
+          "target": "scene_2554",
+          "direction": "West"
+        },
+        {
+          "label": "308",
+          "target": "scene_2595",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2600",
+      "originalSceneId": 2600,
+      "title": "308A 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "308",
+          "target": "scene_2595",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2602",
+      "originalSceneId": 2602,
+      "title": "308B 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 5,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "308",
+          "target": "scene_2595",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2604",
+      "originalSceneId": 2604,
+      "title": "301+302 연회식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "North-East"
+        },
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "South-East"
+        },
+        {
+          "label": "301",
+          "target": "scene_2555",
+          "direction": "South"
+        },
+        {
+          "label": "302",
+          "target": "scene_2559",
+          "direction": "North"
+        },
+        {
+          "label": "301+302",
+          "target": "scene_2603",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2605",
+      "originalSceneId": 2605,
+      "title": "301+302 극장식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 359,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "North-East"
+        },
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "South-East"
+        },
+        {
+          "label": "301",
+          "target": "scene_2555",
+          "direction": "South"
+        },
+        {
+          "label": "302",
+          "target": "scene_2559",
+          "direction": "North"
+        },
+        {
+          "label": "301+302",
+          "target": "scene_2603",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2606",
+      "originalSceneId": 2606,
+      "title": "301+302 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 357,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "North-East"
+        },
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "South-East"
+        },
+        {
+          "label": "301",
+          "target": "scene_2555",
+          "direction": "South"
+        },
+        {
+          "label": "302",
+          "target": "scene_2559",
+          "direction": "North"
+        },
+        {
+          "label": "301+302",
+          "target": "scene_2603",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2608",
+      "originalSceneId": 2608,
+      "title": "303+304 연회식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "North-East"
+        },
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "South-East"
+        },
+        {
+          "label": "303",
+          "target": "scene_2563",
+          "direction": "South"
+        },
+        {
+          "label": "304",
+          "target": "scene_2567",
+          "direction": "North"
+        },
+        {
+          "label": "303+304",
+          "target": "scene_2607",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2609",
+      "originalSceneId": 2609,
+      "title": "303+304 극장식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "North-East"
+        },
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "South-East"
+        },
+        {
+          "label": "303",
+          "target": "scene_2563",
+          "direction": "South"
+        },
+        {
+          "label": "304",
+          "target": "scene_2567",
+          "direction": "North"
+        },
+        {
+          "label": "303+304",
+          "target": "scene_2607",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2610",
+      "originalSceneId": 2610,
+      "title": "303+304 강의식",
+      "zone": "floor2_3",
+      "startDirection": {
+        "hDeg": 357,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "North-East"
+        },
+        {
+          "label": "301~304복도",
+          "target": "scene_2553",
+          "direction": "South-East"
+        },
+        {
+          "label": "303",
+          "target": "scene_2563",
+          "direction": "South"
+        },
+        {
+          "label": "304",
+          "target": "scene_2567",
+          "direction": "North"
+        },
+        {
+          "label": "303+304",
+          "target": "scene_2607",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2613",
+      "originalSceneId": 2613,
+      "title": "401 연회식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 358,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "West"
+        },
+        {
+          "label": "401",
+          "target": "scene_2612",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2614",
+      "originalSceneId": 2614,
+      "title": "401 극장식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "West"
+        },
+        {
+          "label": "401",
+          "target": "scene_2612",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2615",
+      "originalSceneId": 2615,
+      "title": "401 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "West"
+        },
+        {
+          "label": "401",
+          "target": "scene_2612",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2617",
+      "originalSceneId": 2617,
+      "title": "402 연회식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 2,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "East"
+        },
+        {
+          "label": "402",
+          "target": "scene_2616",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2618",
+      "originalSceneId": 2618,
+      "title": "402 극장식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "East"
+        },
+        {
+          "label": "402",
+          "target": "scene_2616",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2619",
+      "originalSceneId": 2619,
+      "title": "402 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 356,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "East"
+        },
+        {
+          "label": "402",
+          "target": "scene_2616",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2621",
+      "originalSceneId": 2621,
+      "title": "403 연회식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "West"
+        },
+        {
+          "label": "403",
+          "target": "scene_2620",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2622",
+      "originalSceneId": 2622,
+      "title": "403 극장식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 359,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "West"
+        },
+        {
+          "label": "403",
+          "target": "scene_2620",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2623",
+      "originalSceneId": 2623,
+      "title": "403 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 3,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "West"
+        },
+        {
+          "label": "403",
+          "target": "scene_2620",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2625",
+      "originalSceneId": 2625,
+      "title": "404 연회식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "East"
+        },
+        {
+          "label": "404",
+          "target": "scene_2624",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2626",
+      "originalSceneId": 2626,
+      "title": "404 극장식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "West"
+        },
+        {
+          "label": "404",
+          "target": "scene_2624",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2627",
+      "originalSceneId": 2627,
+      "title": "404 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 357,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "East"
+        },
+        {
+          "label": "404",
+          "target": "scene_2624",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2629",
+      "originalSceneId": 2629,
+      "title": "405 연회식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 270,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-East"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-West"
+        },
+        {
+          "label": "405",
+          "target": "scene_2628",
+          "direction": "West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2630",
+      "originalSceneId": 2630,
+      "title": "405 극장식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-West"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-West"
+        },
+        {
+          "label": "405",
+          "target": "scene_2628",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2631",
+      "originalSceneId": 2631,
+      "title": "405 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-West"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "West"
+        },
+        {
+          "label": "405",
+          "target": "scene_2628",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2633",
+      "originalSceneId": 2633,
+      "title": "405A 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "405",
+          "target": "scene_2628",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2635",
+      "originalSceneId": 2635,
+      "title": "405B 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 4,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "405",
+          "target": "scene_2628",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2637",
+      "originalSceneId": 2637,
+      "title": "406 연회식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-East"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-West"
+        },
+        {
+          "label": "406",
+          "target": "scene_2636",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2638",
+      "originalSceneId": 2638,
+      "title": "406 극장식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-West"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-West"
+        },
+        {
+          "label": "406",
+          "target": "scene_2636",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2639",
+      "originalSceneId": 2639,
+      "title": "406 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-West"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "West"
+        },
+        {
+          "label": "406",
+          "target": "scene_2636",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2641",
+      "originalSceneId": 2641,
+      "title": "406A 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "406",
+          "target": "scene_2636",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2643",
+      "originalSceneId": 2643,
+      "title": "406B 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 4,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "406",
+          "target": "scene_2636",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2645",
+      "originalSceneId": 2645,
+      "title": "407 연회식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 270,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-East"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-West"
+        },
+        {
+          "label": "407",
+          "target": "scene_2644",
+          "direction": "West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2646",
+      "originalSceneId": 2646,
+      "title": "407 극장식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-West"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-West"
+        },
+        {
+          "label": "407",
+          "target": "scene_2644",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2647",
+      "originalSceneId": 2647,
+      "title": "407 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-West"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "West"
+        },
+        {
+          "label": "407",
+          "target": "scene_2644",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2649",
+      "originalSceneId": 2649,
+      "title": "407A 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 2,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "407",
+          "target": "scene_2644",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2651",
+      "originalSceneId": 2651,
+      "title": "407B 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 4,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "407",
+          "target": "scene_2644",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2653",
+      "originalSceneId": 2653,
+      "title": "408 연회식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 270,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-East"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-West"
+        },
+        {
+          "label": "408",
+          "target": "scene_2652",
+          "direction": "West"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2654",
+      "originalSceneId": 2654,
+      "title": "408 극장식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-West"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-West"
+        },
+        {
+          "label": "408",
+          "target": "scene_2652",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2655",
+      "originalSceneId": 2655,
+      "title": "408 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-West"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "West"
+        },
+        {
+          "label": "408",
+          "target": "scene_2652",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2659",
+      "originalSceneId": 2659,
+      "title": "408B 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 4,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "408",
+          "target": "scene_2652",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2663",
+      "originalSceneId": 2663,
+      "title": "401+402 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 356,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-East"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-East"
+        },
+        {
+          "label": "401",
+          "target": "scene_2612",
+          "direction": "South"
+        },
+        {
+          "label": "402",
+          "target": "scene_2616",
+          "direction": "North"
+        },
+        {
+          "label": "401+402",
+          "target": "scene_2660",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2662",
+      "originalSceneId": 2662,
+      "title": "401+402 극장식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-East"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-East"
+        },
+        {
+          "label": "401",
+          "target": "scene_2612",
+          "direction": "South"
+        },
+        {
+          "label": "402",
+          "target": "scene_2616",
+          "direction": "North"
+        },
+        {
+          "label": "401+402",
+          "target": "scene_2660",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2661",
+      "originalSceneId": 2661,
+      "title": "401+402 연회식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-East"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-East"
+        },
+        {
+          "label": "402",
+          "target": "scene_2616",
+          "direction": "North"
+        },
+        {
+          "label": "401",
+          "target": "scene_2612",
+          "direction": "South"
+        },
+        {
+          "label": "401+402",
+          "target": "scene_2660",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2667",
+      "originalSceneId": 2667,
+      "title": "403+404 강의식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 358,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-East"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-East"
+        },
+        {
+          "label": "401",
+          "target": "scene_2612",
+          "direction": "South"
+        },
+        {
+          "label": "402",
+          "target": "scene_2616",
+          "direction": "North"
+        },
+        {
+          "label": "403+404",
+          "target": "scene_2664",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2666",
+      "originalSceneId": 2666,
+      "title": "403+404 극장식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 0,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-East"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-East"
+        },
+        {
+          "label": "401",
+          "target": "scene_2612",
+          "direction": "South"
+        },
+        {
+          "label": "402",
+          "target": "scene_2616",
+          "direction": "North"
+        },
+        {
+          "label": "403+404",
+          "target": "scene_2664",
+          "direction": "North"
+        }
+      ]
+    },
+    {
+      "sceneKey": "scene_2665",
+      "originalSceneId": 2665,
+      "title": "403+404 연회식",
+      "zone": "floor2_4",
+      "startDirection": {
+        "hDeg": 1,
+        "vDeg": 0
+      },
+      "adjacentScenes": [
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "North-East"
+        },
+        {
+          "label": "4F복도",
+          "target": "scene_2611",
+          "direction": "South-East"
+        },
+        {
+          "label": "401",
+          "target": "scene_2612",
+          "direction": "South"
+        },
+        {
+          "label": "402",
+          "target": "scene_2616",
+          "direction": "North"
+        },
+        {
+          "label": "403+404",
+          "target": "scene_2664",
+          "direction": "North"
         }
       ]
     }

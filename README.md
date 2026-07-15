@@ -112,7 +112,7 @@ kmice-vr/
 │   │   ├── FloorSelector.tsx
 │   │   ├── InfoPanel.tsx
 │   │   ├── InfoTabs.tsx
-│   │   ├── KintexLogo.tsx
+│   │   ├── SIC27Logo.tsx
 │   │   ├── MiniMap.tsx
 │   │   ├── PanoramaViewer.tsx     # Three.js WebGL 뷰어 초기화 및 마운트 위임
 │   │   ├── SceneDropdown.tsx

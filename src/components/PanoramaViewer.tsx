@@ -3,6 +3,8 @@ import {
   useCallback,
   useEffect,
   useImperativeHandle,
+  useLayoutEffect,
+  useMemo,
   useRef,
   useState,
 } from "react";
@@ -11,14 +13,18 @@ import { getScene } from "../data/scenes";
 import type { Hotspot, Scene } from "../models/scene.model";
 import { useEditorController } from "../controllers/editor.controller";
 import { useHotspotController } from "../controllers/hotspot.controller";
+import { hotspotService } from "../services/hotspot.service";
 import { usePanoramaTextureController } from "../controllers/panoramaTexture.controller";
 import { useWebXrHotspotController } from "../controllers/webxr.controller";
 import { panoramaProjection } from "../utils/panoramaProjection";
 import PanoramaView from "../views/PanoramaView";
 import { rebuildPanoramaHotspotSprites } from "../services/panoramaHotspotSprite.service";
+import type { MapTourSelection } from "../models/service-menu.model";
+import addedHotspotsData from "../data/added-hotspots.json";
 
 // Note 1: 환경변수를 활용하여 현재 핫스팟 수정 에디터 모드인지 파악합니다.
 const isHotspotEditMode = import.meta.env.VITE_HOTSPOT_EDIT_MODE === "true";
+const XR_NAVIGATION_PRELOAD_TIMEOUT_MS = 1200;
 
 export interface ViewerHandle {
   zoomIn: () => void;
@@ -44,6 +50,7 @@ interface Props {
   setVrMode?: (fn: (v: boolean) => boolean) => void;
   onXrActiveChange?: (active: boolean) => void;
   onVrHardwareUnavailable?: () => void;
+  mapTourSelection?: MapTourSelection;
 }
 
 const clamp = (v: number, min: number, max: number) =>
@@ -51,7 +58,7 @@ const clamp = (v: number, min: number, max: number) =>
 
 // Note 2: PanoramaViewer 컴포넌트는 Controller 역할을 수행하며 Three.js 초기화, 렌더링 루프 스케줄링 및 에디터 상태 조율을 중개합니다.
 const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
-  { scene, autoRotate, showHotspots, headingRef, onNavigate, onInfo, onLoadingChange, lang, activeTab, highlightedHotspotId, vrMode, setVrMode, onXrActiveChange, onVrHardwareUnavailable },
+  { scene, autoRotate, showHotspots, headingRef, onNavigate, onInfo, onLoadingChange, lang, activeTab, highlightedHotspotId, vrMode, setVrMode, onXrActiveChange, onVrHardwareUnavailable, mapTourSelection },
   ref,
 ) {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -64,6 +71,7 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
   const cameraRef = useRef<THREE.PerspectiveCamera>();
   const meshRef = useRef<THREE.Mesh>();
   const safetyArrowsGroupRef = useRef<THREE.Group>();
+  const mapTourArrowsGroupRef = useRef<THREE.Group>();
   
   const testCubeRef = useRef<THREE.Mesh>();
   const testGridRef = useRef<THREE.GridHelper>();
@@ -80,6 +88,12 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
   const spinTargetRef = useRef<number | null>(null);
   const sceneDataRef = useRef<Scene>(scene);
   const showHotspotsRef = useRef(showHotspots);
+  const pendingXrNavigationTargetRef = useRef<string | null>(null);
+  const latestXrNavigationRequestIdRef = useRef(0);
+  const activeXrTransitionIdRef = useRef<string | null>(null);
+  const currentSceneIdRef = useRef(scene.id);
+  const latestSceneTransitionRequestIdRef = useRef(0);
+  const activeSceneTransitionIdRef = useRef<string | null>(null);
 
   const [fade, setFade] = useState(false);
 
@@ -87,8 +101,11 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
   const editor = useEditorController(scene.id, cameraRef, hotspotLayerRef);
   // Note 4: Hotspot Controller 훅을 호출하여 현재 탭 상태(safety 여부)에 최적화된 핫스팟 목록 필터 동작을 수행합니다.
   const { filterHotspots } = useHotspotController();
+  const textureCacheOptions = useMemo(() => ({
+    shouldDisposeColdTextures: () => !rendererRef.current?.xr.isPresenting,
+  }), []);
   // Note 5: 파노라마 텍스처 캐시 정책은 전용 컨트롤러를 통해 서비스와 분리합니다.
-  const { getTexture, warmCurrentSceneWindow, releaseColdTextures } = usePanoramaTextureController(scene.id);
+  const { getTexture, warmCurrentSceneWindow, releaseColdTextures } = usePanoramaTextureController(scene.id, textureCacheOptions);
 
   const overridesRef = useRef(editor.overrides);
   const addedHotspotsRef = useRef(editor.addedHotspots);
@@ -100,18 +117,51 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
   }, [editor.addedHotspots]);
 
   // autoRotate 및 showHotspots 변수들을 Ref들에 동기화
-  useEffect(() => {
+  useLayoutEffect(() => {
     autoRef.current = autoRotate;
   }, [autoRotate]);
-  useEffect(() => {
+  useLayoutEffect(() => {
     showHotspotsRef.current = showHotspots;
   }, [showHotspots]);
 
   // Three.js 애니메이션 프레임 루프용 activeTab Ref 동기화
   const activeTabRef = useRef(activeTab);
-  useEffect(() => {
+  useLayoutEffect(() => {
     activeTabRef.current = activeTab;
   }, [activeTab]);
+
+  const mapTourSelectionRef = useRef(mapTourSelection);
+  useLayoutEffect(() => {
+    mapTourSelectionRef.current = mapTourSelection;
+  }, [mapTourSelection]);
+
+  useLayoutEffect(() => {
+    currentSceneIdRef.current = scene.id;
+    sceneDataRef.current = scene;
+  }, [scene.id, scene]);
+
+  useEffect(() => {
+    if (activeTab !== "safety") return;
+
+    const safetyHotspot = sceneDataRef.current.hotspots.find((hotspot) =>
+      hotspotService.isSafetyHotspot(hotspot.url)
+    );
+
+    if (!safetyHotspot) return;
+
+    lonRef.current = safetyHotspot.lon;
+    latRef.current = safetyHotspot.lat;
+    velRef.current = { x: 0, y: 0 };
+    spinTargetRef.current = null;
+
+    const safetyRotation = THREE.MathUtils.degToRad(safetyHotspot.lon);
+    if (meshRef.current) {
+      meshRef.current.rotation.y = safetyRotation;
+    }
+    if (xrHotspotsGroupRef.current) {
+      xrHotspotsGroupRef.current.rotation.y = safetyRotation;
+    }
+  }, [activeTab, scene.id]);
 
   // WebXR용 3D 핫스팟 그룹 생성
   const xrHotspotsGroupRef = useRef<THREE.Group>(new THREE.Group());
@@ -120,8 +170,18 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
   // WebXR 3D 핫스팟 갱신 효과
   useEffect(() => {
     const currentAdded = editor.addedHotspots[scene.id] || [];
-    const mergedHotspots = [...scene.hotspots, ...currentAdded];
-    const filtered = filterHotspots(mergedHotspots, showHotspots, activeTab);
+    const mergedHotspots = hotspotService.resolveHotspots(
+      [...scene.hotspots, ...currentAdded],
+      scene.id,
+      editor.overrides,
+    );
+    const filtered = filterHotspots(mergedHotspots, true, activeTab).filter((hotspot) => {
+      if (activeTab === "safety") {
+        return true;
+      }
+
+      return Boolean(hotspot.target);
+    });
 
     console.log("[WebXR Hotspots] Rebuilding 3D sprites. Count:", filtered.length);
 
@@ -158,7 +218,11 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
 
     // Find exit hotspots
     const currentAdded = editor.addedHotspots[scene.id] || [];
-    const allHotspots = [...scene.hotspots, ...currentAdded];
+    const allHotspots = hotspotService.resolveHotspots(
+      [...scene.hotspots, ...currentAdded],
+      scene.id,
+      editor.overrides,
+    );
     const exits = allHotspots.filter((h) => 
       h.url?.includes("marker-exit") || 
       h.label?.includes("비상구") || 
@@ -172,9 +236,9 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
 
       // Unit direction pointing towards exit
       const dir = new THREE.Vector3(
-        Math.sin(phi) * Math.sin(theta),
+        -Math.sin(phi) * Math.sin(theta),
         Math.cos(phi),
-        Math.sin(phi) * Math.cos(theta)
+        -Math.sin(phi) * Math.cos(theta)
       ).normalize();
 
       // Point on floor: start near camera and go towards the exit direction projection on the floor plane
@@ -195,7 +259,87 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
         arrowsGroup.add(arrowHelper);
       }
     }
-  }, [activeTab, scene.id, editor.addedHotspots]);
+  }, [activeTab, scene.id, editor.addedHotspots, editor.overrides]);
+
+  // WebGL 3D Map Tour Directional Arrows dynamic updates
+  useEffect(() => {
+    const arrowsGroup = mapTourArrowsGroupRef.current;
+    if (!arrowsGroup) return;
+
+    // Clear existing arrows
+    while (arrowsGroup.children.length > 0) {
+      const child = arrowsGroup.children[0];
+      arrowsGroup.remove(child);
+      if (child instanceof THREE.ArrowHelper) {
+        child.line.geometry.dispose();
+        (child.line.material as THREE.Material).dispose();
+        child.cone.geometry.dispose();
+        (child.cone.material as THREE.Material).dispose();
+      }
+    }
+
+    if (
+      !mapTourSelection ||
+      mapTourSelection.navigationMode !== "guiding" ||
+      !mapTourSelection.navigationRoute ||
+      mapTourSelection.navigationRoute.length <= 1
+    ) {
+      return;
+    }
+
+    // Find the current step in the route
+    const currentStepIdx = mapTourSelection.navigationRoute.findIndex((step) =>
+      step.id.includes(`-${scene.id}-`)
+    );
+
+    if (currentStepIdx === -1 || currentStepIdx >= mapTourSelection.navigationRoute.length - 1) {
+      return;
+    }
+
+    const nextStep = mapTourSelection.navigationRoute[currentStepIdx + 1];
+    const nextSceneId = nextStep.id.split("-")[1];
+
+    // Find the hotspot pointing to this next scene
+    const currentAdded = addedHotspotsRef.current[scene.id] || [];
+    const allHotspots = hotspotService.resolveHotspots(
+      [...scene.hotspots, ...currentAdded],
+      scene.id,
+      editor.overrides,
+    );
+    const nextHotspot = allHotspots.find((h) => h.target === nextSceneId);
+
+    if (!nextHotspot) return;
+
+    // Create 3D arrows on the floor pointing to this next hotspot
+    const resolvedAth = nextHotspot.lon;
+    const resolvedAtv = nextHotspot.lat;
+
+    const phi = THREE.MathUtils.degToRad(90 - resolvedAtv);
+    const theta = THREE.MathUtils.degToRad(resolvedAth);
+
+    const dir = new THREE.Vector3(
+      -Math.sin(phi) * Math.sin(theta),
+      Math.cos(phi),
+      -Math.sin(phi) * Math.cos(theta)
+    ).normalize();
+
+    const floorDir = new THREE.Vector3(dir.x, 0, dir.z).normalize();
+    
+    // Draw 3 green arrows along this direction on the floor
+    for (let d = 4; d <= 20; d += 8) {
+      const origin = floorDir.clone().multiplyScalar(d).setY(-11);
+      const arrowLength = 4;
+      const arrowHelper = new THREE.ArrowHelper(
+        floorDir,
+        origin,
+        arrowLength,
+        0x10b981, // Neon Green
+        1.6,      // headLength
+        1.0       // headWidth
+      );
+      arrowsGroup.add(arrowHelper);
+    }
+  }, [mapTourSelection, scene.id, editor.addedHotspots, editor.overrides]);
 
   const interactionModeRef = useRef(editor.interactionMode);
   useEffect(() => {
@@ -225,9 +369,126 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
         onNavigate(targetId);
       }
     } else {
+      const targetScene = getScene(targetId);
+      const currentSceneId = currentSceneIdRef.current;
+      if (rendererRef.current?.xr.isPresenting && targetScene?.id === currentSceneId) {
+        pendingXrNavigationTargetRef.current = null;
+        activeXrTransitionIdRef.current = null;
+        console.log("[WebXR Transition]", {
+          phase: "same-scene-noop",
+          fromScene: currentSceneId,
+          toScene: targetId,
+          currentSceneState: scene.id,
+          currentSceneRef: currentSceneIdRef.current,
+          pendingScene: pendingXrNavigationTargetRef.current,
+          rendererXrIsPresenting: !!rendererRef.current?.xr.isPresenting,
+        });
+        onLoadingChange?.(false);
+        return;
+      }
+      if (rendererRef.current?.xr.isPresenting && targetScene?.id === targetId) {
+        if (pendingXrNavigationTargetRef.current === targetId) {
+          return;
+        }
+
+        const transitionId = crypto.randomUUID();
+        const requestId = ++latestXrNavigationRequestIdRef.current;
+        const fromScene = currentSceneIdRef.current;
+        pendingXrNavigationTargetRef.current = targetId;
+        activeXrTransitionIdRef.current = transitionId;
+        console.log("[WebXR Navigation] Preparing target texture before scene switch:", targetId);
+        onLoadingChange?.(true);
+        console.log("[WebXR Transition]", {
+          transitionId,
+          requestId,
+          phase: "request-start",
+          fromScene,
+          toScene: targetId,
+          startTime: new Date().toISOString(),
+          currentSceneState: scene.id,
+          currentSceneRef: currentSceneIdRef.current,
+          pendingScene: pendingXrNavigationTargetRef.current,
+          rendererXrIsPresenting: !!rendererRef.current?.xr.isPresenting,
+        });
+
+        const preloadTimeout = window.setTimeout(() => {
+          console.warn("[WebXR Navigation] Target texture preload still pending:", {
+            transitionId,
+            requestId,
+            targetId,
+            timeoutMs: XR_NAVIGATION_PRELOAD_TIMEOUT_MS,
+          });
+        }, XR_NAVIGATION_PRELOAD_TIMEOUT_MS);
+
+        void getTexture(targetScene.img)
+          .then(() => {
+            window.clearTimeout(preloadTimeout);
+            if (requestId !== latestXrNavigationRequestIdRef.current || pendingXrNavigationTargetRef.current !== targetId) {
+              console.warn("[WebXR Transition]", {
+                transitionId,
+                requestId,
+                phase: "stale-completion-ignored",
+                fromScene,
+                toScene: targetId,
+                currentSceneState: scene.id,
+                currentSceneRef: currentSceneIdRef.current,
+                pendingScene: pendingXrNavigationTargetRef.current,
+              });
+              return;
+            }
+
+            pendingXrNavigationTargetRef.current = null;
+            console.log("[WebXR Transition]", {
+              transitionId,
+              requestId,
+              phase: "texture-ready",
+              fromScene,
+              toScene: targetId,
+              textureLoadEnd: new Date().toISOString(),
+              currentSceneState: scene.id,
+              currentSceneRef: currentSceneIdRef.current,
+              pendingScene: pendingXrNavigationTargetRef.current,
+            });
+            console.log("[WebXR Navigation] Target texture ready. Switching scene:", targetId);
+            onNavigate(targetId);
+          })
+          .catch((error) => {
+            window.clearTimeout(preloadTimeout);
+            if (requestId !== latestXrNavigationRequestIdRef.current || pendingXrNavigationTargetRef.current !== targetId) {
+              console.warn("[WebXR Transition]", {
+                transitionId,
+                requestId,
+                phase: "stale-failure-ignored",
+                fromScene,
+                toScene: targetId,
+                currentSceneState: scene.id,
+                currentSceneRef: currentSceneIdRef.current,
+                pendingScene: pendingXrNavigationTargetRef.current,
+              });
+              return;
+            }
+
+            pendingXrNavigationTargetRef.current = null;
+            console.error("[WebXR Transition]", {
+              transitionId,
+              requestId,
+              phase: "texture-failed",
+              fromScene,
+              toScene: targetId,
+              currentSceneState: scene.id,
+              currentSceneRef: currentSceneIdRef.current,
+              pendingScene: pendingXrNavigationTargetRef.current,
+              error,
+            });
+            console.error("[WebXR Navigation] Target texture preload failed. Switching scene with fallback:", error);
+            onNavigate(targetId);
+          });
+        return;
+      }
+
       onNavigate(targetId);
     }
-  }, [editor.interactionMode, isHotspotEditMode, lang, onNavigate, scene.id]);
+  }, [editor.interactionMode, getTexture, isHotspotEditMode, lang, onLoadingChange, onNavigate, scene.id]);
 
   const webxr = useWebXrHotspotController({
     rendererRef,
@@ -361,6 +622,10 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
     const arrowsGroup = new THREE.Group();
     tscene.add(arrowsGroup);
     safetyArrowsGroupRef.current = arrowsGroup;
+
+    const mapTourArrowsGroup = new THREE.Group();
+    tscene.add(mapTourArrowsGroup);
+    mapTourArrowsGroupRef.current = mapTourArrowsGroup;
 
     // ---- 포인터/마우스 드래그 상호작용 이벤트 정의 ----
     const el = renderer.domElement;
@@ -570,6 +835,17 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
         });
       }
 
+      // Map Tour Arrows Flow animation
+      if (mapTourArrowsGroupRef.current && mapTourArrowsGroupRef.current.children.length > 0) {
+        const time = Date.now() * 0.007;
+        mapTourArrowsGroupRef.current.children.forEach((child, index) => {
+          if (child instanceof THREE.ArrowHelper) {
+            const pulse = 1 + Math.sin(time - index * 0.8) * 0.25;
+            child.scale.set(pulse, pulse, pulse);
+          }
+        });
+      }
+
       renderer.render(tscene, camera);
 
       // 핫스팟을 2D 뷰포트 스크린 영역에 2차원 매핑 투사 처리
@@ -578,6 +854,7 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
         const w = layer.clientWidth;
         const h = layer.clientHeight;
         camera.getWorldDirection(forward);
+        const shouldShowHotspotLayer = showHotspotsRef.current || activeTabRef.current === "safety";
         const list = [
           ...sceneDataRef.current.hotspots,
           ...(addedHotspotsRef.current[sceneDataRef.current.id] || [])
@@ -598,7 +875,7 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
           const shouldShowSafety = activeTabRef.current === "safety";
           const isDimHotspot = hp.url?.includes("dim-img");
 
-          if (!showHotspotsRef.current || (isSafetyHotspot && !shouldShowSafety) || isDimHotspot) {
+          if (!shouldShowHotspotLayer || (isSafetyHotspot && !shouldShowSafety) || isDimHotspot) {
             node.style.opacity = "0";
             node.style.pointerEvents = "none";
             continue;
@@ -684,6 +961,34 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
     if (!mesh) return;
 
     let cancelled = false;
+    const transitionId = crypto.randomUUID();
+    const requestId = ++latestSceneTransitionRequestIdRef.current;
+    activeSceneTransitionIdRef.current = transitionId;
+    const isXrSceneTransition = Boolean(rendererRef.current?.xr.isPresenting);
+
+    console.log("[WebXR Scene State]", {
+      phase: "load-start",
+      transitionId,
+      requestId,
+      currentSceneState: scene.id,
+      currentSceneRef: currentSceneIdRef.current,
+      pendingScene: pendingXrNavigationTargetRef.current,
+      rendererXrIsPresenting: !!rendererRef.current?.xr.isPresenting,
+      sceneChildrenCount: sceneRef.current?.children.length ?? 0,
+      sphereVisible: mesh.visible,
+      materialUuid: (mesh.material as THREE.Material).uuid,
+      textureUuid: ((mesh.material as THREE.MeshBasicMaterial).map as THREE.Texture | undefined)?.uuid ?? "N/A",
+      rendererInfoTextures: rendererRef.current?.info.memory.textures ?? 0,
+      rendererInfoRenderCalls: rendererRef.current?.info.render.calls ?? 0,
+    });
+
+    if (isXrSceneTransition) {
+      const rotationAngle = THREE.MathUtils.degToRad(scene.startLon);
+      mesh.rotation.y = rotationAngle;
+      xrHotspotsGroupRef.current.rotation.y = rotationAngle;
+      console.log("[WebXR Orientation Sync] Applied scene.startLon rotation before texture swap:", scene.startLon);
+    }
+
     setFade(true);
     onLoadingChange?.(true);
 
@@ -696,52 +1001,138 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
         if (cancelled) {
           return;
         }
+        if (requestId !== latestSceneTransitionRequestIdRef.current) {
+          console.warn("[WebXR Scene State]", {
+            phase: "stale-ignored",
+            transitionId,
+            requestId,
+            currentSceneState: scene.id,
+            currentSceneRef: currentSceneIdRef.current,
+            pendingScene: pendingXrNavigationTargetRef.current,
+          });
+          return;
+        }
 
         texture.anisotropy = rendererRef.current?.capabilities.getMaxAnisotropy() || 1;
+        console.log("[WebXR Scene State]", {
+          phase: "load-success",
+          transitionId,
+          requestId,
+          currentSceneState: scene.id,
+          currentSceneRef: currentSceneIdRef.current,
+          pendingScene: pendingXrNavigationTargetRef.current,
+          textureUuid: texture.uuid,
+          rendererInfoTextures: rendererRef.current?.info.memory.textures ?? 0,
+        });
 
         const mat = mesh.material as THREE.MeshBasicMaterial;
         const previousTexture = mat.map;
+        console.log("[WebXR Scene State]", {
+          phase: "commit-start",
+          transitionId,
+          requestId,
+          currentSceneState: scene.id,
+          currentSceneRef: currentSceneIdRef.current,
+          pendingScene: pendingXrNavigationTargetRef.current,
+          oldTextureUuid: previousTexture?.uuid ?? "N/A",
+          newTextureUuid: texture.uuid,
+          materialUuid: mat.uuid,
+        });
         mat.map = texture;
         mat.color.set(0xffffff);
         mat.needsUpdate = true;
-        previousTexture?.dispose();
-
-        // 씬 회전 기준점 리셋
-        lonRef.current = scene.startLon;
-        latRef.current = scene.startLat || 0;
-        fovRef.current = 90;
-        if (cameraRef.current) {
-          cameraRef.current.fov = 90;
-          cameraRef.current.updateProjectionMatrix();
+        console.log("[WebXR Scene State]", {
+          phase: "material-swap",
+          transitionId,
+          requestId,
+          currentSceneState: scene.id,
+          currentSceneRef: currentSceneIdRef.current,
+          pendingScene: pendingXrNavigationTargetRef.current,
+          sphereVisible: mesh.visible,
+          materialUuid: mat.uuid,
+          newTextureUuid: texture.uuid,
+        });
+        if (!isXrSceneTransition) {
+          previousTexture?.dispose();
         }
 
-        // WebXR 모드에서는 카메라 앵글이 강제 고정이므로 메쉬와 핫스팟 그룹을 y축 회전시켜 기준 2D 정면과 각도 싱크를 맞춰줍니다.
-        if (rendererRef.current?.xr.isPresenting) {
-          const rotationAngle = THREE.MathUtils.degToRad(scene.startLon);
-          mesh.rotation.y = rotationAngle;
-          if (xrHotspotsGroupRef.current) {
-            xrHotspotsGroupRef.current.rotation.y = rotationAngle;
+        if (!isXrSceneTransition) {
+          // 씬 회전 기준점 리셋. WebXR 중에는 HMD 카메라와 충돌하므로 PC 모드에서만 적용합니다.
+          lonRef.current = scene.startLon;
+          latRef.current = scene.startLat || 0;
+          fovRef.current = 90;
+          if (cameraRef.current) {
+            cameraRef.current.fov = 90;
+            cameraRef.current.updateProjectionMatrix();
           }
-          console.log("[WebXR Orientation Sync] Applied scene.startLon rotation:", scene.startLon);
-        } else {
+
           // 비 XR 2D 모드에서는 회전 오프셋 복구
           mesh.rotation.y = 0;
-          if (xrHotspotsGroupRef.current) {
-            xrHotspotsGroupRef.current.rotation.y = 0;
-          }
+          xrHotspotsGroupRef.current.rotation.y = 0;
         }
 
-        setTimeout(() => {
+        if (cancelled) {
+          return;
+        }
+        if (requestId !== latestSceneTransitionRequestIdRef.current) {
+          console.warn("[WebXR Scene State]", {
+            phase: "stale-ignored",
+            transitionId,
+            requestId,
+            currentSceneState: scene.id,
+            currentSceneRef: currentSceneIdRef.current,
+            pendingScene: pendingXrNavigationTargetRef.current,
+          });
+          return;
+        }
+
+        console.log("[WebXR Scene State]", {
+          phase: "texture-applied",
+          transitionId,
+          requestId,
+          currentSceneState: scene.id,
+          currentSceneRef: currentSceneIdRef.current,
+          pendingScene: pendingXrNavigationTargetRef.current,
+          activeTransitionId: activeXrTransitionIdRef.current,
+          activeSceneTransitionId: activeSceneTransitionIdRef.current,
+          sphereVisible: mesh.visible,
+          sceneChildrenCount: mesh.parent?.children.length ?? 0,
+          rendererXrIsPresenting: !!rendererRef.current?.xr.isPresenting,
+          materialUuid: (mesh.material as THREE.Material).uuid,
+          textureUuid: ((mesh.material as THREE.MeshBasicMaterial).map as THREE.Texture | undefined)?.uuid ?? "N/A",
+          rendererInfoTextures: rendererRef.current?.info.memory.textures ?? 0,
+          rendererInfoRenderCalls: rendererRef.current?.info.render.calls ?? 0,
+        });
+        setFade(false);
+        onLoadingChange?.(false);
+        console.log("[WebXR Scene State]", {
+          phase: "completed",
+          transitionId,
+          requestId,
+          currentSceneState: scene.id,
+          currentSceneRef: currentSceneIdRef.current,
+          pendingScene: pendingXrNavigationTargetRef.current,
+          activeSceneTransitionId: activeSceneTransitionIdRef.current,
+          sphereVisible: mesh.visible,
+          materialUuid: (mesh.material as THREE.Material).uuid,
+          textureUuid: ((mesh.material as THREE.MeshBasicMaterial).map as THREE.Texture | undefined)?.uuid ?? "N/A",
+          rendererInfoTextures: rendererRef.current?.info.memory.textures ?? 0,
+          rendererInfoRenderCalls: rendererRef.current?.info.render.calls ?? 0,
+        });
+
+        window.setTimeout(() => {
           if (cancelled) return;
-          releaseColdTextures(scene.id);
-          setFade(false);
-          onLoadingChange?.(false);
+          if (!rendererRef.current?.xr.isPresenting) {
+            releaseColdTextures(scene.id);
+          }
         }, 120);
       } catch (error) {
         console.error("[PanoramaViewer] panorama texture load failed", error);
         if (!cancelled) {
-          setFade(false);
-          onLoadingChange?.(false);
+          if (requestId === latestSceneTransitionRequestIdRef.current) {
+            setFade(false);
+            onLoadingChange?.(false);
+          }
         }
       }
     })();
@@ -801,16 +1192,39 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
   }, []);
 
   const currentAdded = editor.addedHotspots[scene.id] || [];
-  const mergedScene = {
+  const resolvedScene = useMemo(() => ({
     ...scene,
-    hotspots: [...scene.hotspots, ...currentAdded]
-  };
+    hotspots: hotspotService.resolveHotspots(
+      [...scene.hotspots, ...currentAdded],
+      scene.id,
+      editor.overrides,
+    ),
+  }), [scene, currentAdded, editor.overrides]);
 
-  const filteredHotspots = filterHotspots(mergedScene.hotspots, showHotspots, activeTab);
+  useLayoutEffect(() => {
+    sceneDataRef.current = resolvedScene;
+    console.log("[WebXR Scene State]", {
+      currentSceneState: resolvedScene.id,
+      currentSceneRef: currentSceneIdRef.current,
+      pendingScene: pendingXrNavigationTargetRef.current,
+      activeTransitionId: activeXrTransitionIdRef.current,
+      rendererXrIsPresenting: !!rendererRef.current?.xr.isPresenting,
+      sceneChildrenCount: sceneRef.current?.children.length ?? 0,
+      sphereVisible: meshRef.current?.visible ?? false,
+      materialUuid: (meshRef.current?.material as THREE.Material | undefined)?.uuid ?? "N/A",
+      textureUuid: ((meshRef.current?.material as THREE.MeshBasicMaterial | undefined)?.map as THREE.Texture | undefined)?.uuid ?? "N/A",
+      rendererInfoTextures: rendererRef.current?.info.memory.textures ?? 0,
+      rendererInfoRenderCalls: rendererRef.current?.info.render.calls ?? 0,
+    });
+  }, [resolvedScene]);
+
+  const filteredHotspots = useMemo(() => (
+    filterHotspots(resolvedScene.hotspots, showHotspots, activeTab)
+  ), [activeTab, filterHotspots, resolvedScene.hotspots, showHotspots]);
 
   return (
     <PanoramaView
-      scene={mergedScene}
+      scene={resolvedScene}
       lang={lang}
       fade={fade}
       toast={editor.toast}
@@ -842,6 +1256,7 @@ const PanoramaViewer = forwardRef<ViewerHandle, Props>(function PanoramaViewer(
       setAddModalState={setAddModalState}
       handleCreateHotspot={editor.handleCreateHotspot}
       handleDeleteHotspot={editor.handleDeleteHotspot}
+      mapTourSelection={mapTourSelection}
     />
   );
 });

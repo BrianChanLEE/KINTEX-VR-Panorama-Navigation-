@@ -41,7 +41,7 @@ export function getHotspotBadgeConfig(hotspot: Hotspot, lang: HotspotLang): Hots
   const width = Math.max(144, Math.min(420, Math.round(84 + textLength * 12)));
   const height = 118;
   const renderScale = 4;
-  const iconUrl = resolveAssetPath(hotspot.url || "/mice/upload/mice_vr/marker/marker01.png");
+  const iconUrl = resolveAssetPath(hotspot.url || "/mice/upload/mice_vr/marker/nav.png");
 
   const config = { label, iconUrl, width, height, iconSize, fontSize, renderScale };
   badgeCache.set(cacheKey, config);

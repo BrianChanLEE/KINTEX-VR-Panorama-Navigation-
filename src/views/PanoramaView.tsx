@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Scene, Hotspot } from "../models/scene.model";
 import type { InteractionMode, ToastModel } from "../models/editor.model";
 import { IconArrowDown, IconPin } from "../components/icons";
 import { SCENES } from "../data/scenes";
 import { getHotspotBadgeConfig, getHotspotBadgeDataUrl } from "../utils/hotspotBadge";
+import type { HotspotOverride } from "../models/hotspot.model";
+import { resolveAssetPath } from "../utils/assetPath";
+import type { MapTourSelection } from "../models/service-menu.model";
 
 interface PanoramaViewProps {
   scene: Scene;
@@ -30,7 +33,7 @@ interface PanoramaViewProps {
   startDrag: (e: React.PointerEvent<HTMLDivElement>, h: Hotspot, index: number) => void;
   handleDrag: (e: React.PointerEvent<HTMLDivElement>, h: Hotspot, index: number) => void;
   endDrag: (e: React.PointerEvent<HTMLDivElement>, h: Hotspot, index: number) => void;
-  handleSave: () => void;
+  handleSave: (patch?: Partial<HotspotOverride>) => void;
   handleReset: () => void;
   handleCopyPosition: () => void;
   handleExportJSON: () => void;
@@ -41,6 +44,7 @@ interface PanoramaViewProps {
   setAddModalState: React.Dispatch<React.SetStateAction<{ visible: boolean; ath: number; atv: number } | null>>;
   handleCreateHotspot: (label: string, labelEn: string, kind: string, type: string, target: string, sub: string, ath: number, atv: number) => Promise<void>;
   handleDeleteHotspot: () => Promise<void>;
+  mapTourSelection?: MapTourSelection;
 }
 
 // Note 2: PanoramaView 컴포넌트는 WebGL 씬 캔테이너 및 핫스팟 레이어, 에디터 패널의 DOM 구조를 렌더하는 프레젠테이셔널 뷰입니다.
@@ -75,6 +79,7 @@ export default function PanoramaView({
   handleDeleteHotspot,
   highlightedHotspotId,
   vrMode,
+  mapTourSelection,
 }: PanoramaViewProps) {
   const [formLabel, setFormLabel] = useState("");
   const [formLabelEn, setFormLabelEn] = useState("");
@@ -83,6 +88,42 @@ export default function PanoramaView({
   const [formTarget, setFormTarget] = useState("");
   const [formSub, setFormSub] = useState("");
   const [formSubmitLoading, setFormSubmitLoading] = useState(false);
+  const [editLabel, setEditLabel] = useState("");
+  const [editLabelEn, setEditLabelEn] = useState("");
+  const [editKind, setEditKind] = useState("poi");
+  const [editType, setEditType] = useState("custom");
+  const [editTarget, setEditTarget] = useState("");
+  const [editSub, setEditSub] = useState("");
+  const [editUrl, setEditUrl] = useState("/mice/upload/mice_vr/marker/nav.png");
+
+  useEffect(() => {
+    if (!selectedHotspot) return;
+    const hotspot = selectedHotspot.hotspot;
+    const sceneOverrides = overrides[scene.id] || {};
+    const override = sceneOverrides[hotspot.id || hotspot.label];
+
+    setEditLabel(override?.label ?? hotspot.label ?? "");
+    setEditLabelEn(override?.labelEn ?? hotspot.labelEn ?? "");
+    setEditKind(override?.kind ?? hotspot.kind ?? "poi");
+    setEditType(override?.type ?? (hotspot as Hotspot & { type?: string }).type ?? "custom");
+    setEditTarget(override?.target ?? hotspot.target ?? "");
+    setEditSub(override?.sub ?? hotspot.sub ?? "");
+    setEditUrl(override?.url ?? hotspot.url ?? "/mice/upload/mice_vr/marker/nav.png");
+  }, [selectedHotspot, overrides, scene.id]);
+
+  const markerOptions = [
+    { label: "Default", value: "/mice/upload/mice_vr/marker/nav.png" },
+    { label: "Camera", value: "/mice/upload/mice_vr/marker/camera.png" },
+    { label: "Aerial", value: "/mice/upload/mice_vr/marker/aerial.png" },
+    { label: "Viewpoint", value: "/mice/upload/mice_vr/marker/vewer.png" },
+    { label: "Restroom", value: "/mice/upload/mice_vr/marker/Restroom.png" },
+    { label: "Convenience", value: "/mice/upload/mice_vr/marker/Convenience.png" },
+    { label: "Cafe", value: "/mice/upload/mice_vr/marker/cafe.png" },
+    { label: "Elevator", value: "/mice/upload/mice_vr/marker/Elevator.png" },
+    { label: "Info", value: "/mice/upload/mice_vr/marker/Info.png" },
+    { label: "Safety Exit", value: "/mice/upload/mice_vr/marker/Exit.png" },
+    { label: "CCTV", value: "/mice/upload/mice_vr/marker/marker-cctv.png" },
+  ];
 
   return (
     <div className="absolute inset-0 select-none">
@@ -93,7 +134,7 @@ export default function PanoramaView({
       />
 
       {/* Hotspots overlay layer */}
-      <div ref={hotspotLayerRef} className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div ref={hotspotLayerRef} className="pointer-events-none absolute inset-0 z-20 overflow-hidden">
         {scene.hotspots.map((h, i) => {
           const sceneOverrides = overrides[scene.id] || {};
           const override = sceneOverrides[h.id || h.label];
@@ -101,15 +142,42 @@ export default function PanoramaView({
             ...h,
             lon: override?.ath ?? h.lon,
             lat: override?.atv ?? h.lat,
+            label: override?.label ?? h.label,
+            labelEn: override?.labelEn ?? h.labelEn,
+            kind: override?.kind ?? h.kind,
+            type: override?.type ?? (h as Hotspot & { type?: string }).type,
+            target: override?.target ?? h.target,
+            sub: override?.sub ?? h.sub,
+            url: override?.url ?? h.url,
           };
           
           // Note 3: 필터링 목록에 없는 핫스팟은 DOM 렌더 타임에 가려지도록 분기합니다.
           const isRendered = filteredHotspots.some((fh) => fh.id === h.id);
           if (!isRendered) return null;
 
+          const isNextStep = (() => {
+            if (
+              !mapTourSelection ||
+              mapTourSelection.navigationMode !== "guiding" ||
+              !mapTourSelection.navigationRoute ||
+              mapTourSelection.navigationRoute.length <= 1
+            ) {
+              return false;
+            }
+            const currentStepIdx = mapTourSelection.navigationRoute.findIndex((step) =>
+              step.id.includes(`-${scene.id}-`)
+            );
+            if (currentStepIdx === -1 || currentStepIdx >= mapTourSelection.navigationRoute.length - 1) {
+              return false;
+            }
+            const nextStep = mapTourSelection.navigationRoute[currentStepIdx + 1];
+            const nextSceneId = nextStep.id.split("-")[1];
+            return resolvedHotspot.target === nextSceneId;
+          })();
+
           return (
             <div
-              key={h.id}
+              key={`${scene.id}:${h.id}`}
               ref={(node) => setHotspotNodeRef(node, i)}
               className={`absolute left-0 top-0 will-change-transform ${
                 isHotspotEditMode
@@ -129,6 +197,7 @@ export default function PanoramaView({
                 onInfo={onInfo}
                 lang={lang}
                 disableClick={isHotspotEditMode && interactionMode === "drag"}
+                isNextStep={isNextStep}
               />
             </div>
           );
@@ -139,7 +208,7 @@ export default function PanoramaView({
       {isHotspotEditMode && (
         <div
           className="absolute left-4 top-4 z-50 flex flex-col gap-3 rounded-xl border border-white/10 bg-black/85 p-4 text-xs text-white backdrop-blur-md shadow-2xl"
-          style={{ width: 280, pointerEvents: "auto" }}
+          style={{ width: 360, pointerEvents: "auto" }}
         >
           <div className="flex items-center justify-between border-b border-white/10 pb-2">
             <span className="font-bold text-emerald-400 tracking-wider uppercase">Hotspot Editor</span>
@@ -152,7 +221,7 @@ export default function PanoramaView({
               <button
                 onClick={() => {
                   setInteractionMode("drag");
-                  setToast({ message: "Mode: Drag Edit", type: "success" });
+                  setToast({ message: "Mode: Edit", type: "success" });
                 }}
                 className={`rounded py-1 px-1.5 text-center font-semibold text-[10px] transition active:scale-95 ${
                   interactionMode === "drag"
@@ -160,7 +229,7 @@ export default function PanoramaView({
                     : "bg-white/10 hover:bg-white/15 text-white/70"
                 }`}
               >
-                Drag (D)
+                Edit (D)
               </button>
               <button
                 onClick={() => {
@@ -202,17 +271,88 @@ export default function PanoramaView({
                   <span className="text-white/40">ID:</span>{" "}
                   <span className="font-mono text-white/90">{selectedHotspot.hotspot.id}</span>
                 </div>
-                <div>
-                  <span className="text-white/40">Label:</span>{" "}
-                  <span className="text-white/90 font-semibold">{selectedHotspot.hotspot.label}</span>
-                </div>
-                <div>
-                  <span className="text-white/40">Kind:</span>{" "}
-                  <span className="font-mono text-white/90">{selectedHotspot.hotspot.kind}</span>
-                </div>
-                <div>
-                  <span className="text-white/40">Target:</span>{" "}
-                  <span className="font-mono text-white/90">{selectedHotspot.hotspot.target || "none"}</span>
+                <div className="mt-1 border-t border-white/5 pt-2 flex flex-col gap-2">
+                  <label className="flex flex-col gap-1">
+                    <span className="text-white/40">Label (KOR)</span>
+                    <input
+                      type="text"
+                      value={editLabel}
+                      onChange={(e) => setEditLabel(e.target.value)}
+                      className="rounded border border-white/10 bg-white/5 px-2 py-1 text-white outline-none focus:border-emerald-500"
+                    />
+                  </label>
+                  <label className="flex flex-col gap-1">
+                    <span className="text-white/40">Label (ENG)</span>
+                    <input
+                      type="text"
+                      value={editLabelEn}
+                      onChange={(e) => setEditLabelEn(e.target.value)}
+                      className="rounded border border-white/10 bg-white/5 px-2 py-1 text-white outline-none focus:border-emerald-500"
+                    />
+                  </label>
+                  <div className="grid grid-cols-2 gap-2">
+                    <label className="flex flex-col gap-1">
+                      <span className="text-white/40">Kind</span>
+                      <select
+                        value={editKind}
+                        onChange={(e) => setEditKind(e.target.value)}
+                        className="rounded border border-white/10 bg-zinc-900 px-2 py-1 text-white outline-none focus:border-emerald-500"
+                      >
+                        <option value="poi">poi</option>
+                        <option value="nav">nav</option>
+                        <option value="info">info</option>
+                      </select>
+                    </label>
+                    <label className="flex flex-col gap-1">
+                      <span className="text-white/40">Type</span>
+                      <select
+                        value={editType}
+                        onChange={(e) => setEditType(e.target.value)}
+                        className="rounded border border-white/10 bg-zinc-900 px-2 py-1 text-white outline-none focus:border-emerald-500"
+                      >
+                        <option value="custom">custom</option>
+                        <option value="toilet">toilet</option>
+                        <option value="convenience">convenience</option>
+                        <option value="cafe">cafe</option>
+                        <option value="elevator">elevator</option>
+                        <option value="nursing">nursing</option>
+                        <option value="locker">locker</option>
+                        <option value="smoking">smoking</option>
+                      </select>
+                    </label>
+                  </div>
+                  <label className="flex flex-col gap-1">
+                    <span className="text-white/40">Target</span>
+                    <input
+                      type="text"
+                      value={editTarget}
+                      onChange={(e) => setEditTarget(e.target.value)}
+                      className="rounded border border-white/10 bg-white/5 px-2 py-1 text-white outline-none focus:border-emerald-500"
+                    />
+                  </label>
+                  <label className="flex flex-col gap-1">
+                    <span className="text-white/40">Sub</span>
+                    <input
+                      type="text"
+                      value={editSub}
+                      onChange={(e) => setEditSub(e.target.value)}
+                      className="rounded border border-white/10 bg-white/5 px-2 py-1 text-white outline-none focus:border-emerald-500"
+                    />
+                  </label>
+                  <label className="flex flex-col gap-1">
+                    <span className="text-white/40">Marker</span>
+                    <select
+                      value={editUrl}
+                      onChange={(e) => setEditUrl(e.target.value)}
+                      className="rounded border border-white/10 bg-zinc-900 px-2 py-1 text-white outline-none focus:border-emerald-500"
+                    >
+                      {markerOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
                 </div>
 
                 <div className="mt-1 border-t border-white/5 pt-1.5 flex flex-col gap-1">
@@ -257,14 +397,24 @@ export default function PanoramaView({
                 <div className="mt-3 grid grid-cols-2 gap-2">
                   <button
                     disabled={interactionMode === "click"}
-                    onClick={handleSave}
+                    onClick={() =>
+                      handleSave({
+                        label: editLabel,
+                        labelEn: editLabelEn,
+                        kind: editKind,
+                        type: editType,
+                        target: editTarget,
+                        sub: editSub,
+                        url: editUrl,
+                      })
+                    }
                     className={`rounded py-1.5 px-3 font-semibold text-white transition ${
                       interactionMode === "click"
                         ? "bg-emerald-600/30 text-white/30 cursor-not-allowed"
                         : "bg-emerald-600 hover:bg-emerald-500 active:scale-95"
                     }`}
                   >
-                    Save
+                    Save Edit
                   </button>
                   <button
                     onClick={handleReset}
@@ -299,11 +449,11 @@ export default function PanoramaView({
             <div className="flex justify-between">
               <span>Mode</span>
               <span className="font-semibold text-emerald-400">
-                {interactionMode === "drag" ? "Drag Edit" : "Click Test"}
+                {interactionMode === "drag" ? "Edit" : interactionMode === "click" ? "Click Test" : "Add Hotspot"}
               </span>
             </div>
             <div className="flex justify-between">
-              <span>Drag</span>
+              <span>Edit</span>
               <span className={interactionMode === "drag" ? "text-emerald-400" : "text-rose-400"}>
                 {interactionMode === "drag" ? "Enabled" : "Disabled"}
               </span>
@@ -524,19 +674,19 @@ interface HotspotElementProps {
   onInfo: (h: Hotspot) => void;
   lang: "KOR" | "ENG";
   disableClick?: boolean;
+  isNextStep?: boolean;
 }
 
 // Note 4: 핫스팟 타입(nav, poi, info)에 따라 개별 형상을 출력하는 뷰 요소입니다.
-function HotspotElement({ h, onNavigate, onInfo, lang, disableClick }: HotspotElementProps) {
+function HotspotElement({ h, onNavigate, onInfo, lang, disableClick, isNextStep }: HotspotElementProps) {
   if (h.url?.includes("dim-img")) {
     return null;
   }
   const text = lang === "KOR" ? h.label : h.labelEn || h.label;
+  const hotspotType = (h as Hotspot & { type?: string }).type;
+  const iconUrl = resolveAssetPath(h.url || "/mice/upload/mice_vr/marker/nav.png");
 
-  if (h.type && ["toilet", "convenience", "cafe", "elevator", "nursing", "locker", "smoking"].includes(h.type)) {
-    const badgeConfig = getHotspotBadgeConfig(h, lang);
-    const badgeSrc = getHotspotBadgeDataUrl(badgeConfig);
-
+  if (hotspotType && ["toilet", "convenience", "cafe", "elevator", "nursing", "locker", "smoking"].includes(hotspotType)) {
     return (
       <button
         type="button"
@@ -544,29 +694,30 @@ function HotspotElement({ h, onNavigate, onInfo, lang, disableClick }: HotspotEl
         onClick={() => !disableClick && h.target && onNavigate(h.target)}
         aria-label={text}
         title={text}
+        data-hotspot-kind="poi"
         className="flex flex-col items-center gap-1 border-0 bg-transparent p-0 text-white transition-transform duration-300 hover:scale-105 select-none"
       >
         <img
-          src={badgeSrc}
+          src={iconUrl}
           alt={text}
-          width={badgeConfig.width}
-          height={badgeConfig.height}
+          width={72}
+          height={72}
           style={{
-            width: badgeConfig.width,
-            height: badgeConfig.height,
+            width: 72,
+            height: 72,
             objectFit: "contain",
             imageRendering: "auto",
             filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))",
           }}
         />
+        <span className="max-w-[14rem] rounded bg-black/40 px-2 py-0.5 text-[11px] text-white/95 backdrop-blur-sm">
+          {text}
+        </span>
       </button>
     );
   }
 
   if (h.kind === "nav") {
-    const badgeConfig = getHotspotBadgeConfig(h, lang);
-    const badgeSrc = getHotspotBadgeDataUrl(badgeConfig);
-
     const isExit = h.url?.includes("marker-exit") || h.label?.includes("비상구") || h.labelEn?.includes("Exit");
 
     return (
@@ -574,11 +725,15 @@ function HotspotElement({ h, onNavigate, onInfo, lang, disableClick }: HotspotEl
         {isExit && (
           <div className="absolute rounded-full border-4 border-emerald-400 bg-emerald-500/20 ping-ring" style={{ width: 80, height: 80, pointerEvents: "none" }} />
         )}
+        {isNextStep && (
+          <div className="absolute rounded-full border-4 border-emerald-400 bg-emerald-500/20 ping-ring" style={{ width: 88, height: 88, pointerEvents: "none" }} />
+        )}
         <button
           type="button"
           onClick={() => !disableClick && h.target && onNavigate(h.target)}
           aria-label={text}
           title={text}
+          data-hotspot-kind="navigation"
           style={{
             display: "flex",
             flexDirection: "column",
@@ -588,23 +743,26 @@ function HotspotElement({ h, onNavigate, onInfo, lang, disableClick }: HotspotEl
             border: "none",
             cursor: "pointer",
             padding: 0,
-            zIndex: 10
+            zIndex: 10,
           }}
         >
           <img
-            src={badgeSrc}
+            src={iconUrl}
             alt={text}
-            width={badgeConfig.width}
-            height={badgeConfig.height}
+            width={72}
+            height={72}
             style={{
-              width: badgeConfig.width,
-              height: badgeConfig.height,
+              width: 72,
+              height: 72,
               objectFit: "contain",
               imageRendering: "auto",
               filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))",
               transition: "transform 0.2s",
             }}
           />
+          <span className="max-w-[14rem] rounded bg-black/40 px-2 py-0.5 text-[11px] text-white/95 backdrop-blur-sm">
+            {text}
+          </span>
         </button>
       </div>
     );
@@ -615,6 +773,7 @@ function HotspotElement({ h, onNavigate, onInfo, lang, disableClick }: HotspotEl
       <button
         type="button"
         onClick={() => !disableClick && onInfo(h)}
+        data-hotspot-kind="information"
         className="group flex items-center gap-2"
       >
         <span className="flex h-7 w-7 items-center justify-center rounded-full border border-white/70 bg-white/10 font-cond text-sm italic text-white backdrop-blur-sm transition-all duration-200 group-hover:scale-110 group-hover:bg-white/25">
@@ -639,6 +798,7 @@ function HotspotElement({ h, onNavigate, onInfo, lang, disableClick }: HotspotEl
         onClick={() => !disableClick && isClickable && h.target && onNavigate(h.target)}
         aria-label={text}
         title={text}
+        data-hotspot-kind="poi"
         style={{
           display: "flex",
           flexDirection: "column",

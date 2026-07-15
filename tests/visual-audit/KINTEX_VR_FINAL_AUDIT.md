@@ -15,8 +15,8 @@
    - 실제 마우스 드래그 및 회전 이벤트만 허용.
 3. **UI 전면 재구현**: 
    - 기존의 다크 모드/Glassmorphism 스타일을 폐기하고, 원본(SIC27-KINTEX K-MICE iframe)의 **흰색 솔리드 패널 스타일**로 `index.css` 및 전체 컴포넌트를 재작성.
-   - `TopNav`, `SIC2027 KINTEXLogo`, `SceneDropdown`, `FloorSelector`, `InfoTabs`, `VRControls` 등 모든 오버레이 요소를 원본 레이아웃(좌측 상단 로고/드롭다운, 우측 층선택, 하단 정보 탭 등)과 일치시킴.
-   - 핫스팟(`nav`, `poi`) 렌더링 시, 원본에 사용된 마커 이미지(`marker01.png`, `marker07.png` 등) 및 라벨 사이즈 적용.
+   - `TopNav`, `SIC2027 SIC27Logo`, `SceneDropdown`, `FloorSelector`, `InfoTabs`, `VRControls` 등 모든 오버레이 요소를 원본 레이아웃(좌측 상단 로고/드롭다운, 우측 층선택, 하단 정보 탭 등)과 일치시킴.
+   - 핫스팟(`nav`, `poi`) 렌더링 시, 원본에 사용된 마커 이미지(`nav.png`, `vewer.png` 등) 및 라벨 사이즈 적용.
 
 ## 3. 남은 과제 및 수동 검증 안내 (Phase 4 ~ 8)
 sandbox 환경 보안 정책에 의해 로컬 터미널에서의 자동 픽셀 비교(playwright + pixelmatch) 수행에 제약이 발생했습니다. 

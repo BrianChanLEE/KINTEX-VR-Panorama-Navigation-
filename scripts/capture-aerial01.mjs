@@ -29,7 +29,7 @@ async function run() {
   // Extract origin hotspots
   // Krpano creates <div> elements for hotspots. We can query them by looking at their internal img src or styles.
   // Origin uses:
-  // - Orange marker: /mice/upload/mice_vr/marker/marker01.png or marker07.png
+  // - Orange marker: /mice/upload/mice_vr/marker/nav.png or vewer.png
   // - SIC27-KINTEX 1 pin: /mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX01.png
   // - SIC27-KINTEX 2 pin: /mice/upload/mice_vr/KIN/air/kor/SIC2027 KINTEX02.png
 
@@ -49,7 +49,7 @@ async function run() {
       let type = '';
       let label = '';
       
-      if (src.includes('marker01.png') || src.includes('marker07.png')) {
+      if (src.includes('nav.png') || src.includes('vewer.png')) {
         type = 'orange_marker';
       } else if (src.includes('SIC2027 KINTEX01.png')) {
         type = 'SIC2027 KINTEX1_pin';
@@ -99,7 +99,7 @@ async function run() {
       let type = '';
       let label = btn.innerText || '';
       
-      if (src.includes('marker01.png') || src.includes('marker07.png')) {
+      if (src.includes('nav.png') || src.includes('vewer.png')) {
         type = 'orange_marker';
       } else if (src.includes('SIC2027 KINTEX01.png')) {
         type = 'SIC2027 KINTEX1_pin';
