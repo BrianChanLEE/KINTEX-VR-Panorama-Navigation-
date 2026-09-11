@@ -319,10 +319,5 @@ npx playwright test tests/e2e/kintex-vr-all-scenes-position-parity.spec.ts
 
 ---
 
-# License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 # Contributors
 - **VX WEB Team (CTC DX)**
